@@ -11,20 +11,13 @@
 
 # Alkuperäinen järjestelmä
 ## Työympäristö- ja ajoneuvo
-* Traktorin koura on vaihdettu eri merkkiseen, jota ohjataan Motomit-järjestelmällä. Motomit on CAN-väyläinen moduuliratkaisu, joka on yhdistetty PC:hen sarjaportti-CAN-adapterilla.
-*Traktorin säätöjä muutetaan sarjaportin välityksellä DOS-pohjaisella Valmetin Terman-ohjelmalla.
 ## Alkuperäisen laitteen huollosta kokemuksia
 
 ## Laitteisto
-* BUS-väylä: Tietokoneen HID-laitteet on ohjattu BUS-porttiin, jossa on PS/2 Sunitin omassa pinoutissa. Mittasin yleismittarin ja oskilloskoopin kanssa kaikki pinnit selvittääkseni missä PS/2 saattaisi olla.
 ### PS/2 -protokolla
 ### RS232 -protokolla
 
-
 ## Ohjelmistot
-* Käyttöjärjestelmä on Windows 98. 
-* Kouralle on erillinen mittalaiteohjelmisto Motomit.
-* Traktorin asetusten muuttamiseen DOS-pohjainen Terman
 
 # Suunnittelu
 ## Tekniset toteuttamisvaihtoehdot
