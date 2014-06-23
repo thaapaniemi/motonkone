@@ -1,15 +1,15 @@
 
 # Metsäkoneen ajoneuvotietokoneen päivitys
 
-#Johdanto
+# [Johdanto](sisalto/johdanto.md)
 
 # [Lyhenteet](sisalto/lyhenteet.md)
 
-# Autotietokoneiden teoriaa
+# [Autotietokoneiden teoriaa](sisalto/teoriaa.md)
 ## ajoneuvotietotekniikkastandardit?
 * StanForD 2010: Metsäkoneiden tiedonhallinnassa ja datansiirrossa käytettävä tiedonesitystavan standardi (XML).
 
-## yleisiä vaatimuksia ajoneuvokäyttöön
+## [Yleisiä vaatimuksia ajoneuvokäyttöön](sisalto/vaatimukset.md)
 
 # [Alkuperäinen järjestelmä](sisalto/alkuperainen_jarjestelma.md)
 ## Työympäristö- ja ajoneuvo
@@ -19,7 +19,7 @@
 ### PS/2 -protokolla
 ### RS232 -protokolla
 
-## Ohjelmistot
+## [Ohjelmistot](sisalto/ohjelmistot.md)
 
 # [Suunnittelu](sisalto/suunnittelu.md)
 ## Tekniset toteuttamisvaihtoehdot
@@ -30,7 +30,7 @@
 ## Käytettävyys
 ## Valitut ratkaisut
 
-# Toteutus
+# [Toteutus](sisalto/toteutus.md)
 # Testaus
 # Käyttöönotto
 
