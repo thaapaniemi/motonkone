@@ -3,8 +3,7 @@
 
 #Johdanto
 
-# Lyhenteet
-{{sisalto/lyhenteet.md}}
+# [Lyhenteet](sisalto/lyhenteet.md)
 
 # Autotietokoneiden teoriaa
 ## ajoneuvotietotekniikkastandardit?
@@ -12,8 +11,7 @@
 
 ## yleisiä vaatimuksia ajoneuvokäyttöön
 
-# Alkuperäinen järjestelmä
-{{sisalto/alkuperainen_jarjestelma.md}}
+# [Alkuperäinen järjestelmä](sisalto/alkuperainen_jarjestelma.md)
 ## Työympäristö- ja ajoneuvo
 ## Alkuperäisen laitteen huollosta kokemuksia
 
@@ -23,8 +21,7 @@
 
 ## Ohjelmistot
 
-# Suunnittelu
-{{sisalto/suunnittelu.md}}
+# [Suunnittelu](sisalto/suunnittelu.md)
 ## Tekniset toteuttamisvaihtoehdot
 ### Emulointi
 ### Virtualisointi
