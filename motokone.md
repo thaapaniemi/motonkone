@@ -3,6 +3,9 @@
 
 #Johdanto
 
+# Lyhenteet
+{{sisalto/lyhenteet.md}}
+
 # Autotietokoneiden teoriaa
 ## ajoneuvotietotekniikkastandardit?
 * StanForD 2010: Metsäkoneiden tiedonhallinnassa ja datansiirrossa käytettävä tiedonesitystavan standardi (XML).
@@ -10,6 +13,7 @@
 ## yleisiä vaatimuksia ajoneuvokäyttöön
 
 # Alkuperäinen järjestelmä
+{{sisalto/alkuperainen_jarjestelma.md}}
 ## Työympäristö- ja ajoneuvo
 ## Alkuperäisen laitteen huollosta kokemuksia
 
@@ -20,6 +24,7 @@
 ## Ohjelmistot
 
 # Suunnittelu
+{{sisalto/suunnittelu.md}}
 ## Tekniset toteuttamisvaihtoehdot
 ### Emulointi
 ### Virtualisointi
