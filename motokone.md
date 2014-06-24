@@ -1,9 +1,9 @@
 
 # Metsäkoneen ajoneuvotietokoneen päivitys
 
-# [Johdanto](sisalto/01_johdanto.md)
+# [Lyhenteet](sisalto/01_lyhenteet.md)
 
-# [Lyhenteet](sisalto/02_lyhenteet.md)
+# [Johdanto](sisalto/02_johdanto.md)
 
 # [Autotietokoneiden teoriaa](sisalto/03_teoriaa.md)
 ## ajoneuvotietotekniikkastandardit?
