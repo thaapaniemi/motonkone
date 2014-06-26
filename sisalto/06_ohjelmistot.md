@@ -1,8 +1,19 @@
 # Ohjelmistot
 
-## Windows 98
+## Windows 98 SE
+Windows 98 on Microsoftin 25.6.1998 julkaisema käyttöjärjestelmä, joka pohjautui Microsoftin MS-DOS:n päälle rakenettuu Windows 95-käyttöjärjestelmään [98hist1]. Windows 98 SE on 10.6.1999 julkaistu, päivitetty versio Windows 98:sta, joka lisäsi useita parannuksia ja vakautta alkuperäiseen Windows 98:iin nähden[98hist2]. Windows 98/98 SE/ME:n tuki päättyi 11.7.2006 [98tuki]
 
 ## Motomit PC
+Motomit PC on Motomit IT:n Windows-pohjainen käyttöliittymä, joka kommunikoi Motomit IT-järjestelmän kanssa sarjaportin välityksellä [motomit1]
+
+* Mitron Oy:n osuus asiaan?
+	* Nähtävästi ainakin rautaa? CAN-ohjain yms.
 
 ## Valmet Terman
 Valmet Terman on DOS-pohjainen mittaus- ja hallintajärjestelmä Valmetin xxx-xxx motoille.
+
+# Lähteet
+[98hist1](http://windows.microsoft.com/fi-fi/windows/history)
+[98hist2](http://www.techairlines.com/a-brief-history-of-microsoft-windows/)
+[98tuki](http://support.microsoft.com/gp/lifean18)
+[motomit1](http://files.kotisivukone.com/productsupport.tarjoaa.fi/Ohjekirjoja/Motomit/manual_it_fin_0605.pdf)
