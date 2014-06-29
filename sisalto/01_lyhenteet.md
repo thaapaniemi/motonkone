@@ -1,5 +1,7 @@
 # Lyhenteet
 
+x86: Yleisnimitys Intelin 1987 julkaisemalle CISC-prosessorikäskykannalle. Alkuperäiset 8086/80186/80286 olivat 16-bittisiä, mutta 80386:sta eteenpäin käskykantaa laajennettiin 32-bittiseksi.
+
 PS/2: Sarjaväyläinen, alunperin IBM PS/2 koneessa ollut liitäntäprotokolla, joka yleistyi PC-koneiden standardiliitännäksi näppäimistölle ja hiirelle ennen USB-protokollaa. 5V, GND, data, clock. Suunniteltu 1987 [lähde?]
 
 RS232: Alunperin v. 1962 esitelty asynkroninen sarjaliitäntäprotokolla, joka oli ennen USB-liitännän yleistymistä yleisin PC-koneiden oheislaitteiden liitäntäväylä.

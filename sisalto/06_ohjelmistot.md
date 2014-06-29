@@ -1,5 +1,8 @@
 # Ohjelmistot
 
+## MS-DOS
+MS-DOS (Microsoft Disk Operating System) on vuonna 1981 julkaistu käyttöjärjestelmä x86-yhteensopiville tietokoneille. Viimeinen versio MS-Dosista on 8.0 (14.9.2000), joka toimitettiin Windows ME-käyttöjärjestelmän yhteydessä.
+
 ## Windows 98 SE
 Windows 98 on Microsoftin 25.6.1998 julkaisema käyttöjärjestelmä, joka pohjautui Microsoftin MS-DOS:n päälle rakenettuu Windows 95-käyttöjärjestelmään [98hist1]. Windows 98 SE on 10.6.1999 julkaistu, päivitetty versio Windows 98:sta, joka lisäsi useita parannuksia ja vakautta alkuperäiseen Windows 98:iin nähden[98hist2]. Windows 98/98 SE/ME:n tuki päättyi 11.7.2006 [98tuki]
 
