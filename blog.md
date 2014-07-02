@@ -75,3 +75,11 @@
 ## 2014-06-18
 * Kone kasaan
 
+## 2014-07-01
+* Kone kiinni motoon
+	* Motomit toimi suoraan, termanin asetuksia pitää säätää
+
+## 2014-07-02
+* Terman toimimaan Valmetin avustuksella
+	* COM-portin vaihto 3->2
+	* COM-portin vaihto: VBUport
