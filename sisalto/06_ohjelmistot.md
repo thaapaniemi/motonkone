@@ -7,13 +7,13 @@ MS-DOS (Microsoft Disk Operating System) on vuonna 1981 julkaistu käyttöjärje
 Windows 98 on Microsoftin 25.6.1998 julkaisema käyttöjärjestelmä, joka pohjautui Microsoftin MS-DOS:n päälle rakenettuu Windows 95-käyttöjärjestelmään [98hist1]. Windows 98 SE on 10.6.1999 julkaistu, päivitetty versio Windows 98:sta, joka lisäsi useita parannuksia ja vakautta alkuperäiseen Windows 98:iin nähden[98hist2]. Windows 98/98 SE/ME:n tuki päättyi 11.7.2006 [98tuki]
 
 ## Motomit PC
-Motomit PC on Motomit IT:n Windows-pohjainen käyttöliittymä, joka kommunikoi Motomit IT-järjestelmän kanssa sarjaportin välityksellä [motomit1]
+Motomit PC on Motomit IT:n Windows-pohjainen käyttöliittymä, joka kommunikoi Motomit IT-järjestelmän kanssa sarjaportin kautta CAN-väylän välityksellä [motomit1].
 
 * Mitron Oy:n osuus asiaan?
 	* Nähtävästi ainakin rautaa? CAN-ohjain yms.
 
 ## Valmet Terman
-Valmet Terman on DOS-pohjainen mittaus- ja hallintajärjestelmä Valmetin xxx-xxx motoille.
+Valmet Terman on DOS-pohjainen mittaus- ja hallintajärjestelmä Valmetin xxx-xxx motoille. Käytössä oleva metsätraktori on viimeisiä Terman-ohjelmistoa käyttäviä traktorimalleja.
 
 # Lähteet
 [98hist1](http://windows.microsoft.com/fi-fi/windows/history)

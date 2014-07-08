@@ -6,4 +6,4 @@ Insinöörityön aiheena on 15v vanhan Sunit Nero-ajoneuvotietokoneen korvaus yh
 
 Aluksi tutustutaan käytössä olevaan laitteistoon ja sen asettamiin vaatimuksiin. Seuraavaksi käydään läpi mahdollisia toteuttamisvaihtoehtoja ja niiden ominaisuuksia. Lopuksi toteutetaan muutokset, testataan järjestelmä tuotantoympäristössä ja kerätään käyttäjäkokemuksia.
 
-Haasteita työlle asettavat vanhat ohjelmistot, tärinää ja pölyä ja vaihtelevia lämpötiloja sisältävä työympäristö.
+Haasteita työlle asettavat vanhat ohjelmistot, tärinää ja pölyä ja vaihtelevia lämpötiloja sisältävä työympäristö. Metsätraktori on huoltoja lukuunottamatta metsässä kesät talvet ja lämpötilat vaihtelevat talvella -20 asteesta +20 asteeseen ja kesäisin lämmöt voivat nousta ohjaamossa jopa +50-60 asteeseen.
