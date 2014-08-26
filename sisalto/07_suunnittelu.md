@@ -3,60 +3,33 @@
 ## Ohjelmiston toteutusvaihtoehdot
 Tarkoituksena olisi löytää projektille sopiva vaihtoehto, missä alkuperäiset ohjelmistot saataisiin toimimaan käyttäjäystävällisesti ja vakaasti uuden laitteiston kanssa.
 
-### Suora toteutus, "Natiivi"
-Suorassa toteutuksessa tietokoneeseen asennettaan uusin käyttöjärjestelmä, mitä käytössä oleva laitteisto ja ohjelmat tukevat. Koska käytössä on kohtalaisen uutta laitteistoa (max ~5v vanhaa) ja käytössä olevat ohjelmistot ovat vuosituhannen vaihteesta, asettaa tämä haasteita löytää toimiva yhdistelmä. Vaihtoehto vaatii yhteensopivan laite- ja ohelmistoarkkitehtuurin vanhan järjestelmän kanssa.
-
-* Laitteisto
-	* Windows XP+ toimii
-	* Windows 9x pitää testata
-* Ohjelmistot
-	* Windows 9x toimii
-	* Windows XP ehkä jos löytää sopivan sarjaporttiajurin (tai sitten ei)
-
+### Natiivi ympäristö
+Vaihtoehdossa tietokoneeseen asennettaan uusin käyttöjärjestelmä, mitä käytössä oleva laitteisto ja ohjelmat tukevat. Vaihtoehto on haasteellinen, koska ohjelmistot ovat vanhoja ja laitteisto uutta. Uusien laitteiden tuki vanhoilla käyttöjärjestelmillä on puutteellinen tai puuttuva.
 
 ## Ohjelmistojen rajapintojen yhteensopivuuskerros
-Käyttöjärjestelmän ja ohjelman välissä sopivia rajapintakerroksia, jolloin saadaan käyttöjärjestelmän kanssa yhteensopimattomat ohjelmat toimimaan keskenään. Vaihtoehto vaatii yhteensopivan laitteistoarkkitehtuurin alkuperäisen järjestelmän kanssa.
-* ~Natiivinopeus
-* ~Natiivimuistinkulutus
-* eivät täydellisiä (nykyään kuitenkin varsin hyviä) joten yhteensopivuus pitää testata
-
+Vaihtoehdossa käytetään käyttöjärjestelmän ja ohjelman välissä sopivia rajapintakerroksia, jolloin saadaan käyttöjärjestelmän kanssa yhteensopimattomat ohjelmat toimimaan keskenään. Vaihtoehto vaatii yhteensopivan laitteistoarkkitehtuurin alkuperäisen järjestelmän kanssa. Nykyiset Windows-versiot (Windows XP+) sisältävät jo valmiiksi yhteensopivuustilan, joka mahdollistaa vanhempien ohjelmien käyttämisen uudemmissa käyttöjärjestelmissä. Linuxissa Wine-rajapintatoteutus mahdollistaa kaikenikäisten Windows-sovellusten ajamisen Linuxissa.
 
 ## Virtualisointi
-Alkuperäisiä ohjelmistoja+käyttöjärjestelmää ajetaan virtuaalikoneessa toisen käyttöjärjestelmän päällä. Näin saavutetaan varmin yhteensopivuus ohjelmistotasolla. Oheislaitteiden kanssa esiintyy rajoituksia, jotka pitää huomioida. Vaihtoehto vaatii yhteensopivan laitteistoarkkitehtuurin alkuperäisen järjestelmän kanssa.
-* Virtuaalikoneohjelmistojen rajoitukset
-	* Virtualbox: 2 sarjaporttia
-* Isompi muistinkulutus
-	* Win98 64MB, joten ei käytännössä väliä
-* Hyötysuhde pienenee
-	* Virtualisoinnilla päästään kuitenkin ~90%+ natiivista suorituskyvystä [http://www.anandtech.com/show/2770/10]
+Vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmää ajetaan virtuaalikoneessa toisen käyttöjärjestelmän päällä. Näin saavutetaan varmin yhteensopivuus ohjelmistotasolla. Oheislaitteiden siirtämisessä virtualisoidun koneen käyttöön on rajoituksia, jotka pitää huomioida virtualisointiohjelmistoja valittaessa. Vaihtoehto kuluttaa muistia enemmän ja on hieman hitaampi kuin natiivi toteutus, hyötysuhteen ollessa ~90% natiivista [virtnat_anadtech].
+
+[virtnat_anadtech](http://www.anandtech.com/show/2770/10)
 
 ## Järjestelmäemulointi
-Alkuperäisiä ohjelmistoja+käyttöjärjestelmä ajetaan emulaattorissa toisen järjestelmän päällä. Vaihtoehto ei vaadi minkäänlaista laitteisto- tai ohjelmistoarkkitehtuurillista yhteensopivuutta.
+Vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmä ajetaan emulaattorissa toisen järjestelmän päällä. Emuloimalla saavutetaan laitteistoarkkitehtuuririippumattomuus isäntäkoneen ja emuloitavan järjestelmän välillä. Emuloinnin haittapuolena on hitaus. Nyrkkisääntönä on 20% hyötysuhde [tinycc], parhaat emulaattorit pääsevät n. 40% hyötysuhteeseen [40pperf]
 
-* Emulaattorirajoitukset?
-* Hidasta
-	* sormisääntö: oleta ~20% hyötysuhdetta
-	 	* QEMU's ARM emulation on a 2Ghz x86_64 is likely to be faster than a real 400mhz ARM920T.
-	 	* RaspberryPi:n päällä x86-emulaatio vastaa n. 486:sta
-	 		* [http://rpix86.patrickaalto.com/index.html]
-	 		* The emulation runs at a speed of around 20MHz 80486
-	 	* [http://www.raspberrypi.org/forums/viewtopic.php?f=56&t=13161]
-	 		* It was just about usable
-	* parhaat emulaattorit pääsevät/pääsivät ~40% hyötysuhteesen [2012-10-03 http://www.embedded.com/electronics-news/4397737/X86-emulation-coming-to-ARM-processors]
+[40pperf](http://www.embedded.com/electronics-news/4397737/X86-emulation-coming-to-ARM-processors)
+[rpi_emu](http://www.raspberrypi.org/forums/viewtopic.php?f=56&t=13161)
+[rpi_emu2](http://rpix86.patrickaalto.com/index.html)
+[pearpc](http://pearpc.sourceforge.net/about.html)
 
 ## Ohjelmistojen emulointi
-Emuloidaan vain user-space tai koko pc:n sijasta. Vaihtoehto ei vaadi minkäänlaista laitteisto- tai ohjelmistoarkkitehtuurillista yhteensopivuutta. Lähes samat viat kuin järjestelmäemulaattoreissa.
-* QEMU 5. QEMU User space emulator
-* Ei kokemusta, selvitä asiaa
-	*http://wiki.qemu.org/download/qemu-doc.html#Supported-Operating-Systems
-
-* Fabrice Bellard's Tinycc project in 2003 originally as a way to run Wine on non-x86 hosts. 
-	* QEMU conceptually forked off it
-	* http://landley.net/aboriginal/presentation.html#cross_advantages
-	* Good rule of thumb is 20% of native speed, 
-* QEMU Application Emulation is nice but limited
+Vaihtoehdossa emuloidaan vain ohjelmat koko pc:n sijasta. Tämä onnistuu tietyillä ohjelmilla tiettyjen ohjelmistoarkkitehtuurien välillä [qemu_use],[tinycc]. Vaihtoehdolla voi ajaa x86-ohjelmia ARM-prosessoreilla.
+[qemu_use](http://wiki.qemu.org/download/qemu-doc.html#Supported-Operating-Systems)
+[tinycc](http://landley.net/aboriginal/presentation.html#cross_advantages)
 
 
-* Ei rajoituksia lähtö- ja kohdearkkitehtuureilla
-	* X86-ohjelmia ARM-arkkitehtuurilla (pienempi tehonkulutus, koko)
+## Valinta
+Toteutustavan valinnassa mietittiin kahden vaihtoehdon välillä. Ensimmäinen vaihtoehto oli pieni vähävirtainen ARM-arkkitehtuurinen laite (Raspberry Pi [raspi], CuBox[cubox]) ja emuloida x86-järjestelmä QEMU:lla. Toinen vaihtoehto oli käyttää x86-arkkitehtuurin kannettavaa aihiona, jossa tarvittavat ohjelmat pyörivät osittain Wine-rajapinnan kautta ja osittain DOSEMU-emulaattorissa. Sekä Wine- että DOSEMU mahdollistavat isäntäkoneen sarjaporttien mappaamisen kohdeohjelmien käyttöön.
 
+[raspi](http://www.raspberrypi.org/)
+[cubox](http://www.solid-run.com/products)
