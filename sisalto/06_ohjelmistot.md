@@ -9,14 +9,15 @@ Windows 98 on Microsoftin 25.6.1998 julkaisema käyttöjärjestelmä, joka pohja
 ## Motomit PC
 Motomit PC on Motomit IT:n Windows-pohjainen käyttöliittymä, joka kommunikoi Motomit IT-järjestelmän kanssa sarjaportin kautta CAN-väylän välityksellä [motomit1].
 
-* Mitron Oy:n osuus asiaan?
-	* Nähtävästi ainakin rautaa? CAN-ohjain yms.
-
 ## Valmet Terman
 Valmet Terman on DOS-pohjainen mittaus- ja hallintajärjestelmä Valmetin xxx-xxx motoille. Käytössä oleva metsätraktori on viimeisiä Terman-ohjelmistoa käyttäviä traktorimalleja.
+
+## Arch Linux
+Arch Linux on vuonna 2002 aloitettu Linux-distribuutio. Se on Distrowatch-sivuston listauksen mukaan Top-10 -listalla [dw]. Arch Linuxilla ei ole erillisiä julkaisuversiota vaan se on Rolling-release -tyylinen jolloin uudet versiot ohjelmistoista tulevat jatkuvasti saataville paketointijärjestelmään.
 
 # Lähteet
 [98hist1](http://windows.microsoft.com/fi-fi/windows/history)
 [98hist2](http://www.techairlines.com/a-brief-history-of-microsoft-windows/)
 [98tuki](http://support.microsoft.com/gp/lifean18)
 [motomit1](http://files.kotisivukone.com/productsupport.tarjoaa.fi/Ohjekirjoja/Motomit/manual_it_fin_0605.pdf)
+[distrowatch](http://distrowatch.com/dwres.php?resource=popularity)
