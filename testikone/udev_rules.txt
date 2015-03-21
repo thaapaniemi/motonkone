@@ -1,0 +1,4 @@
+/etc/udev/rules.d/10-local.rules:
+
+ACTION=="add", DRIVERS=="mos7840",ATTRS{port_number}=="0", SYMLINK+="ttyMoto0"
+ACTION=="add", DRIVERS=="mos7840",ATTRS{port_number}=="1", SYMLINK+="ttyMoto1"

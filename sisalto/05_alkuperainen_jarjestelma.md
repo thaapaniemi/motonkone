@@ -19,3 +19,10 @@ Huoltaessani konetta 05-06/2014 vaihdoin kiintolevyn, sekä uudet lämpötahnat 
 Kone kiinnitettiin takaisin motoon 1.7.2014 ja säädettyä portit kuntoon MotomitPC:stä ja Termanista, järjestelmä vaikutti toimivan ja poistuin paikalta.
 ![Kone kiinni motossa](../pictures/moto_1.jpg)
 ![Moto](../pictures/moto_2.jpg)
+
+### Huolto xx/2014
+Vaihdettu, käytettynä ostettu kiintolevy oli hajonnut käytössä ja se korvattiin SD-muistikorttipohjaisella ratkaisulla.
+
+### Huolto 03/2015
+SD-muistikorttiratkaisu oli hajonnut. Ratkaisu korvattiin nopeiten saatavissa olleella vaihtoehdolla, CF-muistikorttipohjaisella kiintolevykorvikkeella. Samalla tilattiin varastoon lisää kiintolevyadaptereita ja laitettiin ne käyttövalmiiksi siten, että osan hajottua voi vain vaihtaa uuden tilalle.
+

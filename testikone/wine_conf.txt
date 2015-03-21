@@ -1,0 +1,12 @@
+Winelle
+
+symboliset linkit laitteisiin:
+
+.wine/dosdevices/
+
+com1 -> /dev/ttyMoto1
+com2 -> /dev/ttyMoto0
+
+sudo ln -s /dev/ttyMoto1 /home/user/.wine/dosdevices/com1
+sudo ln -s /dev/ttyMoto0 /home/user/.wine/dosdevices/com2
+
