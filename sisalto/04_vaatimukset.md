@@ -1,15 +1,15 @@
-# Ajoneuvotietokoneiden vaatimuksia
+# Standardeja
 
 ## EU-direktiivi 2004/104/EY
 Direktiivi 2004/104/EY (Autoteollisuuden EMC-direktiivi) määrittää, että 1.7.2006 alkaen valmistettujen ajoneuvojen ja kiinteiästi asennetun ajoneuvoelektroniikan aiheuttamat säteilypäästöt ja päästöjen sietokyky mitataan kyseisen direktiivin mukaisesti. Direktiiviin on julkaistu lisäys 2005/83/EY, joka tarkentaa direktiiviä. Uusi direktiivi korvaan aiemman direktiivin 95/54/EY.
 
 Uusi direktiivi vaatii tyyppihyväksynnän vain laitteilta, joilla on vaikutusta ajoneuvon hallintaan, kuljettajan asennon muuttamiseen tai kuljettajan näkyvyysalueeseen. Laitteiden, joiden ei tarvitse olla tyyppihyväksyttyjä, pitää täyttää kuitenkin EMC-direktiivin 89/336/EY tai radio- ja telepäätelaitedirektiivin 1999/5/EY vaatimukset. [ajoneuvodirektiivi*]
 
-### EMC-direktiivi 89/336/EY
-EMC-direktiivi 89/336/EY määrittelee ainoastaan laitteistolta vaadittavat ominaisuudet sähkömagneettisen yhteensopivuuden takaamiseksi. Direktiivin tarkoitus on ohjeistaa valmistajia tekemään elektromagneettisesti yhteensopivia laitteita. Direktiivi koskee kaikkia sähkölaitteita ja -asennuksia, joita ei direktiivissä ole erikseen rajattu sen ulkopuolelle.
+### EMC-direktiivi 89/336/ETY ja 2004/108/EY 
+EMC-direktiivi 89/336/ETY määrittelee ainoastaan laitteistolta vaadittavat ominaisuudet sähkömagneettisen yhteensopivuuden takaamiseksi. Direktiivin tarkoitus on ohjeistaa valmistajia tekemään elektromagneettisesti yhteensopivia laitteita. Direktiivi koskee kaikkia sähkölaitteita ja -asennuksia, joita ei direktiivissä ole erikseen rajattu sen ulkopuolelle. Direktiivi 2004/108/EY kumosi vanhemman direktiivin 89/336/ETY 20.7.2004 alkaen. 2004/108/EY mm. erotteli kiinteille asennuksille ja laitteille tehtävät asennukset, sekä yksinkertaisti vaatimustenmukaisuuden arviointimenettelyä.
 
 ### Radio- ja telepäätelaitedirektiivi 1999/5/EY
-R&TTE-direktiivi 1999/5/EY määrittää radio ja telepäätelaitteiden yhteensopivuuden euroopan laajuisesti. zzoijeoifwejoiwe ierhgiu ewwoigoioigw iogwjoigroigr hoineg
+Radio- ja telepäätelaitedirektiivi 1999/5/EY määrittää radio ja telepäätelaitteiden yhteensopivuuden euroopan laajuisesti. Kaikkiin direktiivin piiriin kuuluvien laitteiden tulee olla turvallisia käyttäjälle ja muille henkilöille, sekä täyttää vaaditut suojavaatimukset sähkömagneettisen yhteensopivuuden osalta. Lisäksi direktiivi määrittää että laitteistojen tulee olla rakennettuja siten että ne käyttävät tehokaasti radioviestintään varattua spektriä ja resursseja. Tietyille laiteluokille on lisäksi määritelty vielä muita vaadittuja lisäominaisuuksia, kuten yksityisyyden suojan takaamisen, yhteensopivuuden muiden laitteistojen välillä, sisältävät petoksia ehkäiseviä ominaisuuksia, tukevat hätäpalveluihin pääsyn takaavia ominaisuuksia ja/tai sisältävät ominaisuuksia joilla laitteistojen käyttö tehdään helpommaksi vammaisille. Direktiivi 1999/5/EY on kumottu 13.6.2016 alkaen direktiivillä 2014/53/EU radiolaitteiden asettamista saataville markkinoilla koskevan jäsenvaltioiden lainsäädännön yhdenmukaistamisesta.
 
 
 # IP-suojaluokitus
@@ -36,3 +36,9 @@ Ajoneuvosähkö ei ole kovin puhdasta, joten sähkölaitteiden sähkönsaannissa
 [ajoneuvodirektiivi1](http://www.sunit.fi/en/news.php?show=9)
 [ajoneuvodirektiivi2](http://eur-lex.europa.eu/LexUriServ/site/fi/oj/2004/l_337/l_33720041113fi00130058.pdf)
 [ajoneuvodirektiivi3](http://www.google.fi/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&ved=0CDQQFjAC&url=http%3A%2F%2Fwww.kamk.fi%2Floader.aspx%3Fid%3Dbe59b946-2e54-416e-8dae-d2bc38142165&ei=gNw_VOuMK4npywP48YBI&usg=AFQjCNHS2PmCt6WAQTMqYkYviz6sjsPZAw&bvm=bv.77648437,d.bGQ&cad=rja)
+
+[1999/5/EY](http://www.edilex.fi.ezproxy.metropolia.fi/eu-lainsaadanto/31999L0005?offset=1&perpage=20&phrase=1999%2F5%2FEY&sort=relevance&searchKey=430515)
+[89/336/ETY](http://eur-lex.europa.eu/legal-content/FI/TXT/HTML/?uri=CELEX:31989L0336&from=FI)
+[2004/104/EY](http://eur-lex.europa.eu/legal-content/FI/TXT/HTML/?uri=CELEX:32004L0104&from=en)
+
+[IEC 60529](http://www.maximintegrated.com/en/app-notes/index.mvp/id/4126)
