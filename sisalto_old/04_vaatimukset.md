@@ -3,7 +3,7 @@
 ## EU-direktiivi 2004/104/EY
 Direktiivi 2004/104/EY (Autoteollisuuden EMC-direktiivi) määrittää, että 1.7.2006 alkaen valmistettujen ajoneuvojen ja kiinteiästi asennetun ajoneuvoelektroniikan aiheuttamat säteilypäästöt ja päästöjen sietokyky mitataan kyseisen direktiivin mukaisesti. Direktiiviin on julkaistu lisäys 2005/83/EY, joka tarkentaa direktiiviä. Uusi direktiivi korvaan aiemman direktiivin 95/54/EY.
 
-Uusi direktiivi vaatii tyyppihyväksynnän vain laitteilta, joilla on vaikutusta ajoneuvon hallintaan, kuljettajan asennon muuttamiseen tai kuljettajan näkyvyysalueeseen. Laitteiden, joiden ei tarvitse olla tyyppihyväksyttyjä, pitää täyttää kuitenkin EMC-direktiivin 89/336/EY tai radio- ja telepäätelaitedirektiivin 1999/5/EY vaatimukset. [ajoneuvodirektiivi*]
+Uusi direktiivi vaatii tyyppihyväksynnän vain laitteilta, joilla on vaikutusta ajoneuvon hallintaan, kuljettajan asennon muuttamiseen tai kuljettajan näkyvyysalueeseen. Laitteiden, joiden ei tarvitse olla tyyppihyväksyttyjä, pitää täyttää kuitenkin EMC-direktiivin 89/336/EY tai radio- ja telepäätelaitedirektiivin 1999/5/EY vaatimukset. [@ajoneuvodirektiivi1] [@ajoneuvodirektiivi2] [@ajoneuvodirektiivi3]
 
 ### EMC-direktiivi 89/336/ETY ja 2004/108/EY 
 EMC-direktiivi 89/336/ETY määrittelee ainoastaan laitteistolta vaadittavat ominaisuudet sähkömagneettisen yhteensopivuuden takaamiseksi. Direktiivin tarkoitus on ohjeistaa valmistajia tekemään elektromagneettisesti yhteensopivia laitteita. Direktiivi koskee kaikkia sähkölaitteita ja -asennuksia, joita ei direktiivissä ole erikseen rajattu sen ulkopuolelle. Direktiivi 2004/108/EY kumosi vanhemman direktiivin 89/336/ETY 20.7.2004 alkaen. 2004/108/EY mm. erotteli kiinteille asennuksille ja laitteille tehtävät asennukset, sekä yksinkertaisti vaatimustenmukaisuuden arviointimenettelyä.
@@ -33,9 +33,7 @@ Ajoneuvosähkö ei ole kovin puhdasta, joten sähkölaitteiden sähkönsaannissa
 
 # Lähteet
 [ajoneuvopc_verkkokauppa](http://www.elkome.fi/verkkokauppa/index2.php?cPath=151)
-[ajoneuvodirektiivi1](http://www.sunit.fi/en/news.php?show=9)
-[ajoneuvodirektiivi2](http://eur-lex.europa.eu/LexUriServ/site/fi/oj/2004/l_337/l_33720041113fi00130058.pdf)
-[ajoneuvodirektiivi3](http://www.google.fi/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&ved=0CDQQFjAC&url=http%3A%2F%2Fwww.kamk.fi%2Floader.aspx%3Fid%3Dbe59b946-2e54-416e-8dae-d2bc38142165&ei=gNw_VOuMK4npywP48YBI&usg=AFQjCNHS2PmCt6WAQTMqYkYviz6sjsPZAw&bvm=bv.77648437,d.bGQ&cad=rja)
+
 
 [1999/5/EY](http://www.edilex.fi.ezproxy.metropolia.fi/eu-lainsaadanto/31999L0005?offset=1&perpage=20&phrase=1999%2F5%2FEY&sort=relevance&searchKey=430515)
 [89/336/ETY](http://eur-lex.europa.eu/legal-content/FI/TXT/HTML/?uri=CELEX:31989L0336&from=FI)

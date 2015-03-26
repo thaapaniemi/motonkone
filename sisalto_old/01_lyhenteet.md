@@ -1,4 +1,4 @@
-# Lyhenteet
+### Lyhenteet
 
 x86: Yleisnimitys Intelin 1987 julkaisemalle CISC-prosessorikäskykannalle. Alkuperäiset 8086/80186/80286 olivat 16-bittisiä, mutta 80386:sta eteenpäin käskykantaa laajennettiin 32-bittiseksi.
 
