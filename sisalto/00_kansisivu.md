@@ -1,5 +1,4 @@
 <!-- 00:Kansisivu !-->
-
 ---
 title: MotoPC: Autotietokoneen päivitysmahdollisuus metsätraktoriin
 author:
