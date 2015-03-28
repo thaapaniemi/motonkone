@@ -24,12 +24,17 @@ Caption: AMD K6 66 MHz
 
 Koneen ongelmana on ollut viime aikoina ylikuumeneminen. Kuumennettuaan siitä tulee epävakaa eikä se lähde päälle ennekuin jäähdyttyään, joka kuumana kesäpäivänä traktorin hytissä vie aikaa
 
+## Alkuperäinen järjestelmä
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempus vehicula aliquam. Morbi vulputate in lacus at convallis. Phasellus a urna odio. Sed varius luctus imperdiet. Sed quis mollis nulla, non posuere ipsum. Nunc elementum leo at ante molestie, sed fringilla nunc luctus. Curabitur cursus mollis turpis eu ultrices. Nam id massa sodales, congue ligula nec, scelerisque quam. Nunc ullamcorper massa volutpat nibh rutrum, et convallis felis faucibus. Nunc vitae dolor sed justo viverra malesuada. Duis luctus, lacus at bibendum varius, neque mi feugiat quam, eget faucibus sapien tortor eget diam. Donec id libero dapibus, interdum eros ac, euismod purus. Nam tincidunt at augue quis mollis. Phasellus eget viverra neque. Integer felis purus, auctor gravida varius vel, ultrices in risus. Proin nec aliquam nisl.
+
+Ut eleifend tellus sit amet venenatis tincidunt. Quisque mattis interdum augue, suscipit porta turpis cursus at. Sed suscipit ac urna eget pretium. Suspendisse nisl justo, placerat vel urna et, luctus rutrum arcu. Praesent maximus fringilla ante, ac vulputate urna dictum vel. Sed non neque quis massa feugiat lacinia. Fusce eu mi posuere, volutpat tortor ac, fermentum nulla. Sed id malesuada eros. Nulla eros est, hendrerit in hendrerit sed, ultricies ac sem. Aliquam vel congue turpis. Aenean viverra sagittis dolor vitae dapibus. Aenean ac tincidunt metus. Curabitur in aliquet sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+
 ## Standardeja
 
 ### EU-direktiivi 2004/104/EY
 Direktiivi 2004/104/EY (Autoteollisuuden EMC-direktiivi) määrittää, että 1.7.2006 alkaen valmistettujen ajoneuvojen ja kiinteiästi asennetun ajoneuvoelektroniikan aiheuttamat säteilypäästöt ja päästöjen sietokyky mitataan kyseisen direktiivin mukaisesti. Direktiiviin on julkaistu lisäys 2005/83/EY, joka tarkentaa direktiiviä. Uusi direktiivi korvaan aiemman direktiivin 95/54/EY.
 
-Uusi direktiivi vaatii tyyppihyväksynnän vain laitteilta, joilla on vaikutusta ajoneuvon hallintaan, kuljettajan asennon muuttamiseen tai kuljettajan näkyvyysalueeseen. Laitteiden, joiden ei tarvitse olla tyyppihyväksyttyjä, pitää täyttää kuitenkin EMC-direktiivin 89/336/EY tai radio- ja telepäätelaitedirektiivin 1999/5/EY vaatimukset. [@ajoneuvodirektiivi1] [@ajoneuvodirektiivi2] [@ajoneuvodirektiivi3]
+Uusi direktiivi vaatii tyyppihyväksynnän vain laitteilta, joilla on vaikutusta ajoneuvon hallintaan, kuljettajan asennon muuttamiseen tai kuljettajan näkyvyysalueeseen. Laitteiden, joiden ei tarvitse olla tyyppihyväksyttyjä, pitää täyttää kuitenkin EMC-direktiivin 89/336/ETY tai radio- ja telepäätelaitedirektiivin 1999/5/EY vaatimukset. [@ajoneuvodirektiivi1] [@1999/5/EY] [@89/336/ETY]
 
 ### EMC-direktiivi 89/336/ETY ja 2004/108/EY 
 EMC-direktiivi 89/336/ETY määrittelee ainoastaan laitteistolta vaadittavat ominaisuudet sähkömagneettisen yhteensopivuuden takaamiseksi. Direktiivin tarkoitus on ohjeistaa valmistajia tekemään elektromagneettisesti yhteensopivia laitteita. Direktiivi koskee kaikkia sähkölaitteita ja -asennuksia, joita ei direktiivissä ole erikseen rajattu sen ulkopuolelle [@89/336/ETY]. Direktiivi 2004/108/EY kumosi vanhemman direktiivin 89/336/ETY 20.7.2004 alkaen. 2004/108/EY mm. erotteli kiinteille asennuksille ja laitteille tehtävät asennukset, sekä yksinkertaisti vaatimustenmukaisuuden arviointimenettelyä. [@2004/108/EY]
