@@ -2,21 +2,25 @@
 
 # Taustaa
 
-## Metsätraktori Valmet xxx
+## Hakkuukoneet
+Hakkuukoneet eli motot (monitoimikoneet) ovat metsätraktoreita, joiden tehtävänä on hakkuun kaikki työvaiheet. Hakkuukoneet sisältävät tietokoneistetu mittalaitteet joilla katkonta ja mittaus saadaan hoidettua tarkasti.
+
+### Hakkuukone Valmet xxx
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed gravida ex. Sed leo nisl, viverra in efficitur eget, imperdiet vel nibh. Donec gravida sapien facilisis nisl rhoncus, sit amet ullamcorper nulla congue. Donec egestas nisi sed finibus tempus. Integer convallis suscipit magna et sollicitudin. Fusce gravida nisl eros, sit amet congue odio aliquam vel. Vivamus congue massa eget est efficitur, dapibus lacinia velit porttitor. Nunc consectetur sit amet augue vel ultrices. Nullam hendrerit nisi efficitur tincidunt molestie.
 
-Vivamus pulvinar facilisis tortor nec faucibus. Praesent nec nisl nunc. Vestibulum vestibulum luctus felis, ut sodales sapien sagittis sed. Sed pellentesque sed leo vitae aliquet. Vestibulum accumsan ipsum sed leo luctus, eget euismod tortor egestas. Mauris iaculis libero eu rutrum maximus. Aenean dignissim convallis quam consequat congue.
+### Motomit-mittalaite
+Kohteena olevaan Valmet xxx-hakkuukoneeseen on jälkiasennettu Motomit-IT -mittalaite, joka on korvannut hakkuukoneen alkuperäiset mittalaitteet ja ohjelmiston hakkuussa. Motomit IT tukee StanForD-standardin mukaista apteerausohjeiden tiedonsiirtoa. Motomit IT hoitaa sisäisen kommunikaation CAN-väylää pitkin. Kommunikaatiossa alkuperäisen ajoneuvotietokoneen kanssa käytetään RS232-väylää ja MotomitPC -ohjelmistoa. [@motomit_kaytto-ohje]
 
-Nulla tincidunt augue in lobortis porta. Pellentesque sit amet laoreet sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras congue iaculis erat. Vestibulum eros mi, vestibulum vel accumsan fermentum, posuere nec mauris. Ut sem arcu, malesuada quis urna ac, bibendum tempor dolor. Vestibulum fringilla eros sit amet massa maximus varius non vitae elit. Sed condimentum et eros nec tincidunt. Sed massa erat, malesuada id odio vel, elementum vehicula erat. Donec nec mi et ex dignissim luctus non at nulla.
+#### Kuva: Motomit kaavio {#Motomit_kaavio}
+![](../pictures/motomit_kaavio.png){#Motomit_kaavio width=25%}
+Caption: Motomit IT:n moduulikaavio
 
 ## Ajoneuvo-PC Sunit Nero / Valmet Maxi
 #### Figure: Sunit Nero {#Nero}
 ![Sunit Nero](../pictures/valmet_maxi.jpg){#Nero width=25%}
-Traktorissa kiinni oleva ajoneuvo-PC Sunit Nero / Valmet Maxi on valmistettu [joskus 1997-1999]. Sunit Nero on oikeastaan kannettava, johon on modifioitu ulkopuoliset liittimet ja tukevampi runko. Kotelointi koostuu XXX-muovisista ulkokuorista, sekä metallilevystä (teräs? alumiini?), jonka molemmin puolin on komponentit kiinnitetty. Toisella puolen on emolevy,prosessori,NIMH-akku (asetusten säilytystä varten? ymmärtääkseni) ja liittimet, toisella puolen kiintolevy, levykeasema,cd-asema ja näyttö. Näyttöpaneeli on 4:3 800x60 LCD.
+Hakkuukoneessa kiinni oleva ajoneuvo-PC Sunit Nero / Valmet Maxi on valmistettu [joskus 1997-1999]. Sunit Nero on oikeastaan kannettava, johon on modifioitu ulkopuoliset liittimet ja tukevampi runko. Kotelointi koostuu XXX-muovisista ulkokuorista, sekä metallilevystä (teräs? alumiini?), jonka molemmin puolin on komponentit kiinnitetty. Toisella puolen on emolevy,prosessori,NIMH-akku (asetusten säilytystä varten? ymmärtääkseni) ja liittimet, toisella puolen kiintolevy, levykeasema,cd-asema ja näyttö. Näyttöpaneeli on 4:3 800x60 LCD.
 
-Koska kyseessä on kuitenkin kiinteäksi tarkoitettu paketti, niin laitteelta löytyy painoa xxx,xx kg.
-
-PC:ssä on ollut koko käyttöiän (~15v) erilaisia ongelmia. Alkuperäinen laite on vaihdettu syystä x vuonna y. Nykyisestä laitteesta on kiintolevy hajonnut vuonna xxxx ja 2014, jolloin pääsin ensimmäisen kerran tutustumaan laitteeseen paremmin. Prosessori on vaihdettu v. zzzz.
+Ajoneuvotietokoneeessa on ollut koko käyttöiän (~15v) erilaisia ongelmia. Alkuperäinen laite on vaihdettu syystä x vuonna y. Nykyisestä laitteesta on kiintolevy hajonnut vuonna xxxx ja 2014, jolloin pääsin ensimmäisen kerran tutustumaan laitteeseen paremmin. Prosessori on vaihdettu v. zzzz.
 
 #### Figure: AMD K6 {#AMDK6}
 ![](../pictures/processor.jpg){#AMDK6 width=25%}
