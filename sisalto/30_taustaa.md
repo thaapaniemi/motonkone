@@ -12,18 +12,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed gravida ex. Sed
 Kohteena olevaan Valmet xxx-hakkuukoneeseen on jälkiasennettu Motomit-IT -mittalaite, joka on korvannut hakkuukoneen alkuperäiset mittalaitteet ja ohjelmiston hakkuussa. Motomit IT tukee StanForD-standardin mukaista apteerausohjeiden tiedonsiirtoa. Motomit IT hoitaa sisäisen kommunikaation CAN-väylää pitkin. Kommunikaatiossa alkuperäisen ajoneuvotietokoneen kanssa käytetään RS232-väylää ja MotomitPC -ohjelmistoa. [@motomit_kaytto-ohje]
 
 #### Kuva: Motomit kaavio {#Motomit_kaavio}
-![](../pictures/motomit_kaavio.png){#Motomit_kaavio width=25%}
+![](../pictures/motomit_kaavio.png){#Motomit_kaavio width=100%}
 Caption: Motomit IT:n moduulikaavio
 
 ## Ajoneuvo-PC Sunit Nero / Valmet Maxi
 #### Figure: Sunit Nero {#Nero}
-![Sunit Nero](../pictures/valmet_maxi.jpg){#Nero width=25%}
+![Sunit Nero](../pictures/valmet_maxi.jpg){#Nero width=100%}
 Hakkuukoneessa kiinni oleva ajoneuvo-PC Sunit Nero / Valmet Maxi on valmistettu [joskus 1997-1999]. Sunit Nero on oikeastaan kannettava, johon on modifioitu ulkopuoliset liittimet ja tukevampi runko. Kotelointi koostuu XXX-muovisista ulkokuorista, sekä metallilevystä (teräs? alumiini?), jonka molemmin puolin on komponentit kiinnitetty. Toisella puolen on emolevy,prosessori,NIMH-akku (asetusten säilytystä varten? ymmärtääkseni) ja liittimet, toisella puolen kiintolevy, levykeasema,cd-asema ja näyttö. Näyttöpaneeli on 4:3 800x60 LCD.
 
 Ajoneuvotietokoneeessa on ollut koko käyttöiän (~15v) erilaisia ongelmia. Alkuperäinen laite on vaihdettu syystä x vuonna y. Nykyisestä laitteesta on kiintolevy hajonnut vuonna xxxx ja 2014, jolloin pääsin ensimmäisen kerran tutustumaan laitteeseen paremmin. Prosessori on vaihdettu v. zzzz.
 
 #### Figure: AMD K6 {#AMDK6}
-![](../pictures/processor.jpg){#AMDK6 width=25%}
+![](../pictures/processor.jpg){#AMDK6 width=50%}
 Caption: AMD K6 66 MHz
 
 Koneen ongelmana on ollut viime aikoina ylikuumeneminen. Kuumennettuaan siitä tulee epävakaa eikä se lähde päälle ennekuin jäähdyttyään, joka kuumana kesäpäivänä traktorin hytissä vie aikaa
