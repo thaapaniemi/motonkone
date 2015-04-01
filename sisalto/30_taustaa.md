@@ -18,6 +18,7 @@ Caption: Motomit IT:n moduulikaavio
 ## Ajoneuvo-PC Sunit Nero / Valmet Maxi
 #### Figure: Sunit Nero {#Nero}
 ![Sunit Nero](../pictures/valmet_maxi.jpg){#Nero width=100%}
+
 Hakkuukoneessa kiinni oleva ajoneuvo-PC Sunit Nero / Valmet Maxi on valmistettu [joskus 1997-1999]. Sunit Nero on oikeastaan kannettava, johon on modifioitu ulkopuoliset liittimet ja tukevampi runko. Kotelointi koostuu XXX-muovisista ulkokuorista, sekä metallilevystä (teräs? alumiini?), jonka molemmin puolin on komponentit kiinnitetty. Toisella puolen on emolevy,prosessori,NIMH-akku (asetusten säilytystä varten? ymmärtääkseni) ja liittimet, toisella puolen kiintolevy, levykeasema,cd-asema ja näyttö. Näyttöpaneeli on 4:3 800x60 LCD.
 
 Ajoneuvotietokoneeessa on ollut koko käyttöiän (~15v) erilaisia ongelmia. Alkuperäinen laite on vaihdettu syystä x vuonna y. Nykyisestä laitteesta on kiintolevy hajonnut vuonna xxxx ja 2014, jolloin pääsin ensimmäisen kerran tutustumaan laitteeseen paremmin. Prosessori on vaihdettu v. zzzz.

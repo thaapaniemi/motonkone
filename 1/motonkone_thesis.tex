@@ -1,0 +1,630 @@
+%----------------------------------------------------------------------------------------
+%	Metropolia Thesis LaTeX Template
+%----------------------------------------------------------------------------------------
+% License:
+% This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
+%
+% Authors:
+% Panu Leppäniemi, Patrik Luoto and Patrick Ausderau
+%
+% Credits:
+% Panu Leppäniemi: abstract, def, cleaning,...
+% Patrik Luoto: title page, abstract in Finnish, abbreviation, math,...
+% Patrick Ausderau: initial version, style, table of content, bibliography, figure, appendix, table, source code listing...
+%
+% Please:
+% If you find mistakes, improve this template and alike, please contribute by sharing your improvements and/or send us your feedback there: https://github.com/panunu/metropolia-thesis-latex
+% And of course, if you improve it, add yourself as an author.
+%
+% Compiler:
+% Use XeLaTeX as a compiler.
+
+%----------------------------------------------------------------------------------------
+%	THESIS
+%----------------------------------------------------------------------------------------
+
+\def\thesislang{finnish} %change this depending on your language
+\author{Tomi Haapaniemi}
+\def\thesis{Opinnäytetyö/Thesis}
+\def\alaotsikko{Alaotsikko/Subtitle}
+
+%Finnish section
+\def\otsikko{Hakkuukoneen ajoneuvotietokoneen päivitysmahdollisuudet uudempaan}
+\def\tutkinto{Insinööri (AMK)}
+\def\kohjelma{Tietotekniikan koulutusohjelma}
+\def\suuntautumis{Ohjelmistotekniikka/Sulautettu tietotekniikka}
+\def\ohjaajat{
+Etunimi Sukunimi, Titteli\newline
+Etunimi Sukunimi, Titteli
+}
+\def\avainsanat{avainsanat}
+\def\pvm{\ddmmyyyydate\today}
+
+%English section, for abstract
+\title{Possibilities to upgrade embedded computer of Harvester}
+\def\metropoliadegree {Bachelor of Engineering}
+\def\metropoliadegreeprogramme {Degree Programme in Information Technology}
+\def\metropoliaspecialisation {Software Engineering/Embedded Engineering}
+\def\metropoliainstructors {
+First name Last name, Title (for example: Project Manager)\newline
+First name Last name, Title (for example: Principal Lecturer)
+}
+\def\metropoliakeywords {Keywords}
+\date{\today}
+
+%----------------------------------------------------------------------------------------
+%	GLOBAL STYLES
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,a4paper,oneside,article]{memoir}
+\usepackage[\thesislang]{babel} 
+\usepackage{float}
+\usepackage{iflang}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fontspec}
+\usepackage{tocloft}
+\usepackage{titlesec}
+\usepackage[hyphens]{url}
+\usepackage{mathtools}
+\usepackage{wallpaper}
+\usepackage{datetime}
+\usepackage[bookmarksdepth=subsection]{hyperref} % for automagic pdf links for toc, refs, etc.
+\usepackage[amssymb]{SIunits}
+\usepackage[version=3]{mhchem}
+\usepackage{pgfplots} %simple plots etc
+\usepackage{pgfplotstable}
+\usepackage{tikz} % mindmaps, flowcharts, piecharts, examples at http://www.texample.net/tikz/examples/
+\usetikzlibrary{shapes.geometric, arrows}
+
+
+\renewcommand{\dateseparator}{.}
+%condition for adding or not space in TOC
+\usepackage{etoolbox}
+%for compact list
+\usepackage{enumitem}
+%for block comment
+\usepackage{verbatim}
+%for "easier" references
+\usepackage{varioref}
+%forcing single line spacing in bibliography
+\DisemulatePackage{setspace}
+\usepackage{setspace}
+%including figure (image)
+\usepackage{graphicx}
+%change the numbering for figure
+\usepackage{chngcntr}
+%strike trough
+\usepackage{ulem}
+%euro symbol
+\usepackage{eurosym}
+%try to count
+\usepackage{totcount}
+%insert source code
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{color}
+%force the width of a table instead of column
+\usepackage{tabularx}
+\usepackage{booktabs} %why not booktabs? :3
+
+\newcommand\tn[1]{\textnormal{#1}} %use \tn instead of \textnormal
+\newcommand\reaction[1]{\begin{equation}\ce{#1}\end{equation}} %\reaction{} for chemical reactions
+
+%NORMAL TEXT
+%all text, title, etc. in the same font: Arial
+%replace with arial.ttf if you have the fontfile
+%NOTE: fontname is case-sensitive
+\setmainfont
+[BoldFont=LiberationSans-Bold.ttf,
+ItalicFont=LiberationSans-Italic.ttf,
+BoldItalicFont=LiberationSans-BoldItalic.ttf]
+{LiberationSans-Regular.ttf}
+%line space
+\linespread{1.5}
+%\doublespacing
+%margin
+\usepackage[top=2.5cm, bottom=3cm, left=4cm, right=2cm, nofoot]{geometry}
+\setlength{\parindent}{0pt} %first line of paragraph not indented
+\setlength{\parskip}{16.5pt} %one empty line to separate paragraph
+%list with small line space separation
+\tightlists
+
+%IMAGE - FIGURE
+%the figures should be placed in the "illustration" folder
+\graphicspath{{illustration/}}
+%figure number without chapter (1.1, 1.2, 2.1) to (1, 2, 3)
+\counterwithout{figure}{chapter}
+%border around images
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{0.5pt}
+%caption font size
+\captionnamefont{\small}
+\captiontitlefont{\small}
+%space after figure caption (and other float elements)
+\setlength{\belowcaptionskip}{-7pt}
+
+%TABLE
+\counterwithout{table}{chapter}
+
+%SOURCE CODE
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\lstset{
+extendedchars=true,
+captionpos=b,
+caption=\footnotesize,
+basicstyle=\singlespacing\ttfamily,%\small\fontfamily{"Courier"}\selectfont,
+keywordstyle=\color{blue}\bfseries,
+commentstyle=\color{purple}\itshape,
+identifierstyle=\color{black},
+stringstyle=\color{red},
+showstringspaces=false,
+showspaces=false,
+numbers=left,
+numberstyle=\footnotesize,
+numbersep=9pt,
+breaklines=true,
+tabsize=2,
+showtabs=false,
+xleftmargin=1cm
+}
+\IfLanguageName {finnish} {\renewcommand{\lstlistingname}{Listaus}} {} % what is a good translation for this?
+%\counterwithout{lstlisting}{chapter}
+%moved after begin document, otherwise does not compile
+
+%TOC
+%change toc title
+\IfLanguageName {finnish} {\addto{\captionsfinnish}{\renewcommand*{\contentsname}{Sisällys}}} {}
+%remove dots
+\renewcommand*{\cftdotsep}{\cftnodots}
+%chapter title and page number not in bold
+\renewcommand{\cftchapterfont}{}
+\renewcommand{\cftchapterpagefont}{}
+%sub section in toc
+\setcounter{tocdepth}{2}
+%subsection numbered
+\setcounter{secnumdepth}{2}
+\renewcommand{\tocheadstart}{\vspace*{-15pt}}
+\renewcommand{\printtoctitle}[1]{\fontsize{13pt}{13pt}\bfseries #1}
+\renewcommand{\aftertoctitle}{\vspace*{-22pt}\afterchaptertitle}
+%spacing afer a chapter in toc
+\preto\section{%
+  \ifnum\value{section}=0\addtocontents{toc}{\vskip11pt}\fi
+}
+%spacing afer a section in toc
+\renewcommand{\cftsectionaftersnumb}{\vspace*{-3pt}}
+%spacing afer a subsection in toc
+\renewcommand{\cftsubsectionaftersnumb}{\vspace*{-1pt}}
+%appendix in toc with "Appendix " + num
+\IfLanguageName {finnish} {
+  \renewcommand*{\cftappendixname}{Liite\space}
+  \renewcommand{\appendixtocname}{Liitteet}
+}{\renewcommand*{\cftappendixname}{Appendix\space}}
+%appendix header
+\IfLanguageName {finnish} {\def\appname{Liite\space}}{\def\appname{Appendix\space}}
+
+%TITLES
+%chapter title
+\titleformat{\chapter}
+{\fontsize{13pt}{13pt}\bfseries\linespread{1}}
+{\thechapter}{.5cm}{}
+\titlespacing*{\chapter}{0pt}{.32cm}{9pt}
+\titleformat{\section}
+{\fontsize{12pt}{12pt}\linespread{1}}
+{\thesection}{.5cm}{}
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+\titleformat{\subsection}
+{\fontsize{12pt}{12pt}\linespread{1}}
+{\thesubsection}{.5cm}{}
+\titlespacing*{\subsection}{0pt}{14pt}{6pt}
+
+
+%QUOTE
+\renewenvironment{quote}
+  {\list{}{\rightmargin=0pt\leftmargin=1cm\topsep=-10pt}%
+  \item\relax\fontsize{10pt}{10pt}\singlespacing}
+  {\endlist}
+
+%BIBLIOGRAPHY
+%bibliography title to be "references"
+\IfLanguageName {finnish} {\addto{\captionsfinnish}{\renewcommand*{\bibname}{Lähteet}}} {\renewcommand\bibname{References}}
+\makeatletter %reference list option change
+\renewcommand\@biblabel[1]{#1\hspace{1cm}} %from [1] to 1 with 1cm gap
+\makeatother %
+\setlength{\bibitemsep}{11pt}
+
+%count the appendices (since the chapter counter is reset after \appendix).
+%! require to complie 2 times
+\regtotcounter{chapter}
+
+%TITLE PAGE
+\makeatletter
+\renewcommand{\maketitle}{
+\thispagestyle{empty}
+\ThisCenterWallPaper{1}{viiva}
+%
+\vspace*{9.5cm}
+\tn{\LARGE\@author\\[22pt]\Huge\IfLanguageName {finnish}{\otsikko}{\@title}\\[22pt]\LARGE\alaotsikko\\[1.75cm]}
+
+\parbox{.7\linewidth}{
+\IfLanguageName {finnish}{
+  Metropolia Ammattikorkeakoulu\\
+  \tutkinto \\
+  \kohjelma \\
+  \thesis\\
+  \pvm
+} {
+  Helsinki Metropolia University of Applied Sciences\\
+  \metropoliadegree \\
+  \metropoliadegreeprogramme \\
+  \thesis\\
+  \ddmmyyyydate\today %to be checked date format? 
+}
+}
+\ThisLRCornerWallPaper{1}{metropolia}
+%
+\clearpage
+}
+\makeatother
+
+\makepagestyle{tiivis}
+\makeevenhead{tiivis}{}{}{Tiivistelmä}
+\makeoddhead{tiivis}{}{}{Tiivistelmä}
+
+\makepagestyle{abstract}
+\makeevenhead{abstract}{}{}{Abstract}
+\makeoddhead{abstract}{}{}{Abstract}
+
+\begin{document}
+\counterwithout{lstlisting}{chapter}
+
+%page number always on the top right, clear the "chapter/section" head
+\pagestyle{myheadings}
+\markright{}
+%clear chapter "title" foot page
+\makeevenfoot{plain}{}{}{}
+\makeoddfoot{plain}{}{}{}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\maketitle
+\newpage
+\LRCornerWallPaper{1}{footer}
+
+%----------------------------------------------------------------------------------------
+%    Tiivistelmä
+%----------------------------------------------------------------------------------------
+
+\thispagestyle{tiivis}
+\begin{tabular}{ | p{4,7cm} | p{10,3cm} |}
+  \hline
+  Tekijä(t) \newline
+  Otsikko \newline\newline 
+  Sivumäärä \newline
+  Aika
+  & 
+  \makeatletter
+  \@author \newline 
+  \otsikko \newline\newline 
+  \makeatother
+  \pageref*{LastPage} sivua + \total{chapter} liitettä \newline %! if no appendices, risk to count total of chapter :D
+  \pvm		
+  \\ \hline
+  Tutkinto & \tutkinto
+  \\ \hline
+  Koulutusohjelma & \kohjelma
+  \\ \hline
+  Suuntautumisvaihtoehto & \suuntautumis
+  \\ \hline
+  Ohjaaja(t) & \ohjaajat
+  \\ \hline
+  \multicolumn{2}{|p{15cm}|}{\begin{singlespacing}\vspace{-22pt}
+  Tämä on tiivistelmän ensimmäinen kappale. Tiivistelmän kappaleet loppuvat komentoon newline, jotta saadaan yksi tyhjä rivi aikaiseksi. \newline
+  
+  Tämä on tiivistlemän toinen kappale.
+  \end{singlespacing}} \\[14cm] \hline
+  Avainsanat & \avainsanat
+  \\ \hline
+\end{tabular}
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\pagestyle{abstract}
+\begin{tabular}{ | p{4,7cm} | p{10,3cm} |}
+  \hline
+  Author(s) \newline
+  Title \newline\newline 
+  Number of Pages \newline
+  Date
+  & 
+  \makeatletter
+  \@author \newline
+  \@title \newline\newline
+  \pageref*{LastPage} pages + \total{chapter} appendices \newline %! if no appendices, risk to count total of chapter :D
+  \IfLanguageName {finnish} {\foreignlanguage{english}{\longdate\@date}} {\@date}
+  \makeatother
+  \\ \hline
+  Degree & \metropoliadegree
+  \\ \hline
+  Degree Programme & \metropoliadegreeprogramme
+  \\ \hline
+  Specialisation option & \metropoliaspecialisation
+  \\ \hline
+  Instructor(s) & \metropoliainstructors
+  \\ \hline
+  \multicolumn{2}{|p{15cm}|}{\begin{singlespacing}\vspace{-22pt}
+  Abstract content
+  \end{singlespacing}} \\[14cm] \hline
+  Keywords & \metropoliakeywords
+  \\ \hline
+\end{tabular}
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	Acknowledgement ?
+%----------------------------------------------------------------------------------------
+%\chapter*{Acknowledgement}
+%Thanks to my cat
+%\clearpage
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\makeevenhead{plain}{}{}{}
+\makeoddhead{plain}{}{}{}
+\pagestyle{empty} %remove page number in toc (if longer than 2 pages)
+\tableofcontents*
+\pagestyle{empty} %remove page number in toc (if longer than 1 pages)
+\clearpage
+\pagestyle{plain}
+
+%list of figure, tables comes here...
+
+
+%----------------------------------------------------------------------------------------
+%    Lyhenteet / Abbreviation
+%----------------------------------------------------------------------------------------
+
+\pagestyle{empty}
+\setlength{\parskip}{1cm}
+\IfLanguageName {finnish} {
+  \chapter*{Lyhenteet}
+  \cftaddtitleline{toc}{chapter}{Lyhenteet}{}
+} {
+  \chapter*{Abbreviation}
+  \cftaddtitleline{toc}{chapter}{Abbreviation}{}
+}
+\begin{table}[h]
+\setlength{\tabcolsep}{8pt}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{l p{12cm}}
+OMG & Oh my god\\
+WTF & What the F\\
+TL;DR & Too long, didn't read\\
+\end{tabular}
+\end{table}
+
+\newpage
+
+%page number always on top right; also for chapter "title" page
+\pagestyle{plain}
+\makeevenhead{plain}{}{}{\thepage}
+\makeoddhead{plain}{}{}{\thepage}
+
+\setcounter{page}{1} %page 1 should be Introduction
+\ClearWallPaper
+%----------------------------------------------------------------------------------------
+%	CONTENT
+%----------------------------------------------------------------------------------------
+
+\chapter{Johdanto}
+
+Tietokoneiden käyttöikä on varsinkin vaativissa kohteissa rajallinen.
+Kun järjestelmien ikä kasvaa niin varaosien saatavuus vähenee. Viimein
+ollaan pisteessä, missä ainoa vaihtoehto on korvata vanha järjestelmä
+uudella. Tämä saattaa vaatia mittavia päivitysprojekteja myös
+järjestelmää tukeviin kokonaisuuksiin ja vaihdon kannattavuus suhteessa
+hyötyyn on huono.
+
+Järjestelmänä on vuonna xxx valmistetun metsätraktori, eli
+tuttavallisemmin moto. Motolla on n. yy v käyttöikää jäljellä ja moton
+ajoneuvotietokone, jolla hallitaan koneen moottoriasetuksia, että myös
+puiden kadon hallintaa, alkaa olemaan elinikänsä loppupäässä.
+Alkuperäinen tietokone lakkaa toimimasta kokonaan kuumennettuaan liikaa,
+kiintolevy on hajonnyt useaan otteeseen ja akustot alkavat olemaan
+uusimisen tarpeessa. Jos laitteiston vaihtaisi kokonaan uudempaan olisi
+kyseessä sen verran kallis toimenpide(n. 20 000\euro{}), ettei sitä
+kannata tehdä enää kyseiseen metsätraktoriin. Tämän takia tutkimmekin
+vaihtoehtoisia ratkaisuita lisätä metsätraktorin käytössä olevalle
+tietokonejärjestelmälle elinikää.
+
+Insinöörityön aiheena on löytää motossa käytetylle 15v vanhan Sunit
+Nero-ajoneuvotietokoneelle korvaava uudempi, mutta yhteensopiva
+tietokone. Tavoitteena on uuden laitteen yhteensopivuus vanhan
+kiinnitysjärjestelmän kanssa, liitinyhteensopivuus, sekä ohjelmallisen
+tason yhteensopivuus. Aluksi tutustutaan käytössä olevaan laitteistoon
+ja sen asettamiin vaatimuksiin. Seuraavaksi käydään läpi mahdollisia
+toteuttamisvaihtoehtoja ja niiden ominaisuuksia. Asennetaan uusi
+ohjelmisto testikannetavaan ja testataan järjestelmä
+tuotantoympäristössä. Lopuksi tutkitaan mahdolliset
+
+Haasteita työlle asettavat vanhat ohjelmistot, tärinää ja pölyä ja
+vaihtelevia lämpötiloja sisältävä työympäristö. Metsätraktori on
+huoltoja lukuunottamatta metsässä kesät talvet ja lämpötilat vaihtelevat
+talvella -20 asteesta +20 asteeseen ja kesäisin lämmöt voivat nousta
+ohjaamossa jopa +50-60 asteeseen.
+
+\chapter{Taustaa}
+\section{Hakkuukoneet}
+
+Hakkuukoneet eli motot (monitoimikoneet) ovat metsätraktoreita, joiden
+tehtävänä on hakkuun kaikki työvaiheet. Hakkuukoneet sisältävät
+tietokoneistetu mittalaitteet joilla katkonta ja mittaus saadaan
+hoidettua tarkasti.
+
+\subsection{Hakkuukone Valmet xxx}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed gravida
+ex. Sed leo nisl, viverra in efficitur eget, imperdiet vel nibh. Donec
+gravida sapien facilisis nisl rhoncus, sit amet ullamcorper nulla
+congue. Donec egestas nisi sed finibus tempus. Integer convallis
+suscipit magna et sollicitudin. Fusce gravida nisl eros, sit amet congue
+odio aliquam vel. Vivamus congue massa eget est efficitur, dapibus
+lacinia velit porttitor. Nunc consectetur sit amet augue vel ultrices.
+Nullam hendrerit nisi efficitur tincidunt molestie.
+
+\subsection{Motomit-mittalaite}
+
+Kohteena olevaan Valmet xxx-hakkuukoneeseen on jälkiasennettu Motomit-IT
+-mittalaite, joka on korvannut hakkuukoneen alkuperäiset mittalaitteet
+ja ohjelmiston hakkuussa. Motomit IT tukee StanForD-standardin mukaista
+apteerausohjeiden tiedonsiirtoa. Motomit IT hoitaa sisäisen
+kommunikaation CAN-väylää pitkin. Kommunikaatiossa alkuperäisen
+ajoneuvotietokoneen kanssa käytetään RS232-väylää ja MotomitPC
+-ohjelmistoa. (P. L. Oy 2008)
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.000\textwidth]{/home/th/repos/motonkone/pictures/motomit_kaavio.png}
+\caption{Motomit IT:n moduulikaavio}
+\end{figure}
+
+\section{Alkuperäinen PC-järjestelmä}
+
+\subsection{Ajoneuvo-PC Sunit Nero / Valmet Maxi}
+
+Hakkuukoneessa kiinni oleva ajoneuvo-PC Sunit Nero / Valmet
+Maxi on valmistettu {[}joskus 1997-1999{]}. Sunit Nero on oikeastaan
+kannettava, johon on modifioitu ulkopuoliset liittimet ja tukevampi
+runko. Kotelointi koostuu XXX-muovisista ulkokuorista, sekä
+metallilevystä (teräs? alumiini?), jonka molemmin puolin on komponentit
+kiinnitetty. Toisella puolen on emolevy,prosessori,NIMH-akku (asetusten
+säilytystä varten? ymmärtääkseni) ja liittimet, toisella puolen
+kiintolevy, levykeasema,cd-asema ja näyttö. Näyttöpaneeli on 4:3 800x60
+LCD.
+
+Ajoneuvotietokoneeessa on ollut koko käyttöiän (\textasciitilde{}15v)
+erilaisia ongelmia. Alkuperäinen laite on vaihdettu syystä x vuonna y.
+Nykyisestä laitteesta on kiintolevy hajonnut vuonna xxxx ja 2014,
+jolloin pääsin ensimmäisen kerran tutustumaan laitteeseen paremmin.
+Prosessori on vaihdettu v. zzzz.
+
+Koneen ongelmana on ollut viime aikoina ylikuumeneminen. Kuumennettuaan
+siitä tulee epävakaa eikä se lähde päälle ennekuin jäähdyttyään, joka
+kuumana kesäpäivänä traktorin hytissä vie aikaa
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.000\hsize]{/home/th/repos/motonkone/pictures/valmet_maxi.jpg}
+\caption{Sunit Nero / Valmet Maxi}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.500\hsize]{/home/th/repos/motonkone/pictures/processor.jpg}
+\caption{AMD K6 66 MHz}
+\end{figure}
+
+\subsection{Valmet Terman}
+Terman on Valmetin alkuperäinen DOS-pohjainen hallinta- ja apteerausohjelmisto käytettävälle hakkuukoneelle. Ohjelmiston versio on riippuvainen käytettävästä hakkuukoneesta. Kommunikointi hakkukoneen kanssa tapahtuu 9600 bitin nopeudella RS-232-sarjaporttia käyttäen. Koska mittauslaite on vaihdettu Motomit IT-järjestelmälle, käytetään Termania hakkuukoneen moottoriasetusten hallintaan.
+
+\subsection{Motomit PC}
+Motomit PC on Motomit IT:n Windows-pohjainen näyttö- ja hallintaohjelmisto Motomit IT-järjestelmälle. Motomit PC kommunikoi Motomit IT:n kanssa RS-232 -sarjaväylän avulla. \cite{motomit:esite}
+
+\section{Standardeja}
+
+\subsection{EU-direktiivi 2004/104/EY}
+
+Direktiivi 2004/104/EY (Autoteollisuuden EMC-direktiivi) määrittää, että
+1.7.2006 alkaen valmistettujen ajoneuvojen ja kiinteiästi asennetun
+ajoneuvoelektroniikan aiheuttamat säteilypäästöt ja päästöjen sietokyky
+mitataan kyseisen direktiivin mukaisesti. Direktiiviin on julkaistu
+lisäys 2005/83/EY, joka tarkentaa direktiiviä. Uusi direktiivi korvaan
+aiemman direktiivin 95/54/EY.
+
+Uusi direktiivi vaatii tyyppihyväksynnän vain laitteilta, joilla on
+vaikutusta ajoneuvon hallintaan, kuljettajan asennon muuttamiseen tai
+kuljettajan näkyvyysalueeseen. Laitteiden, joiden ei tarvitse olla
+tyyppihyväksyttyjä, pitää täyttää kuitenkin EMC-direktiivin 89/336/ETY
+tai radio- ja telepäätelaitedirektiivin 1999/5/EY vaatimukset. (S. Oy
+2006) {[}@1999/5/EY{]} {[}@89/336/ETY{]}
+
+\subsection{EMC-direktiivi 89/336/ETY ja
+2004/108/EY}
+
+EMC-direktiivi 89/336/ETY määrittelee ainoastaan laitteistolta
+vaadittavat ominaisuudet sähkömagneettisen yhteensopivuuden
+takaamiseksi. Direktiivin tarkoitus on ohjeistaa valmistajia tekemään
+elektromagneettisesti yhteensopivia laitteita. Direktiivi koskee kaikkia
+sähkölaitteita ja -asennuksia, joita ei direktiivissä ole erikseen
+rajattu sen ulkopuolelle {[}@89/336/ETY{]}. Direktiivi 2004/108/EY
+kumosi vanhemman direktiivin 89/336/ETY 20.7.2004 alkaen. 2004/108/EY
+mm. erotteli kiinteille asennuksille ja laitteille tehtävät asennukset,
+sekä yksinkertaisti vaatimustenmukaisuuden arviointimenettelyä.
+{[}@2004/108/EY{]}
+
+\subsection{Radio- ja telepäätelaitedirektiivi
+1999/5/EY}
+
+Radio- ja telepäätelaitedirektiivi 1999/5/EY määrittää radio ja
+telepäätelaitteiden yhteensopivuuden euroopan laajuisesti. Kaikkiin
+direktiivin piiriin kuuluvien laitteiden tulee olla turvallisia
+käyttäjälle ja muille henkilöille, sekä täyttää vaaditut
+suojavaatimukset sähkömagneettisen yhteensopivuuden osalta. Lisäksi
+direktiivi määrittää että laitteistojen tulee olla rakennettuja siten
+että ne käyttävät tehokaasti radioviestintään varattua spektriä ja
+resursseja. Tietyille laiteluokille on lisäksi määritelty vielä muita
+vaadittuja lisäominaisuuksia, kuten yksityisyyden suojan takaamisen,
+yhteensopivuuden muiden laitteistojen välillä, sisältävät petoksia
+ehkäiseviä ominaisuuksia, tukevat hätäpalveluihin pääsyn takaavia
+ominaisuuksia ja/tai sisältävät ominaisuuksia joilla laitteistojen
+käyttö tehdään helpommaksi vammaisille {[}@1999/5/EY{]}. Direktiivi
+1999/5/EY on kumottu 13.6.2016 alkaen direktiivillä 2014/53/EU
+radiolaitteiden asettamista saataville markkinoilla koskevan
+jäsenvaltioiden lainsäädännön yhdenmukaistamisesta. {[}@2014/53/EU{]}
+
+\subsection{IP-suojaluokitus}
+
+IP-suojaluokitus on standardissa IEC 60529 määritetty järjestelmä
+sähkölaitteiden tiiveyden määrittämiseksi. IP-luokitus kertoo laitteiden
+suojauksen pölyä ja vettä vastaan. (Maxim Integrated Products 2007)
+
+\subsubsection{IP54}
+
+IP54-suojaluokitetut tuotteet ovat pölysuojattuja (ei täydellistä
+tiiveyttä, mutta ei pölykertymiä), sekä roiskesuojattuja.
+
+\subsubsection{IP67/66}
+
+IP67/66 -suojaluokitetut tuotteet ovat täysin pölytiiviitä ja kestävät
+suurella paineella tulevan vesiruiskun. IP67/66-tuotteet kestävät
+tärinää ja iskuja 5M3-vaatimusten mukaisesti. (DIN EN 60721-3-5, MIL-STD
+810F.)
+
+
+%----------------------------------------------------------------------------------------
+%   BIBLIOGRAPHY 
+%----------------------------------------------------------------------------------------
+
+\IfLanguageName{finnish}{\bibliographystyle{vancouver_fi}}{\bibliographystyle{vancouver}}
+%line space
+%\singlespacing %removed otherwise the appendix are also single space
+\begin{flushleft}
+\begin{singlespacing}
+\bibliography{motonkone_biblio}
+\end{singlespacing}
+\end{flushleft}
+
+%for conting the pages
+\label{LastPage}~
+
+
+\end{document}
