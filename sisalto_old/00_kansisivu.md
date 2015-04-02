@@ -1,16 +1,21 @@
-<!-- 00 Kansisivu !-->
-
+<!-- 00:Kansisivu -->
 ---
-title: MotoPC: Autotietokoneen päivitysmahdollisuus metsätraktoriin
-author:
-        - Tomi Haapaniemi
-subject: Selvitys moton tietokoneen vaihtomahdollisuudesta uudempaan ajan jättäessä alkuperäisestä
-date: 2015-03-26
-keywords: moto metsätraktori tietokone päivitys
+title: Moton ajoneuvotietokoneen päivitysmahdollisuudet uudempaan
+author: Tomi Haapaniemi
+subject: Moton ajoneuvotietokoneen päivitysmahdollisuudet uudempaan
+date: 2015-03-31
+company: Metropolia AMK
+keywords: moto, sunit, ajoneuvopc
 ---
 
+\title{Moton ajoneuvotietokoneen päivitysmahdollisuudet uudempaan}
+\date{\today}
+\author{Tomi Haapaniemi}
 
+\maketitle
 
 \newpage
 
-<!-- EOF 00 !-->
+
+
+<!-- 00:EOF -->

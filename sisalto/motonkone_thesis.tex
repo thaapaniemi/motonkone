@@ -682,7 +682,7 @@ tietyillä ohjelmilla tiettyjen ohjelmistoarkkitehtuurien välillä
 \cite{tinycc},\cite{qemu_use}. Vaihtoehdolla voi ajaa mm.
 x86-ohjelmia ARM-prosessoreilla.
 
-\section{Käytettävä toteuttamisvaihtoehto}\label{valinta}
+\section{Käytettävä toteuttamisvaihtoehto}
 
 Tähän miksi päädyttiin x86-pohjaiseen järjestelmään, DOS-ohjelmien emuloinnilla ja Windows-ohjelmien Winettämisellä / TAI jos ei toimi niin
 Virtualisoinnilla.
@@ -725,7 +725,20 @@ vanhaan Fujitsu-Siemensin kannettavaan. Johtuen rankoista olosuhteita,
 tavallista kannettavaa käytetään vain käyttöjärjestelmän ja ohjelmien
 testaamiseksi yhdessä Moton kanssa.
 
-\section{Tarvittavat asennukset}
+\section{Tarvittavat laitteistot}
+\subsection{Tietokone}
+Testaukseen käytetään vanhaa Fujitsu-Siemensin Amilo Pa 2510-kannettavaa vuodelta 2007. Amilo Pa 2510:ssa on AMD Turion 64 X2 TL-50 1.6 GHz prosessori, ATI Radeon Xpress X1200 128 Mb näytönohjain, 2 Gb keskusmuistia, 15.4" näyttö, sekä 120 Gb:n kiintolevy. Nämä speksit riittävät hyvin ohjelmistojen testaukseen sekä virtuaalikoneen kanssa, että emuloituna+ohjelmistorajapinnan kautta \cite{fs_amilo:review}. Puutteena kannettavassa on mm. sarjaporttien puute, sekä hajonnut näppäimistö. 
+
+Sarjaporttiliittimet ovat poistuneet kannettavista USB:n yleistyttyä jo 2000-luvun alussa, vaikkakin vielä on myös myynnissä yrityskäyttöön kannettavia, joista löytyy vähintään yksi natiivi sarjaporttiliitin\cite{hp:laptop}. Sarjaportin puuttuminen korvataan tässä tapauksessa USB-sarjaporttiadapterilla, jonka avulla voidaan kyseistä kannettavaa tietokonetta käyttää testaukseen.
+
+Rikkinäinen näppäimistö korvataan erillisellä USB-väylään liitettävällä näppäimistöllä testauksen ajaksi. Sähkönsyöttö testauksen ajan hoituu kannettavan omalla akulla, jossa on vielä kapasiteettia pitää kannettava käynnissä testauksen ajan / xxx h.
+
+\subsection{USB-Sarjaportti -adapteri}
+Käytettävä USB-sarjaporttiadapteri on eBaystä testaukseen hankittu 2-porttinen xxxx. 
+
+
+
+\section{Tarvittavat ohjelmat}
 
 Perusasennuksella asennettavaan Xubuntu-käyttöjärjestelmään tarvitsee
 lisäksi asentaa seuraavat paketit, että alkuperäiset ohjelmistot saadaan
@@ -734,6 +747,11 @@ Motomit PC:tä varten. MotomitPC tuli päivittää uusimpaan versioon, jotta
 ohjelmisto toimisi winen alla.
 
 \subsection{Xubuntu}
+
+Xubuntu 14.04 on Ubuntu 14.04:aan perustuva (joka taas on Debianiin perustuva) Linux-distro, jossa 
+käyttöliittymäksi on vaihdettu XFCE 4.10 ja mukana toimitettavista ohjelmistoista on valittu kevyemmät 
+versiot kuin Ubuntussa.\cite{xubuntu:about}. Xubuntu valittiin käyttöjärjestelmäksi, koska testaamiseen 
+käytettävä kannettava on 
 
 Käyttöjärjestelmäksi valittiin Xubuntusta pitkän tuen versio 14.04.
 Xubuntu asennettiin oletusasetuksilla testikoneeseen. Lisäksi Xubuntu
@@ -750,13 +768,13 @@ Wine on Windows-yhteensopivuuskerros Unixin kaltaisiin (mm.
 Unix/Linux/OS X/Solaris) käyttöjärjestelmiin, joka mahdollistaa
 Windows-ohjelmien käyttämisen käytetyssä käyttöjärjestelmässä. Vaikka
 Motomit sisältääkin taustajärjestelmänään
-Linuxin{[}ref:Motomit-manuaali{]}, niin käyttöliittymäänä tomivasta
+Linuxin\cite{motomit:manual}, niin käyttöliittymäänä tomivasta
 MotomitPC -ohjelmasta on vain olemassa Windows-versio.
 
 Jotta sarjaportit saa toimimaan Windowsin käyttämillä COM-porttinimillä
 Windows-ohjelmien puolella, tulee laitetiedostoista tehdä symboliset
 linkit \textasciitilde{}/.wine/dosdevices/ -hakemistoon halutuilla
-nimillä (COM1 ja COM2).{[}ref Wine-manuaali{]}
+nimillä (COM1 ja COM2).\cite[s. 21]{wine:manual}
 
 \subsection{Dosbox}
 
@@ -773,6 +791,30 @@ Dosboxissa sarjaportit määritetään samasta asennustiedostosta kuin
 muutkin asetukset, joten sinne piti lisätä vähintään Termanin käyttämä
 sarjaportti käyttöön. (asetustiedosto
 liitteenä){[}ref:http://www.dosbox.com/wiki/Dosbox.conf{]}
+
+\section{Asennus ja asetusten säätö}
+blaah. Siirrä ylempää tekstiä tänne.
+
+
+\chapter{Yhteenveto}\
+Tämän työn tarkoitus oli selvittää mahdolliseuudet päivittää
+Moto-traktorin 20v vanha ajoneuvotietokone uudemaksi tarpeen tullessa.
+Testikoneella tehdyissä testeissä alkuperäiset ohjelmistot saatiin
+toimimaan uudemmissa käyttöjärjestelmissä, sekä testattua että ne
+toimivat myös tuotantoympäristössä (toivottavasti). Näiden tulosten
+perusteella voidaankin todeta, että alkuperäinen ajoneuvotietokone
+voidaan tarpeen tullen korvata uudemmalla ajoneuvoympäristöön
+tarkoitetulla laitteella kunhan uudesta laitteesta löytyy tarvittavat
+liittimet (vaihtoehtoisesti vähintään 2 sarjaporttiliitäntää tai
+USB-liitäntä). Nämä vaatimukset täyttyvät todennäköisesti suurimmalla
+osalla tarjolla olevista vaihtoehdoista. Korvaamalla vain
+laitteistopuoli ja pitämällä ohjelmat alkuperäisinä säästytään kalliilta
+(ja kannattamattomalta) vaihdostyöltä, jossa kaikki kyseissen
+metsätraktorin elektroniikka olisi vaihdettu uudelle ohjaukselle.
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu. Sed arcu lectus auctor vitae, consectetuer et venenatis eget velit. Sed augue orci, lacinia eu tincidunt et eleifend nec lacus. Donec ultricies nisl ut felis, suspendisse potenti. Lorem ipsum ligula ut hendrerit mollis, ipsum erat vehicula risus, eu suscipit sem libero nec erat. Aliquam erat volutpat. Sed congue augue vitae neque. Nulla consectetuer porttitor pede. Fusce purus morbi tortor magna condimentum vel, placerat id blandit sit amet tortor.
+
+Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, lorem velit accumsan velit vel mattis libero nisl et sem. Proin interdum maecenas massa turpis sagittis in, interdum non lobortis vitae massa. Quisque purus lectus, posuere eget imperdiet nec sodales id arcu. Vestibulum elit pede dictum eu, viverra non tincidunt eu ligula.
 
 
 %----------------------------------------------------------------------------------------
