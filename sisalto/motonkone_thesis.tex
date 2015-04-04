@@ -406,9 +406,16 @@ xleftmargin=1cm
 \setlength{\tabcolsep}{8pt}
 \renewcommand{\arraystretch}{2}
 \begin{tabular}{l p{12cm}}
-OMG & Oh my god\\
-WTF & What the F\\
-TL;DR & Too long, didn't read\\
+x86 & Yleisnimitys Intelin 1987 julkaisemalle CISC-prosessorikäskykannalle. Alkuperäiset 8086/80186/80286 olivat 16-bittisiä, mutta 80386:sta eteenpäin käskykantaa laajennettiin 32-bittiseksi.\\
+PS/2 & Sarjaväyläinen, alunperin IBM PS/2 koneessa ollut liitäntäprotokolla, joka yleistyi PC-koneiden standardiliitännäksi näppäimistölle ja hiirelle ennen USB-protokollaa. 5V, GND, data, clock.\\
+RS232 & Alunperin v. 1962 esitelty asynkroninen sarjaliitäntäprotokolla, joka oli ennen USB-liitännän yleistymistä yleisin PC-koneiden oheislaitteiden liitäntäväylä.\\
+USB & Universal Serial BUS, vuonna 1996 esitelty sarjaväyläinen liitäntä oheislaitteiden liitäntään.\\
+IDE/PATA & Integrated Drive Electronics (Parallel AT Attachments), kiintolevyjen ja optisten asemien liittämiseen tarkoitettu 16-bittinen rinnakkainen liitäntäväylä vuodelta 1986.\\
+CAN & Controller Area Network, vikasietoinen, differentiaalinen kaksijohtoinen automaatioväylä, jossa liikenne lähetetään priorisoituina sanomina vuodelta 1986\\
+%
+%OMG & Oh my god\\
+%WTF & What the F\\
+%TL;DR & Too long, didn't read\\
 \end{tabular}
 \end{table}
 
@@ -446,8 +453,8 @@ kannata tehdä enää kyseiseen metsätraktoriin. Tämän takia tutkimmekin
 vaihtoehtoisia ratkaisuita lisätä metsätraktorin käytössä olevalle
 tietokonejärjestelmälle elinikää.
 
-Insinöörityön aiheena on löytää motossa käytetylle 15v vanhan Sunit
-Nero-ajoneuvotietokoneelle korvaava uudempi, mutta yhteensopiva
+Insinöörityön aiheena on löytää hakkuukoneessa olevalle 15v vanhan Sunit
+Nero-ajoneuvotietokoneelle korvaava uudempi, mutta ohjelmistoilta ja liitäänöiltä yhteensopiva
 tietokone. Tavoitteena on uuden laitteen yhteensopivuus vanhan
 kiinnitysjärjestelmän kanssa, liitinyhteensopivuus, sekä ohjelmallisen
 tason yhteensopivuus. Aluksi tutustutaan käytössä olevaan laitteistoon
@@ -461,104 +468,6 @@ vaihtelevia lämpötiloja sisältävä työympäristö. Metsätraktori on
 huoltoja lukuunottamatta metsässä kesät talvet ja lämpötilat vaihtelevat
 talvella -20 asteesta +20 asteeseen ja kesäisin lämmöt voivat nousta
 ohjaamossa jopa +50-60 asteeseen.
-
-\chapter{Taustaa}
-\section{Hakkuukoneet}
-
-Hakkuukoneet eli motot (monitoimikoneet) ovat metsätraktoreita, joiden
-tehtävänä on hakkuun kaikki työvaiheet. Hakkuukoneet sisältävät
-tietokoneistetu mittalaitteet joilla katkonta ja mittaus saadaan
-hoidettua tarkasti.
-
-\subsection{Hakkuukone Valmet xxx}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed gravida
-ex. Sed leo nisl, viverra in efficitur eget, imperdiet vel nibh. Donec
-gravida sapien facilisis nisl rhoncus, sit amet ullamcorper nulla
-congue. Donec egestas nisi sed finibus tempus. Integer convallis
-suscipit magna et sollicitudin. Fusce gravida nisl eros, sit amet congue
-odio aliquam vel. Vivamus congue massa eget est efficitur, dapibus
-lacinia velit porttitor. Nunc consectetur sit amet augue vel ultrices.
-Nullam hendrerit nisi efficitur tincidunt molestie.
-
-\subsection{Motomit-mittalaite}
-
-Kohteena olevaan Valmet xxx-hakkuukoneeseen on jälkiasennettu Motomit-IT
--mittalaite, joka on korvannut hakkuukoneen alkuperäiset mittalaitteet
-ja ohjelmiston hakkuussa. Motomit IT tukee StanForD-standardin mukaista
-apteerausohjeiden tiedonsiirtoa. Motomit IT hoitaa sisäisen
-kommunikaation CAN-väylää pitkin. Kommunikaatiossa alkuperäisen
-ajoneuvotietokoneen kanssa käytetään RS232-väylää ja MotomitPC
--ohjelmistoa. (P. L. Oy 2008)
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=1.000\textwidth]{/home/th/repos/motonkone/pictures/motomit_kaavio.png}
-\caption{Motomit IT:n moduulikaavio}
-\end{figure}
-
-\section{Alkuperäinen PC-järjestelmä}
-
-\subsection{Ajoneuvo-PC Sunit Nero / Valmet Maxi}
-
-Hakkuukoneessa kiinni oleva ajoneuvo-PC Sunit Nero / Valmet
-Maxi on valmistettu {[}joskus 1997-1999{]}. Sunit Nero on oikeastaan
-kannettava, johon on modifioitu ulkopuoliset liittimet ja tukevampi
-runko. Kotelointi koostuu XXX-muovisista ulkokuorista, sekä
-metallilevystä (teräs? alumiini?), jonka molemmin puolin on komponentit
-kiinnitetty. Toisella puolen on emolevy,prosessori,NIMH-akku (asetusten
-säilytystä varten? ymmärtääkseni) ja liittimet, toisella puolen
-kiintolevy, levykeasema,cd-asema ja näyttö. Näyttöpaneeli on 4:3 800x60
-LCD.
-
-Ajoneuvotietokoneeessa on ollut koko käyttöiän (\textasciitilde{}15v)
-erilaisia ongelmia. Alkuperäinen laite on vaihdettu syystä x vuonna y.
-Nykyisestä laitteesta on kiintolevy hajonnut vuonna xxxx ja 2014,
-jolloin pääsin ensimmäisen kerran tutustumaan laitteeseen paremmin.
-Prosessori on vaihdettu v. zzzz.
-
-Koneen ongelmana on ollut viime aikoina ylikuumeneminen. Kuumennettuaan
-siitä tulee epävakaa eikä se lähde päälle ennekuin jäähdyttyään, joka
-kuumana kesäpäivänä traktorin hytissä vie aikaa
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=1.000\hsize]{/home/th/repos/motonkone/pictures/valmet_maxi.jpg}
-\caption{Sunit Nero / Valmet Maxi}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.500\hsize]{/home/th/repos/motonkone/pictures/processor.jpg}
-\caption{AMD K6 66 MHz}
-\end{figure}
-
-\subsection{Sunit Neron liitännät}
-\begin{figure}[H]
-\centering
-\includegraphics[width=1.00\hsize]{/home/th/repos/motonkone/pictures/sunit_nero_liitannat.jpg}
-\caption{Sunit Neron liitännät}
-\end{figure}
-
-Ajoneuvotietokone Sunit Nerosta löytyy 3+1 sarjaporttiliitäntää (3x 9pin standardi RS-232, sekä yksi yhdistetty liitin), rinnakkaisporttiliitin (25pin Centronics), Sunitin oma BUS-liitin PS/2 hiirelle ja näppäimistölle, yhdistetty virta/GPRS/GPS -liitin sekä Data I/O-liitin jonka tarkoituksesta ei ole tietoa. Käytössä on kolme sarjaporttia, sekä virtaliitin. Sarjaporteista yksi on alkuperäiselle Terman-ohjaukselle, yksi Motomit IT:lle ja kolmas on luultavasti käytöstä poistettu GPS/GSM-moduuli.
-
-\subsection{Valmet Terman}
-Terman on Valmetin alkuperäinen DOS-pohjainen hallinta- ja apteerausohjelmisto käytettävälle hakkuukoneelle. Ohjelmiston versio on riippuvainen käytettävästä hakkuukoneesta. Kommunikointi hakkukoneen kanssa tapahtuu 9600 bitin nopeudella RS-232-sarjaporttia käyttäen. Koska mittauslaite on vaihdettu Motomit IT-järjestelmälle, käytetään Termania hakkuukoneen moottoriasetusten hallintaan.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=1.00\hsize]{/home/th/repos/motonkone/pictures/terman_original.jpg}
-\caption{Terman Nero-ajoneuvopc:n ruudulla}
-\end{figure}
-
-\subsection{Motomit PC}
-Motomit PC on Motomit IT:n Windows-pohjainen näyttö- ja hallintaohjelmisto Motomit IT-järjestelmälle. Motomit PC kommunikoi Motomit IT:n kanssa RS-232 -sarjaväylän avulla. \cite{motomit:esite}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=1.00\hsize]{/home/th/repos/motonkone/pictures/motomit_original.jpg}
-\caption{Motomit PC Nero-ajoneuvopc:n ruudulla}
-\end{figure}
 
 \section{Standardeja}
 
@@ -629,6 +538,96 @@ IP67/66 -suojaluokitetut tuotteet ovat täysin pölytiiviitä ja kestävät
 suurella paineella tulevan vesiruiskun. IP67/66-tuotteet kestävät
 tärinää ja iskuja 5M3-vaatimusten mukaisesti. (DIN EN 60721-3-5, MIL-STD
 810F.)
+
+\chapter{Taustaa}
+\section{Hakkuukoneet}
+
+Hakkuukoneet eli motot (monitoimikoneet) ovat metsätraktoreita, joiden
+tehtävänä on hakkuun kaikki työvaiheet. Hakkuukoneet sisältävät
+tietokoneohjatut mittalaitteet joilla puiden katkonta ja mittaus saadaan
+hoidettua tarkasti.
+
+\subsection{Hakkuukone Valmet xxx}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed gravida
+ex. Sed leo nisl, viverra in efficitur eget, imperdiet vel nibh. Donec
+gravida sapien facilisis nisl rhoncus, sit amet ullamcorper nulla
+congue. Donec egestas nisi sed finibus tempus. Integer convallis
+suscipit magna et sollicitudin. Fusce gravida nisl eros, sit amet congue
+odio aliquam vel. Vivamus congue massa eget est efficitur, dapibus
+lacinia velit porttitor. Nunc consectetur sit amet augue vel ultrices.
+Nullam hendrerit nisi efficitur tincidunt molestie.
+
+\subsection{Motomit-mittalaite}
+
+Kohteena olevaan Valmet xxx-hakkuukoneeseen on jälkiasennettu Motomit-IT
+-mittalaite, joka on korvannut hakkuukoneen alkuperäiset mittalaitteet
+ja ohjelmiston hakkuussa. Motomit IT tukee StanForD-standardin mukaista
+apteerausohjeiden tiedonsiirtoa. Motomit IT hoitaa sisäisen
+kommunikaation CAN-väylää pitkin. Kommunikaatiossa alkuperäisen
+ajoneuvotietokoneen kanssa käytetään RS232-väylää ja MotomitPC
+-ohjelmistoa. (P. L. Oy 2008)
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.000\textwidth]{/home/th/repos/motonkone/pictures/motomit_kaavio.png}
+\caption{Motomit IT:n moduulikaavio}
+\end{figure}
+
+\section{Alkuperäinen PC-järjestelmä}
+
+\subsection{Ajoneuvo-PC Sunit Nero / Valmet Maxi}
+
+Hakkuukoneessa käytetty tietokone on Sunitin valmistama Sunit Nero (myös nimellä Valmet MAXI)-ajoneuvotietokone. Nero on paketoitu näyttöineen ja keskusyksikköineen yhdeksi all-in-one -tyyliseksi iskunkestäväksi paketiksi. Vaikka kyseessä ei olekaan sama yksilö mikä on alunperin ollut kiinni kyseisessä hakkuukoneeessa, on se samanlainen kuin alkuperäinen ja samaa ikäluokkaa (n. 17v, vuodelta 1997? ). Emolevyn northbridge-ohjaimena on SiS 5571-ohjain. Tässä Nero-yksilössä prosessorina on AMD:n 300 MHz Socket 7-kantainen K6-prosessori vuodelta 1998 (alkuperäinen prosessori on vaihdettu useita vuosia sitten tehdyn huollon yhteydessä toiseen), 64 Mb keskusmuistia. Tietokoneen kiintolevynä oli tutkintahetkellä Western Digitalin 120 Gb:n Scorpio Blue-kiintolevy, joka sekin on vaihdettu kyseiseen yksilöön useaan kertaan. Nero-tietokoneesta löytyy 3,5" levykseasema, sekä cd-asema. Näyttöpaneeli on 4:3-kuvasuhteella ja 800x600 pikselin resoluutiolla oleva 12" LCD-paneeli. Koneessa on lisäksi NiMH-akku BIOSin asetusten säilyttämiseen. Tietokoneesta löytyy liitännät sekä 12V ja 24V jännitteille. Sunitin huolto on ilmoittanut, etteivät he suostu/pysty enää huoltamaan näin vanhaa tietokonetta.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.000\hsize]{/home/th/repos/motonkone/pictures/valmet_maxi.jpg}
+\caption{Sunit Nero / Valmet Maxi}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.500\hsize]{/home/th/repos/motonkone/pictures/processor.jpg}
+\caption{AMD K6 66 MHz}
+\end{figure}
+
+\subsection{Sunit Neron liitännät}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\hsize]{/home/th/repos/motonkone/pictures/sunit_nero_liitannat.jpg}
+\caption{Sunit Neron liitännät}
+\end{figure}
+
+Ajoneuvotietokone Sunit Nerosta löytyy 3+1 sarjaporttiliitäntää (3x 9pin standardi RS-232, sekä yksi yhdistetty liitin), rinnakkaisporttiliitin (25pin Centronics), Sunitin oma BUS-liitin PS/2 hiirelle ja näppäimistölle, yhdistetty virta/GPRS/GPS -liitin sekä Data I/O-liitin jonka tarkoituksesta ei ole tietoa. Käytössä on kolme sarjaporttia, sekä virtaliitin. Sarjaporteista yksi on alkuperäiselle Terman-ohjaukselle, yksi Motomit IT:lle ja kolmas on luultavasti käytöstä poistettu GPS/GSM-moduuli.
+
+\subsection{Tutustuminen Nero-ajoneuvotietokoneeseen}
+\subsubsection{Ensimmäinen huolto 05/2004}
+Ensimmäinen tutustuminen Sunitin Nero-ajoneuvotietokoneeseen tuli toukokuussa 2014 kun työn kohteena olevasta yksilöstä oli kiintolevy hajonnut. Tällöin tutkin ja selvitin tietokoneen ominaisuudet, liitännät ja ohjelmistot. Koska ohjelmistot oli saatavana kopioina Motomit-jälleenmyyjältä ja Valmetilta, ei alkuperäistä kiintolevyn sisältöä tarvinnut saada talteen. Tietokoneeseen hankittiin käytetty Hitachin 40Gb 2,5" IDE-kiintolevy, asennettiin käyttöjärjestelmä (Windows 98) ja ohjelmistot valmiiksi virtuaalikoneessa, varmuuskopioitiin asennus, sekä lopuksi 1.7.2014 testattiin tuotantoympäristössä että kaikki toimii oikein.
+
+\subsubsection{Toinen huolto xx/2014}
+Ensimmäisessä huollossa vaihdettu kiintolevy oli hajonnut vain muutaman kuukauden käytön jälkeen. Koska kiintolevyn koolla ja nopeudella ei ole kyseisessä tietokoneessa erityisemmin väliä, valittiin uudeksi kiintolevykorvikkeeksi paremmin tärinää ja vaihtelevia lämpö-olosuhteita kestävä SD-IDE-muistikorttiadapteri ja 2 Gb:n muistikortti. Alkuperäinen SecureDigital-standardi mahdollistaa vain 2Gb:n kapasiteetin ja väylän maksiminopeus on 12,5 Mb/s (kirjoitusnopeuden ollessa huomattavasti vähemmän, n. 1-2 Mb/s )\cite{sd:2gb}.
+
+\subsubsection{Kolmas huolto 04/2015}
+Huhtikuussa 2015 Nero-ajoneuvotietokoneesta hajosi BIOS:n CMOS-asetuksia ylläpitänyt NiMH-akku, jonka seurauksena ajoneuvotietokone kadottaa asetuksensa aina päävirtojen katkaisun yhteydessä. Kiintolevy pitää erikseen etsiä BIOS:sta, joten tämä tekee tietokoneen käytön hankalaksi tai jopa mahdottomaksi hakkuukoneen kuljettajalle. Akkupaketin NiMH-kennot uusittiin ja BIOS-asetukset määritettiin uudelleen, jolloin kone saatiin taas takaisin käyttöön.
+
+\subsection{Valmet Terman}
+Terman on Valmetin alkuperäinen DOS-pohjainen hallinta- ja apteerausohjelmisto käytettävälle hakkuukoneelle. Ohjelmiston versio on riippuvainen käytettävästä hakkuukoneesta. Kommunikointi hakkukoneen kanssa tapahtuu 9600 bitin nopeudella RS-232-sarjaporttia käyttäen. Koska mittauslaite on vaihdettu Motomit IT-järjestelmälle, käytetään Termania hakkuukoneen moottoriasetusten hallintaan.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\hsize]{/home/th/repos/motonkone/pictures/terman_original.jpg}
+\caption{Terman Nero-ajoneuvopc:n ruudulla}
+\end{figure}
+
+\subsection{Motomit PC}
+Motomit PC on Motomit IT:n Windows-pohjainen näyttö- ja hallintaohjelmisto Motomit IT-järjestelmälle. Motomit PC kommunikoi Motomit IT:n kanssa RS-232 -sarjaväylän avulla. \cite{motomit:esite}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\hsize]{/home/th/repos/motonkone/pictures/motomit_original.jpg}
+\caption{Motomit PC Nero-ajoneuvopc:n ruudulla}
+\end{figure}
 
 \chapter{Suunnittelu}
 
