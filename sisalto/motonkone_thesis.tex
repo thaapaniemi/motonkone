@@ -637,49 +637,24 @@ Jotta tietokoneen vaihto on mahdollista, tulee käytössä olevien Terman- ja Mo
 
 \subsection{Natiivi ympäristö}
 
-Vaihtoehdossa tietokoneeseen asennettaan uusin käyttöjärjestelmä, mitä
-käytössä oleva laitteisto ja ohjelmat tukevat. Vaihtoehto on
-haasteellinen, koska ohjelmistot ovat vanhoja ja laitteisto uutta.
-Uusien laitteiden tuki vanhoilla käyttöjärjestelmillä on puutteellinen
-tai puuttuva.
+Natiivin ympäristön vaihtoehdossa ohjelmistoja käytetään ympäristössä, johon ne on aikoinaan suunniteltu toimivaksi. Hyvänä puolena tässä vaihtoehdossa on se että ohjelmat toimivat varmasti siten kun ne on suunniteltu, mutta koska käytettävät ohjelmistot ovat vanhoja, DOS- ja Windows 98- aikaisia, niin natiivin ympärsitön käyttäminen vaatisi suunnilleen samaa ikäluokkaa olevan laitteiston käyttämisen, mitä alkuperäinenkin tietokone on. Uudemmat laitteistot eivät ole enää yhteensopivia Windows 98SE / ME:n kanssa ja lisäksi Windows 98:lla on maksimirajoituksia käytettävälle laitteistolle, kuten maksimi luotettavasti käytettävä määrä keskusmuistia on 1024 Mb ja kiintolevyosiolle on rajattu maksimikoko 127,5 Gb \cite{win98:maxspecs}. Myöskään uudemmille laitteille ei löydy välttämättä toimivia ajureita, joka rajoittaa entisestään mahdollisia laitteistovaihtoehtoja. Koska ajoneuvotietokone ei ole yhdistettynä Internetiin ja koneelle on rajattu pääsy, joten tässä käyttöympäristössä Windows 98:n paikkaamattomilla haavoittuvuuksilla (Windows 98: 84 kpl, Windows 98SE 61 kpl \cite{win98:vulns}) ei ole erityistä merkitystä käytettävyyteen.
 
 \subsection{Ohjelmistojen rajapintojen
 yhteensopivuuskerros}
 
-Vaihtoehdossa käytetään käyttöjärjestelmän ja ohjelman välissä sopivia
-rajapintakerroksia, jolloin saadaan käyttöjärjestelmän kanssa
-yhteensopimattomat ohjelmat toimimaan keskenään. Vaihtoehto vaatii
-yhteensopivan laitteistoarkkitehtuurin alkuperäisen järjestelmän kanssa.
-Nykyiset Windows-versiot (Windows XP+) sisältävät jo valmiiksi
-yhteensopivuustilan, joka mahdollistaa vanhempien ohjelmien käyttämisen
-uudemmissa käyttöjärjestelmissä. Linuxissa Wine-rajapintatoteutus
-mahdollistaa kaikenikäisten Windows-sovellusten ajamisen Linuxissa.
+Ohjelmistojen rajapintojen yhteensopivuuskerros-vaihtoehdossa  käytetään käyttöjärjestelmän ja ohjelman välissä sopivia rajapintakerroksia, jolloin saadaan käyttöjärjestelmän kanssa yhteensopimattomat ohjelmat toimimaan keskenään. Vaihtoehto vaatii yhteensopivan laitteistoarkkitehtuurin alkuperäisen järjestelmän kanssa (x86). Nykyiset Windows-versiot (Windows XP+) sisältävät jo valmiiksi yhteensopivuustilan, joka mahdollistaa vanhempien ohjelmien käyttämisen uudemmissa käyttöjärjestelmissä. Linuxissa Wine-rajapintatoteutus mahdollistaa kaikenikäisten Windows-sovellusten ajamisen Linuxissa. Myös DOS:lle löytyy rajapintakerrostoteutus Linuxiin.
 
 \subsection{Virtualisointi}
 
-Vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmää ajetaan
-virtuaalikoneessa toisen käyttöjärjestelmän päällä. Näin saavutetaan
-varmin yhteensopivuus ohjelmistotasolla. Oheislaitteiden siirtämisessä
-virtualisoidun koneen käyttöön on rajoituksia, jotka pitää huomioida
-virtualisointiohjelmistoja valittaessa. Vaihtoehto kuluttaa muistia
-enemmän ja on hieman hitaampi kuin natiivi toteutus, hyötysuhteen
-ollessa \textasciitilde{}90\% natiivista \cite{virtnat_anadtech}.
+Vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmää ajetaan virtuaalikoneessa toisen käyttöjärjestelmän päällä. Näin saavutetaan varmin yhteensopivuus ohjelmistotasolla. Oheislaitteiden siirtämisessä virtualisoidun koneen käyttöön on rajoituksia, jotka pitää huomioida virtualisointiohjelmistoja valittaessa. Vaihtoehto kuluttaa muistia enemmän ja on hieman hitaampi kuin natiivi toteutus, hyötysuhteen ollessa \textasciitilde{}90\%  natiivista \cite{virtnat_anadtech}.
 
 \subsection{Järjestelmäemulointi}
 
-Vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmä ajetaan
-emulaattorissa toisen järjestelmän päällä. Emuloimalla saavutetaan
-laitteistoarkkitehtuuririippumattomuus isäntäkoneen ja emuloitavan
-järjestelmän välillä. Emuloinnin haittapuolena on hitaus. Nyrkkisääntönä
-on 20\% hyötysuhde \cite{tinycc}, parhaat emulaattorit
-pääsevät n. 40-80\% hyötysuhteeseen \cite{40pperf} \cite{eltechs:exagear}
+Vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmä ajetaan emulaattorissa toisen järjestelmän päällä. Emuloimalla saavutetaan laitteistoarkkitehtuuririippumattomuus isäntäkoneen ja emuloitavan järjestelmän välillä. Emuloinnin haittapuolena on hitaus. Nyrkkisääntönä on 20\% hyötysuhde \cite{tinycc}, parhaat emulaattorit pääsevät n. 40-80\% hyötysuhteeseen \cite{40pperf} \cite{eltechs:exagear}
 
 \subsection{Ohjelmistojen emulointi}
 
-Vaihtoehdossa emuloidaan vain ohjelmat koko pc:n sijasta. Tämä onnistuu
-tietyillä ohjelmilla tiettyjen ohjelmistoarkkitehtuurien välillä
-\cite{tinycc},\cite{qemu_use}. Vaihtoehdolla voi ajaa mm.
-x86-ohjelmia ARM-prosessoreilla.
+Vaihtoehdossa emuloidaan vain ohjelmat koko pc:n sijasta. Tämä onnistuu tietyillä ohjelmilla tiettyjen ohjelmistoarkkitehtuurien välillä \cite{tinycc},\cite{qemu_use}. Vaihtoehdolla voi ajaa mm. x86-ohjelmia ARM-prosessoreilla.
 
 \section{Käytettävä toteuttamisvaihtoehto}
 
