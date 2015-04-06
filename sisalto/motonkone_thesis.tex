@@ -1,4 +1,4 @@
-%----------------------------------------------------------------------------------------
+ %----------------------------------------------------------------------------------------
 %	Metropolia Thesis LaTeX Template
 %----------------------------------------------------------------------------------------
 % License:
@@ -26,28 +26,28 @@
 \def\thesislang{finnish} %change this depending on your language
 \author{Tomi Haapaniemi}
 \def\thesis{Opinnäytetyö/Thesis}
-\def\alaotsikko{Alaotsikko/Subtitle}
+\def\alaotsikko{}
+%\def\alaotsikko{Alaotsikko/Subtitle}
 
 %Finnish section
-\def\otsikko{Hakkuukoneen ajoneuvotietokoneen päivitysmahdollisuudet uudempaan}
+\def\otsikko{Työnimi: Hakkuukoneen ajoneuvotietokoneen päivitysmahdollisuudet uudempaan}
 \def\tutkinto{Insinööri (AMK)}
 \def\kohjelma{Tietotekniikan koulutusohjelma}
 \def\suuntautumis{Ohjelmistotekniikka/Sulautettu tietotekniikka}
 \def\ohjaajat{
-Etunimi Sukunimi, Titteli\newline
-Etunimi Sukunimi, Titteli
+Keijo Länsikunnas, Lehtori%\newline
 }
-\def\avainsanat{avainsanat}
+\def\avainsanat{Hakkuukone, ajoneuvotietokone, }
 \def\pvm{\ddmmyyyydate\today}
 
 %English section, for abstract
-\title{Possibilities to upgrade embedded computer of Harvester}
+\title{Working title: Possibilities to upgrade embedded computer of Harvester}
 \def\metropoliadegree {Bachelor of Engineering}
 \def\metropoliadegreeprogramme {Degree Programme in Information Technology}
 \def\metropoliaspecialisation {Software Engineering/Embedded Engineering}
 \def\metropoliainstructors {
-First name Last name, Title (for example: Project Manager)\newline
-First name Last name, Title (for example: Principal Lecturer)
+Keijo Länsikunnas, Lecturer %(for example: Project Manager)\newline
+%First name Last name, Title (for example: Principal Lecturer)
 }
 \def\metropoliakeywords {Keywords}
 \date{\today}
@@ -305,7 +305,7 @@ xleftmargin=1cm
   Tekijä(t) \newline
   Otsikko \newline\newline 
   Sivumäärä \newline
-  Aika
+  Aika 
   & 
   \makeatletter
   \@author \newline 
@@ -323,9 +323,13 @@ xleftmargin=1cm
   Ohjaaja(t) & \ohjaajat
   \\ \hline
   \multicolumn{2}{|p{15cm}|}{\begin{singlespacing}\vspace{-22pt}
-  Tämä on tiivistelmän ensimmäinen kappale. Tiivistelmän kappaleet loppuvat komentoon newline, jotta saadaan yksi tyhjä rivi aikaiseksi. \newline
+  %Tämä on tiivistelmän ensimmäinen kappale. Tiivistelmän kappaleet loppuvat komentoon newline, jotta saadaan yksi tyhjä rivi aikaiseksi. \newline
+  Insinöörityön tarkoituksena on löytää xxx v. vanhalle hakkukoneen ajoneuvotietokoneelle uudempi vaihtoehto, jolla kuitenkin saadaan alkuperäiset ohjausohjelmistot toimimaan alkuperäisen järjestelmän tavoin, niin että käyttökokemus on sama hakkuukoneen loppukäyttäjälle.\newline
+
+  Työ tehtiin yritykselle Tmi Arto Saali ja työn tarkoitus on antaa lisäselvitystä käytössä olevan hakkuukoneen käyttöiän ennusteelle koneen tietotekniikan osalta. Tavoitteena oli saada hakkuukoneeseen toimintakuntoinen, fyysisiltä ulkomitoiltaan yhteensopiva ajoneuvotietokone alkuperäisen tilalle, mutta alkuperäisen järjestelmän osoitettua vielä korjauskelpoiseksi, sekä aikataulullisista syistä päädyttiin rajaamaan insinöörityö olemaan vain selvitys, että onko päivitys edes mahdollista järkevän budjetin ja aikataulun rajoissa.
+
   
-  Tämä on tiivistlemän toinen kappale.
+ % Tämä on tiivistlemän toinen kappale.
   \end{singlespacing}} \\[14cm] \hline
   Avainsanat & \avainsanat
   \\ \hline
@@ -453,21 +457,9 @@ kannata tehdä enää kyseiseen metsätraktoriin. Tämän takia tutkimmekin
 vaihtoehtoisia ratkaisuita lisätä metsätraktorin käytössä olevalle
 tietokonejärjestelmälle elinikää.
 
-Insinöörityön aiheena on löytää hakkuukoneessa olevalle 15v vanhan Sunit
-Nero-ajoneuvotietokoneelle korvaava uudempi, mutta ohjelmistoilta ja liitäänöiltä yhteensopiva
-tietokone. Tavoitteena on uuden laitteen yhteensopivuus vanhan
-kiinnitysjärjestelmän kanssa, liitinyhteensopivuus, sekä ohjelmallisen
-tason yhteensopivuus. Aluksi tutustutaan käytössä olevaan laitteistoon
-ja sen asettamiin vaatimuksiin. Seuraavaksi käydään läpi mahdollisia
-toteuttamisvaihtoehtoja ja niiden ominaisuuksia. Asennetaan uusi
-ohjelmisto testikannetavaan ja testataan järjestelmä
-tuotantoympäristössä. Lopuksi tutkitaan mahdolliset
+Insinöörityön aiheena on löytää hakkuukoneessa olevalle Sunit Nero -ajoneuvotietokoneelle korvaava uudempi, mutta ohjelmistoilta ja liitännöiltään yhteensopiva tietokone. Aluksi tutustutaan käytössä olevaan laitteistoon ja sen asettamiin vaatimuksiin. Seuraavaksi käydään läpi mahdollisia toteuttamisvaihtoehtoja ja niiden ominaisuuksia. Asennetaan uusi ohjelmisto testikannetavaan ja testataan järjestelmä tuotantoympäristössä.
 
-Haasteita työlle asettavat vanhat ohjelmistot, tärinää ja pölyä ja
-vaihtelevia lämpötiloja sisältävä työympäristö. Metsätraktori on
-huoltoja lukuunottamatta metsässä kesät talvet ja lämpötilat vaihtelevat
-talvella -20 asteesta +20 asteeseen ja kesäisin lämmöt voivat nousta
-ohjaamossa jopa +50-60 asteeseen.
+Haasteita työlle asettavat vanhat ohjelmistot, tärinää ja pölyä ja vaihtelevia lämpötiloja sisältävä työympäristö. Hakkuukone on huoltoja lukuunottamatta metsässä kesät talvet ja lämpötilat vaihtelevat talvella -20 asteesta +20 asteeseen ja kesäisin lämmöt voivat nousta ohjaamossa jopa +50-60 asteeseen. Ohjelmistot ovat vanhoja DOS- ja Windows 9x-aikaisia ohjelmia joiden toimivuus uudemmissa käyttöjärjestelmissä on kyseenalaista.
 
 \section{Standardeja}
 
@@ -578,13 +570,17 @@ ajoneuvotietokoneen kanssa käytetään RS232-väylää ja MotomitPC
 
 \subsection{Ajoneuvo-PC Sunit Nero / Valmet Maxi}
 
-Hakkuukoneessa käytetty tietokone on Sunitin valmistama Sunit Nero (myös nimellä Valmet MAXI)-ajoneuvotietokone. Nero on paketoitu näyttöineen ja keskusyksikköineen yhdeksi all-in-one -tyyliseksi iskunkestäväksi paketiksi. Vaikka kyseessä ei olekaan sama yksilö mikä on alunperin ollut kiinni kyseisessä hakkuukoneeessa, on se samanlainen kuin alkuperäinen ja samaa ikäluokkaa (n. 17v, vuodelta 1997? ). Emolevyn northbridge-ohjaimena on SiS 5571-ohjain. Tässä Nero-yksilössä prosessorina on AMD:n 300 MHz Socket 7-kantainen K6-prosessori vuodelta 1998 (alkuperäinen prosessori on vaihdettu useita vuosia sitten tehdyn huollon yhteydessä toiseen), 64 Mb keskusmuistia. Tietokoneen kiintolevynä oli tutkintahetkellä Western Digitalin 120 Gb:n Scorpio Blue-kiintolevy, joka sekin on vaihdettu kyseiseen yksilöön useaan kertaan. Nero-tietokoneesta löytyy 3,5" levykseasema, sekä cd-asema. Näyttöpaneeli on 4:3-kuvasuhteella ja 800x600 pikselin resoluutiolla oleva 12" LCD-paneeli. Koneessa on lisäksi NiMH-akku BIOSin asetusten säilyttämiseen. Tietokoneesta löytyy liitännät sekä 12V ja 24V jännitteille. Sunitin huolto on ilmoittanut, etteivät he suostu/pysty enää huoltamaan näin vanhaa tietokonetta.
-
 \begin{figure}[H]
 \centering
 \includegraphics[width=1.000\hsize]{/home/th/repos/motonkone/pictures/valmet_maxi.jpg}
 \caption{Sunit Nero / Valmet Maxi}
 \end{figure}
+
+Hakkuukoneessa käytetty tietokone on Sunitin valmistama Sunit Nero (myös nimellä Valmet MAXI)-ajoneuvotietokone. Nero on paketoitu näyttöineen ja keskusyksikköineen yhdeksi all-in-one -tyyliseksi iskunkestäväksi paketiksi. Vaikka kyseessä ei olekaan sama yksilö mikä on alunperin ollut kiinni kyseisessä hakkuukoneeessa, on se samanlainen kuin alkuperäinen ja samaa ikäluokkaa (n. 17v, vuodelta 1997? ). 
+
+Emolevyn northbridge-ohjaimena on SiS 5571-ohjain. Tässä Nero-yksilössä prosessorina on AMD:n 300 MHz Socket 7-kantainen K6-prosessori vuodelta 1998 (alkuperäinen prosessori on vaihdettu useita vuosia sitten tehdyn huollon yhteydessä toiseen), 64 Mb keskusmuistia. Tietokoneen kiintolevynä oli tutkintahetkellä Western Digitalin 120 Gb:n Scorpio Blue-kiintolevy, joka sekin on vaihdettu kyseiseen yksilöön useaan kertaan. Nero-tietokoneesta löytyy 3,5" levykseasema, sekä cd-asema. Näyttöpaneeli on 4:3-kuvasuhteella ja 800x600 pikselin resoluutiolla oleva 12" LCD-paneeli. Koneessa on lisäksi NiMH-akku BIOSin asetusten säilyttämiseen. Tietokoneesta löytyy liitännät sekä 12V ja 24V jännitteille. 
+
+Sunitin huolto on ilmoittanut, etteivät he suostu/pysty enää huoltamaan näin vanhaa tietokonetta, joka on osasyynä korvaavan vaihtoehdon etsimiseen.
 
 \begin{figure}[H]
 \centering
@@ -650,7 +646,7 @@ Vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmää ajetaan virtua
 
 \subsection{Järjestelmäemulointi}
 
-Vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmä ajetaan emulaattorissa toisen järjestelmän päällä. Emuloimalla saavutetaan laitteistoarkkitehtuuririippumattomuus isäntäkoneen ja emuloitavan järjestelmän välillä. Emuloinnin haittapuolena on hitaus. Nyrkkisääntönä on 20\% hyötysuhde \cite{tinycc}, parhaat emulaattorit pääsevät n. 40-80\% hyötysuhteeseen \cite{40pperf} \cite{eltechs:exagear}
+Vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmä ajetaan emulaattorissa toisen järjestelmän päällä. Emuloimalla saavutetaan laitteistoarkkitehtuuririippumattomuus isäntäkoneen ja emuloitavan järjestelmän välillä. Emuloinnin haittapuolena on hitaus. Nyrkkisääntönä on 20\% hyötysuhde \cite{tinycc}, parhaat emulaattorit pääsevät n. 40-80\% hyötysuhteeseen \cite{40pperf}. Esimerksiksi Eltechs tarjoaa ExaGear Desktop-ohjelmistoaan, jolla voi ajaa x86-ohjelmia ARMv7 -ympäristössä. \cite{eltechs:exagear}. 
 
 \subsection{Ohjelmistojen emulointi}
 
@@ -658,8 +654,10 @@ Vaihtoehdossa emuloidaan vain ohjelmat koko pc:n sijasta. Tämä onnistuu tietyi
 
 \section{Käytettävä toteuttamisvaihtoehto}
 
-Tähän miksi päädyttiin x86-pohjaiseen järjestelmään, DOS-ohjelmien emuloinnilla ja Windows-ohjelmien Winettämisellä / TAI jos ei toimi niin
-Virtualisoinnilla.
+Johtuen saatavissa olevista laitteistoista, sekä alkuperäisten ohjelmistojen arkkitehtuurista, päädyin valitsemaan testaukseen X86-arkkitehtuurilla ja Linux-käyttöjärjestelmällä toteutettavan kokonaisuuden, jossa on asennettuna sekä Winen, Dosboxin ja Dosemun päälle tarvittavat Motomit- ja Terman-ohjelmat. Lisäksi asensin Virtualbox-virtuaalikoneeseen alkuperäisen Windows 98-käyttöjärjestelmän ja alkuperäiset ohjelmat kokeiltavaksi. Näin saamme kokeiltua Linuxin, sekä virtualisoinnin sopivuuden varsinaisen uuden ajoneuvotietokoneen mahdollisiksi toteutustavoiksi.
+
+Linux valittiin kohdekäyttöjärjestelmäksi, koska Windows tiedetään Motomitin osalta toimivaksi vaihtoehdoksi (Motomitistä löytyy Windows 7-yhteensopiva versio). DOS-ohjelmia ei voi ajaa suoraan Windowsin päällä, koska vaikka myös uudemmista 32-bittisistä versioista (XP+) Windowseista löytyy \"Virtual DOS machine\", niin se ei rajoita ohjelmien ajonopeutta, eikä tue suorayhteyttä sarjaväylälle jonka takia tarvitaan lähes kaikissa toteustavoissa jokin lisäohjelma jotta sarjaportti saadaan toimimaan DOS:n puolella (ref: Virtual Dos Machine). Lisäksi Dosboxista löytyy sekä Windows- että Linux-versiot, jonka takia yhteensopivuuden pystyy testaamaan alustavasti Linuxin avulla. Päätökseen valita Linux vaikutti myös vahvasti oman osaamisen ja mieltymysten painottuminen Linux-puolelle, enkä nähnyt erityistä estettä olla kokeilematta järjestelmän toimivuutta Linux-käyttöjärjestelmässä.
+
 
 Raspi2+Eltechs ExaGear Desktop olisi suht. edullinen (Raspi2 35€+Exagear 30€+loput romut  \textasciitilde{}100-200€) Tee se itse-ratkaisu, mutta toimivuus olisi kyseenalainen joten todennäköisesti järkevämpää on käyttää valmiita ajoneuvopc-käyttöön tarkoitettuja x86-ratkaisuita. Kun insinöörityötä tehtiin ei Raspi2:ta ollut vielä edes julkaistu.
 
@@ -701,7 +699,7 @@ vanhaan Fujitsu-Siemensin kannettavaan. Johtuen rankoista olosuhteita,
 tavallista kannettavaa käytetään vain käyttöjärjestelmän ja ohjelmien
 testaamiseksi yhdessä Moton kanssa.
 
-\section{Tarvittavat laitteistot}
+\section{Käytetyt laitteistot}
 \subsection{Tietokone}
 Testaukseen käytetään vanhaa Fujitsu-Siemensin Amilo Pa 2510-kannettavaa vuodelta 2007. Amilo Pa 2510:ssa on AMD Turion 64 X2 TL-50 1.6 GHz prosessori, ATI Radeon Xpress X1200 128 Mb näytönohjain, 2 Gb keskusmuistia, 15.4" näyttö, sekä 120 Gb:n kiintolevy. Nämä speksit riittävät hyvin ohjelmistojen testaukseen sekä virtuaalikoneen kanssa, että emuloituna+ohjelmistorajapinnan kautta \cite{fs_amilo:review}. Puutteena kannettavassa on mm. sarjaporttien puute, sekä hajonnut näppäimistö. 
 
@@ -714,7 +712,7 @@ Käytettävä USB-sarjaporttiadapteri on eBaystä testaukseen hankittu 2-porttin
 
 
 
-\section{Tarvittavat ohjelmat}
+\section{Käytetyt ohjelmat}
 
 Perusasennuksella asennettavaan Xubuntu-käyttöjärjestelmään tarvitsee
 lisäksi asentaa seuraavat paketit, että alkuperäiset ohjelmistot saadaan
@@ -727,7 +725,7 @@ ohjelmisto toimisi winen alla.
 Xubuntu 14.04 on Ubuntu 14.04:aan perustuva (joka taas on Debianiin perustuva) Linux-distro, jossa 
 käyttöliittymäksi on vaihdettu XFCE 4.10 ja mukana toimitettavista ohjelmistoista on valittu kevyemmät 
 versiot kuin Ubuntussa.\cite{xubuntu:about}. Xubuntu valittiin käyttöjärjestelmäksi, koska testaamiseen 
-käytettävä kannettava on 
+käytettävä kannettava on hieman vanhempi ja Xubuntu on todettu jo aiemmin toimivaksi käyttöjärjestelmäksi ko. kannettavassa.
 
 Käyttöjärjestelmäksi valittiin Xubuntusta pitkän tuen versio 14.04.
 Xubuntu asennettiin oletusasetuksilla testikoneeseen. Lisäksi Xubuntu
@@ -767,6 +765,9 @@ Dosboxissa sarjaportit määritetään samasta asennustiedostosta kuin
 muutkin asetukset, joten sinne piti lisätä vähintään Termanin käyttämä
 sarjaportti käyttöön. (asetustiedosto
 liitteenä){[}ref:http://www.dosbox.com/wiki/Dosbox.conf{]}
+
+\subsection{Dosemu}
+Dosemu on virtuaalikone / DOS-rajapintakerros Linuxille, joka mahdollistaa DOS-ohjelmien ajamisen x86-arkkitehtuuria käyttävässä Linux-käyttöjärjestelmässä. Testaamme sekä Dosboxin, että Dosemun sopivuuden Termanin ajamiseksi Linux-käyttöjärjestelmässä.
 
 \section{Asennus ja asetusten säätö}
 blaah. Siirrä ylempää tekstiä tänne.
