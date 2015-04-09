@@ -451,10 +451,7 @@ uudella. Tämä saattaa vaatia mittavia päivitysprojekteja myös
 järjestelmää tukeviin kokonaisuuksiin ja vaihdon kannattavuus suhteessa
 hyötyyn on huono.
 
-Järjestelmänä on vuonna xxx valmistetun metsätraktori, eli
-tuttavallisemmin moto. Motolla on n. yy v käyttöikää jäljellä ja moton
-ajoneuvotietokone, jolla hallitaan koneen moottoriasetuksia, että myös
-puiden kadon hallintaa, alkaa olemaan elinikänsä loppupäässä.
+Järjestelmänä on vuonna 1998 valmistetun hakkuukone, eli tuttavallisemmin moto.Moton ajoneuvotietokone, jolla hallitaan koneen asetuksia ja puiden kaatoa, alkaa olemaan elinikänsä loppupäässä.
 Alkuperäinen tietokone lakkaa toimimasta kokonaan kuumennettuaan liikaa,
 kiintolevy on hajonnyt useaan otteeseen ja akustot alkavat olemaan
 uusimisen tarpeessa. Jos laitteiston vaihtaisi kokonaan uudempaan olisi
@@ -622,7 +619,7 @@ Terman on Valmetin alkuperäinen DOS-pohjainen hallinta- ja apteerausohjelmisto 
 \end{figure}
 
 \subsection{Motomit PC}
-Motomit PC on Motomit IT:n Windows-pohjainen näyttö- ja hallintaohjelmisto Motomit IT-järjestelmälle. Motomit PC kommunikoi Motomit IT:n kanssa RS-232 -sarjaväylän avulla. \cite{motomit:esite}
+Motomit PC on Motomit IT:n Windows-pohjainen näyttö- ja hallintaohjelmisto Motomit IT-järjestelmälle. Motomit PC kommunikoi Motomit IT:n MCI-moduulin (Mitron CAN Interface) kanssa RS-232 -sarjaväylän avulla. \cite{motomit:esite}.
 
 \begin{figure}[H]
 \centering
@@ -703,9 +700,6 @@ Xubuntu asennettiin oletusasetuksilla testikoneeseen. Lisäksi Xubuntu
 laitettiin kirjautumaan sisään automaattisesti, sekä Dosbox ja MotomitPC
 laitettiin käynnistymään automaattisesti sisäänkirjautumisen yhteydessä.
 
-Käytetylle USB-sarjaporttiadapterille lisättiin oma udev-sääntö, jonka
-ansiosta adapterin kaksi sarjaporttia tulevat näkyviin Linuxissa
-samoilla laitetiedosto (Device file)-nimillä. (ref:udev-sääntö)
 
 \subsection{Wine}
 
@@ -716,17 +710,25 @@ Motomit sisältääkin taustajärjestelmänään
 Linuxin\cite{motomit:manual}, niin käyttöliittymäänä tomivasta
 MotomitPC -ohjelmasta on vain olemassa Windows-versio.
 
-Jotta sarjaportit saa toimimaan Windowsin käyttämillä COM-porttinimillä
-Windows-ohjelmien puolella, tulee laitetiedostoista tehdä symboliset
-linkit \textasciitilde{}/.wine/dosdevices/ -hakemistoon halutuilla
-nimillä (COM1 ja COM2).\cite[s. 21]{wine:manual}
-
 \subsection{Dosbox}
 
 Dosbox on DOS-emulaattori, joka emuloi IBM PC-yhteensopivaa tietokonetta
 286/386-prosessorilla, sekä monia kyseisen aikakauden laitteistoja.
 Dosbox sisältää lisäksi suoratuen sarjaportille, niin se on valittu
 käytettäväksi DOS-emulaattoriksi.
+
+\subsection{Dosemu}
+Dosemu on virtuaalikone / DOS-rajapintakerros Linuxille, joka mahdollistaa DOS-ohjelmien ajamisen x86-arkkitehtuuria käyttävässä Linux-käyttöjärjestelmässä. Testaamme sekä Dosboxin, että Dosemun sopivuuden Termanin ajamiseksi Linux-käyttöjärjestelmässä.
+
+\section{Asennus ja asetusten säätö}
+Käytetylle USB-sarjaporttiadapterille lisättiin oma udev-sääntö, jonka
+ansiosta adapterin kaksi sarjaporttia tulevat näkyviin Linuxissa
+samoilla laitetiedosto (Device file)-nimillä. (ref:udev-sääntö)
+
+Jotta sarjaportit saa toimimaan Winessä Windowsin käyttämillä COM-porttinimillä
+Windows-ohjelmien puolella, tulee laitetiedostoista tehdä symboliset
+linkit \textasciitilde{}/.wine/dosdevices/ -hakemistoon halutuilla
+nimillä (COM1 ja COM2).\cite[s. 21]{wine:manual}
 
 Koska Dosbox on emulaattori, niin siinä pystyy säätämään
 suoritusnopeutta, ruudun resoluutiota/kokoa, yms. varsin monipuolisesti.
@@ -737,11 +739,6 @@ muutkin asetukset, joten sinne piti lisätä vähintään Termanin käyttämä
 sarjaportti käyttöön. (asetustiedosto
 liitteenä){[}ref:http://www.dosbox.com/wiki/Dosbox.conf{]}
 
-\subsection{Dosemu}
-Dosemu on virtuaalikone / DOS-rajapintakerros Linuxille, joka mahdollistaa DOS-ohjelmien ajamisen x86-arkkitehtuuria käyttävässä Linux-käyttöjärjestelmässä. Testaamme sekä Dosboxin, että Dosemun sopivuuden Termanin ajamiseksi Linux-käyttöjärjestelmässä.
-
-\section{Asennus ja asetusten säätö}
-blaah. Siirrä ylempää tekstiä tänne.
 
 
 \section{Testaus}
@@ -749,7 +746,7 @@ Kootun Linux-järjestelmän testaus suoritettiin metsässä hakkuukoneen luona. 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1.00\hsize]{/home/th/repos/motonkone/pictures/motomit_linux.jpg}
+\includegraphics[width=1.00\hsize]{/home/th/repos/motonkone/pictures/motomit_linux.png}
 \caption{Motomit PC-ohjelmisto Winessä ajettuna.}
 \end{figure}
 
