@@ -444,25 +444,13 @@ Apteeraus & Puun rungon jako eri puutavaralajeiksi mitta- ja laatuvaatimukset hu
 
 \chapter{Johdanto}
 
-Tietokoneiden käyttöikä on varsinkin vaativissa kohteissa rajallinen.
-Kun järjestelmien ikä kasvaa niin varaosien saatavuus vähenee. Viimein
-ollaan pisteessä, missä ainoa vaihtoehto on korvata vanha järjestelmä
-uudella. Tämä saattaa vaatia mittavia päivitysprojekteja myös
-järjestelmää tukeviin kokonaisuuksiin ja vaihdon kannattavuus suhteessa
-hyötyyn on huono.
+Tietokoneiden käyttöikä on varsinkin vaativissa kohteissa rajallinen. Kun järjestelmät vanhenevat, niin huollon tarve lisääntyy, mutta varaosien saatavuus vähenee. Viimein voi tulla eteen piste, missä ainoa mahdollinen vaihtoehto on korvata vanha järjestelmä uudella. Tämä saattaa vaatia suuriakin muutostöitä myös järjestelmää käyttäviin laitteisiin ja usein on järkevämpää vaihtaa koko kohde kuin tehdä suuria muutostöitä kohteeseen.
 
-Järjestelmänä on vuonna 1998 valmistetun hakkuukone, eli tuttavallisemmin moto.Moton ajoneuvotietokone, jolla hallitaan koneen asetuksia ja puiden kaatoa, alkaa olemaan elinikänsä loppupäässä.
-Alkuperäinen tietokone lakkaa toimimasta kokonaan kuumennettuaan liikaa,
-kiintolevy on hajonnyt useaan otteeseen ja akustot alkavat olemaan
-uusimisen tarpeessa. Jos laitteiston vaihtaisi kokonaan uudempaan olisi
-kyseessä sen verran kallis toimenpide(n. 20 000\euro{}), ettei sitä
-kannata tehdä enää kyseiseen metsätraktoriin. Tämän takia tutkimmekin
-vaihtoehtoisia ratkaisuita lisätä metsätraktorin käytössä olevalle
-tietokonejärjestelmälle elinikää.
+Insinöörityön kohteena on vuonna 1998 valmistetun hakkuukoneen ajoneuvotietokoneen päivitysmahdollisuuksien tutkiminen. Alkuperäinen, myös vuodelta 1998 oleva ajoneuvotietokoneessa on alkanut näkyä ikääntymisen merkit. Laitteesta hajoaa yksitellen komponentit, se ylikuumenee varsinkin kesäisin siten ettei se pysy paria tuntia kauempaa kerrallaan päällä, ja osien saatavuus tähän 17v vanhaan tietokoneeseen alkaa olemaan hankalaa.
 
-Insinöörityön aiheena on löytää hakkuukoneessa olevalle Sunit Nero -ajoneuvotietokoneelle korvaava uudempi, mutta ohjelmistoilta ja liitännöiltään yhteensopiva tietokone. Aluksi tutustutaan käytössä olevaan laitteistoon ja sen asettamiin vaatimuksiin. Seuraavaksi käydään läpi mahdollisia toteuttamisvaihtoehtoja ja niiden ominaisuuksia. Asennetaan uusi ohjelmisto testikannetavaan ja testataan järjestelmä tuotantoympäristössä.
+Insinöörityö pyrkii selvittämään hakkuukoneen ja ajoneuvotietokoneen väliset liitännät, sekä ajoneuvotietokoneen ohjelmistot ja etsimään mahdolliset korvaavat ratkaisut, jotka kestävät pölyn, lämpötilan mutokset, sekä tärinän mille ajoneuvotietokone altistuu hakkuukoneessa. Tarkoituksena olisi että korvaava järjestelmä vaatisi mahdollisimman vähän muutoksia hakkuukoneeseen, sekä olisi hakkuukoneen kuljettajalle toiminnallisuudeltaan vastaava kuin alkuperäinen järjestelmä.
 
-Haasteita työlle asettavat vanhat ohjelmistot, tärinää ja pölyä ja vaihtelevia lämpötiloja sisältävä työympäristö. Hakkuukone on huoltoja lukuunottamatta metsässä kesät talvet ja lämpötilat vaihtelevat talvella -20 asteesta +20 asteeseen ja kesäisin lämmöt voivat nousta ohjaamossa jopa +50-60 asteeseen. Ohjelmistot ovat vanhoja DOS- ja Windows 9x-aikaisia ohjelmia joiden toimivuus uudemmissa käyttöjärjestelmissä on kyseenalaista.
+Työn haasteita ovat hakkuukoneen sijainti (yli 200km päässä metsässä), tarvittava pölyn, tärinän ja lämpötilan kesto, sekä alkuperäisten ohjelmien mahdollisesti asettamat vaatimukset.
 
 \section{Standardeja}
 
@@ -518,29 +506,20 @@ jäsenvaltioiden lainsäädännön yhdenmukaistamisesta. {[}@2014/53/EU{]}
 
 \subsection{IP-suojaluokitus}
 
-IP-suojaluokitus on standardissa IEC 60529 määritetty järjestelmä
-sähkölaitteiden tiiveyden määrittämiseksi. IP-luokitus kertoo laitteiden
-suojauksen pölyä ja vettä vastaan. \cite{IEC60529}
+IP-suojaluokitus on standardissa IEC 60529 määritetty järjestelmä sähkölaitteiden tiiveyden määrittämiseksi. IP- luokitus kertoo laitteiden suojauksen pölyä ja vettä vastaan. \cite{IEC60529}
 
 \subsubsection{IP54}
 
-IP54-suojaluokitetut tuotteet ovat pölysuojattuja (ei täydellistä
-tiiveyttä, mutta ei pölykertymiä), sekä roiskesuojattuja.
+IP54-suojaluokitetut tuotteet ovat pölysuojattuja (ei täydellistä tiiveyttä, mutta ei pölykertymiä), sekä roiskesuojattuja.
 
 \subsubsection{IP67/66}
 
-IP67/66 -suojaluokitetut tuotteet ovat täysin pölytiiviitä ja kestävät
-suurella paineella tulevan vesiruiskun. IP67/66-tuotteet kestävät
-tärinää ja iskuja 5M3-vaatimusten mukaisesti. (DIN EN 60721-3-5, MIL-STD
-810F.)
+IP67/66 -suojaluokitetut tuotteet ovat täysin pölytiiviitä ja kestävät suurella paineella tulevan vesiruiskun. IP67/66-tuotteet kestävät tärinää ja iskuja 5M3-vaatimusten mukaisesti. (DIN EN 60721-3-5, MIL-STD 810F.)
 
 \chapter{Taustaa}
 \section{Hakkuukoneet}
 
-Hakkuukoneet eli motot (monitoimikoneet) ovat metsätraktoreita, joiden
-tehtävänä on hakkuun kaikki työvaiheet. Hakkuukoneet sisältävät
-tietokoneohjatut mittalaitteet joilla puiden katkonta ja mittaus saadaan
-hoidettua tarkasti.
+Hakkuukoneet eli motot (monitoimikoneet) ovat metsätraktoreita, joiden tehtävänä on hakkuun kaikki työvaiheet. Hakkuukoneet sisältävät tietokoneohjatut mittalaitteet joilla puiden katkonta ja mittaus saadaan hoidettua tarkasti.
 
 \subsection{Hakkuukone Valmet 901}
 
@@ -580,7 +559,7 @@ ajoneuvotietokoneen kanssa käytetään RS232-väylää ja MotomitPC
 
 Hakkuukoneessa käytetty tietokone on Sunitin valmistama Sunit Nero (myös nimellä Valmet MAXI)-ajoneuvotietokone. Nero on paketoitu näyttöineen ja keskusyksikköineen yhdeksi all-in-one -tyyliseksi iskunkestäväksi paketiksi. Vaikka kyseessä ei olekaan sama yksilö mikä on alunperin ollut kiinni kyseisessä hakkuukoneeessa, on se samanlainen kuin alkuperäinen ja samaa ikäluokkaa (n. 17v, vuodelta 1998 ). 
 
-Emolevyn northbridge-ohjaimena on SiS 5571-ohjain. Tässä Nero-yksilössä prosessorina on AMD:n 300 MHz Socket 7-kantainen K6-prosessori vuodelta 1998 (alkuperäinen prosessori on vaihdettu useita vuosia sitten tehdyn huollon yhteydessä toiseen), 64 Mb keskusmuistia. Tietokoneen kiintolevynä oli tutkintahetkellä Western Digitalin 120 Gb:n Scorpio Blue-kiintolevy, joka sekin on vaihdettu kyseiseen yksilöön useaan kertaan. Nero-tietokoneesta löytyy 3,5" levykseasema, sekä cd-asema. Näyttöpaneeli on 4:3-kuvasuhteella ja 800x600 pikselin resoluutiolla oleva 12" LCD-paneeli. Koneessa on lisäksi NiMH-akku BIOSin asetusten säilyttämiseen. Tietokoneesta löytyy liitännät sekä 12V ja 24V jännitteille. 
+Emolevyn northbridge-ohjaimena on SiS 5571-ohjain. Tässä Nero-yksilössä prosessorina on AMD:n 300 MHz Socket 7-kantainen K6-prosessori vuodelta 1998 (alkuperäinen prosessori on vaihdettu useita vuosia sitten tehdyn huollon yhteydessä toiseen), 64 Mb keskusmuistia. Tietokoneen kiintolevynä oli tutkintahetkellä Western Digitalin 120 Gb:n Scorpio Blue-kiintolevy, joka sekin on vaihdettu kyseiseen yksilöön useaan kertaan. Nero-tietokoneesta löytyy 3,5" levykseasema, sekä cd-asema. Näyttöpaneeli on 4:3-kuvasuhteella ja 800x600 pikselin resoluutiolla oleva 12" LCD-paneeli. Koneessa on lisäksi NiMH-akku BIOSin asetusten säilyttämiseen. Tietokoneesta löytyy liitännät sekä 12V ja 24V jännitteille.
 
 Sunitin huolto on ilmoittanut, etteivät he suostu/pysty enää huoltamaan näin vanhaa tietokonetta, joka on osasyynä korvaavien vaihtoehtojen kartoittamiseen.
 
@@ -751,20 +730,12 @@ Kootun Linux-järjestelmän testaus suoritettiin metsässä hakkuukoneen luona. 
 \end{figure}
 
 \chapter{Yhteenveto}\
-Tämän työn tarkoitus oli selvittää mahdolliseuudet päivittää
-Moto-traktorin 20v vanha ajoneuvotietokone uudemaksi tarpeen tullessa.
-Testikoneella tehdyissä testeissä alkuperäiset ohjelmistot saatiin
-toimimaan uudemmissa käyttöjärjestelmissä, sekä testattua että ne
-toimivat myös tuotantoympäristössä (toivottavasti). Näiden tulosten
-perusteella voidaankin todeta, että alkuperäinen ajoneuvotietokone
-voidaan tarpeen tullen korvata uudemmalla ajoneuvoympäristöön
-tarkoitetulla laitteella kunhan uudesta laitteesta löytyy tarvittavat
-liittimet (vaihtoehtoisesti vähintään 2 sarjaporttiliitäntää tai
-USB-liitäntä). Nämä vaatimukset täyttyvät todennäköisesti suurimmalla
-osalla tarjolla olevista vaihtoehdoista. Korvaamalla vain
-laitteistopuoli ja pitämällä ohjelmat alkuperäisinä säästytään kalliilta
-(ja kannattamattomalta) vaihdostyöltä, jossa kaikki kyseissen
-metsätraktorin elektroniikka olisi vaihdettu uudelle ohjaukselle.
+Insinöörityön tavoitteena oli selvittää mahdolliset vaihtoehdot korvata 17v vanhan hakkuukoneen alkuperäinen ajoneuvotietokone uudemalla, hakkuukoneen järjestelmien kanssa yhteensopivalla vaihtoehdolla.
+
+Alkuperäistä ajoneuvotietokonetta tutkimalla, sekä mahdollisia vaihtoehtoja punnitsemalla päädyttiin testaamaan alkuperäisten ohjelmistojen toimivuutta yhteensopivuusrajapintojen kautta tavallisessa, useamman vuoden vanhassa Linux-käyttöjärjestelmällä varustetussa kannettavassa tietokoneessa. Testaamalla selvisi, että käytettävät alkuperäiset ohjelmistot toimivat USB-sarjaporttiadapterin ja Linuxin kautta suoritettuina. Tästä voidaan päätellä että alkuperäinen Sunit Nero-ajoneuvotietokone on helpostikin korvattavissa uudemmalla ajoneuvotietokoneella tai olosuhteita kestävällä kannettavalla.
+
+Vaatimuksina uudelle tietokoneelle on lähinnä tarvittava olosuhteiden kesto, sekä tarvittavat liittimet. Hakkuukoneen järjestelmät vaativat kaksi sarjaporttiliitäntää, joilla kommunikointi hakkuukoneen ja ajoneuvotietokoneen välillä tapahtuu. Hakkuukoneen sähköjärjestelmä on 24V, joka tulee ottaa huomioon tietokoneen sähkönsyöttöä miettiessä. 
+
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu. Sed arcu lectus auctor vitae, consectetuer et venenatis eget velit. Sed augue orci, lacinia eu tincidunt et eleifend nec lacus. Donec ultricies nisl ut felis, suspendisse potenti. Lorem ipsum ligula ut hendrerit mollis, ipsum erat vehicula risus, eu suscipit sem libero nec erat. Aliquam erat volutpat. Sed congue augue vitae neque. Nulla consectetuer porttitor pede. Fusce purus morbi tortor magna condimentum vel, placerat id blandit sit amet tortor.
 
