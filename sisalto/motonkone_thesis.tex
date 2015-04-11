@@ -25,7 +25,7 @@
 
 \def\thesislang{finnish} %change this depending on your language
 \author{Tomi Haapaniemi}
-\def\thesis{Opinnäytetyö/Thesis}
+\def\thesis{Insinöörityö/Thesis}
 \def\alaotsikko{}
 %\def\alaotsikko{Alaotsikko/Subtitle}
 
@@ -37,7 +37,7 @@
 \def\ohjaajat{
 Keijo Länsikunnas, Lehtori%\newline
 }
-\def\avainsanat{Hakkuukone, ajoneuvotietokone, }
+\def\avainsanat{Hakkuukone, ajoneuvotietokone}
 \def\pvm{\ddmmyyyydate\today}
 
 %English section, for abstract
@@ -49,7 +49,7 @@ Keijo Länsikunnas, Lehtori%\newline
 Keijo Länsikunnas, Lecturer %(for example: Project Manager)\newline
 %First name Last name, Title (for example: Principal Lecturer)
 }
-\def\metropoliakeywords {Keywords}
+\def\metropoliakeywords {harvester, in-vehicle computer}
 \date{\today}
 
 %----------------------------------------------------------------------------------------
@@ -324,13 +324,13 @@ xleftmargin=1cm
   \\ \hline
   \multicolumn{2}{|p{15cm}|}{\begin{singlespacing}\vspace{-22pt}
   %Tämä on tiivistelmän ensimmäinen kappale. Tiivistelmän kappaleet loppuvat komentoon newline, jotta saadaan yksi tyhjä rivi aikaiseksi. \newline
-  Insinöörityön tarkoituksena on löytää xxx v. vanhalle hakkukoneen ajoneuvotietokoneelle uudempi vaihtoehto, jolla kuitenkin saadaan alkuperäiset ohjausohjelmistot toimimaan alkuperäisen järjestelmän tavoin, niin että käyttökokemus pysyy samana hakkuukoneen loppukäyttäjälle.\newline
+  Insinöörityön tarkoituksena on selvittää, onko mahdollista korvata 17 v. vanhan hakkuukoneen ajoneuvotietokone uudemmalla, siten ettei hakkuukoneen järjestelmiin tarvitse koskea vaan korvaavassa ajoneuvotietokoneessa toimisivat alkuperäisessä ajoneuvotietokoneessa käytetyt ohjelmistot.\newline
 
-  Työ tehtiin yritykselle Tmi Arto Saali ja työn tarkoitus on antaa lisäselvitystä käytössä olevan hakkuukoneen käyttöiän ennusteelle koneen tietotekniikan osalta. Tavoitteena oli saada hakkuukoneeseen toimintakuntoinen, fyysisiltä ulkomitoiltaan yhteensopiva ajoneuvotietokone alkuperäisen tilalle, mutta alkuperäisen järjestelmän osoitettua vielä korjauskelpoiseksi, sekä aikataulullisista syistä päädyttiin rajaamaan insinöörityö olemaan vain selvitys, että onko päivitys edes mahdollista järkevän budjetin ja aikataulun rajoissa.\newline
+  Työ tehtiin yksityiselle yrittäjälle ja työn tarkoitus on antaa lisäselvitystä käytössä olevan hakkuukoneen käyttöiän ennusteelle koneen tietotekniikan osalta. Tavoitteena oli saada hakkuukoneeseen toimintakuntoinen, fyysisiltä ulkomitoiltaan yhteensopiva ajoneuvotietokone alkuperäisen tilalle, mutta alkuperäisen järjestelmän osoitettua vielä korjauskelpoiseksi, sekä aikataulullisista syistä päädyttiin rajaamaan insinöörityö olemaan vain selvitys, että onko päivitys edes mahdollista järkevän budjetin ja aikataulun rajoissa.\newline
 
-  Haasteita työlle asetti hakkuukoneen sijainti, joka oli insinöörityön aikana n. 30 km metsään Oriveden keskustasta. Orivedelle on matkaa Leppävaarasta, Espoosta n. 200 km. Insinöörityön teon aikana käytiin hakkuukoneen luona yhteensä kolme kertaa, kaikki kerrat alkuperäisen hakkuukoneen ajoneuvotietokoneen huoltojen yhteydessä.
+  Haasteita työlle asetti hakkuukoneen sijainti, joka oli insinöörityön aikana n. 30 km metsään Oriveden keskustasta. Orivedelle on matkaa Leppävaarasta, Espoosta n. 200 km. Insinöörityön teon aikana käytiin hakkuukoneen luona yhteensä kolme kertaa, kaikki kerrat alkuperäisen hakkuukoneen ajoneuvotietokoneen huoltojen yhteydessä.\newline
 
-  Työssä selviää, että hakkuukoneen järjestelmien kommunikointi ajoneuvotietokoneen kanssa tapahtuu standardin RS-232 -sarjaväylän kautta ja käytettävät ohjelmat on mahdollista saada toimimaan uudemmissa käyttöjärjestelmissä, joka mahdollistaa uudempien ajoneuvotietokoneiden tai fyysiseltä kestävyydeltään vastaavien tietokoneiden käytön hakkuukoneessa ilman muutoksia hakkuukoneen järjestelmiin.
+  Työssä selviää, että hakkuukoneen järjestelmien kommunikointi ajoneuvotietokoneen kanssa tapahtuu standardin RS-232 -sarjaväylän kautta ja käytettävät ohjelmat on mahdollista saada toimimaan uudemmissa käyttöjärjestelmissä, joka mahdollistaa uudempien ajoneuvotietokoneiden tai fyysiseltä kestävyydeltään vastaavien tietokoneiden käytön hakkuukoneessa ilman muutoksia hakkuukoneen järjestelmiin.\newline
 
 
   
@@ -369,7 +369,16 @@ xleftmargin=1cm
   Instructor(s) & \metropoliainstructors
   \\ \hline
   \multicolumn{2}{|p{15cm}|}{\begin{singlespacing}\vspace{-22pt}
-  Abstract content
+  
+The purpose of this thesis is to find out whether it is possible to replace original computer in 17 y. old harvester with newer computer so that there is no need to do changes to harvester's electronical systems. Therefore original communication protocols and controlling software must work in new computer. User Experience of system with new computer should be similar with original computer.\newline
+
+This thesis was done for private entrepreneur and results is intended to provide additional information about the life expection of harverster from computer systems viewpoint. The original goal of thesis was to produce drop in replacement computer for original systems, but because the original system is proven yet repairable and time estimation for producing durable replacement was too high it was decided to limit the thesis to be only report about possibility to upgrade original system with reasonable budget and time.\newline
+
+Challenges during the thesis was location of harvester, which was the approx. 30 km to forest from the Orivesi city center. Distance to Orivesi is approx. 200 km from Leppävaara, Espoo. Harvester was visited total of three times, all visits took plave after maintenance of harvester's original computer.\newline
+
+Result of thesis was that all required communication with harvester is through standard RS-232 serial bus. Also all required software was proven work in newer operating systems, which allows possible new system be selected from broader range of availabe rugged computer models without any modifications needed to harvester's electronical systems.\newline
+
+
   \end{singlespacing}} \\[14cm] \hline
   Keywords & \metropoliakeywords
   \\ \hline
@@ -619,7 +628,7 @@ Natiivin ympäristön vaihtoehdossa ohjelmistoja käytetään ympäristössä, j
 \subsection{Ohjelmistojen rajapintojen
 yhteensopivuuskerros}
 
-Ohjelmistojen rajapintojen yhteensopivuuskerros-vaihtoehdossa  käytetään käyttöjärjestelmän ja ohjelman välissä sopivia rajapintakerroksia, jolloin saadaan käyttöjärjestelmän kanssa yhteensopimattomat ohjelmat toimimaan keskenään. Vaihtoehto vaatii yhteensopivan laitteistoarkkitehtuurin alkuperäisen järjestelmän kanssa (x86). Nykyiset Windows-versiot (Windows XP+) sisältävät jo valmiiksi yhteensopivuustilan, joka mahdollistaa vanhempien ohjelmien käyttämisen uudemmissa käyttöjärjestelmissä. Linuxissa Wine-rajapintatoteutus mahdollistaa kaikenikäisten Windows-sovellusten ajamisen Linuxissa. Myös DOS:lle löytyy rajapintakerrostoteutus Linuxiin.
+Ohjelmistojen rajapintojen yhteensopivuuskerros-vaihtoehdossa  käytetään käyttöjärjestelmän ja ohjelman välissä sopivia rajapintakerroksia, jolloin saadaan käyttöjärjestelmän kanssa yhteensopimattomat ohjelmat toimimaan keskenään. Vaihtoehto vaatii yhteensopivan laitteistoarkkitehtuurin alkuperäisen järjestelmän kanssa (x86). Nykyiset Windows-versiot (Windows XP+) sisältävät jo valmiiksi yhteensopivuustilan, joka mahdollistaa vanhempien ohjelmien käyttämisen uudemmissa käyttöjärjestelmissä. Linuxissa Wine -rajapintatoteutus mahdollistaa kaikenikäisten Windows-sovellusten ajamisen Linuxissa. Myös DOS:lle löytyy rajapintakerrostoteutus Linuxiin.
 
 \subsection{Virtualisointi}
 
@@ -635,17 +644,17 @@ Vaihtoehdossa emuloidaan vain ohjelmat koko pc:n sijasta. Tämä onnistuu tietyi
 
 \section{Käytettävä toteuttamisvaihtoehto}
 
-Johtuen saatavissa olevista laitteistoista, sekä alkuperäisten ohjelmistojen arkkitehtuurista, päädyin valitsemaan testaukseen X86-arkkitehtuurilla ja Linux-käyttöjärjestelmällä toteutettavan kokonaisuuden, jossa on asennettuna sekä Winen, Dosboxin ja Dosemun päälle tarvittavat Motomit- ja Terman-ohjelmat. Lisäksi asensin Virtualbox-virtuaalikoneeseen alkuperäisen Windows 98-käyttöjärjestelmän ja alkuperäiset ohjelmat kokeiltavaksi. Näin saamme kokeiltua Linuxin, sekä virtualisoinnin sopivuuden varsinaisen uuden ajoneuvotietokoneen mahdollisiksi toteutustavoiksi.
+Johtuen saatavissa olevista laitteistoista, sekä alkuperäisten ohjelmistojen arkkitehtuurista, päädyin valitsemaan testaukseen X86-arkkitehtuurilla ja Linux-käyttöjärjestelmällä toteutettavan kokonaisuuden, jossa on asennettuna sekä Winen, Dosboxin ja Dosemun päälle tarvittavat Motomit- ja Terman-ohjelmat. Lisäksi asensin virtuaalikoneeseen (Virtualbox) alkuperäisen Windows 98-käyttöjärjestelmän ja alkuperäiset ohjelmat kokeiltavaksi. Näin saamme kokeiltua Linuxin, sekä virtualisoinnin sopivuuden varsinaisen uuden ajoneuvotietokoneen mahdollisiksi toteutustavoiksi.
 
 Linux valittiin kohdekäyttöjärjestelmäksi, koska Windows tiedetään Motomitin osalta toimivaksi vaihtoehdoksi (Motomitistä löytyy Windows 7-yhteensopiva versio). DOS-ohjelmia ei voi ajaa suoraan Windowsin päällä, koska vaikka myös uudemmista 32-bittisistä versioista (XP+) Windowseista löytyy \"Virtual DOS machine\", niin se ei rajoita ohjelmien ajonopeutta, eikä tue suorayhteyttä sarjaväylälle jonka takia tarvitaan lähes kaikissa toteustavoissa jokin lisäohjelma jotta sarjaportti saadaan toimimaan DOS:n puolella (ref: Virtual Dos Machine). Lisäksi Dosboxista löytyy sekä Windows- että Linux-versiot, jonka takia yhteensopivuuden pystyy testaamaan alustavasti Linuxin avulla. Päätökseen valita Linux vaikutti myös vahvasti oman osaamisen ja mieltymysten painottuminen Linux-puolelle, enkä nähnyt erityistä estettä olla kokeilematta järjestelmän toimivuutta Linux-käyttöjärjestelmässä.
 
-Muita mahdollisia vaihtoehtoja toteutukselle olisi ollut X86-pohjainen Windows 7/8 -käyttöjärjestelmällä oleva kannettava/ajoneuvotietokone. Tätä ratkaisua ei käytetty, johtuen osittain käytettävästä testauskoneesta, osittain siitä että haluttiin kartoittaa käytettävien ohjelmien toiminta myös Linux-puolella, sekä osittain puuttuvan Windows-lisenssin takia.
+Muita mahdollisia vaihtoehtoja toteutukselle olisi ollut X86 -pohjainen Windows 7 tai Windows 8 -käyttöjärjestelmällä oleva kannettava. Tätä ratkaisua ei käytetty, johtuen osittain käytettävästä testauskoneesta, osittain siitä että haluttiin kartoittaa käytettävien ohjelmien toiminta myös Linux-puolella, sekä osittain puuttuvan Windows-lisenssin takia.
 
-Raspberry Pi Foundation julkaisi ARMv7-pohjaisen Raspberry 2-tietokoneen xxxx, josta olisi voinut yhdessä Eltechs ExaGear Desktop x86-tulkkausohjelmiston kanssa rakentaa kevyen ajoneuvotietokoneen, mutta tämä vaihtoehto ei ollut vielä insinöörityön selvitysvaiheessa edes tiedossa, joten koska itse tehty järjestelmä olisi lisäksi vaatinut huomattavasti enemmän suunnittelua, rakentelua ja testausta, todettiin ratkaisu liian työlääksi ja epävarmaksi.
+ARMv7-pohjaisista kehitysalustoista/tietokoneista, kuten Raspberry Pi 2, sekä BeagleBone Black, olisi voinut yhdessä Eltechs ExaGear Desktop x86-tulkkausohjelmiston kanssa rakentaa kevyen ajoneuvotietokoneen, mutta tämä vaihtoehto ei ollut vielä insinöörityön selvitysvaiheessa edes tiedossa, joten koska itse tehty järjestelmä olisi lisäksi vaatinut huomattavasti enemmän suunnittelua, rakentelua ja testausta, todettiin ratkaisu liian työlääksi ja epävarmaksi.
 
 \chapter{Toteutus}
 
-Testaukseen päädyttiin käyttämään käyttöjärjestelmänä Linux-distribuutiota Xubuntu 14.04. Alkuperäiset ohjelmistot Motomit PC ja Terman sovitettiin käyttöön Wine-rajapinnan ja Dosbox/Dosemu DOS-emulaattorin avulla. Järjestelmä asennettiin testausta varten vanhaan Fujitsu-Siemensin kannettavaan. Johtuen rankoista olosuhteita, tavallista kannettavaa käytetään vain käyttöjärjestelmän ja ohjelmien testaamiseksi yhdessä Moton kanssa.
+Testaukseen päädyttiin käyttämään käyttöjärjestelmänä Linux-distribuutiota Xubuntu 14.04. Alkuperäiset ohjelmistot Motomit PC ja Terman sovitettiin käyttöön Wine-rajapinnan ja Dosbox/Dosemu DOS -emulaattorin avulla. Järjestelmä asennettiin testausta varten vanhaan Fujitsu-Siemensin kannettavaan. Johtuen rankoista olosuhteita, tavallista kannettavaa käytetään vain käyttöjärjestelmän ja ohjelmien testaamiseksi yhdessä Moton kanssa.
 
 \section{Käytetyt laitteistot}
 \subsection{Tietokone}
@@ -663,7 +672,7 @@ Käytettävä USB-sarjaporttiadapteri on eBaystä testaukseen hankittu 2-porttin
 
 Perusasennuksella asennettavaan Xubuntu-käyttöjärjestelmään tarvitsee
 lisäksi asentaa seuraavat paketit, että alkuperäiset ohjelmistot saadaan
-toimimaan: * Dosbox DOS-emulaattori Termania varten * Wine -rajapinta
+toimimaan: * Dosbox DOS -emulaattori Termania varten * Wine -rajapinta
 Motomit PC:tä varten. MotomitPC tuli päivittää uusimpaan versioon, jotta
 ohjelmisto toimisi winen alla.
 
