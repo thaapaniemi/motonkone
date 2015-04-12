@@ -425,7 +425,7 @@ Result of thesis was that all required communication with harvester is through s
 \renewcommand{\arraystretch}{2}
 \begin{tabular}{l p{12cm}}
 x86 & Yleisnimitys Intelin 1987 julkaisemalle CISC-prosessorikäskykannalle. Alkuperäiset 8086/80186/80286 olivat 16-bittisiä, mutta 80386:sta eteenpäin käskykantaa laajennettiin 32-bittiseksi.\\
-PS/2 & Sarjaväyläinen, alunperin IBM PS/2 koneessa ollut liitäntäprotokolla, joka yleistyi PC-koneiden standardiliitännäksi näppäimistölle ja hiirelle ennen USB-protokollaa. 5V, GND, data, clock.\\
+PS/2 & Sarjaväyläinen, alunperin IBM PS/2 koneessa ollut liitäntäprotokolla, joka yleistyi PC-koneiden standardiliitännäksi näppäimistölle ja hiirelle ennen USB-protokollaa.\\
 RS232 & Alunperin v. 1962 esitelty asynkroninen sarjaliitäntäprotokolla, joka oli ennen USB-liitännän yleistymistä yleisin PC-koneiden oheislaitteiden liitäntäväylä.\\
 USB & Universal Serial BUS, vuonna 1996 esitelty sarjaväyläinen liitäntä oheislaitteiden liitäntään.\\
 IDE/PATA & Integrated Drive Electronics (Parallel AT Attachments), kiintolevyjen ja optisten asemien liittämiseen tarkoitettu 16-bittinen rinnakkainen liitäntäväylä vuodelta 1986.\\
@@ -525,6 +525,7 @@ IP54-suojaluokitetut tuotteet ovat pölysuojattuja (ei täydellistä tiiveyttä,
 
 IP67/66 -suojaluokitetut tuotteet ovat täysin pölytiiviitä ja kestävät suurella paineella tulevan vesiruiskun. IP67/66-tuotteet kestävät tärinää ja iskuja 5M3-vaatimusten mukaisesti. (DIN EN 60721-3-5, MIL-STD 810F.)
 
+\newpage
 \chapter{Taustaa}
 \section{Hakkuukoneet}
 
@@ -615,6 +616,7 @@ Motomit PC on Motomit IT:n Windows-pohjainen näyttö- ja hallintaohjelmisto Mot
 \caption{Motomit PC Nero-ajoneuvopc:n ruudulla}
 \end{figure}
 
+\newpage
 \chapter{Suunnittelu}
 
 Jotta tietokoneen vaihto on mahdollista, tulee käytössä olevien Terman- ja Motomit PC-ohjelmistojen toimia uudessa koneessa samaan tapaan kuin vanhassa, näkyen loppukäyttäjälle (hakkuukoneen kuljettajalle) samalla tavalla kuin aiemminkin ohjelmistot ovat näkyneet.
@@ -628,7 +630,7 @@ Natiivin ympäristön vaihtoehdossa ohjelmistoja käytetään ympäristössä, j
 \subsection{Ohjelmistojen rajapintojen
 yhteensopivuuskerros}
 
-Ohjelmistojen rajapintojen yhteensopivuuskerros-vaihtoehdossa  käytetään käyttöjärjestelmän ja ohjelman välissä sopivia rajapintakerroksia, jolloin saadaan käyttöjärjestelmän kanssa yhteensopimattomat ohjelmat toimimaan keskenään. Vaihtoehto vaatii yhteensopivan laitteistoarkkitehtuurin alkuperäisen järjestelmän kanssa (x86). Nykyiset Windows-versiot (Windows XP+) sisältävät jo valmiiksi yhteensopivuustilan, joka mahdollistaa vanhempien ohjelmien käyttämisen uudemmissa käyttöjärjestelmissä. Linuxissa Wine -rajapintatoteutus mahdollistaa kaikenikäisten Windows-sovellusten ajamisen Linuxissa. Myös DOS:lle löytyy rajapintakerrostoteutus Linuxiin.
+Ohjelmistojen rajapintojen yhteensopivuuskerros-vaihtoehdossa  käytetään käyttöjärjestelmän ja ohjelman välissä sopivia rajapintakerroksia, jolloin saadaan käyttöjärjestelmän kanssa yhteensopimattomat ohjelmat toimimaan keskenään. Vaihtoehto vaatii yhteensopivan laitteistoarkkitehtuurin alkuperäisen järjestelmän kanssa (x86). Nykyiset Windows-versiot (Windows XP+) sisältävät jo valmiiksi yhteensopivuustilan, joka mahdollistaa vanhempien ohjelmien käyttämisen uudemmissa käyttöjärjestelmissä. Linuxissa Wine -rajapinta mahdollistaa kaikenikäisten Windows-sovellusten ajamisen Linuxissa. Myös DOS:lle löytyy rajapintakerrostoteutus Linuxiin.
 
 \subsection{Virtualisointi}
 
@@ -652,6 +654,7 @@ Muita mahdollisia vaihtoehtoja toteutukselle olisi ollut X86 -pohjainen Windows 
 
 ARMv7-pohjaisista kehitysalustoista/tietokoneista, kuten Raspberry Pi 2, sekä BeagleBone Black, olisi voinut yhdessä Eltechs ExaGear Desktop x86-tulkkausohjelmiston kanssa rakentaa kevyen ajoneuvotietokoneen, mutta tämä vaihtoehto ei ollut vielä insinöörityön selvitysvaiheessa edes tiedossa, joten koska itse tehty järjestelmä olisi lisäksi vaatinut huomattavasti enemmän suunnittelua, rakentelua ja testausta, todettiin ratkaisu liian työlääksi ja epävarmaksi.
 
+\newpage
 \chapter{Toteutus}
 
 Testaukseen päädyttiin käyttämään käyttöjärjestelmänä Linux-distribuutiota Xubuntu 14.04. Alkuperäiset ohjelmistot Motomit PC ja Terman sovitettiin käyttöön Wine-rajapinnan ja Dosbox/Dosemu DOS -emulaattorin avulla. Järjestelmä asennettiin testausta varten vanhaan Fujitsu-Siemensin kannettavaan. Johtuen rankoista olosuhteita, tavallista kannettavaa käytetään vain käyttöjärjestelmän ja ohjelmien testaamiseksi yhdessä Moton kanssa.
@@ -665,17 +668,10 @@ Sarjaporttiliittimet ovat poistuneet kannettavista USB:n yleistyttyä jo 2000-lu
 Rikkinäinen näppäimistö korvataan erillisellä USB-väylään liitettävällä näppäimistöllä testauksen ajaksi. Sähkönsyöttö testauksen ajan hoituu kannettavan omalla akulla, jossa on vielä kapasiteettia pitää kannettava käynnissä testauksen ajan.
 
 \subsection{USB-Sarjaportti -adapteri}
-Käytettävä USB-sarjaporttiadapteri on eBaystä testaukseen hankittu 2-porttinen xxxx. 
+Käytettävä USB-sarjaporttiadapteri on eBaystä testaukseen hankittu 2-porttinen Unitek USB to Dual Serial Cable Y-106 \cite{serial:unitek}. Y-106 -adapteri käyttää MosChip Semiconductorin MCS7820 -piiriä muunnokseen. Adapteri valittiin, koska siinä oli tarvittavat 2 sarjaporttia, adpaterin myyntihinta oli edullinen (n. 25€ sisältäen toimituksen), sekä käytetylle muunninpiirille löytyi ajurituki sekä Windows-, että Linux -käyttöjärjestelmille.
 
 
 \section{Käytetyt ohjelmat}
-
-Perusasennuksella asennettavaan Xubuntu-käyttöjärjestelmään tarvitsee
-lisäksi asentaa seuraavat paketit, että alkuperäiset ohjelmistot saadaan
-toimimaan: * Dosbox DOS -emulaattori Termania varten * Wine -rajapinta
-Motomit PC:tä varten. MotomitPC tuli päivittää uusimpaan versioon, jotta
-ohjelmisto toimisi winen alla.
-
 \subsection{Xubuntu}
 
 Xubuntu 14.04 on Ubuntu 14.04:aan perustuva (joka taas on Debianiin perustuva) Linux-distro, jossa 
@@ -691,43 +687,21 @@ laitettiin käynnistymään automaattisesti sisäänkirjautumisen yhteydessä.
 
 \subsection{Wine}
 
-Wine on Windows-yhteensopivuuskerros Unixin kaltaisiin (mm.
-Unix/Linux/OS X/Solaris) käyttöjärjestelmiin, joka mahdollistaa
-Windows-ohjelmien käyttämisen käytetyssä käyttöjärjestelmässä. Vaikka
-Motomit sisältääkin taustajärjestelmänään
-Linuxin\cite{motomit:manual}, niin käyttöliittymäänä tomivasta
-MotomitPC -ohjelmasta on vain olemassa Windows-versio.
+Wine on Windows-yhteensopivuuskerros Unixin kaltaisiin (mm. Unix/Linux/OS X/Solaris) käyttöjärjestelmiin, joka mahdollistaa Windows-ohjelmien käyttämisen käytetyssä käyttöjärjestelmässä. Wineä tarvitaan, että apteeraukseen käyettävä Motomit PC-ohjelmisto saadaan toimimaan Linuxissa. Vaikka Motomit sisältääkin taustajärjestelmänään Linuxin\cite{motomit:manual}, niin käyttöliittymäänä tomivasta Motomit PC -ohjelmasta on vain olemassa Windows-versio.
 
 \subsection{Dosbox}
 
-Dosbox on DOS-emulaattori, joka emuloi IBM PC-yhteensopivaa tietokonetta
-286/386-prosessorilla, sekä monia kyseisen aikakauden laitteistoja.
-Dosbox sisältää lisäksi suoratuen sarjaportille, niin se on valittu
-käytettäväksi DOS-emulaattoriksi.
+Dosbox on DOS-emulaattori, joka emuloi IBM PC-yhteensopivaa tietokonetta 286/386-prosessorilla, sekä monia kyseisen aikakauden laitteistoja. Dosbox sisältää lisäksi suoratuen sarjaportille, niin se on valittu käytettäväksi DOS-emulaattoriksi. Dosboxia tarvitaan, että Terman-ohjelmisto saadaan toimimaan uudemmissa Windowseissa ja Linuxeissa.
 
 \subsection{Dosemu}
-Dosemu on virtuaalikone / DOS-rajapintakerros Linuxille, joka mahdollistaa DOS-ohjelmien ajamisen x86-arkkitehtuuria käyttävässä Linux-käyttöjärjestelmässä. Testaamme sekä Dosboxin, että Dosemun sopivuuden Termanin ajamiseksi Linux-käyttöjärjestelmässä.
+Dosemu on virtuaalikone / DOS-rajapintakerros Linuxille, joka mahdollistaa DOS-ohjelmien ajamisen x86-arkkitehtuuria käyttävässä Linux-käyttöjärjestelmässä. Dosemu valittiin myös testattavaksi vaihtoehdoksi Termanin saamiseksi toimimaan Linux-käyttöjärjestelmässä.
 
 \section{Asennus ja asetusten säätö}
-Käytetylle USB-sarjaporttiadapterille lisättiin oma udev-sääntö, jonka
-ansiosta adapterin kaksi sarjaporttia tulevat näkyviin Linuxissa
-samoilla laitetiedosto (Device file)-nimillä. (ref:udev-sääntö)
+Käytetylle USB-sarjaporttiadapterille lisättiin oma udev-sääntö, jonka ansiosta adapterin kaksi sarjaporttia tulevat näkyviin Linuxissa samoilla laitetiedosto (Device file)-nimillä, vaikka tietokoneeseen olisi kytkettynä useampi erillainen USB-sarjaporttiadapteri.
 
-Jotta sarjaportit saa toimimaan Winessä Windowsin käyttämillä COM-porttinimillä
-Windows-ohjelmien puolella, tulee laitetiedostoista tehdä symboliset
-linkit \textasciitilde{}/.wine/dosdevices/ -hakemistoon halutuilla
-nimillä (COM1 ja COM2).\cite[s. 21]{wine:manual}
+Jotta sarjaportit saa toimimaan Winessä Windowsin käyttämillä COM-porttinimillä Windows-ohjelmien puolella, tulee laitetiedostoista tehdä symboliset linkit \textasciitilde{}/.wine/dosdevices/ -hakemistoon halutuilla nimillä (COM1 ja COM2).\cite[s. 21]{wine:manual}
 
-Koska Dosbox on emulaattori, niin siinä pystyy säätämään
-suoritusnopeutta, ruudun resoluutiota/kokoa, yms. varsin monipuolisesti.
-Asetin suoritusnopeuden maksimiin, ruudun koon ikkunamoodissa kokoon
-800x600 ilman näppäinlukitusta, sekä poistin ääniemulaation käytöstä.
-Dosboxissa sarjaportit määritetään samasta asennustiedostosta kuin
-muutkin asetukset, joten sinne piti lisätä vähintään Termanin käyttämä
-sarjaportti käyttöön. (asetustiedosto
-liitteenä){[}ref:http://www.dosbox.com/wiki/Dosbox.conf{]}
-
-
+Dosboxin ja Dosemun asetuksiin tuli määrittää käytetävät sarjaportit. Lisäksi Dosboxista muutettiin suoritusnopeutta ja ruudun kokoa suuremmaksi, jotta käytettävyys olisi parempi \cite{dosbox:conf}. Molemmat ohjelmat jätettiin ikkunointimoodiin, jotta yhteiskäyttö Motomit PC:n kanssa olisi helpompaa.
 
 \section{Testaus}
 Kootun Linux-järjestelmän testaus suoritettiin metsässä hakkuukoneen luona. Rajoittavaksi tekijäksi asettui testikannettavan akun kesto, joka oli vain n. 15 minuuttia. Tässä ajassa saatiin kuitenkin testattua alustavasti Motomit PC- ja Terman-ohjelmistojen toimivuus Winen ja Dosbox/Dosemun avulla suoritettuna. Valitettavasti Virtuaalikoneeseen asennettuja ohjelmia ei ehditty testaamaan ennen kuin akku loppui.
@@ -738,6 +712,7 @@ Kootun Linux-järjestelmän testaus suoritettiin metsässä hakkuukoneen luona. 
 \caption{Motomit PC-ohjelmisto Winessä ajettuna.}
 \end{figure}
 
+\newpage
 \chapter{Yhteenveto}\
 Insinöörityön tavoitteena oli selvittää mahdolliset vaihtoehdot korvata 17v vanhan hakkuukoneen alkuperäinen ajoneuvotietokone uudemalla, hakkuukoneen järjestelmien kanssa yhteensopivalla vaihtoehdolla.
 
@@ -745,6 +720,7 @@ Alkuperäistä ajoneuvotietokonetta tutkimalla, sekä mahdollisia vaihtoehtoja p
 
 Vaatimuksina uudelle tietokoneelle on lähinnä tarvittava olosuhteiden kesto, sekä tarvittavat liittimet. Hakkuukoneen järjestelmät vaativat kaksi sarjaporttiliitäntää, joilla kommunikointi hakkuukoneen ja ajoneuvotietokoneen välillä tapahtuu. Hakkuukoneen sähköjärjestelmä on 24V, joka tulee ottaa huomioon tietokoneen sähkönsyöttöä miettiessä. 
 
+Insinöörityöstä jäi puutumaan alustava analyysi Terman- ja Motomit PC-ohjelmistojen käyttämille protokollalle, koska en tietokoneongelmien vuoksi saanut otettua kaappausta porteista...
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu. Sed arcu lectus auctor vitae, consectetuer et venenatis eget velit. Sed augue orci, lacinia eu tincidunt et eleifend nec lacus. Donec ultricies nisl ut felis, suspendisse potenti. Lorem ipsum ligula ut hendrerit mollis, ipsum erat vehicula risus, eu suscipit sem libero nec erat. Aliquam erat volutpat. Sed congue augue vitae neque. Nulla consectetuer porttitor pede. Fusce purus morbi tortor magna condimentum vel, placerat id blandit sit amet tortor.
 
@@ -766,6 +742,58 @@ Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, lorem velit a
 
 %for conting the pages
 \label{LastPage}~
+
+
+%----------------------------------------------------------------------------------------
+%   APPENDICES 
+%----------------------------------------------------------------------------------------
+%avoid that the last page of bib get appendix header
+\clearpage
+%start appendix
+\appendix
+%no page number for appendix in table of content
+\addtocontents{toc}{\cftpagenumbersoff{chapter}}
+%appendix sections and subsections not in table of content
+\settocdepth{chapter}
+%add "Appendices" in the table of content
+\addappheadtotoc
+%force smaller vertical spacing in table of content
+%!!! There can be some fun depending if the appendices have (sub)sections or not :D
+% You will have to play with these numbers and eventually copy the \pretocmd line on before some \chapter and force another number.
+\addtocontents{toc}{\vspace{11pt}}
+\pretocmd{\chapter}{\addtocontents{toc}{\protect\vspace{-24pt}}}{}{}
+%have Appendix 1 (instead of Appendix A)
+\renewcommand{\thechapter}{\arabic{chapter}} 
+
+\newcommand\liite[1]{
+%each appendix restart page num to one
+\setcounter{page}{1}
+%special counter for appendix TODO: this is a ugly quick hack :( Should find a better way to count the page per appendix.
+\newtotcounter{appx#1}
+%overwrite the header
+\makeevenhead{plain}{}{}{\appname \thechapter \\ \thepage\,(\stepcounter{appx#1}\total{appx#1})}
+\makeoddhead{plain}{}{}{\appname \thechapter \\ \thepage\,(\stepcounter{appx#1}\total{appx#1})}}
+
+\liite{1}
+\chapter{My First Appendix}\label{appx:first}
+
+Note that every appendix will be a chapter.
+
+Sorry for the ugly hack on how to count the total pages per appendix.
+
+
+Of course with section and subsection.
+
+\section{Appendix Section}
+
+And you can cite \cite{tobias:book} stuff, it will go into the main bibliography.
+
+
+\clearpage
+\liite{2}
+\chapter{R examples}
+TODO
+
 
 
 \end{document}
