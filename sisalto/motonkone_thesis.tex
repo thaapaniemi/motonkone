@@ -424,7 +424,7 @@ Result of thesis was that all required communication with harvester is through s
 \setlength{\tabcolsep}{8pt}
 \renewcommand{\arraystretch}{2}
 \begin{tabular}{l p{12cm}}
-x86 & Yleisnimitys Intelin 1987 julkaisemalle CISC-prosessorikäskykannalle. Alkuperäiset 8086/80186/80286 olivat 16-bittisiä, mutta 80386:sta eteenpäin käskykantaa laajennettiin 32-bittiseksi.\\
+x86 & Yleisnimitys Intelin 1987 julkaisemalle CISC-prosessorikäskykannalle. Työssä x86:lla viitataan myös 80386:ssa käytössä olleeseen ja myöhempiin 32-bittisiin versioihin kyseisestä käskykannasta.\\
 PS/2 & Sarjaväyläinen, alunperin IBM PS/2 koneessa ollut liitäntäprotokolla, joka yleistyi PC-koneiden standardiliitännäksi näppäimistölle ja hiirelle ennen USB-protokollaa.\\
 RS232 & Alunperin v. 1962 esitelty asynkroninen sarjaliitäntäprotokolla, joka oli ennen USB-liitännän yleistymistä yleisin PC-koneiden oheislaitteiden liitäntäväylä.\\
 USB & Universal Serial BUS, vuonna 1996 esitelty sarjaväyläinen liitäntä oheislaitteiden liitäntään.\\
@@ -634,7 +634,7 @@ Ohjelmistojen rajapintojen yhteensopivuuskerros-vaihtoehdossa  käytetään käy
 
 \subsection{Virtualisointi}
 
-Vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmää ajetaan virtuaalikoneessa toisen käyttöjärjestelmän päällä. Näin saavutetaan varmin yhteensopivuus ohjelmistotasolla. Oheislaitteiden siirtämisessä virtualisoidun koneen käyttöön on rajoituksia, jotka pitää huomioida virtualisointiohjelmistoja valittaessa. Vaihtoehto kuluttaa muistia enemmän ja on hieman hitaampi kuin natiivi toteutus, hyötysuhteen ollessa \textasciitilde{}90\%  natiivista \cite{virtnat_anadtech}.
+Vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmää ajetaan virtuaalikoneessa toisen käyttöjärjestelmän päällä. Näin saavutetaan varmin yhteensopivuus ohjelmistotasolla. Oheislaitteiden siirtämisessä virtualisoidun koneen käyttöön on rajoituksia, jotka pitää huomioida virtualisointiohjelmistoja valittaessa. Vaihtoehto kuluttaa muistia enemmän ja on hieman hitaampi kuin natiivi toteutus, hyötysuhteen ollessa \textasciitilde{}90\%  natiivista \cite{virtnat_anadtech}. 
 
 \subsection{Järjestelmäemulointi}
 
@@ -714,17 +714,17 @@ Kootun Linux-järjestelmän testaus suoritettiin metsässä hakkuukoneen luona. 
 
 \newpage
 \chapter{Yhteenveto}\
-Insinöörityön tavoitteena oli selvittää mahdolliset vaihtoehdot korvata 17v vanhan hakkuukoneen alkuperäinen ajoneuvotietokone uudemalla, hakkuukoneen järjestelmien kanssa yhteensopivalla vaihtoehdolla.
+Insinöörityön tavoitteena oli selvittää työn kohteena olevan 17v vanhan hakkuukoneen alkuperäisen ajoneuvotietokoneen liitännät ja ohjelmistot, sekä selvittää mahdolliset vaihtoehdot korvata vanha, käyttöikänsä loppupäässä oleva alkuperäinen ajoneuvotietokone uudemmalla, hakkuukoneen järjestelmien kanssa yhteensopivalla vaihtoehdolla.
 
-Alkuperäistä ajoneuvotietokonetta tutkimalla, sekä mahdollisia vaihtoehtoja punnitsemalla päädyttiin testaamaan alkuperäisten ohjelmistojen toimivuutta yhteensopivuusrajapintojen kautta tavallisessa, useamman vuoden vanhassa Linux-käyttöjärjestelmällä varustetussa kannettavassa tietokoneessa. Testaamalla selvisi, että käytettävät alkuperäiset ohjelmistot toimivat USB-sarjaporttiadapterin ja Linuxin kautta suoritettuina. Tästä voidaan päätellä että alkuperäinen Sunit Nero-ajoneuvotietokone on helpostikin korvattavissa uudemmalla ajoneuvotietokoneella tai olosuhteita kestävällä kannettavalla.
+Alkuperäistä ajoneuvotietokonetta tutkimalla, sekä mahdollisia vaihtoehtoja punnitsemalla päädyttiin testaamaan alkuperäisten ohjelmistojen toimivuutta yhteensopivuusrajapintojen kautta tavallisessa, useamman vuoden vanhassa Linux-käyttöjärjestelmällä varustetussa kannettavassa tietokoneessa. Testaamalla selvisi, että käytettävät alkuperäiset ohjelmistot toimivat USB-sarjaporttiadapterin ja Linuxin kautta suoritettuina. Tästä voidaan päätellä että alkuperäinen Sunit Nero-ajoneuvotietokone on helpostikin korvattavissa uudemmalla olosuhteita kestävällä ajoneuvotietokoneella tai kannettavalla.
 
 Vaatimuksina uudelle tietokoneelle on lähinnä tarvittava olosuhteiden kesto, sekä tarvittavat liittimet. Hakkuukoneen järjestelmät vaativat kaksi sarjaporttiliitäntää, joilla kommunikointi hakkuukoneen ja ajoneuvotietokoneen välillä tapahtuu. Hakkuukoneen sähköjärjestelmä on 24V, joka tulee ottaa huomioon tietokoneen sähkönsyöttöä miettiessä. 
 
-Insinöörityöstä jäi puutumaan alustava analyysi Terman- ja Motomit PC-ohjelmistojen käyttämille protokollalle, koska en tietokoneongelmien vuoksi saanut otettua kaappausta porteista...
+Suurimmat haasteet insinöörityön kanssa liittyivät pääsyyn työn kohteena olevan hakkuukoneelle. Hakkuukone oli aktiivisessa käytössä Oriveden metsissä koko insinöörityön ajan ja vierailut koneelle tuli lopuksi järjestettyä alkuperäisen ajoneuvotietokoneen huoltojen yhteydessä. Hakkuukoneen kommunikointi ajoneuvotietokoneen kanssa osoittautui kuitenkin yksinkertaiseksi, joten järjestyneet käyntikerrat riittivät hyvin selvittämään alkuperäisen järjestelmän toimintaa sekä testaamaan mahdollisessa uudessa tietokoneessa käytettäviä ratkaisuja. Insinöörityöstä jäi puutumaan alustava analyysi Terman- ja Motomit PC-ohjelmistojen käyttämille protokollille, koska en testikannettavan huonon akunkeston takia saanut tallennettua näytettä sarjaporttien liikenteestä. Tämän liikenteen avulla olisi voinut myös simuloida hakkuukonetta syöttämällä kaapatun datan mikrokontrollerin tai toisen tietokoneen avulla testikannettavaan.
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu. Sed arcu lectus auctor vitae, consectetuer et venenatis eget velit. Sed augue orci, lacinia eu tincidunt et eleifend nec lacus. Donec ultricies nisl ut felis, suspendisse potenti. Lorem ipsum ligula ut hendrerit mollis, ipsum erat vehicula risus, eu suscipit sem libero nec erat. Aliquam erat volutpat. Sed congue augue vitae neque. Nulla consectetuer porttitor pede. Fusce purus morbi tortor magna condimentum vel, placerat id blandit sit amet tortor.
+Insinöörityössä saavutettiin asetetut tavoitteet ja saatiin pohjustettua uuden tietokoneen vaatimuksia ja vaihtoehtoja. Suunnitelmissa on, että hakkuukoneeseen saadaan hankittua ja rakennettua uusi ajoneuvotietokone varajärjestelmäksi, joka voidaan ottaa käyttöön alkuperäisen ajoneuvotietokoneen hajotessa seuraavan kerran.
 
-Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, lorem velit accumsan velit vel mattis libero nisl et sem. Proin interdum maecenas massa turpis sagittis in, interdum non lobortis vitae massa. Quisque purus lectus, posuere eget imperdiet nec sodales id arcu. Vestibulum elit pede dictum eu, viverra non tincidunt eu ligula.
+Lopuksi haluaisin kiittää rakasta vaimoani, joka oikolukee ja muotoilee tämän insinöörityön julkaistavaan kuntoon, sekä Arto Saalia, jonka hakkuukoneeseen insinöörityö kohdistui ja joka auttoi käytännön järjestelyissä.
 
 
 %----------------------------------------------------------------------------------------
