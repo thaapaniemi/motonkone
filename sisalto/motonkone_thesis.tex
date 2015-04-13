@@ -670,7 +670,7 @@ Sarjaporttiliittimet ovat poistuneet kannettavista USB:n yleistyttyä jo 2000-lu
 Rikkinäinen näppäimistö korvataan erillisellä USB-väylään liitettävällä näppäimistöllä testauksen ajaksi. Sähkönsyöttö testauksen ajan hoituu kannettavan omalla akulla, jossa on vielä kapasiteettia pitää kannettava käynnissä testauksen ajan.
 
 \subsection{USB-Sarjaportti -adapteri}
-Käytettävä USB-sarjaporttiadapteri on eBaystä testaukseen hankittu 2-porttinen Unitek USB to Dual Serial Cable Y-106 \cite{serial:unitek}. Y-106 -adapteri käyttää MosChip Semiconductorin MCS7820 -piiriä muunnokseen. Adapteri valittiin, koska siinä oli tarvittavat 2 sarjaporttia, sen myyntihinta oli edullinen (n. 25€ sisältäen toimituksen) sekä käytetylle muunninpiirille löytyi ajurituki sekä Windows- että Linux -käyttöjärjestelmille.
+Käytettävä USB-sarjaporttiadapteri on eBaystä testaukseen hankittu 2-porttinen Unitek USB to Dual Serial Cable Y-106 \cite{serial:unitek}. Y-106 -adapteri käyttää MosChip Semiconductorin MCS7820 -piiriä muunnokseen. Adapteri valittiin, koska siinä oli tarvittavat 2 sarjaporttia, sen myyntihinta oli edullinen (n. 25€ sisältäen toimituksen) ja käytetylle muunninpiirille löytyi ajurituki sekä Windows- että Linux -käyttöjärjestelmille.
 
 
 \section{Käytetyt ohjelmat}
@@ -723,17 +723,18 @@ Alkuperäistä ajoneuvotietokonetta tutkimalla sekä mahdollisia vaihtoehtoja pu
 
 Vaatimuksina uudelle tietokoneelle on lähinnä tarvittava olosuhteiden kesto sekä tarvittavat liittimet. Hakkuukoneen järjestelmät vaativat kaksi sarjaporttiliitäntää, joilla kommunikointi hakkuukoneen ja ajoneuvotietokoneen välillä tapahtuu. Hakkuukoneen sähköjärjestelmä on 24V, mikä tulee ottaa huomioon tietokoneen sähkönsyöttöä pohdittaessa. 
 
-Suurimmat haasteet insinöörityön kanssa liittyivät pääsyyn työn kohteena olevan hakkuukoneelle. Hakkuukone oli aktiivisessa käytössä Oriveden metsissä koko insinöörityön ajan ja vierailut koneelle tuli lopulta järjestettyä alkuperäisen ajoneuvotietokoneen huoltojen yhteydessä. Hakkuukoneen kommunikointi ajoneuvotietokoneen kanssa osoittautui kuitenkin yksinkertaiseksi, joten järjestyneet käyntikerrat riittivät hyvin selvittämään alkuperäisen järjestelmän toimintaa sekä testaamaan mahdollisessa uudessa tietokoneessa käytettäviä ratkaisuja. Insinöörityöstä jäi puuttumaan alustava analyysi Terman- ja Motomit PC-ohjelmistojen käyttämille protokollille, koska en testikannettavan huonon akunkeston takia saanut tallennettua näytettä sarjaporttien liikenteestä. Tämän liikenteen avulla olisi voinut myös simuloida hakkuukonetta syöttämällä kaapatun datan mikrokontrollerin tai toisen tietokoneen avulla testikannettavaan.
+Suurimmat haasteet insinöörityön kanssa liittyivät pääsyyn työn kohteena olevalle hakkuukoneelle. Hakkuukone oli aktiivisessa käytössä Oriveden metsissä koko insinöörityön ajan ja vierailut koneelle saatiin lopulta järjestettyä alkuperäisen ajoneuvotietokoneen huoltojen yhteydessä. Hakkuukoneen kommunikointi ajoneuvotietokoneen kanssa osoittautui kuitenkin yksinkertaiseksi, joten järjestyneet käyntikerrat riittivät hyvin selvittämään alkuperäisen järjestelmän toimintaa sekä testaamaan mahdollisessa uudessa tietokoneessa käytettäviä ratkaisuja. Insinöörityöstä jäi puuttumaan alustava analyysi Terman- ja Motomit PC-ohjelmistojen käyttämille protokollille, koska en testikannettavan huonon akunkeston takia saanut tallennettua näytettä sarjaporttien liikenteestä. Tämän liikenteen avulla olisi voinut myös simuloida hakkuukonetta syöttämällä kaapatun datan mikrokontrollerin tai toisen tietokoneen avulla testikannettavaan.
 
 Insinöörityössä saavutettiin asetetut tavoitteet ja saatiin pohjustettua uuden tietokoneen vaatimuksia ja vaihtoehtoja. Suunnitelmissa on, että hakkuukoneeseen saadaan hankittua ja rakennettua uusi ajoneuvotietokone varajärjestelmäksi, joka voidaan ottaa käyttöön alkuperäisen ajoneuvotietokoneen hajotessa seuraavan kerran.
 
-Lopuksi haluaisin kiittää rakasta vaimoani kannustuksesta ja oikolukuavusta, poikaani Tuukka Haapaniemeä toimimisesta apulaisena alkuperäisen koneen huollon ja tutkimisen yhteydessä sekä Arto Saalia, jonka hakkuukoneeseen insinöörityö kohdistui.
+Lopuksi haluaisin kiittää rakasta vaimoani kannustuksesta ja oikolukuavusta, poikaani Tuukka Haapaniemeä toimimisesta apulaisena alkuperäisen koneen huollon ja tutkimisen yhteydessä sekä Arto Saalia, jonka hakkuukoneeseen insinöörityö kohdistui.\newline
 
-\newline
+%\newline
+
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.800\textwidth]{/home/th/repos/motonkone/pictures/tuukka_auttaa.jpg}
+\includegraphics[width=0.600\textwidth]{/home/th/repos/motonkone/pictures/tuukka_auttaa.jpg}
 \caption{Tuukka Haapaniemi valmistelemassa ajoneuvotietokoneen huoltoa}
 \end{figure}
 
