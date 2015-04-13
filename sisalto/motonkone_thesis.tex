@@ -26,11 +26,12 @@
 \def\thesislang{finnish} %change this depending on your language
 \author{Tomi Haapaniemi}
 \def\thesis{Insinöörityö/Thesis}
-\def\alaotsikko{}
+\def\alaotsikko{Sunit Nero / Valmet 901 II}
 %\def\alaotsikko{Alaotsikko/Subtitle}
 
 %Finnish section
-\def\otsikko{Työnimi: Hakkuukoneen ajoneuvotietokoneen päivitysmahdollisuudet uudempaan}
+\def\otsikko{Ajoneuvotietokoneen päivitysmahdollisuudet hakkuukoneessa}
+\def\tiivistelmaotsikko{ \otsikko : \alaotsikko}
 \def\tutkinto{Insinööri (AMK)}
 \def\kohjelma{Tietotekniikan koulutusohjelma}
 \def\suuntautumis{Ohjelmistotekniikka/Sulautettu tietotekniikka}
@@ -41,7 +42,7 @@ Keijo Länsikunnas, Lehtori%\newline
 \def\pvm{\ddmmyyyydate\today}
 
 %English section, for abstract
-\title{Working title: Possibilities to upgrade embedded computer of Harvester}
+\title{Possibilities to upgrade Sunit Nero -embedded computer in Valmet 901 II -Harvester}
 \def\metropoliadegree {Bachelor of Engineering}
 \def\metropoliadegreeprogramme {Degree Programme in Information Technology}
 \def\metropoliaspecialisation {Software Engineering/Embedded Engineering}
@@ -303,13 +304,14 @@ xleftmargin=1cm
 \begin{tabular}{ | p{4,7cm} | p{10,3cm} |}
   \hline
   Tekijä(t) \newline
-  Otsikko \newline\newline 
+  Otsikko \newline\newline
+
   Sivumäärä \newline
   Aika 
   & 
   \makeatletter
   \@author \newline 
-  \otsikko \newline\newline 
+  \tiivistelmaotsikko \newline\newline   
   \makeatother
   \pageref*{LastPage} sivua + \total{chapter} liitettä \newline %! if no appendices, risk to count total of chapter :D
   \pvm		
@@ -324,13 +326,13 @@ xleftmargin=1cm
   \\ \hline
   \multicolumn{2}{|p{15cm}|}{\begin{singlespacing}\vspace{-22pt}
   %Tämä on tiivistelmän ensimmäinen kappale. Tiivistelmän kappaleet loppuvat komentoon newline, jotta saadaan yksi tyhjä rivi aikaiseksi. \newline
-  Insinöörityön tarkoituksena on selvittää, onko mahdollista korvata 17 v. vanhan hakkuukoneen ajoneuvotietokone uudemmalla, siten ettei hakkuukoneen järjestelmiin tarvitse koskea vaan korvaavassa ajoneuvotietokoneessa toimisivat alkuperäisessä ajoneuvotietokoneessa käytetyt ohjelmistot.\newline
+  Tämän insinöörityön tarkoituksena on selvittää, onko mahdollista korvata 17 vuotta vanhan Valmet 901 II- hakkuukoneen ajoneuvotietokone uudemmalla siten, ettei hakkuukoneen järjestelmiin tarvitse koskea, vaan korvaavassa ajoneuvotietokoneessa toimisivat alkuperäisessä ajoneuvotietokoneessa käytetyt ohjelmistot.\newline
 
-  Työ tehtiin yksityiselle yrittäjälle ja työn tarkoitus on antaa lisäselvitystä käytössä olevan hakkuukoneen käyttöiän ennusteelle koneen tietotekniikan osalta. Tavoitteena oli saada hakkuukoneeseen toimintakuntoinen, fyysisiltä ulkomitoiltaan yhteensopiva ajoneuvotietokone alkuperäisen tilalle, mutta alkuperäisen järjestelmän osoitettua vielä korjauskelpoiseksi, sekä aikataulullisista syistä päädyttiin rajaamaan insinöörityö olemaan vain selvitys, että onko päivitys edes mahdollista järkevän budjetin ja aikataulun rajoissa.\newline
+  Työ tehtiin yksityiselle yrittäjälle. Työn tarkoituksena on tuottaa lisää tietoa käytössä olevan hakkuukoneen käyttöiän ennusteesta koneen tietotekniikan osalta. Tavoitteena oli saada hakkuukoneeseen toimintakuntoinen, fyysisiltä ulkomitoiltaan yhteensopiva ajoneuvotietokone alkuperäisen tilalle. Koska alkuperäinen järjestelmä osoittautuikin vielä korjauskelpoiseksi ja korvaavan järjestelmän tuottamisen arvioitiin vievän liikaa aikaa, päädyttiin insinöörityö rajaamaan selvitykseksi järkevän budjetin ja aikataulun rajoissa olevasta päivitysmahdollisuudesta.\newline
 
-  Haasteita työlle asetti hakkuukoneen sijainti, joka oli insinöörityön aikana n. 30 km metsään Oriveden keskustasta. Orivedelle on matkaa Leppävaarasta, Espoosta n. 200 km. Insinöörityön teon aikana käytiin hakkuukoneen luona yhteensä kolme kertaa, kaikki kerrat alkuperäisen hakkuukoneen ajoneuvotietokoneen huoltojen yhteydessä.\newline
+  Haasteita työlle asetti hakkuukoneen sijainti, joka oli insinöörityön aikana noin 30 km metsään Oriveden keskustasta. Orivedelle on matkaa kotoani Kirkkonummelta noin 200 kilometriä. Insinöörityön teon aikana käytiin alkuperäisen ajoneuvotietokoneen huoltojen yhteydessä hakkuukoneen luona yhteensä kolme kertaa. Hakkuukoneella toteutettujen huoltojen lisäksi laitetta ja sen osia huollettiin etätyönä yrittäjän lähetettyä ne postitse, jolloin matka Orivedelle ei ollut välttämätön.\newline
 
-  Työssä selviää, että hakkuukoneen järjestelmien kommunikointi ajoneuvotietokoneen kanssa tapahtuu standardin RS-232 -sarjaväylän kautta ja käytettävät ohjelmat on mahdollista saada toimimaan uudemmissa käyttöjärjestelmissä, joka mahdollistaa uudempien ajoneuvotietokoneiden tai fyysiseltä kestävyydeltään vastaavien tietokoneiden käytön hakkuukoneessa ilman muutoksia hakkuukoneen järjestelmiin.\newline
+  Työssä selviää, että hakkuukoneen järjestelmien kommunikointi ajoneuvotietokoneen kanssa tapahtuu standardin RS-232 -sarjaväylän kautta ja käytettävät ohjelmat on mahdollista saada toimimaan uudemmissa käyttöjärjestelmissä. Tämä mahdollistaa uudempien ajoneuvotietokoneiden tai fyysiseltä kestävyydeltään vastaavien tietokoneiden käytön hakkuukoneessa ilman muutoksia hakkuukoneen järjestelmiin.\newline
 
 
   
@@ -355,7 +357,7 @@ xleftmargin=1cm
   & 
   \makeatletter
   \@author \newline
-  \@title \newline\newline
+  \@title \newline
   \pageref*{LastPage} pages + \total{chapter} appendices \newline %! if no appendices, risk to count total of chapter :D
   \IfLanguageName {finnish} {\foreignlanguage{english}{\longdate\@date}} {\@date}
   \makeatother
@@ -370,13 +372,13 @@ xleftmargin=1cm
   \\ \hline
   \multicolumn{2}{|p{15cm}|}{\begin{singlespacing}\vspace{-22pt}
   
-The purpose of this thesis is to find out whether it is possible to replace original computer in 17 y. old harvester with newer computer so that there is no need to do changes to harvester's electronical systems. Therefore original communication protocols and controlling software must work in new computer. User Experience of system with new computer should be similar with original computer.\newline
+The purpose of this thesis is to find out whether it is possible to replace the original computer in 17 y. old harvester with a newer computer so that there is no need to do any changes to the harvester's electronical systems. Therefore original communication protocols and controlling software must work in the new computer. User Experience of system with the new computer should be similar with the original computer.\newline
 
-This thesis was done for private entrepreneur and results is intended to provide additional information about the life expection of harverster from computer systems viewpoint. The original goal of thesis was to produce drop in replacement computer for original systems, but because the original system is proven yet repairable and time estimation for producing durable replacement was too high it was decided to limit the thesis to be only report about possibility to upgrade original system with reasonable budget and time.\newline
+This thesis was done for a private entrepreneur and the results are intended to provide additional information about the life expectation of harvester from the viewpoint of computer systems. The original goal of the thesis was to produce a drop in -replacement computer for the original systems, but because the original system proved to be repairable and the time estimation for producing a durable replacement was too high it was decided to limit the thesis to be only a report about the possibility to upgrade the original system with reasonable budget and time.\newline
 
-Challenges during the thesis was location of harvester, which was the approx. 30 km to forest from the Orivesi city center. Distance to Orivesi is approx. 200 km from Leppävaara, Espoo. Harvester was visited total of three times, all visits took plave after maintenance of harvester's original computer.\newline
+The location of the harvester, which was approx. 30 km to forest from the Orivesi city center set some challenges for the thesis. Distance to Orivesi is approx. 200 kilometres from my home at Kirkkonummi. Harvester was visited total of three times. All visits took place after maintenance of the harvester's original computer. In addition the entrepreneur sent some parts for maintenance by mail so that a visit to Orivesi wasn't necessary.\newline
 
-Result of thesis was that all required communication with harvester is through standard RS-232 serial bus. Also all required software was proven work in newer operating systems, which allows possible new system be selected from broader range of availabe rugged computer models without any modifications needed to harvester's electronical systems.\newline
+Result of the thesis is that all required communication with harvester is through standard RS-232 serial bus. All required software was proven to work in newer operating systems which allows the possible new system to be selected from a broader range of availabe rugged computer models without any modifications to harvester's electronical systems.\newline
 
 
   \end{singlespacing}} \\[14cm] \hline
@@ -453,26 +455,112 @@ Apteeraus & Puun rungon jako eri puutavaralajeiksi mitta- ja laatuvaatimukset hu
 
 \chapter{Johdanto}
 
-Tietokoneiden käyttöikä on varsinkin vaativissa kohteissa rajallinen. Kun järjestelmät vanhenevat, niin huollon tarve lisääntyy, mutta varaosien saatavuus vähenee. Viimein voi tulla eteen piste, missä ainoa mahdollinen vaihtoehto on korvata vanha järjestelmä uudella. Tämä saattaa vaatia suuriakin muutostöitä myös järjestelmää käyttäviin laitteisiin ja usein on järkevämpää vaihtaa koko kohde kuin tehdä suuria muutostöitä kohteeseen.
+Tietokoneiden käyttöikä on varsinkin vaativissa kohteissa rajallinen. Kun järjestelmät vanhenevat, niin huollon tarve lisääntyy, mutta varaosien saatavuus vähenee. Viimein voi tulla eteen piste, jossa ainoa mahdollinen vaihtoehto on korvata vanha järjestelmä uudella. Tämä saattaa vaatia suuriakin muutostöitä myös järjestelmää käyttäviin laitteisiin ja usein on järkevämpää vaihtaa koko kohde kuin tehdä siihen suuria muutostöitä.
 
-Insinöörityön kohteena on vuonna 1998 valmistetun hakkuukoneen ajoneuvotietokoneen päivitysmahdollisuuksien tutkiminen. Alkuperäinen, myös vuodelta 1998 oleva ajoneuvotietokoneessa on alkanut näkyä ikääntymisen merkit. Laitteesta hajoaa yksitellen komponentit, se ylikuumenee varsinkin kesäisin siten ettei se pysy paria tuntia kauempaa kerrallaan päällä, ja osien saatavuus tähän 17v vanhaan tietokoneeseen alkaa olemaan hankalaa.
+Insinöörityön kohteena on vuonna 1998 valmistetun hakkuukoneen ajoneuvotietokoneen päivitysmahdollisuuksien tutkiminen. Alkuperäisessä, myös vuodelta 1998 olevassa ajoneuvotietokoneessa on alkanut näkyä ikääntymisen merkkejä. Laitteen komponentit hajoavat yksitellen ja se ylikuumenee etenkin kesäisin siten, että käyttöaika on vain pari tuntia kerrallaan. Osien saatavuus näin vanhaan tietokoneeseen alkaa luonnollisesti olemaan hankalaa.
 
-Insinöörityö pyrkii selvittämään hakkuukoneen ja ajoneuvotietokoneen väliset liitännät, sekä ajoneuvotietokoneen ohjelmistot ja etsimään mahdolliset korvaavat ratkaisut, jotka kestävät pölyn, lämpötilan mutokset, sekä tärinän mille ajoneuvotietokone altistuu hakkuukoneessa. Tarkoituksena olisi että korvaava järjestelmä vaatisi mahdollisimman vähän muutoksia hakkuukoneeseen, sekä olisi hakkuukoneen kuljettajalle toiminnallisuudeltaan vastaava kuin alkuperäinen järjestelmä.
+Insinöörityö pyrkii selvittämään hakkuukoneen ja ajoneuvotietokoneen väliset liitännät sekä ajoneuvotietokoneen ohjelmistot ja etsimään mahdolliset korvaavat ratkaisut. Tarkoituksena on, että korvaava järjestelmä vaatisi mahdollisimman vähän muutoksia hakkuukoneeseen sekä olisi hakkuukoneen kuljettajalle toiminnallisuudeltaan vastaava kuin alkuperäinen järjestelmä. 
 
-Työn haasteita ovat hakkuukoneen sijainti (yli 200km päässä metsässä), tarvittava pölyn, tärinän ja lämpötilan kesto, sekä alkuperäisten ohjelmien mahdollisesti asettamat vaatimukset.
+Haasteita työlle asettavat huollettavan hakkuukoneen sijainti yli 200 kilometrin päässä sekä alkuperäisten ohjelmien mahdollisesti asettamat vaatimukset. Lisäksi on huomioitava hakkuukoneen käyttöympäristö, joka asettaa ajoneuvotietokoneelle erityisiä vaatimuksia pölyn siedon, lämpötilan muutosten sekä tärinän keston suhteen.
 
 \newpage
-\chapter{Lainsäädäntö ja standardit}
-Lain ja olosuhteiden asettamia vaatimuksia ajoneuvotietokoneelle on käsitelty seuraavissa direktiiveissä, sekä standardeissa.
+
+\chapter{Valmet 901 II -hakkuukone}
+
+Hakkuukoneet eli motot (monitoimikoneet) ovat metsätraktoreita, joiden tehtävänä on hakkuun kaikki työvaiheet. Hakkuukoneet sisältävät tietokoneohjatut mittalaitteet, joilla puiden katkonta ja mittaus saadaan hoidettua tarkasti.
+
+Työn kohteena oleva hakkuukone on nelipyöräinen Valmet 901 II vuosimallia 1998. Kone on otettu käyttöön joulukuussa 1998. Värityksen on Valmetin vanhempi punamusta-väritys. Valmet 901 on Valmetin sen aikaisen malliston pienin hakkuukone, joka on tarkoitettu ensisijaisesti harvennushakkuisiin. Alkuperäinen hakkuupää on jälkikäteen vaihdettu toiseksi, jolloin myös apteeraukseen käytettävä ohjelmisto vaihtui. Lisäksi hakkuukoneen alkuperäinen teleskooppipuomisto on vaihdettu teleskooppipuomistoon.
+\newline
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.800\textwidth]{/home/th/repos/motonkone/pictures/moto_2.jpg}
+\caption{Valmet 901 II}
+\end{figure}
+
+\section{Motomit-mittalaite}
+
+Työn kohteena olevaan hakkuukoneeseen on jälkiasennettu Motomit-IT
+-mittalaite, joka on korvannut hakkuukoneen alkuperäiset mittalaitteet
+ja ohjelmiston. Motomit IT tukee StanForD-standardin mukaista
+apteerausohjeiden tiedonsiirtoa. Motomit IT hoitaa sisäisen
+kommunikaation CAN-väylää pitkin. Kommunikaatiossa alkuperäisen
+ajoneuvotietokoneen kanssa käytetään RS232-väylää ja MotomitPC
+-ohjelmistoa. (P. L. Oy 2008)
+\newline
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.800\textwidth]{/home/th/repos/motonkone/pictures/motomit_kaavio.png}
+\caption{Motomit IT:n moduulikaavio}
+\end{figure}
+\newpage
+
+Motomit PC on Motomit IT:n Windows-pohjainen näyttö- ja hallintaohjelmisto Motomit IT-järjestelmälle. Motomit PC kommunikoi Motomit IT:n MCI-moduulin (Mitron CAN Interface) kanssa RS-232 -sarjaväylän avulla.
+ \cite{motomit:esite}.
+\newline
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\hsize]{/home/th/repos/motonkone/pictures/motomit_original.jpg}
+\caption{Motomit PC Nero-ajoneuvopc:n ruudulla}
+\end{figure}
+
+\section{Ajoneuvo-PC Sunit Nero / Valmet Maxi}
+
+Hakkuukoneessa käytetty tietokone on Sunitin valmistama Sunit Nero (myös nimellä Valmet MAXI)-ajoneuvotietokone. Nero on paketoitu näyttöineen ja keskusyksikköineen yhdeksi all-in-one -tyyliseksi iskunkestäväksi paketiksi. Vaikka kyseessä ei olekaan sama yksilö mikä on alunperin ollut kiinni kyseisessä hakkuukoneeessa, on se samanlainen kuin alkuperäinen ja samaa ikäluokkaa (noin 17 vuotta, vuodelta 1998). 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.000\hsize]{/home/th/repos/motonkone/pictures/valmet_maxi.jpg}
+\caption{Sunit Nero / Valmet Maxi}
+\end{figure}
+
+Emolevyn northbridge-ohjaimena on SiS 5571-ohjain. Tässä Nero-yksilössä prosessorina on AMD:n 300 MHz Socket 7-kantainen K6-prosessori vuodelta 1998 (alkuperäinen prosessori on vaihdettu useita vuosia sitten tehdyn huollon yhteydessä toiseen), 64 Mb keskusmuistia. Tietokoneen kiintolevynä oli tutkintahetkellä Western Digitalin 120 Gb:n Scorpio Blue-kiintolevy, joka sekin on vaihdettu kyseiseen yksilöön useaan kertaan. Nero-tietokoneesta löytyy 3,5" levykseasema, sekä cd-asema. Näyttöpaneelissa on 12" LCD-paneeli 800x600 pikselin resoluutiolla. Kuvasuhde on 4:3. Lisäksi koneessa on NiMH-akku BIOSin asetusten säilyttämiseen. Tietokoneesta löytyy liitännät sekä 12V että 24V jännitteille.
+\newline\newline
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.500\hsize]{/home/th/repos/motonkone/pictures/processor.jpg}
+\caption{AMD K6 66 MHz}
+\end{figure}
+
+Sunitin huolto on ilmoittanut, etteivät he suostu/pysty enää huoltamaan näin vanhaa tietokonetta, mikä on myös osasyynä korvaavien vaihtoehtojen kartoittamiseen.
+
+Sunit Nerosta löytyy 3+1 sarjaporttiliitäntää (3x 9pin standardi RS-232, sekä yksi yhdistetty liitin), rinnakkaisporttiliitin (25pin Centronics), Sunitin oma BUS-liitin PS/2 hiirelle ja näppäimistölle, yhdistetty virta/GPRS/GPS -liitin sekä Data I/O-liitin jonka tarkoituksesta ei ole tietoa. Käytössä on kolme sarjaporttia, sekä virtaliitin. Sarjaporteista yksi on alkuperäiselle Terman-ohjaukselle, yksi Motomit IT:lle ja kolmas on luultavasti käytöstä poistettu GPS/GSM-moduuli.
+\newline\newline
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\hsize]{/home/th/repos/motonkone/pictures/sunit_nero_liitannat.jpg}
+\caption{Sunit Neron liitännät}
+\end{figure}
+
+\section{Valmet Terman}
+Terman on Valmetin alkuperäinen DOS-pohjainen hallinta- ja apteerausohjelmisto käytettävälle hakkuukoneelle. Ohjelmiston versio on riippuvainen käytettävästä hakkuukoneesta. Kommunikointi hakkukoneen kanssa tapahtuu 9600 bitin nopeudella RS-232-sarjaporttia käyttäen. Koska mittauslaite on vaihdettu Motomit IT-järjestelmälle, käytetään Termania lähinnä hakkuukoneen ajo- ja moottoriasetusten hallintaan.
+\newline\newline
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\hsize]{/home/th/repos/motonkone/pictures/terman_original.jpg}
+\caption{Terman Nero-ajoneuvopc:n ruudulla}
+\end{figure}
+
+\newpage
+\chapter{Suunnittelu}
+
+Loppukäyttäjän (hakkuukoneen kuljettajan) toiveena on, että tietokoneen vaihtuessa käytössä olevat Terman- ja Motomit PC-ohjelmistot toimivat uudessa koneessa samaan tapaan kuin vanhassa ja näkyvät samalla tavalla kuin ohjelmistot aiemminkin ovat näkyneet. Loppukäyttäjän toiveiden lisäksi on huomioitava tietokoneen käyttöolosuhteiden asettamat vaatimukset sekä aiheeseen liittyvä lainsäädäntö ja standardit.
+
+\section{Lainsäädäntö ja standardit}
+Lain ja olosuhteiden asettamia vaatimuksia ajoneuvotietokoneelle on käsitelty seuraavissa direktiiveissä ja standardeissa:
 
 
-\section{EU-direktiivi 2004/104/EY}
+\subsubsection{EU-direktiivi 2004/104/EY}
 
 Direktiivi 2004/104/EY (Autoteollisuuden EMC-direktiivi) määrittää, että
-1.7.2006 alkaen valmistettujen ajoneuvojen ja kiinteiästi asennetun
+1.7.2006 alkaen valmistettujen ajoneuvojen ja kiinteästi asennetun
 ajoneuvoelektroniikan aiheuttamat säteilypäästöt ja päästöjen sietokyky
 mitataan kyseisen direktiivin mukaisesti. Direktiiviin on julkaistu
-lisäys 2005/83/EY, joka tarkentaa direktiiviä. Uusi direktiivi korvaan
+lisäys 2005/83/EY, joka tarkentaa direktiiviä. Uusi direktiivi korvaa
 aiemman direktiivin 95/54/EY.
 
 Uusi direktiivi vaatii tyyppihyväksynnän vain laitteilta, joilla on
@@ -482,7 +570,7 @@ tyyppihyväksyttyjä, pitää täyttää kuitenkin EMC-direktiivin 89/336/ETY
 tai radio- ja telepäätelaitedirektiivin 1999/5/EY vaatimukset. (S. Oy
 2006) \cite{1999/5/EY} \cite{89/336/ETY}
 
-\section{EMC-direktiivi 89/336/ETY ja
+\subsubsection{EMC-direktiivi 89/336/ETY ja
 2004/108/EY}
 
 EMC-direktiivi 89/336/ETY määrittelee ainoastaan laitteistolta
@@ -496,133 +584,37 @@ mm. erotteli kiinteille asennuksille ja laitteille tehtävät asennukset,
 sekä yksinkertaisti vaatimustenmukaisuuden arviointimenettelyä.
 \cite{2004/108/EY}
 
-\section{Radio- ja telepäätelaitedirektiivi
+\subsubsection{Radio- ja telepäätelaitedirektiivi
 1999/5/EY}
 
-Radio- ja telepäätelaitedirektiivi 1999/5/EY määrittää radio ja
-telepäätelaitteiden yhteensopivuuden euroopan laajuisesti. Kaikkiin
+Radio- ja telepäätelaitedirektiivi 1999/5/EY määrittää radio- ja
+telepäätelaitteiden yhteensopivuuden Euroopan laajuisesti. Kaikkiin
 direktiivin piiriin kuuluvien laitteiden tulee olla turvallisia
-käyttäjälle ja muille henkilöille, sekä täyttää vaaditut
+käyttäjälle ja muille henkilöille sekä täyttää vaaditut
 suojavaatimukset sähkömagneettisen yhteensopivuuden osalta. Lisäksi
-direktiivi määrittää että laitteistojen tulee olla rakennettuja siten
+direktiivi määrittää, että laitteistojen tulee olla rakennettuja siten,
 että ne käyttävät tehokaasti radioviestintään varattua spektriä ja
 resursseja. Tietyille laiteluokille on lisäksi määritelty vielä muita
-vaadittuja lisäominaisuuksia, kuten yksityisyyden suojan takaamisen,
-yhteensopivuuden muiden laitteistojen välillä, sisältävät petoksia
-ehkäiseviä ominaisuuksia, tukevat hätäpalveluihin pääsyn takaavia
-ominaisuuksia ja/tai sisältävät ominaisuuksia joilla laitteistojen
+vaadittuja lisäominaisuuksia kuten yksityisyyden suojan takaaminen,
+yhteensopivuus muiden laitteistojen välillä, petoksia
+ehkäisevien ominaisuuksien sisältäminen, tuki hätäpalveluihin pääsyn takaaville
+ominaisuuksille ja/tai ominaisuudet, joilla laitteistojen
 käyttö tehdään helpommaksi vammaisille {[}@1999/5/EY{]}. Direktiivi
 1999/5/EY on kumottu 13.6.2016 alkaen direktiivillä 2014/53/EU
 radiolaitteiden asettamista saataville markkinoilla koskevan
 jäsenvaltioiden lainsäädännön yhdenmukaistamisesta. {[}@2014/53/EU{]}
 
-\section{IP-suojaluokitus}
+\subsubsection{IP-suojaluokitus}
 
 IP-suojaluokitus on standardissa IEC 60529 määritetty järjestelmä sähkölaitteiden tiiveyden määrittämiseksi. IP- luokitus kertoo laitteiden suojauksen pölyä ja vettä vastaan. \cite{IEC60529}
 
-\section{IP54}
+\subsubsection{IP54}
 
 IP54-suojaluokitetut tuotteet ovat pölysuojattuja (ei täydellistä tiiveyttä, mutta ei pölykertymiä), sekä roiskesuojattuja.
 
-\section{IP67/66}
+\subsubsection{IP67/66}
 
 IP67/66 -suojaluokitetut tuotteet ovat täysin pölytiiviitä ja kestävät suurella paineella tulevan vesiruiskun. IP67/66-tuotteet kestävät tärinää ja iskuja 5M3-vaatimusten mukaisesti. (DIN EN 60721-3-5, MIL-STD 810F.)
-
-\newpage
-\chapter{Taustaa}
-\section{Hakkuukoneet}
-
-Hakkuukoneet eli motot (monitoimikoneet) ovat metsätraktoreita, joiden tehtävänä on hakkuun kaikki työvaiheet. Hakkuukoneet sisältävät tietokoneohjatut mittalaitteet joilla puiden katkonta ja mittaus saadaan hoidettua tarkasti.
-
-\subsection{Hakkuukone Valmet 901}
-
-Työn kohteena oleva hakkuukone on nelipyöräinen Valmet 901 II, vuosimallia 1998 ja kone on myös otettu käyttöön joulukuussa 1998. Värityksenä Valmetin vanhempi punamusta-väritys. Valmet 901 on Valmetin sen aikaisen malliston pienin hakkuukone, joka on tarkoitettu ensisijaisesti harvennushakkuisiin. Alkuperäinen hakkupää on jälkikäteen vaihdettu toiseksi, jolloin myös apteeraukseen käytettävä ohjelmisto vaihtui toiseksi. Hakkuukoneeseen on lisäksi vaihdettu alkuperäinen teleskooppipuomisto liikeratapuomiksi.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=1.000\textwidth]{/home/th/repos/motonkone/pictures/moto_2.jpg}
-\caption{Valmet 901 II}
-\end{figure}
-
-\subsection{Motomit-mittalaite}
-
-Kohteena olevaan Valmet 901-hakkuukoneeseen on jälkiasennettu Motomit-IT
--mittalaite, joka on korvannut hakkuukoneen alkuperäiset mittalaitteet
-ja ohjelmiston hakkuussa. Motomit IT tukee StanForD-standardin mukaista
-apteerausohjeiden tiedonsiirtoa. Motomit IT hoitaa sisäisen
-kommunikaation CAN-väylää pitkin. Kommunikaatiossa alkuperäisen
-ajoneuvotietokoneen kanssa käytetään RS232-väylää ja MotomitPC
--ohjelmistoa. (P. L. Oy 2008)
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=1.000\textwidth]{/home/th/repos/motonkone/pictures/motomit_kaavio.png}
-\caption{Motomit IT:n moduulikaavio}
-\end{figure}
-
-\section{Alkuperäinen PC-järjestelmä}
-
-\subsection{Ajoneuvo-PC Sunit Nero / Valmet Maxi}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=1.000\hsize]{/home/th/repos/motonkone/pictures/valmet_maxi.jpg}
-\caption{Sunit Nero / Valmet Maxi}
-\end{figure}
-
-Hakkuukoneessa käytetty tietokone on Sunitin valmistama Sunit Nero (myös nimellä Valmet MAXI)-ajoneuvotietokone. Nero on paketoitu näyttöineen ja keskusyksikköineen yhdeksi all-in-one -tyyliseksi iskunkestäväksi paketiksi. Vaikka kyseessä ei olekaan sama yksilö mikä on alunperin ollut kiinni kyseisessä hakkuukoneeessa, on se samanlainen kuin alkuperäinen ja samaa ikäluokkaa (n. 17v, vuodelta 1998 ). 
-
-Emolevyn northbridge-ohjaimena on SiS 5571-ohjain. Tässä Nero-yksilössä prosessorina on AMD:n 300 MHz Socket 7-kantainen K6-prosessori vuodelta 1998 (alkuperäinen prosessori on vaihdettu useita vuosia sitten tehdyn huollon yhteydessä toiseen), 64 Mb keskusmuistia. Tietokoneen kiintolevynä oli tutkintahetkellä Western Digitalin 120 Gb:n Scorpio Blue-kiintolevy, joka sekin on vaihdettu kyseiseen yksilöön useaan kertaan. Nero-tietokoneesta löytyy 3,5" levykseasema, sekä cd-asema. Näyttöpaneeli on 4:3-kuvasuhteella ja 800x600 pikselin resoluutiolla oleva 12" LCD-paneeli. Koneessa on lisäksi NiMH-akku BIOSin asetusten säilyttämiseen. Tietokoneesta löytyy liitännät sekä 12V ja 24V jännitteille.
-
-Sunitin huolto on ilmoittanut, etteivät he suostu/pysty enää huoltamaan näin vanhaa tietokonetta, joka on osasyynä korvaavien vaihtoehtojen kartoittamiseen.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.500\hsize]{/home/th/repos/motonkone/pictures/processor.jpg}
-\caption{AMD K6 66 MHz}
-\end{figure}
-
-\subsection{Sunit Neron liitännät}
-\begin{figure}[H]
-\centering
-\includegraphics[width=1.00\hsize]{/home/th/repos/motonkone/pictures/sunit_nero_liitannat.jpg}
-\caption{Sunit Neron liitännät}
-\end{figure}
-
-Ajoneuvotietokone Sunit Nerosta löytyy 3+1 sarjaporttiliitäntää (3x 9pin standardi RS-232, sekä yksi yhdistetty liitin), rinnakkaisporttiliitin (25pin Centronics), Sunitin oma BUS-liitin PS/2 hiirelle ja näppäimistölle, yhdistetty virta/GPRS/GPS -liitin sekä Data I/O-liitin jonka tarkoituksesta ei ole tietoa. Käytössä on kolme sarjaporttia, sekä virtaliitin. Sarjaporteista yksi on alkuperäiselle Terman-ohjaukselle, yksi Motomit IT:lle ja kolmas on luultavasti käytöstä poistettu GPS/GSM-moduuli.
-
-\subsection{Tutustuminen Nero-ajoneuvotietokoneeseen}
-\subsubsection{Ensimmäinen huolto 05/2004}
-Ensimmäinen tutustuminen Sunitin Nero-ajoneuvotietokoneeseen tuli toukokuussa 2014 kun työn kohteena olevasta yksilöstä oli kiintolevy hajonnut. Tällöin tutkin ja selvitin tietokoneen ominaisuudet, liitännät ja ohjelmistot. Koska ohjelmistot oli saatavana kopioina Motomit-jälleenmyyjältä ja Valmetilta, ei alkuperäistä kiintolevyn sisältöä tarvinnut saada talteen. Tietokoneeseen hankittiin käytetty Hitachin 40Gb 2,5" IDE-kiintolevy, asennettiin käyttöjärjestelmä (Windows 98) ja ohjelmistot valmiiksi virtuaalikoneessa, varmuuskopioitiin asennus, sekä lopuksi 1.7.2014 testattiin tuotantoympäristössä että kaikki toimii oikein.
-
-\subsubsection{Toinen huolto 09/2014}
-Ensimmäisessä huollossa vaihdettu kiintolevy oli hajonnut vain muutaman kuukauden käytön jälkeen. Koska kiintolevyn koolla ja nopeudella ei ole kyseisessä tietokoneessa erityisemmin väliä, valittiin uudeksi kiintolevykorvikkeeksi paremmin tärinää ja vaihtelevia lämpö-olosuhteita kestävä SD-IDE-muistikorttiadapteri ja 2 Gb:n muistikortti. Alkuperäinen SecureDigital-standardi mahdollistaa vain 2Gb:n kapasiteetin ja väylän maksiminopeus on 12,5 Mb/s (kirjoitusnopeuden ollessa huomattavasti vähemmän, n. 1-2 Mb/s )\cite{sd:2gb}.
-
-\subsubsection{Kolmas huolto 04/2015}
-Huhtikuussa 2015 Nero-ajoneuvotietokoneesta hajosi BIOS:n CMOS-asetuksia ylläpitänyt NiMH-akku, jonka seurauksena ajoneuvotietokone kadottaa asetuksensa aina päävirtojen katkaisun yhteydessä. Kiintolevy pitää erikseen etsiä jokaisen päävirran katkaisun jälkeen BIOS:sta, joten tämä tekee tietokoneen käytön hankalaksi tai jopa mahdottomaksi hakkuukoneen kuljettajalle. Akkupaketin NiMH-kennot uusittiin ja BIOS-asetukset määritettiin uudelleen, jolloin kone saatiin taas takaisin käyttöön.
-
-\subsection{Valmet Terman}
-Terman on Valmetin alkuperäinen DOS-pohjainen hallinta- ja apteerausohjelmisto käytettävälle hakkuukoneelle. Ohjelmiston versio on riippuvainen käytettävästä hakkuukoneesta. Kommunikointi hakkukoneen kanssa tapahtuu 9600 bitin nopeudella RS-232-sarjaporttia käyttäen. Koska mittauslaite on vaihdettu Motomit IT-järjestelmälle, käytetään Termania lähinnä hakkuukoneen ajo- ja moottoriasetusten hallintaan.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=1.00\hsize]{/home/th/repos/motonkone/pictures/terman_original.jpg}
-\caption{Terman Nero-ajoneuvopc:n ruudulla}
-\end{figure}
-
-\subsection{Motomit PC}
-Motomit PC on Motomit IT:n Windows-pohjainen näyttö- ja hallintaohjelmisto Motomit IT-järjestelmälle. Motomit PC kommunikoi Motomit IT:n MCI-moduulin (Mitron CAN Interface) kanssa RS-232 -sarjaväylän avulla. \cite{motomit:esite}.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=1.00\hsize]{/home/th/repos/motonkone/pictures/motomit_original.jpg}
-\caption{Motomit PC Nero-ajoneuvopc:n ruudulla}
-\end{figure}
-
-\newpage
-\chapter{Suunnittelu}
-
-Jotta tietokoneen vaihto on mahdollista, tulee käytössä olevien Terman- ja Motomit PC-ohjelmistojen toimia uudessa koneessa samaan tapaan kuin vanhassa, näkyen loppukäyttäjälle (hakkuukoneen kuljettajalle) samalla tavalla kuin aiemminkin ohjelmistot ovat näkyneet.
 
 \section{Mahdolliset toteuttamisvaihtoehdot ohjelmistojen siirrolle}
 
@@ -647,7 +639,8 @@ Vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmä ajetaan emulaatt
 
 Vaihtoehdossa emuloidaan vain ohjelmat koko pc:n sijasta. Tämä onnistuu tietyillä ohjelmilla tiettyjen ohjelmistoarkkitehtuurien välillä \cite{tinycc},\cite{qemu_use}. Vaihtoehdolla voi ajaa mm. x86-ohjelmia ARM-prosessoreilla.
 
-\section{Käytettävä toteuttamisvaihtoehto}
+\newpage
+\chapter{Toteutus}
 
 Johtuen saatavissa olevista laitteistoista, sekä alkuperäisten ohjelmistojen arkkitehtuurista, päädyin valitsemaan testaukseen X86-arkkitehtuurilla ja Linux-käyttöjärjestelmällä toteutettavan kokonaisuuden, jossa on asennettuna sekä Winen, Dosboxin ja Dosemun päälle tarvittavat Motomit- ja Terman-ohjelmat. Lisäksi asensin virtuaalikoneeseen (Virtualbox) alkuperäisen Windows 98-käyttöjärjestelmän ja alkuperäiset ohjelmat kokeiltavaksi. Näin saamme kokeiltua Linuxin, sekä virtualisoinnin sopivuuden varsinaisen uuden ajoneuvotietokoneen mahdollisiksi toteutustavoiksi.
 
@@ -657,9 +650,15 @@ Muita mahdollisia vaihtoehtoja toteutukselle olisi ollut X86 -pohjainen Windows 
 
 ARMv7-pohjaisista kehitysalustoista/tietokoneista, kuten Raspberry Pi 2, sekä BeagleBone Black, olisi voinut yhdessä Eltechs ExaGear Desktop x86-tulkkausohjelmiston kanssa rakentaa kevyen ajoneuvotietokoneen, mutta tämä vaihtoehto ei ollut vielä insinöörityön selvitysvaiheessa edes tiedossa, joten koska itse tehty järjestelmä olisi lisäksi vaatinut huomattavasti enemmän suunnittelua, rakentelua ja testausta, todettiin ratkaisu liian työlääksi ja epävarmaksi.
 
-\newpage
-\chapter{Toteutus}
+\section{Tutustuminen Nero-ajoneuvotietokoneeseen}
+\subsection{Ensimmäinen huolto 05/2004}
+Ensimmäinen tutustuminen Sunitin Nero-ajoneuvotietokoneeseen tuli toukokuussa 2014 kun työn kohteena olevasta yksilöstä oli kiintolevy hajonnut. Tällöin tutkin ja selvitin tietokoneen ominaisuudet, liitännät ja ohjelmistot. Koska ohjelmistot oli saatavana kopioina Motomit-jälleenmyyjältä ja Valmetilta, ei alkuperäistä kiintolevyn sisältöä tarvinnut saada talteen. Tietokoneeseen hankittiin käytetty Hitachin 40Gb 2,5" IDE-kiintolevy, asennettiin käyttöjärjestelmä (Windows 98) ja ohjelmistot valmiiksi virtuaalikoneessa, varmuuskopioitiin asennus, sekä lopuksi 1.7.2014 testattiin tuotantoympäristössä että kaikki toimii oikein.
 
+\subsection{Toinen huolto 09/2014}
+Ensimmäisessä huollossa vaihdettu kiintolevy oli hajonnut vain muutaman kuukauden käytön jälkeen. Koska kiintolevyn koolla ja nopeudella ei ole kyseisessä tietokoneessa erityisemmin väliä, valittiin uudeksi kiintolevykorvikkeeksi paremmin tärinää ja vaihtelevia lämpö-olosuhteita kestävä SD-IDE-muistikorttiadapteri ja 2 Gb:n muistikortti. Alkuperäinen SecureDigital-standardi mahdollistaa vain 2Gb:n kapasiteetin ja väylän maksiminopeus on 12,5 Mb/s (kirjoitusnopeuden ollessa huomattavasti vähemmän, n. 1-2 Mb/s )\cite{sd:2gb}.
+
+\subsection{Kolmas huolto 04/2015}
+Huhtikuussa 2015 Nero-ajoneuvotietokoneesta hajosi BIOS:n CMOS-asetuksia ylläpitänyt NiMH-akku, jonka seurauksena ajoneuvotietokone kadottaa asetuksensa aina päävirtojen katkaisun yhteydessä. Kiintolevy pitää erikseen etsiä jokaisen päävirran katkaisun jälkeen BIOS:sta, joten tämä tekee tietokoneen käytön hankalaksi tai jopa mahdottomaksi hakkuukoneen kuljettajalle. Akkupaketin NiMH-kennot uusittiin ja BIOS-asetukset määritettiin uudelleen, jolloin kone saatiin taas takaisin käyttöön.
 Testaukseen päädyttiin käyttämään käyttöjärjestelmänä Linux-distribuutiota Xubuntu 14.04. Alkuperäiset ohjelmistot Motomit PC ja Terman sovitettiin käyttöön Wine-rajapinnan ja Dosbox/Dosemu DOS -emulaattorin avulla. Järjestelmä asennettiin testausta varten vanhaan Fujitsu-Siemensin kannettavaan. Johtuen rankoista olosuhteita, tavallista kannettavaa käytetään vain käyttöjärjestelmän ja ohjelmien testaamiseksi yhdessä Moton kanssa.
 
 \section{Käytetyt laitteistot}
