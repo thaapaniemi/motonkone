@@ -777,24 +777,55 @@ Lopuksi haluaisin kiittää rakasta vaimoani, joka oikoluki insinöörityön jul
 \makeoddhead{plain}{}{}{\appname \thechapter \\ \thepage\,(\stepcounter{appx#1}\total{appx#1})}}
 
 \liite{1}
-\chapter{My First Appendix}\label{appx:first}
-
-Note that every appendix will be a chapter.
-
-Sorry for the ugly hack on how to count the total pages per appendix.
+\chapter{Linux configurations}\label{appx:first}
 
 
-Of course with section and subsection.
+\section{Udev rules}
+\begin{lstlisting}
+#/etc/udev/rules.d/10-local.rules
+ACTION=="add", DRIVERS=="mos7840",ATTRS{port_number}=="0", SYMLINK+="ttyMoto0"
+ACTION=="add", DRIVERS=="mos7840",ATTRS{port_number}=="1", SYMLINK+="ttyMoto1"
+\end{lstlisting}
 
-\section{Appendix Section}
+\section{Dosbox configuration file}
+\begin{lstlisting}
+[sdl]
+fullscreen=false
+fulldouble=false
+fullresolution=800x600
+windowresolution=800x600
+output=overlay
+autolock=false
+sensitivity=100
+waitonerror=true
+priority=higher,normal
+mapperfile=mapper-0.74.map
+usescancodes=true
 
-And you can cite \cite{tobias:book} stuff, it will go into the main bibliography.
+[cpu]
+core=auto
+cputype=auto
+cycles=max
+cycleup=10
+cycledown=20
 
+[serial]
+serial1=directserial realport:ttyMoto0
+serial2=directserial realport:ttyMoto1
+\end{lstlisting}
 
-\clearpage
-\liite{2}
-\chapter{R examples}
+\section{Dosemu configuration file}
+\begin{lstlisting}
 TODO
+\end{lstlisting}
+
+\section{Wine configurations}
+\begin{lstlisting}
+#Create symbolic links to .wine/dosdevices/
+sudo ln -s /dev/ttyMoto0 /home/user/.wine/dosdevices/com1
+sudo ln -s /dev/ttyMoto1 /home/user/.wine/dosdevices/com2
+\end{lstlisting}
+
 
 
 
