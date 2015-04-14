@@ -469,7 +469,9 @@ Haasteita työlle tuovat huollettavan hakkuukoneen sijainti yli 200 kilometrin p
 
 \newpage
 
-\chapter{Valmet 901 II -hakkuukone}
+\chapter{Nykyinen järjestelmä}
+
+\section{VALMET 901 II}
 
 Hakkuukoneet eli motot (monitoimikoneet) ovat metsätraktoreita, joiden tehtävänä on hakkuun kaikki työvaiheet. Hakkuukoneet sisältävät tietokoneohjatut mittalaitteet, joilla puiden katkonta ja mittaus saadaan hoidettua tarkasti.
 
@@ -478,7 +480,7 @@ Työn kohteena oleva hakkuukone on nelipyöräinen Valmet 901 II vuosimallia 199
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.800\textwidth]{/home/th/repos/motonkone/pictures/moto_2.jpg}
+\includegraphics[width=0.700\textwidth]{/home/th/repos/motonkone/pictures/moto_2.jpg}
 \caption{Valmet 901 II}
 \end{figure}
 
@@ -550,34 +552,40 @@ Terman on Valmetin alkuperäinen DOS-pohjainen hallinta- ja apteerausohjelmisto 
 \end{figure}
 
 \newpage
-\chapter{Suunnittelu}
+\section{PÄÄLOHKOKAAVIO}
+
+TÄHÄN SE SAATANAN KAAVIO
+
+... KAAVIOSTA ON NÄHTÄVISSÄ, MITÄ OSIA JÄRJESTELMÄSTÄ OLLAAN KORVAAMASSA ELI: ???
+
+\newpage
+\chapter{Mahdolliset toteuttamisvaihtoehdot ohjelmistojen siirrolle}
 
 Loppukäyttäjän (hakkuukoneen kuljettajan) toiveena on, että tietokoneen vaihtuessa käytössä olevat Terman- ja Motomit PC-ohjelmistot toimivat uudessa koneessa samaan tapaan kuin vanhassa ja näkyvät samalla tavalla kuin ohjelmistot aiemminkin ovat näkyneet. Loppukäyttäjän toiveiden lisäksi on huomioitava tietokoneen käyttöolosuhteiden asettamat vaatimukset sekä aiheeseen liittyvä lainsäädäntö ja standardit.
 
-\section{Mahdolliset toteuttamisvaihtoehdot ohjelmistojen siirrolle}
-
-\subsection{Natiivi ympäristö}
+\section{Natiivi ympäristö}
 
 Natiivin ympäristön vaihtoehdossa ohjelmistoja käytetään ympäristössä, johon ne on aikoinaan suunniteltu toimivaksi. Hyvänä puolena tässä vaihtoehdossa on se, että ohjelmat toimivat varmasti siten kuin ne on suunniteltu. Koska käytettävät ohjelmistot ovat vanhoja, DOS- ja Windows 98- aikaisia, vaatisi natiivin ympäristön käyttäminen kuitenkin suunnilleen samaa alkuperäisen tietokoneen kanssa samaa ikäluokkaa olevan laitteiston käyttämisen. Uudemmat laitteistot eivät ole enää yhteensopivia Windows 98SE / ME:n kanssa ja lisäksi Windows 98:lla on maksimirajoituksia käytettävälle laitteistolle kuten maksimi luotettavasti käytettävä määrä keskusmuistia 1024 Mb ja kiintolevyosiolle rajattu maksimikoko 127,5 Gb \cite{win98:maxspecs}. Uudemmille laitteille ei myöskään löydy välttämättä toimivia ajureita, mikä rajoittaa entisestään mahdollisia laitteistovaihtoehtoja. Koska ajoneuvotietokone ei ole yhdistettynä Internetiin ja koneelle on rajattu pääsy, ei tässä käyttöympäristössä Windows 98:n paikkaamattomilla haavoittuvuuksilla (Windows 98: 84 kpl, Windows 98SE 61 kpl \cite{win98:vulns}) ole erityistä merkitystä käytettävyyteen.
 
-\subsection{Ohjelmistojen rajapintojen
+\section{Ohjelmistojen rajapintojen
 yhteensopivuuskerros}
 
 Ohjelmistojen rajapintojen yhteensopivuuskerros-vaihtoehdossa  käytetään käyttöjärjestelmän ja ohjelman välissä sopivia rajapintakerroksia, jolloin saadaan käyttöjärjestelmän kanssa yhteensopimattomat ohjelmat toimimaan keskenään. Vaihtoehto vaatii yhteensopivan laitteistoarkkitehtuurin alkuperäisen järjestelmän kanssa (x86). Nykyiset Windows-versiot (Windows XP+) sisältävät jo valmiiksi yhteensopivuustilan, joka mahdollistaa vanhempien ohjelmien käyttämisen uudemmissa käyttöjärjestelmissä. Linuxissa Wine-rajapinta mahdollistaa kaikenikäisten Windows-sovellusten ajamisen Linuxissa. Myös DOS:lle löytyy rajapintakerrostoteutus Linuxiin.
 
-\subsection{Virtualisointi}
+\section{Virtualisointi}
 
 Tässä vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmää ajetaan virtuaalikoneessa toisen käyttöjärjestelmän päällä. Näin saavutetaan varmin yhteensopivuus ohjelmistotasolla. Oheislaitteiden siirtämisessä virtualisoidun koneen käyttöön on rajoituksia, jotka pitää huomioida virtualisointiohjelmistoja valittaessa. Vaihtoehto kuluttaa muistia enemmän ja on hieman hitaampi kuin natiivi toteutus, hyötysuhteen ollessa \textasciitilde{}90\%  natiivista \cite{virtnat_anadtech}. 
 
-\subsection{Järjestelmäemulointi}
+\section{Järjestelmäemulointi}
 
 Tässä vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmä ajetaan emulaattorissa toisen järjestelmän päällä. Emuloimalla saavutetaan laitteistoarkkitehtuuririippumattomuus isäntäkoneen ja emuloitavan järjestelmän välillä. Emuloinnin haittapuolena on hitaus. Nyrkkisääntönä on 20\% hyötysuhde \cite{tinycc} parhaiden emulaattorien päästessä n. 40-80\% hyötysuhteeseen \cite{40pperf}. Esimerksiksi Eltechs tarjoaa ExaGear Desktop-ohjelmistoa, jolla voi ajaa x86-ohjelmia ARMv7 -ympäristössä. \cite{eltechs:exagear}. 
 
-\subsection{Ohjelmistojen emulointi}
+\section{Ohjelmistojen emulointi}
 
 Tässä vaihtoehdossa emuloidaan vain ohjelmat koko pc:n sijasta. Tämä onnistuu tietyillä ohjelmilla tiettyjen ohjelmistoarkkitehtuurien välillä \cite{tinycc},\cite{qemu_use}. Vaihtoehdolla voi ajaa mm. x86-ohjelmia ARM-prosessoreilla.
 
-\section{Lainsäädäntö ja standardit}
+\chapter{Lainsäädäntö ja standardit}
+
 Lain ja olosuhteiden asettamia vaatimuksia ajoneuvotietokoneelle on käsitelty seuraavissa direktiiveissä ja standardeissa:
 
 EU-direktiivi 2004/104/EY (Autoteollisuuden EMC-direktiivi) määrittää, että
@@ -628,17 +636,10 @@ IP54-suojaluokitetut tuotteet ovat pölysuojattuja (ei täydellistä tiiveyttä,
 
 IP67/66 -suojaluokitetut tuotteet ovat täysin pölytiiviitä ja kestävät suurella paineella tulevan vesiruiskun. IP67/66-tuotteet kestävät tärinää ja iskuja 5M3-vaatimusten mukaisesti. (DIN EN 60721-3-5, MIL-STD 810F.)
 
+NYKYISEN JÄRJESTELMÄN STANDARDIT?? TÄYTTÄVÄTKÖ KAIKKI LAITTEET VAADITUT STANDARDIT??
+
 \newpage
-\chapter{Toteutus}
-
-\section{Perustelut valitulle toteutustavalle}
-Johtuen saatavissa olevista laitteistoista sekä alkuperäisten ohjelmistojen arkkitehtuurista päädyin valitsemaan testaukseen X86-arkkitehtuurilla ja Linux-käyttöjärjestelmällä toteutettavan kokonaisuuden, jossa on asennettuna sekä Winen, Dosboxin että Dosemun päälle tarvittavat Motomit- ja Terman-ohjelmat. Lisäksi asensin virtuaalikoneeseen (Virtualbox) alkuperäisen Windows 98-käyttöjärjestelmän ja alkuperäiset ohjelmat kokeiltavaksi. Näin saan kokeiltua Linuxin sekä virtualisoinnin sopivuuden varsinaisen uuden ajoneuvotietokoneen mahdollisiksi toteutustavoiksi.
-
-Linux valittiin kohdekäyttöjärjestelmäksi, koska Windows tiedetään Motomitin osalta toimivaksi vaihtoehdoksi (Motomitistä löytyy Windows 7-yhteensopiva versio). DOS-ohjelmia ei voi ajaa suoraan Windowsin päällä, sillä vaikka myös uudemmista 32-bittisistä versioista (XP+) Windowseista löytyy \"Virtual DOS machine\", niin se ei rajoita ohjelmien ajonopeutta eikä tue suorayhteyttä sarjaväylälle, minkä takia lähes kaikissa toteustavoissa tarvitaan jokin lisäohjelma, jotta sarjaportti saadaan toimimaan DOS:n puolella (ref: Virtual Dos Machine). Dosboxista löytyy lisäksi sekä Windows- että Linux-versiot, minkä takia yhteensopivuuden pystyy testaamaan alustavasti Linuxin avulla. Päätökseen valita Linux vaikutti myös vahvasti oman osaamisen ja mieltymysten painottuminen Linux-puolelle. En siis nähnyt erityistä estettä olla kokeilematta järjestelmän toimivuutta Linux-käyttöjärjestelmässä.
-
-Muita mahdollisia vaihtoehtoja toteutukselle olisi ollut X86 -pohjainen Windows 7 tai Windows 8 -käyttöjärjestelmällä oleva kannettava. Tätä ratkaisua ei käytetty johtuen osittain käytettävästä testauskoneesta, osittain siitä, että haluttiin kartoittaa käytettävien ohjelmien toiminta myös Linux-puolella sekä osittain puuttuvan Windows-lisenssin takia.
-
-ARMv7-pohjaisista kehitysalustoista/tietokoneista, kuten Raspberry Pi 2, sekä BeagleBone Black, olisi voinut yhdessä Eltechs ExaGear Desktop x86-tulkkausohjelmiston kanssa rakentaa kevyen ajoneuvotietokoneen. Tämä vaihtoehto ei kuitenkaan ollut vielä insinöörityön selvitysvaiheessa tiedossa. Koska itse tehty järjestelmä olisi vaatinut huomattavasti enemmän suunnittelua, rakentelua ja testausta, todettiin ratkaisu tällä aikataululla liian työlääksi ja epävarmaksi.
+\chapter{TEHDYT TUTKIMUKSET JA HUOLLOT}
 
 \section{Tutustuminen Nero-ajoneuvotietokoneeseen}
 
@@ -649,6 +650,15 @@ Ensimmäisessä huollossa vaihdettu kiintolevy hajosi vain muutaman kuukauden k�
 
 Huhtikuussa 2015 Nero-ajoneuvotietokoneesta hajosi BIOS:n CMOS-asetuksia ylläpitänyt NiMH-akku, jonka seurauksena ajoneuvotietokone kadottaa asetuksensa aina päävirtojen katkaisun yhteydessä. Kiintolevy pitää erikseen etsiä jokaisen päävirran katkaisun jälkeen BIOS:sta, joten tämä tekee tietokoneen käytön hankalaksi tai jopa mahdottomaksi hakkuukoneen kuljettajalle. Akkupaketin NiMH-kennot uusittiin ja BIOS-asetukset määritettiin uudelleen, jolloin kone saatiin taas takaisin käyttöön.
 Testaukseen päädyttiin käyttämään käyttöjärjestelmänä Linux-distribuutiota Xubuntu 14.04. Alkuperäiset ohjelmistot Motomit PC ja Terman sovitettiin käyttöön Wine-rajapinnan ja Dosbox/Dosemu DOS -emulaattorin avulla. Järjestelmä asennettiin testausta varten vanhaan Fujitsu-Siemensin kannettavaan. Johtuen rankoista olosuhteita, tavallista kannettavaa käytetään vain käyttöjärjestelmän ja ohjelmien testaamiseksi yhdessä Moton kanssa.
+
+\section{Perustelut valitulle toteutustavalle}
+Johtuen saatavissa olevista laitteistoista sekä alkuperäisten ohjelmistojen arkkitehtuurista päädyin valitsemaan testaukseen X86-arkkitehtuurilla ja Linux-käyttöjärjestelmällä toteutettavan kokonaisuuden, jossa on asennettuna sekä Winen, Dosboxin että Dosemun päälle tarvittavat Motomit- ja Terman-ohjelmat. Lisäksi asensin virtuaalikoneeseen (Virtualbox) alkuperäisen Windows 98-käyttöjärjestelmän ja alkuperäiset ohjelmat kokeiltavaksi. Näin saan kokeiltua Linuxin sekä virtualisoinnin sopivuuden varsinaisen uuden ajoneuvotietokoneen mahdollisiksi toteutustavoiksi.
+
+Linux valittiin kohdekäyttöjärjestelmäksi, koska Windows tiedetään Motomitin osalta toimivaksi vaihtoehdoksi (Motomitistä löytyy Windows 7-yhteensopiva versio). DOS-ohjelmia ei voi ajaa suoraan Windowsin päällä, sillä vaikka myös uudemmista 32-bittisistä versioista (XP+) Windowseista löytyy \"Virtual DOS machine\", niin se ei rajoita ohjelmien ajonopeutta eikä tue suorayhteyttä sarjaväylälle, minkä takia lähes kaikissa toteustavoissa tarvitaan jokin lisäohjelma, jotta sarjaportti saadaan toimimaan DOS:n puolella (ref: Virtual Dos Machine). Dosboxista löytyy lisäksi sekä Windows- että Linux-versiot, minkä takia yhteensopivuuden pystyy testaamaan alustavasti Linuxin avulla. Päätökseen valita Linux vaikutti myös vahvasti oman osaamisen ja mieltymysten painottuminen Linux-puolelle. En siis nähnyt erityistä estettä olla kokeilematta järjestelmän toimivuutta Linux-käyttöjärjestelmässä.
+
+Muita mahdollisia vaihtoehtoja toteutukselle olisi ollut X86 -pohjainen Windows 7 tai Windows 8 -käyttöjärjestelmällä oleva kannettava. Tätä ratkaisua ei käytetty johtuen osittain käytettävästä testauskoneesta, osittain siitä, että haluttiin kartoittaa käytettävien ohjelmien toiminta myös Linux-puolella sekä osittain puuttuvan Windows-lisenssin takia.
+
+ARMv7-pohjaisista kehitysalustoista/tietokoneista, kuten Raspberry Pi 2, sekä BeagleBone Black, olisi voinut yhdessä Eltechs ExaGear Desktop x86-tulkkausohjelmiston kanssa rakentaa kevyen ajoneuvotietokoneen. Tämä vaihtoehto ei kuitenkaan ollut vielä insinöörityön selvitysvaiheessa tiedossa, vaan tuli esille vasta myöhemmin. Koska itse tehty järjestelmä olisi vaatinut huomattavasti enemmän suunnittelua, rakentelua ja testausta, todettiin ratkaisu tällä aikataululla liian työlääksi ja epävarmaksi. Kuten sanottua, nykyinen ajoneuvotietokone osoittautui vielä korjattavissa olevaksi. Tämä viimeisenä esitelty vaihtoehto on kuitenkin todennäköisin siinä vaiheessa, kun ajoneuvotietokone on lopulta vaihdettava uuteen. Kerron tästä tarkemmin luvussa 6.
 
 \section{Käytetyt laitteistot}
 
@@ -687,8 +697,10 @@ Jotta sarjaportit saa toimimaan Winessä Windowsin käyttämillä COM-porttinimi
 Dosboxin ja Dosemun asetuksiin tuli määrittää käytetävät sarjaportit. Lisäksi Dosboxista muutettiin suoritusnopeutta ja ruudun kokoa suuremmaksi, jotta käytettävyys olisi parempi \cite{dosbox:conf}. Molemmat ohjelmat jätettiin ikkunointimoodiin, jotta yhteiskäyttö Motomit PC:n kanssa olisi helpompaa.
 
 \section{Testaus}
-Kootun Linux-järjestelmän testaus suoritettiin metsässä hakkuukoneen luona. Rajoittavaksi tekijäksi asettui testikannettavan akun kesto, joka oli vain n. 15 minuuttia. Tässä ajassa saatiin kuitenkin testattua alustavasti Motomit PC- ja Terman-ohjelmistojen toimivuus Winen ja Dosbox/Dosemun avulla suoritettuna. Valitettavasti virtuaalikoneeseen asennettuja ohjelmia ei ehditty testaamaan ennen kuin akku loppui.
-\newline
+Kootun Linux-järjestelmän testaus suoritettiin huhtikuussa 2015 metsässä hakkuukoneen luona. Rajoittavaksi tekijäksi asettui testikannettavan akun kesto, joka oli vain n. 15 minuuttia. Tässä ajassa saatiin kuitenkin testattua alustavasti Motomit PC- ja Terman-ohjelmistojen toimivuus Winen ja Dosbox/Dosemun avulla suoritettuna. Valitettavasti virtuaalikoneeseen asennettuja ohjelmia ei ehditty testaamaan ennen kuin akku loppui.
+
+VAJAAKSI JÄÄNEEN TESTAUKSEN VUOKSI JÄRJESTETTIIN ENNEN INSINÖÖRITYÖN PALAUTUSTA HUHTIKUUSSA 2015 VIELÄ YKSI TESTAUSMATKA. TESTAUKSEEN VARAUDUTTIIN LAINAAMALLA TESTIKANNETTAVAAN PAREMPI AKKU. TÄLLÄ KERTAA EHDITTIIN TUTKIA PAREMMIN EDELLISELLÄ KERRALLA ALUSTAVASTI TESTATTUJEN OHJELMISTOJEN TOIMIVUUS. SEURAAVAKSI TYÖN ALLE OTETTIIN VIRTUAALIKONEESEEN AENNETUT OHJELMAT - MITKÄ?? -. MITÄ OLI TULOKSET? PYSTYIKÖ LÄPPÄRILLÄ KORVAAMAAN JÄRJESTELMÄN VAI JÄIKÖ PUUTTEITA? Insinöörityöstä jäi puuttumaan alustava analyysi Terman- ja Motomit PC-ohjelmistojen käyttämille protokollille, koska en testikannettavan huonon akunkeston takia saanut tallennettua näytettä sarjaporttien liikenteestä. Tämän liikenteen avulla olisi voinut myös simuloida hakkuukonetta syöttämällä kaapatun datan mikrokontrollerin tai toisen tietokoneen avulla testikannettavaan.
+
 
 \begin{figure}[H]
 \centering
@@ -697,6 +709,30 @@ Kootun Linux-järjestelmän testaus suoritettiin metsässä hakkuukoneen luona. 
 \end{figure}
 
 \newpage
+
+\chapter{KORVAAVA JÄRJESTELMÄ}
+
+TÄMÄN TYÖN AIKANA HANKITUN TIEDON PERUSTEELLA OLEN TEHNYT SUUNNITELMAN NYKYISEN AJONEUVOTIETOKONEEN KORVAAVASTA UUDESTA TIETOKONEESTA.
+
+KUTEN AIEMMIN MAINITSIN, ARMv7-POHJAISISTA KEHITYSALUSTIOSTA/TIETOKONEISTA, KUTEN RASPBERRY PI 2 TAI BEAGLEBONE BLACK, VOISI YHDESSÄ ELTECHS DESKTOP X86-TULKKAUSOHJELMISTON KANSSA RAKENTAA KEVYEN AJONEUVOTIETOKONEEN, JOKA TÄYTTÄÄ AIEMMIN ESITELLYT VAATIMUKSET AJONEUVOTIETOKONEEN OMINAISUUKSISTA.
+
+\section{RASPBERRY PI 2}
+
+TÄHÄN JOTAIN HÖLINÄÄ RASPISTA
+
+\section{TÄHÄN JOTAIN HÖLINÄÄ BEAGLEBONE BLACKISTA}
+
+\section{ELTECHS DESKTOP X86-TULKKAUSOHJELMISTO}
+
+HÖLINÄÄ
+
+\section{SUUNNITELMA KORVAAVASTA JÄRJESTELMÄSTÄ}
+
+TÄHÄN SITTEN SE PERKELEEN SUUNNITELMA OMIN SANOIN :)
+
+
+\newpage
+
 \chapter{Yhteenveto}\
 Insinöörityön tavoitteena oli selvittää työn kohteena olevan 17 vuotta vanhan hakkuukoneen alkuperäisen ajoneuvotietokoneen liitännät ja ohjelmistot sekä tutkia mahdolliset vaihtoehdot korvata vanha, käyttöikänsä loppupäässä oleva alkuperäinen ajoneuvotietokone uudemmalla, hakkuukoneen järjestelmien kanssa yhteensopivalla vaihtoehdolla.
 
@@ -704,21 +740,20 @@ Alkuperäistä ajoneuvotietokonetta tutkimalla sekä mahdollisia vaihtoehtoja pu
 
 Vaatimuksina uudelle tietokoneelle on lähinnä tarvittava olosuhteiden kesto sekä tarvittavat liittimet. Hakkuukoneen järjestelmät vaativat kaksi sarjaporttiliitäntää, joilla kommunikointi hakkuukoneen ja ajoneuvotietokoneen välillä tapahtuu. Hakkuukoneen sähköjärjestelmä on 24V, mikä tulee ottaa huomioon tietokoneen sähkönsyöttöä pohdittaessa. 
 
-Suurimmat haasteet insinöörityön kanssa liittyivät pääsyyn työn kohteena olevalle hakkuukoneelle. Hakkuukone oli aktiivisessa käytössä Oriveden metsissä koko insinöörityön ajan ja vierailut koneelle saatiin lopulta järjestettyä alkuperäisen ajoneuvotietokoneen huoltojen yhteydessä. Hakkuukoneen kommunikointi ajoneuvotietokoneen kanssa osoittautui kuitenkin yksinkertaiseksi, joten järjestyneet käyntikerrat riittivät hyvin selvittämään alkuperäisen järjestelmän toimintaa sekä testaamaan mahdollisessa uudessa tietokoneessa käytettäviä ratkaisuja. Insinöörityöstä jäi puuttumaan alustava analyysi Terman- ja Motomit PC-ohjelmistojen käyttämille protokollille, koska en testikannettavan huonon akunkeston takia saanut tallennettua näytettä sarjaporttien liikenteestä. Tämän liikenteen avulla olisi voinut myös simuloida hakkuukonetta syöttämällä kaapatun datan mikrokontrollerin tai toisen tietokoneen avulla testikannettavaan.
+Suurimmat haasteet insinöörityössä liittyivät pääsyyn työn kohteena olevalle hakkuukoneelle. Hakkuukone oli aktiivisessa käytössä Oriveden metsissä koko insinöörityön ajan ja vierailut koneelle saatiin lopulta järjestettyä alkuperäisen ajoneuvotietokoneen huoltojen yhteydessä. Hakkuukoneen kommunikointi ajoneuvotietokoneen kanssa osoittautui kuitenkin yksinkertaiseksi, joten järjestyneet käyntikerrat riittivät hyvin selvittämään alkuperäisen järjestelmän toimintaa sekä testaamaan mahdollisessa uudessa tietokoneessa käytettäviä ratkaisuja.
 
-Insinöörityössä saavutettiin asetetut tavoitteet ja saatiin pohjustettua uuden tietokoneen vaatimuksia ja vaihtoehtoja. Suunnitelmissa on, että hakkuukoneeseen saadaan hankittua ja rakennettua uusi ajoneuvotietokone varajärjestelmäksi, joka voidaan ottaa käyttöön alkuperäisen ajoneuvotietokoneen hajotessa seuraavan kerran.
+Muita haasteita työn toteutukselle toi hektinen arki. Tyttäreni syntyi joulukuussa vaikean raskauden päätteeksi ja mukana menossa on myös neljävuotias esikoinen. Täysipäiväisesti töitä tekevänä isänä en koe valitettavasti pystyneeni täysin antamaan insinöörityölle sen ansaitsemaa panostusta. Aion kuitenkin hyödyntää tekemääni työtä toteuttamalla uuden ajoneuvotietokoneen myös käytännössä.
+
+Insinöörityössä saavutettiin asetetut tavoitteet uuden tietokoneen vaatimusten ja toteutusvaihtoehtojen selvittämisestä. Tarkoitus on, että hakkuukoneeseen hankitaan ja rakennetaan vielä tämän vuoden aikana edellä mainitun suunnitelman mukainen uusi ajoneuvotietokone, joka voidaan ottaa käyttöön alkuperäisen ajoneuvotietokoneen hajotessa seuraavan kerran.
 
 Lopuksi haluaisin kiittää rakasta vaimoani Jennikaa kannustuksesta ja oikolukuavusta, poikaani Tuukkaa toimimisesta apulaisena alkuperäisen koneen huollon ja tutkimisen yhteydessä sekä hakkuukoneen omistajaa Arto Saalia, joka oli suureksi avuksi kaikissa käytännön järjestelyissä.\newline
-
-%\newline
 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.600\textwidth]{/home/th/repos/motonkone/pictures/tuukka_auttaa.jpg}
+\includegraphics[width=0.4500\textwidth]{/home/th/repos/motonkone/pictures/tuukka_auttaa.jpg}
 \caption{Tuukka Haapaniemi valmistelemassa ajoneuvotietokoneen huoltoa}
 \end{figure}
-
 \newpage
 
 %----------------------------------------------------------------------------------------
