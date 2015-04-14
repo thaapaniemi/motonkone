@@ -437,6 +437,8 @@ USB & Universal Serial BUS, vuonna 1996 esitelty sarjaväyläinen liitäntä ohe
 IDE/PATA & Integrated Drive Electronics (Parallel AT Attachments), kiintolevyjen ja optisten asemien liittämiseen tarkoitettu 16-bittinen rinnakkainen liitäntäväylä vuodelta 1986.\\
 CAN & Controller Area Network, vikasietoinen, differentiaalinen kaksijohtoinen automaatioväylä, jossa liikenne lähetetään priorisoituina sanomina vuodelta 1986\\
 Apteeraus & Puun rungon jako eri puutavaralajeiksi mitta- ja laatuvaatimukset huomioiden\\
+GPS & Global Positioning System, Maapalloa kiertäviin satelliitteihin perustuva paikannusjärjestelmä\\
+DPGS & Differential GPS, DGPS:ssä tarkennetaan sijaintitietoa käyttämällä apuna kiinteiden maa-asemien mittaamaa ja välittämää alueellista paikannusvirhettä.\\
 %
 %OMG & Oh my god\\
 %WTF & What the F\\
@@ -465,7 +467,7 @@ Insinöörityön kohteena on vuonna 1998 valmistetun hakkuukoneen ajoneuvotietok
 
 Insinöörityö pyrkii selvittämään hakkuukoneen ja ajoneuvotietokoneen väliset liitännät sekä ajoneuvotietokoneen ohjelmistot ja etsimään mahdolliset korvaavat ratkaisut. Tarkoituksena on, että loppukäyttäjän (hakkuukoneen kuljettajan) toiveesta korvaava järjestelmä vaatisi mahdollisimman vähän muutoksia hakkuukoneeseen sekä olisi hakkuukoneen kuljettajalle toiminnallisuudeltaan vastaava kuin alkuperäinen järjestelmä. 
 
-Haasteita työlle tuovat huollettavan hakkuukoneen sijainti yli 200 kilometrin päässä sekä alkuperäisten ohjelmien mahdollisesti asettamat vaatimukset. Lisäksi on huomioitava hakkuukoneen käyttöympäristö, joka asettaa ajoneuvotietokoneelle erityisiä vaatimuksia pölyn siedon, lämpötilan muutosten sekä tärinän keston suhteen.
+Haasteita työlle tuovat huollettavan hakkuukoneen sijainti yli 200 kilometrin päässä sekä alkuperäisten ohjelmien mahdollisesti asettamat vaatimukset. Lisäksi on huomioitava hakkuukoneen käyttöympäristö, joka asettaa ajoneuvotietokoneelle erityisiä vaatimuksia pölyn siedon, lämpötilan muutosten sekä tärinän keston suhteen. Lähtötiedot käytetyistä/alkuperäisestä järjestelmistä puuttuvat kokonaan, emmekä tiedä miten ja mitä protokollia? käyttäen järjestelmä on toteutettu.
 
 \newpage
 
@@ -513,7 +515,9 @@ Motomit PC on Motomit IT:n Windows-pohjainen näyttö- ja hallintaohjelmisto Mot
 
 \section{Ajoneuvo-PC Sunit Nero / Valmet Maxi}
 
-Hakkuukoneessa käytetty tietokone on Sunitin valmistama Sunit Nero (myös nimellä Valmet MAXI)-ajoneuvotietokone. Nero on paketoitu näyttöineen ja keskusyksikköineen yhdeksi all-in-one -tyyliseksi iskunkestäväksi paketiksi. Vaikka kyseessä ei olekaan sama yksilö mikä on alunperin ollut kiinni kyseisessä hakkuukoneeessa, on se samanlainen kuin alkuperäinen ja samaa ikäluokkaa (noin 17 vuotta, vuodelta 1998). 
+Hakkuukoneessa käytetty tietokone on Sunitin valmistama Sunit Nero (myös nimellä Valmet MAXI)-ajoneuvotietokone. Nero on paketoitu näyttöineen ja keskusyksikköineen yhdeksi all-in-one -tyyliseksi iskunkestäväksi paketiksi. Vaikka kyseessä ei olekaan sama yksilö mikä on alunperin ollut kiinni kyseisessä hakkuukoneeessa, on se samanlainen kuin alkuperäinen ja samaa ikäluokkaa (noin 17 vuotta, vuodelta 1998). Tietokoneen mitat ovat 315 mm x 252 mm x 115 mm ja paino 4,2 kg. Virrankulutus Nerolla on n. 25W.
+
+Nero täyttää CEN:n standardin EN55022 class A ja class B -vaatimukset ja Sunit vakuuttaa laitteen täyttävän EU:n direktiivien vaatimukset CE-merkinnällä. Neron kotelointi on tuuletusta lukuunottamaat IP54-luokkaa, joka tarkoittaa suojausta pölyltä, sekä suojausta vesiroiskeita vastaan. \cite{nero:manual}
 
 \begin{figure}[H]
 \centering
@@ -532,7 +536,11 @@ Emolevyn northbridge-ohjaimena on SiS 5571-ohjain. Tässä Nero-yksilössä pros
 
 Sunitin huolto on ilmoittanut, etteivät he suostu/pysty enää huoltamaan näin vanhaa tietokonetta, mikä on myös osasyynä korvaavien vaihtoehtojen kartoittamiseen.
 
-Sunit Nerosta löytyy 3+1 sarjaporttiliitäntää (3x 9pin standardi RS-232, sekä yksi yhdistetty liitin), rinnakkaisporttiliitin (25pin Centronics), Sunitin oma BUS-liitin PS/2 hiirelle ja näppäimistölle, yhdistetty virta/GPRS/GPS -liitin sekä Data I/O-liitin jonka tarkoituksesta ei ole tietoa. Käytössä on kolme sarjaporttia, sekä virtaliitin. Sarjaporteista yksi on alkuperäiselle Terman-ohjaukselle, yksi Motomit IT:lle ja kolmas on luultavasti käytöstä poistettu GPS/GSM-moduuli.
+Sunit Nerosta löytyy 3+1 sarjaporttiliitäntää (3x 9pin standardi RS-232, sekä yksi yhdistetty liitin), rinnakkaisporttiliitin (25pin Centronics), Sunitin oma BUS-liitin PS/2 hiirelle ja näppäimistölle, yhdistetty virta/GPRS/GPS -liitin sekä Data I/O-liitin, joka on tarkoitettu optiona oleville CAN- ja SCSI-väylälle, mutta nämä eivät ole kyseisessä yksilössä käytössä.  Käytössä on kolme sarjaporttia, sekä virtaliitin. Sarjaporteista yksi on alkuperäiselle Terman-ohjaukselle, yksi Motomit IT:lle ja kolmas on käytöstä poistetulle GSM-moduulille.
+
+Sunit Neroon on ollut lisäoptiona myös GPS ja DGPS-moduulit jotka olisivat mahdollistaneet kartat paikannuksella. Työn kohteena olevassa yksilössä on GPS-moduuli. Neroon on ollut liitettynä myös ulkoinen GSM-moduuli \cite{nero:manual}. GPS- ja GSM-moduulit eivät ole nykyisessä järjestelmässä käytössä.
+
+
 \newline\newline
 
 \begin{figure}[H]
@@ -554,9 +562,16 @@ Terman on Valmetin alkuperäinen DOS-pohjainen hallinta- ja apteerausohjelmisto 
 \newpage
 \section{PÄÄLOHKOKAAVIO}
 
-TÄHÄN SE SAATANAN KAAVIO
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\hsize]{/home/th/repos/motonkone/pictures/saatanan_kaavio.svg}
+\caption{Saatanan kaavio}
+\end{figure}
+
+Lohkokaavioon on kuvattu Valmet 901 -hakkuukoneen tärkeimmät osat, niiden käyttämät väylät, sekä alkuperäisessä järjestelmässä olleet laitteet. Hakkuukoneessa ei ole itsessään käytössä vielä CAN-väylää, mutta Motomitin mittalaitejärjestelmä käyttää CAN-väylää sisäisesti, sekä hakkuupään ohjaukseen.
 
 ... KAAVIOSTA ON NÄHTÄVISSÄ, MITÄ OSIA JÄRJESTELMÄSTÄ OLLAAN KORVAAMASSA ELI: ???
+Kaaviosta näkyvistä järjestelmistä ollaan korvaamassa keltaisella näkyvä Nero-ajoneuvotietokone.
 
 \newpage
 \chapter{Mahdolliset toteuttamisvaihtoehdot ohjelmistojen siirrolle}
@@ -587,6 +602,8 @@ Tässä vaihtoehdossa emuloidaan vain ohjelmat koko pc:n sijasta. Tämä onnistu
 \chapter{Lainsäädäntö ja standardit}
 
 Lain ja olosuhteiden asettamia vaatimuksia ajoneuvotietokoneelle on käsitelty seuraavissa direktiiveissä ja standardeissa:
+
+CEN EN55022 -standardi määrittää kevyen teollisuuden laitteiden sekä tietokonelaitteuden säteilypäästöjen raja-arvot, sekä määrittää miten mittaus tulee suorittaa. Standardissa laitteet on jaoteltu kahteen luokkaan, A ja B, joista B-luokan laitteet ovat paremmin suojattuja.\cite{EN55022}
 
 EU-direktiivi 2004/104/EY (Autoteollisuuden EMC-direktiivi) määrittää, että
 1.7.2006 alkaen valmistettujen ajoneuvojen ja kiinteästi asennetun
@@ -637,6 +654,7 @@ IP54-suojaluokitetut tuotteet ovat pölysuojattuja (ei täydellistä tiiveyttä,
 IP67/66 -suojaluokitetut tuotteet ovat täysin pölytiiviitä ja kestävät suurella paineella tulevan vesiruiskun. IP67/66-tuotteet kestävät tärinää ja iskuja 5M3-vaatimusten mukaisesti. (DIN EN 60721-3-5, MIL-STD 810F.)
 
 NYKYISEN JÄRJESTELMÄN STANDARDIT?? TÄYTTÄVÄTKÖ KAIKKI LAITTEET VAADITUT STANDARDIT??
+vastattu jo aiemmin. Nero täyttää EN55022-standardin vaatimukset ja on IP54-suojattu. Uuden valmiina hankittavan järjestelmän tulisi täyttää EN55022-standardin ja direktiivin  2004/104/EY vaatimukset.
 
 \newpage
 \chapter{TEHDYT TUTKIMUKSET JA HUOLLOT}
@@ -697,7 +715,14 @@ Jotta sarjaportit saa toimimaan Winessä Windowsin käyttämillä COM-porttinimi
 Dosboxin ja Dosemun asetuksiin tuli määrittää käytetävät sarjaportit. Lisäksi Dosboxista muutettiin suoritusnopeutta ja ruudun kokoa suuremmaksi, jotta käytettävyys olisi parempi \cite{dosbox:conf}. Molemmat ohjelmat jätettiin ikkunointimoodiin, jotta yhteiskäyttö Motomit PC:n kanssa olisi helpompaa.
 
 \section{Testaus}
-Kootun Linux-järjestelmän testaus suoritettiin huhtikuussa 2015 metsässä hakkuukoneen luona. Rajoittavaksi tekijäksi asettui testikannettavan akun kesto, joka oli vain n. 15 minuuttia. Tässä ajassa saatiin kuitenkin testattua alustavasti Motomit PC- ja Terman-ohjelmistojen toimivuus Winen ja Dosbox/Dosemun avulla suoritettuna. Valitettavasti virtuaalikoneeseen asennettuja ohjelmia ei ehditty testaamaan ennen kuin akku loppui.
+%% %-merkki on kommentti, teksti ei tule työhön
+%Kootun Linux-järjestelmän testaus suoritettiin huhtikuussa 2015 metsässä hakkuukoneen luona. Rajoittavaksi tekijäksi asettui testikannettavan akun kesto, joka oli vain n. 15 minuuttia. Tässä ajassa saatiin kuitenkin testattua alustavasti Motomit PC- ja Terman-ohjelmistojen toimivuus Winen ja Dosbox/Dosemun avulla suoritettuna. Valitettavasti virtuaalikoneeseen asennettuja ohjelmia ei ehditty testaamaan ennen kuin akku loppui.
+
+%Blaah kakkaa
+Kannettavan avulla käytiin testaamassa ohjelmistojen yhteensopivuutta Linuxin, USB-sarja-adapterin, sekä hakkuukoneen järjestelmien kanssa huhtikuussa 2015 metsässä. Selvisi, että sekä Motomit PC, että Terman toimivat ja ovat käyttökelposia Linux-käyttöjärjestelmässä sarjaporttiadapterin avulla, joka väljentää tulevan koneen vaatimuksia sarjaporttien määrän osalta.
+
+Testissä selvisi että läppäri olisi muuten sellaisenaan sopiva korvike alkuperäiselle järjestelmälle, mutta rajoittuneen tilan takia läppäri on epäkäytännöllinen vaakatasossa viemänsä tilan vuoksi. Tämän vuoksi läppäri sellaisenaan sopii vain väliaikaiseen käytöön, muttei kiinteästi asennetuksi.
+
 
 VAJAAKSI JÄÄNEEN TESTAUKSEN VUOKSI JÄRJESTETTIIN ENNEN INSINÖÖRITYÖN PALAUTUSTA HUHTIKUUSSA 2015 VIELÄ YKSI TESTAUSMATKA. TESTAUKSEEN VARAUDUTTIIN LAINAAMALLA TESTIKANNETTAVAAN PAREMPI AKKU. TÄLLÄ KERTAA EHDITTIIN TUTKIA PAREMMIN EDELLISELLÄ KERRALLA ALUSTAVASTI TESTATTUJEN OHJELMISTOJEN TOIMIVUUS. SEURAAVAKSI TYÖN ALLE OTETTIIN VIRTUAALIKONEESEEN AENNETUT OHJELMAT - MITKÄ?? -. MITÄ OLI TULOKSET? PYSTYIKÖ LÄPPÄRILLÄ KORVAAMAAN JÄRJESTELMÄN VAI JÄIKÖ PUUTTEITA? Insinöörityöstä jäi puuttumaan alustava analyysi Terman- ja Motomit PC-ohjelmistojen käyttämille protokollille, koska en testikannettavan huonon akunkeston takia saanut tallennettua näytettä sarjaporttien liikenteestä. Tämän liikenteen avulla olisi voinut myös simuloida hakkuukonetta syöttämällä kaapatun datan mikrokontrollerin tai toisen tietokoneen avulla testikannettavaan.
 
@@ -712,7 +737,31 @@ VAJAAKSI JÄÄNEEN TESTAUKSEN VUOKSI JÄRJESTETTIIN ENNEN INSINÖÖRITYÖN PALAU
 
 \chapter{KORVAAVA JÄRJESTELMÄ}
 
-TÄMÄN TYÖN AIKANA HANKITUN TIEDON PERUSTEELLA OLEN TEHNYT SUUNNITELMAN NYKYISEN AJONEUVOTIETOKONEEN KORVAAVASTA UUDESTA TIETOKONEESTA.
+TÄMÄN TYÖN AIKANA HANKITUN TIEDON PERUSTEELLA OLEN TEHNYT SUUNNITELMAN NYKYISEN AJONEUVOTIETOKONEEN KORVAAVASTA UUDESTA TIETOKONEESTA. 
+
+\section{Uusi ajoneuvotietokone}
+
+Ehdotan ajoneuvotietokoneeksi Panasonic Toughbook CF-19 tietokonetta. Toughbook CF-19 on tabletiksi kääntyvä, täysvahvistettu kannettava joka on suunnitteltu ääriolosuhteisiin. CF-19 on suojattu niin, että se kestää pölyä, tärinää, iskuja ja -20 ja +60 °C välisen lämpötila-vaihtelun. CF-19 on varustettu Intel Core 2 Duo U7500 -prosessorilla, 4 Gb:n muistilla ja 10.4 \" näytöllä. Laite on IP54-suojattu kuten alkuperäinen ajoneuvotietokone ja se on täyttää sähkömagneettisen yhteensopivuuden, tärinän, tiputuksen, vesi- ja pölytiiviyden, lämpötilankeston ja kosteudenkeston osalta Yhdysvaltain armeijan asettamat standardit. \cite{cf19}
+
+Valitsin Toughbook CF-19 korvaajaksi, koska kääntyvän näytön takia sen saa n. 5 cm paksuksi joka mahdollistaa sen että ko. kannettavalle voidaan toteuttaa helposti teline joko alkuperäiseen pidikkeeseen, tai erillisenä kiinnityksenä. CF-19:sta löytyy lisäksi vakiona yksi RS-232 -sarjaportti joka on luotettavuuden kannalta parempi kuin USB-pohjaiset adapterit. Tällöin Motomit PC voidaan liittää sarjaporttiin ja Termanin laittaa menemään USB-adapterin kautta tulevasta sarjaportista. Vaikka Panasonic Toughbook CF-19 on suhteellisen vanha (julkaistu v. 2007) \cite{cf19}, niin kyseistä mallia on hyvin saatavissa kunnostettuina. Kosketusnäytön ansiosta erillistä hiirtä ei tarvita ja pärjätään ulkoisella näppäimistöllä.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.50\hsize]{/home/th/repos/motonkone/pictures/cf19.jpg}
+\caption{Panasonic Toughbook CF-19.}
+\end{figure}
+
+
+\section{Uusi ajoneuvotietokone vanhoihin kuoriin}
+
+Toinen vaihtoehto on toteuttaa uusi tietokone Sunit Neron koteloon. Tämän vaihtoehdon etuna on se, että se olisi varmasti yhteensopiva alkuperäisen pidikkeen kanssa. Vaihtoehto vaatii tarkan mietinnän komponenttien valinnan ja kiinnityksen osalta, jotta toteutus saadaan kestämään varsinkin lämpötilavaihteluita ja tärinää. Alkuperäinen kotelointi tarjoaa IP54-luokiteltuna riittävän suojan pölyä ja vesiroiskeita vastaan.
+
+Itse tietokoneeksi valitsisin esimerkiksi Intelin NUC-konseptin D53427RKE emolevyn, jossa on integroituna Intel i5 -prosessori. Liitäntöinä emolevyssä on HDMI näytölle ja miniPCIe SSD-levylle  \cite{D53427RKE}. Lisäksi emossa on 5 USB-liitintä oheislaitteita varten. Näyttöpaneeliksi valitsin 10,1" IPS LCD-paneelin, jossa mukana LCD-ajuripiirilevy HDMI-liitännällä. Alkuperäisen kuoren paneelin koko on 12" 4:3 (tarkista leveys), joten 16:9 10,1" paneeli (tarkista leveys) mahtuu hyvin tilalle koteloon. Paneeli käyttää 9-12V jännitettä, joten se sopii hyvin projektiin. Virtalähteeksi valitaan 24V jännitteellä toimiva M3-ATX, 125W ulostulolla oleva autokäyttöön suunniteltu virtalähde.
+
+Hintaa itse tehtynä tulisi n. 300€ (emo) + 150€ (paneeli) + 70€ (virtalähde) + muut tilpehtöörit (~100-200€?), jolloin lopullinen hinta olisin n. 600-700 € + työt. Kun tätä verrataan Panasonic Toughbook CF-19:sta hintaan (n. 750€) ja otetaan huomioon työ-ympäristö mihin tietokone tulee, niin en pidä kannattavana koneen itse rakentamista, vaan suosittelen valmiiksi olosuhteita kestävän tietokoneen hankkimista.
+
+%http://www.adafruit.com/products/1287
+%http://www.mini-box.com/M3-ATX-DC-DC-ATX-Automotive-Computer-car-PC-Power-Supply
 
 KUTEN AIEMMIN MAINITSIN, ARMv7-POHJAISISTA KEHITYSALUSTIOSTA/TIETOKONEISTA, KUTEN RASPBERRY PI 2 TAI BEAGLEBONE BLACK, VOISI YHDESSÄ ELTECHS DESKTOP X86-TULKKAUSOHJELMISTON KANSSA RAKENTAA KEVYEN AJONEUVOTIETOKONEEN, JOKA TÄYTTÄÄ AIEMMIN ESITELLYT VAATIMUKSET AJONEUVOTIETOKONEEN OMINAISUUKSISTA.
 
@@ -729,6 +778,7 @@ HÖLINÄÄ
 \section{SUUNNITELMA KORVAAVASTA JÄRJESTELMÄSTÄ}
 
 TÄHÄN SITTEN SE PERKELEEN SUUNNITELMA OMIN SANOIN :)
+
 
 
 \newpage
