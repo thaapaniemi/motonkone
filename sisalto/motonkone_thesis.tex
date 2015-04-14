@@ -175,6 +175,10 @@ xleftmargin=1cm
 %\counterwithout{lstlisting}{chapter}
 %moved after begin document, otherwise does not compile
 
+%% set this format as the default for lstlisting
+\DeclareCaptionFormat{empty}{}
+\captionsetup[lstlisting]{format=empty}
+
 %TOC
 %change toc title
 \IfLanguageName {finnish} {\addto{\captionsfinnish}{\renewcommand*{\contentsname}{Sisällys}}} {}
@@ -766,7 +770,6 @@ Lopuksi haluaisin kiittää rakasta vaimoani Jennikaa kannustuksesta ja oikoluku
 
 \liite{1}
 \chapter{Linux configurations}\label{appx:first}
-
 
 \section{Udev rules}
 \begin{lstlisting}
