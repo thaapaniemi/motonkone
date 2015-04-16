@@ -628,20 +628,26 @@ Ohjelmistojen rajapintojen yhteensopivuuskerros-vaihtoehdossa  käytetään käy
 
 \subsection{NTVDM ja WOW}
 
-\lipsum[2]
+\lipsum[1-5]
 
 Huomioitavaa on, että NT-pohjaisissa 32-bittisissä Windowseissa (NT4/2000/XP/Vista/7) on käytössä Windows NTVDM -järjestelmäkomponentti/alijärjestelmä (NT Virtual Dos Machine), joka käyttöjärjestelmästä riippuen virtualisoi tai emuloi 16- ja 32-bittisen DOS-ympäristön DOS-ohjelmien ajamiseksi Windowsissa. NTVDM ei rajaa suoritusnopeutta ja monien oheislaitteiden toteutus siinä on yksinkertainen ja puutteelinen. NTVDM ei myöskään anna DOS-ohjelmien ottaa yhteyttä suoraan laitteistoon joka rajoittaa sen kautta ajettavien ohjelmien toimivuutta.
 
+Tähän ruma kaavio
+
 \subsection{Wine}
 
-\lipsum[2]
+\lipsum[1-5]
+
+Tähän hieno kaavio
 
 \subsection{Dosemu}
 % Mikä doesmu
 %mitä tulkitaan
 % mitä emuloidaan
 
-\lipsum[2]
+\lipsum[1-5]
+
+Tähän vitun hieno kaavio
 
 
 
@@ -653,15 +659,33 @@ Virtualisoinnin ollessa varsin yleistä, niin virtualisointiratkaisuita tarjoavi
 
 % Blaah. Esittely QEMUsta, Virtualboxista, VirtualPC:stä, VMWaren shaibasta
 
+\lipsum[1-5]
+
+Joku paska kaavio
+
 \section{Järjestelmäemulointi}
 
 Tässä vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmä ajetaan emulaattorissa toisen järjestelmän päällä. Emuloimalla saavutetaan laitteistoarkkitehtuuririippumattomuus isäntäkoneen ja emuloitavan järjestelmän välillä. Emuloinnin haittapuolena on hitaus. Nyrkkisääntönä on 20\% hyötysuhde \cite{tinycc} parhaiden emulaattorien päästessä n. 40-80\% hyötysuhteeseen \cite{40pperf}. Esimerksiksi Eltechs tarjoaa ExaGear Desktop-ohjelmistoa, jolla voi ajaa x86-ohjelmia ARMv7 -ympäristössä. \cite{eltechs:exagear}. 
+
+Avoimen lähdekoodin QEMU on myös prosessoriemulaattori, josta löytyy tuki usealle eri ohjelmistoarkkitehtuurille, yleisimpinä mm x86,PowerPC,ARM ja SPARC. Bochs on toinen suosittu prosessoriemulaattori x86/x64 -arkkitehtuureille.
+
+\lipsum[1-5]
+
+QEMUN emuloinnin esittely
+
+Bohcsin esittely
+
+Eltechsin ratkaisusta tarkemmin
+
 
 \section{Ohjelmistojen emulointi}
 
 Tässä vaihtoehdossa emuloidaan vain ohjelmat koko pc:n sijasta. Tämä onnistuu tietyillä ohjelmilla tiettyjen ohjelmistoarkkitehtuurien välillä \cite{tinycc},\cite{qemu_use}. Vaihtoehdolla voi ajaa mm. x86-ohjelmia ARM-prosessoreilla.
 
-Avoimen lähdekoodin QEMU on myös prosessoriemulaattori, josta löytyy tuki usealle eri ohjelmistoarkkitehtuurille, yleisimpinä mm x86,PowerPC,ARM ja SPARC. Bochs on toinen suosittu prosessoriemulaattori x86/x64 -arkkitehtuureille.
+Vähän QEMUn ratkaisusta. Selvitä onko muita
+
+\lipsum[1-5]
+
 \newpage
 
 \chapter{Lainsäädäntö ja standardit}
@@ -810,6 +834,8 @@ Ehdotan ajoneuvotietokoneeksi Panasonic Toughbook CF-19 tietokonetta. Toughbook 
 
 Valitsin Toughbook CF-19 korvaajaksi, koska kääntyvän näytön takia sen saa n. 5 cm paksuksi, mikä mahdollistaa sen, että ko. kannettavalle voidaan toteuttaa helposti teline joko alkuperäiseen pidikkeeseen tai erillisenä kiinnityksenä. CF-19:sta löytyy lisäksi vakiona yksi RS-232 -sarjaportti, joka on luotettavuudeltaan parempi kuin USB-pohjaiset adapterit. Tällöin Motomit PC voidaan liittää sarjaporttiin ja Terman laittaa menemään USB-adapterin kautta tulevasta sarjaportista. Vaikka Panasonic Toughbook CF-19 on suhteellisen vanha (julkaistu v. 2007) \cite{cf19}, niin kyseistä mallia on hyvin saatavissa käytettyjen ja kunnostettujen tietokoneiden myyntiin erikoistuneista liikkeistä. Kosketusnäytön ansiosta erillistä hiirtä ei tarvita ja näppäimistöksi riittää ulkoinen näppäimistö.
 
+\lipsum[1-5]
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.50\hsize]{/home/th/repos/motonkone/pictures/cf19.jpg}
@@ -824,6 +850,8 @@ Toinen vaihtoehto on toteuttaa uusi tietokone Sunit Neron koteloon. Tämän vaih
 Itse tietokoneeksi valitsisin esimerkiksi Intelin NUC-konseptin D53427RKE emolevyn, jossa on integroituna Intel i5 -prosessori. Liitäntöinä emolevyssä on HDMI näytölle ja miniPCIe SSD-levylle  \cite{D53427RKE}. Lisäksi emolevyssä on 5 USB-liitintä oheislaitteita varten. Näyttöpaneeliksi valitsin 10,1" IPS LCD-paneelin, jossa on mukana LCD-ajuripiirilevy HDMI-liitännällä. Alkuperäisen kuoren paneelin koko on 12" 4:3, joten 16:9 10,1" paneeli mahtuu hyvin tilalle koteloon. Paneeli käyttää 9-12V jännitettä, joten se sopii hyvin projektiin. Virtalähteeksi valitaan 24V jännitteellä toimiva M3-ATX, 125W ulostulolla oleva autokäyttöön suunniteltu virtalähde.
 
 Hintaa itse tehtynä tulisi n. 300€ (emolevy) + 150€ (paneeli) + 70€ (virtalähde) + muut tarvikkeet (muistit, ssd-levy, sekalaiset pientarvikkeet) ~100-200€?, jolloin lopullinen hinta olisin n. 600-700 € + työt. Kun tätä verrataan Panasonic Toughbook CF-19:n hintaan (n. 750€) ja otetaan huomioon tietokoneen tuleva käyttöympäristö, en pidä kannattavana koneen itse rakentamista vaan suosittelen valmiiksi olosuhteita kestävän tietokoneen hankkimista.
+
+\lipsum[1-5]
 
 %http://www.adafruit.com/products/1287
 %http://www.mini-box.com/M3-ATX-DC-DC-ATX-Automotive-Computer-car-PC-Power-Supply
@@ -840,6 +868,8 @@ ARM-arkkitehtuurista johtuen ohjelmistojen siirto tulee toteuttaa joko täysin e
 
 Raspberry Pi 2:ta ei ole ainakaan vielä julkisesti testattu EMC-määritysten osalta. Alkuperäinen Raspberry Pi on testattu EU:n asettamien määritysten mukaiseksi  \cite{raspi:emctesting}. EMC-vaatimusten täyttäminen on pakollista vasta valmiille, tuotantokäyttöön sellaisenaan tarkoitetuille tuotteille, mutta toteutuksessa kannattaa huomioida, että tulevan tietokoneen suojauksissa on otettu myös mahdolliset molempiin suuntiin kohdistuvat sähkömagneettiset häiriöt huomioon.
 
+\lipsum[1-5]
+
 
 \newpage
 
@@ -855,11 +885,11 @@ Parhaana vaihtoehtona pidän tällä hetkellä ajoneuvotietokoneen korvaamista P
 
 Suurimmat haasteet insinöörityössä liittyivät pääsyyn työn kohteena olevalle hakkuukoneelle. Hakkuukone oli aktiivisessa käytössä Oriveden metsissä koko insinöörityön ajan ja vierailut koneelle saatiin lopulta järjestettyä alkuperäisen ajoneuvotietokoneen huoltojen yhteydessä. Hakkuukoneen kommunikointi ajoneuvotietokoneen kanssa osoittautui kuitenkin yksinkertaiseksi, joten järjestyneet käyntikerrat riittivät hyvin selvittämään alkuperäisen järjestelmän toimintaa sekä testaamaan mahdollisessa uudessa tietokoneessa käytettäviä ratkaisuja.
 
-Muita haasteita työn toteutukselle toi hektinen arki. Tyttäreni syntyi joulukuussa vaikean raskauden päätteeksi ja mukana menossa on myös neljävuotias esikoinen. Täysipäiväisesti töitä tekevänä isänä en koe valitettavasti pystyneeni täysin antamaan insinöörityölle sen ansaitsemaa panostusta. Aion kuitenkin hyödyntää tekemääni työtä toteuttamalla uuden ajoneuvotietokoneen myös käytännössä.
+%Muita haasteita työn toteutukselle toi hektinen arki. Tyttäreni syntyi joulukuussa vaikean raskauden päätteeksi ja mukana menossa on myös neljävuotias esikoinen. Täysipäiväisesti töitä tekevänä isänä en koe valitettavasti pystyneeni täysin antamaan insinöörityölle sen ansaitsemaa panostusta. Aion kuitenkin hyödyntää tekemääni työtä toteuttamalla uuden ajoneuvotietokoneen myös käytännössä.
 
 Insinöörityössä saavutettiin asetetut tavoitteet uuden tietokoneen vaatimusten ja toteutusvaihtoehtojen selvittämisestä. Tarkoitus on, että hakkuukoneeseen hankitaan vielä tämän vuoden aikana edellä mainitun suunnitelman mukaisesti uusi ajoneuvotietokone, joka voidaan ottaa käyttöön alkuperäisen ajoneuvotietokoneen hajotessa seuraavan kerran.
 
-Lopuksi haluaisin kiittää rakasta vaimoani Jennikaa kannustuksesta ja oikolukuavusta, poikaani Tuukkaa toimimisesta apulaisena alkuperäisen koneen huollon ja tutkimisen yhteydessä sekä hakkuukoneen omistajaa Arto Saalia, joka oli suureksi avuksi kaikissa käytännön järjestelyissä.\newline
+%Lopuksi haluaisin kiittää rakasta vaimoani Jennikaa kannustuksesta ja oikolukuavusta, poikaani Tuukkaa toimimisesta apulaisena alkuperäisen koneen huollon ja tutkimisen yhteydessä sekä hakkuukoneen omistajaa Arto Saalia, joka oli suureksi avuksi kaikissa käytännön järjestelyissä.\newline
 
 
 \begin{figure}[H]
@@ -967,6 +997,16 @@ $_com2 = "/dev/ttyMoto1"
 sudo ln -s /dev/ttyMoto0 /home/user/.wine/dosdevices/com1
 sudo ln -s /dev/ttyMoto1 /home/user/.wine/dosdevices/com2
 \end{lstlisting}
+
+\newpage
+\liite{2}
+\chapter{Ratkaisun kaaviot ja BOM}\label{appx:2}
+Tänne QCAD:lla tai jollain muulla kököllä töherretyt kökkokuvat
+
+\newpage
+\liite{3}
+\chapter{Sunit Nero mitat}\label{appx:nero}
+Tähän Tänne QCAD:lla tai jollain muulla kököllä töherretyt kökkokuvat Neron mitoista
 
 
 \end{document}
