@@ -110,6 +110,8 @@ Keijo Länsikunnas, Lecturer %(for example: Project Manager)\newline
 \usepackage{tabularx}
 \usepackage{booktabs} %why not booktabs? :3
 
+\usepackage{lipsum} % For lorem ipsum 
+
 \newcommand\tn[1]{\textnormal{#1}} %use \tn instead of \textnormal
 \newcommand\reaction[1]{\begin{equation}\ce{#1}\end{equation}} %\reaction{} for chemical reactions
 
@@ -584,19 +586,19 @@ Loppukäyttäjän (hakkuukoneen kuljettajan) toiveena on, että tietokoneen vaih
 
 Natiivilla ympäristöllä tarkoitetaan, että laitteiston ja käyttöjärjestelmän välissä ei ole virtualistointi- tai yhteensopivuusrajapintaa, vaan käyttöjärjestelmällä on suora pääsy fyysisen laitteiston rajapintoihin.
 
-Natiivin ympäristön hyviä puolia:
-* Suoritusnopeus
-* Ohjelman ja laitteiston välisen kommunikoinnin kutsupolku? lyhyempi
-* toimiessaan yksinkertaisin
+% Natiivin ympäristön hyviä puolia:
+% * Suoritusnopeus
+% * Ohjelman ja laitteiston välisen kommunikoinnin kutsupolku? lyhyempi
+% * toimiessaan yksinkertaisin
 
-Natiivin ympäristön Haittapuolia ja rajoituksia:
-* Vanhat käyttöjärjestelmät eivät toimi uusien laitteiden kanssa
-** koska ei löydy laiteajureita
-** koska uudet laitteet ovat liian nopeita tai liian isolla kapasiteetilla varustettuja suhteessa vanhojen käyttöjärjestelmien toteutuksiin
-* Uudet käyttöjärjestelmät eivät ole välttämättä yhteensopivia vanhojen ohjelmien kanssa
-* (ei liity työhön) 
-** Hyötysuhde huono
-** Kaikilla ohjelmilla (käyttöjärjestelmästä riippuen) pääsy toisensa tiedostoihin
+% Natiivin ympäristön Haittapuolia ja rajoituksia:
+% * Vanhat käyttöjärjestelmät eivät toimi uusien laitteiden kanssa
+% ** koska ei löydy laiteajureita
+% ** koska uudet laitteet ovat liian nopeita tai liian isolla kapasiteetilla varustettuja suhteessa vanhojen käyttöjärjestelmien toteutuksiin
+% * Uudet käyttöjärjestelmät eivät ole välttämättä yhteensopivia vanhojen ohjelmien kanssa
+% * (ei liity työhön) 
+% ** Hyötysuhde huono
+% ** Kaikilla ohjelmilla (käyttöjärjestelmästä riippuen) pääsy toisensa tiedostoihin
 
 
 Natiivin ympäristön vaihtoehdossa ohjelmistoja käytetään ympäristössä, johon ne on aikoinaan suunniteltu toimivaksi. Hyvänä puolena tässä vaihtoehdossa on se, että ohjelmat toimivat varmasti siten kuin ne on suunniteltu. Koska käytettävät ohjelmistot ovat vanhoja, DOS- ja Windows 98- aikaisia, vaatisi natiivin ympäristön käyttäminen kuitenkin suunnilleen samaa alkuperäisen tietokoneen kanssa samaa ikäluokkaa olevan laitteiston käyttämisen. Uudemmat laitteistot eivät ole enää yhteensopivia Windows 98SE / ME:n kanssa ja lisäksi Windows 98:lla on maksimirajoituksia käytettävälle laitteistolle kuten maksimi luotettavasti käytettävä määrä keskusmuistia 1024 Mb ja kiintolevyosiolle rajattu maksimikoko 127,5 Gb \cite{win98:maxspecs}. Uudemmille laitteille ei myöskään löydy välttämättä toimivia ajureita, mikä rajoittaa entisestään mahdollisia laitteistovaihtoehtoja. Koska ajoneuvotietokone ei ole yhdistettynä Internetiin ja koneelle on rajattu pääsy, ei tässä käyttöympäristössä Windows 98:n paikkaamattomilla haavoittuvuuksilla (Windows 98: 84 kpl, Windows 98SE 61 kpl \cite{win98:vulns}) ole erityistä merkitystä käytettävyyteen.
@@ -624,7 +626,24 @@ Pääpiirteittäin tulkkaa, mutta saattaa virtualisoida joitain laitteistorajapi
 
 Ohjelmistojen rajapintojen yhteensopivuuskerros-vaihtoehdossa  käytetään käyttöjärjestelmän ja ohjelman välissä sopivia rajapintakerroksia, jolloin saadaan käyttöjärjestelmän kanssa yhteensopimattomat ohjelmat toimimaan keskenään. Vaihtoehto vaatii yhteensopivan laitteistoarkkitehtuurin alkuperäisen järjestelmän kanssa (x86). Nykyiset Windows-versiot (Windows XP+) sisältävät jo valmiiksi yhteensopivuustilan, joka mahdollistaa vanhempien ohjelmien käyttämisen uudemmissa käyttöjärjestelmissä. Linuxissa Wine-rajapinta mahdollistaa kaikenikäisten Windows-sovellusten ajamisen Linuxissa. Myös DOS:lle löytyy rajapintakerrostoteutus Linuxiin.
 
+\subsection{NTVDM ja WOW}
+
+\lipsum[2]
+
 Huomioitavaa on, että NT-pohjaisissa 32-bittisissä Windowseissa (NT4/2000/XP/Vista/7) on käytössä Windows NTVDM -järjestelmäkomponentti/alijärjestelmä (NT Virtual Dos Machine), joka käyttöjärjestelmästä riippuen virtualisoi tai emuloi 16- ja 32-bittisen DOS-ympäristön DOS-ohjelmien ajamiseksi Windowsissa. NTVDM ei rajaa suoritusnopeutta ja monien oheislaitteiden toteutus siinä on yksinkertainen ja puutteelinen. NTVDM ei myöskään anna DOS-ohjelmien ottaa yhteyttä suoraan laitteistoon joka rajoittaa sen kautta ajettavien ohjelmien toimivuutta.
+
+\subsection{Wine}
+
+\lipsum[2]
+
+\subsection{Dosemu}
+% Mikä doesmu
+%mitä tulkitaan
+% mitä emuloidaan
+
+\lipsum[2]
+
+
 
 \section{Virtualisointi}
 
