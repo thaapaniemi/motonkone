@@ -640,19 +640,21 @@ Wine on POSIX-yhteensopiville käyttöjärjestelmille kehitetty yhteensopivuuske
 
 Wineen pystyy asettamaan käyttöön tarvittaessa alkuperäisen järjestelmän jaettuja DLL-kirjastoja. Alkuperäinen DLL tarjoaa täyden yhteensopivuuden kirjaston toteuttamille rutiineille. Näiden käytön vaarana on, että ne voivat yrittää käyttää Windowsin järjestelmäkomponentteja joita Wineen ei ole toteutettu, jolloin toiminnallisuus kärsii. Winen sisäänrakennetut DLL:t sisältävät tarvittavilta osin lisäyksiä ja välityskoodia / käärekoodia joilla kirjastot saadaan toimimaan Unixissa käytetyjen ratkaisuiden kanssa yhteen. 
 
-Wine ei tue Windowsin ajurien käyttöä, koska Winen kernel-ratkaisut eivät sisällä tähän mahdollisuutta. Wine tukee joitain laitteita, jos ja vain jos niille löytyy käytettävästä käyttöjärjestelmästä ajurituki, sekä itse Wineen on toteutettu tarvittavat rajapintamuunnokset kyseiselle laitteelle. Winessä on kuitenkin ohitettu ajurien tarve toteuttamalla monet DLL-kirjastot siten, että ne käyttävät Unixin rajapintoja (tulostus, äänet, näyttö).
+Wine ei tue Windowsin ajurien käyttöä, koska Winen kernel-ratkaisut eivät sisällä tähän mahdollisuutta. Wine tukee joitain laitteita, jos ja vain jos niille löytyy käytettävästä käyttöjärjestelmästä ajurituki, sekä itse Wineen on toteutettu tarvittavat rajapintamuunnokset kyseiselle laitteelle. Winessä on kuitenkin ohitettu ajurien tarve toteuttamalla monet DLL-kirjastot siten, että ne käyttävät Unixin rajapintoja (tulostus, äänet, näyttö). Jokainen Wine-prosessi (==suoritettava exe) ajetaan omana prosessina, jolloin niillä on omat osoiteavaruudet (eivätkä ne voi sörkkiä toisetensa muistia).
 
-Winen kehitys alkoi jo vuonna 1993, kun Bob Amstadt halusi suorittaa sen aikaisia Windows 3.1 -ohjelmia Windowsin puolella. Kehitysvastuu v. 1994 Alexandre Julliard:lle, joka on toiminut Wine Projectin johtohahmona ja projektin vetäjänä siitä lähtien. Winen koodista n. puolet on kirjoitettu vapaaehtoisten toimesta. Yrityspuolelta projektin pääasiallinen sponsori on CodeWeavers, jonka työntekijöitä myös moni Wine-kehittäjä on. CodeWeavers on kehittänyt CrossOver linux-tuotteensa joka on kaupallistettu, käyttäjäystävällisempi versio Winestä. Crossover tarjoaa myös ohjelmistojen porttaus- ja tukipalveluita Winelle.
+Winen kehitys alkoi jo vuonna 1993, kun Bob Amstadt halusi suorittaa sen aikaisia Windows 3.1 -ohjelmia Windowsin puolella. Kehitysvastuu v. 1994 Alexandre Julliard:lle, joka on toiminut Wine Projectin johtohahmona ja projektin vetäjänä siitä lähtien. Winen koodista n. puolet on kirjoitettu vapaaehtoisten toimesta. Yrityspuolelta projektin pääasiallinen sponsori on CodeWeavers, jonka työntekijöitä myös moni Wine-kehittäjä on. CodeWeavers on kehittänyt CrossOver linux-tuotteensa joka on kaupallistettu, käyttäjäystävällisempi versio Winestä. CodeWeavers tarjoaa myös ohjelmistojen porttaus- ja tukipalveluita Winelle.
 
-Winen 1.0 -versio julkaistiin vuonna 2008. Winestä julkaistaan uusi vakaa (stabiili,virallinen,tuettu,jotain) versio kahden vuoden välein. Viimeisin vakaa versio on 1.6. Wine käyttää versionumeroinnissaan Linuxin aiemmin käyttämää tyyliä Major.Minor.Build , jossa parilliset Minor-versiot ovat vakaita julkaisuita ja parittomat kehitysversioita. 
+Winen 1.0 -versio julkaistiin vuonna 2008. Winestä julkaistaan uusi vakaa (stabiili,virallinen,tuettu,jotain) versio kahden vuoden välein. Viimeisin vakaa versio on 1.6. Wine käyttää versionumeroinnissaan sekventiaalista Major.Minor.Build -tyyliä, jossa parilliset Minor-versiot ovat vakaita julkaisuita ja parittomat kehitysversioita. 
 
 
 
 %https://www.winehq.org/docs/winedev-guide/x2884
 
-\lipsum[1-5]
+\lipsum[1-3]
 
-Tähän hieno kaavio
+Tähän hieno kaavio Winen toteuttamasta arkkitehtuurista pinostsa
+
+Wine server toteuttaa IPC:n, synkronoinnin, ja prosessien/säikeiden hallinnan.
 
 \subsection{Dosemu}
 % Mikä doesmu
