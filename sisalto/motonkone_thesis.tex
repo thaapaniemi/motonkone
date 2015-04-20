@@ -635,7 +635,7 @@ Huomioitavaa on, että NT-pohjaisissa 32-bittisissä Windowseissa (NT4/2000/XP/V
 Tähän ruma kaavio
 
 \subsection{Wine}
-
+%https://www.winehq.org/docs/winedev-guide/x2884
 Wine on POSIX-yhteensopiville käyttöjärjestelmille kehitetty yhteensopivuuskerros, jolla Windows-ohjelmat saadaan toimimaan muissa käyttöjärjestelmissä. Wineen on toteutettu Windowsin kernelin järjestelmäkutsut, sekä useita tarvittavia DLL-kirjastoja. 
 
 Wineen pystyy asettamaan käyttöön tarvittaessa alkuperäisen järjestelmän jaettuja DLL-kirjastoja. Alkuperäinen DLL tarjoaa täyden yhteensopivuuden kirjaston toteuttamille rutiineille. Näiden käytön vaarana on, että ne voivat yrittää käyttää Windowsin järjestelmäkomponentteja joita Wineen ei ole toteutettu, jolloin toiminnallisuus kärsii. Winen sisäänrakennetut DLL:t sisältävät tarvittavilta osin lisäyksiä ja välityskoodia / käärekoodia joilla kirjastot saadaan toimimaan Unixissa käytetyjen ratkaisuiden kanssa yhteen. 
@@ -646,15 +646,15 @@ Winen kehitys alkoi jo vuonna 1993, kun Bob Amstadt halusi suorittaa sen aikaisi
 
 Winen 1.0 -versio julkaistiin vuonna 2008. Winestä julkaistaan uusi vakaa (stabiili,virallinen,tuettu,jotain) versio kahden vuoden välein. Viimeisin vakaa versio on 1.6. Wine käyttää versionumeroinnissaan sekventiaalista Major.Minor.Build -tyyliä, jossa parilliset Minor-versiot ovat vakaita julkaisuita ja parittomat kehitysversioita. 
 
-
-
-%https://www.winehq.org/docs/winedev-guide/x2884
-
 \lipsum[1-3]
 
-Tähän hieno kaavio Winen toteuttamasta arkkitehtuurista pinostsa
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\hsize]{/home/th/repos/motonkone/pictures/kaaviot/wine_pino.png}
+\caption{Vasemmalla Windows NT:n käyttämä arkkitehtuuri, oikealla Wineen toteutettu arkkitehtuuri}
+\end{figure}
 
-Wine server toteuttaa IPC:n, synkronoinnin, ja prosessien/säikeiden hallinnan.
+Wine serverin avulla on totetutettu IPC:n (prosessien välinen kommmunikointi), synkronointi, ja prosessien/säikeiden hallinta. Windows-alijärjestelmistä on toteutettuna vain Win32-alijärjestelmä (Kernel32). Winen toteuttamien DLL-tiedostojen nimeämiskäytäntö on pyritty pitämään mahdollisimman lähellä Windowsin nimeämiskäytäntöä, jos vain se on ollut mahdollista. \cite{wine:architecture}
 
 \subsection{Dosemu}
 % Mikä doesmu
