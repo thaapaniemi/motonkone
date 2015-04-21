@@ -623,7 +623,6 @@ Pääpiirteittäin tulkkaa, mutta saattaa virtualisoida joitain laitteistorajapi
 % Darling -> OSX on Linux
 
 
-
 Ohjelmistojen rajapintojen yhteensopivuuskerros-vaihtoehdossa  käytetään käyttöjärjestelmän ja ohjelman välissä sopivia rajapintakerroksia, jolloin saadaan käyttöjärjestelmän kanssa yhteensopimattomat ohjelmat toimimaan keskenään. Vaihtoehto vaatii yhteensopivan laitteistoarkkitehtuurin alkuperäisen järjestelmän kanssa (x86). Nykyiset Windows-versiot (Windows XP+) sisältävät jo valmiiksi yhteensopivuustilan, joka mahdollistaa vanhempien ohjelmien käyttämisen uudemmissa käyttöjärjestelmissä. Linuxissa Wine-rajapinta mahdollistaa kaikenikäisten Windows-sovellusten ajamisen Linuxissa. Myös DOS:lle löytyy rajapintakerrostoteutus Linuxiin.
 
 \subsection{NTVDM ja WOW}
@@ -661,7 +660,14 @@ Wine serverin avulla on totetutettu IPC:n (prosessien välinen kommmunikointi), 
 %mitä tulkitaan
 % mitä emuloidaan
 
-\lipsum[1-5]
+Dosemu on Linuxille kehitetty yhteensopivuuskerros, jolla saa ajettua DOS-ohjelmia x86/x64-arkkitehtuuria käyttävässä Linux-käyttöjärjestelmässä. Dosemu on käyttäjätason ohjelma (ei vaadi pääkäyttäjän/root-oikeuksia), joka hyödyntää 80386:n ja Linux -kernelin erityisominaisuuksia ajaakseen DOS-ohjelmia eriytettynä prosesseina. Dosemu virtualisoi kaiken i/o-liikenteen, simuloi laitteistoa johon DOS-ohjelmilla on suora pääsy, sekä tarjoaa virtuaalisen kiintolevyn joka oikeasti on tiedostopolku Linuxissa.
+
+Tekstipohjaiset DOS-ohjelmat saa suoritettua DOSEMU:n avulla suoraan konsolissa, mutta siitä löytyy myös CGA/EGA/VGA-emulaation DOS:n graafista moodia käyttäville ohjelmille(Mode 13h 320x200 256 väriä). Dosemu sisältää myös tuen sarja- ja rinnakkaisporteille.
+
+% http://www.dosemu.org/docs/HOWTO/x596.html#AEN598
+Dosemun kehitys alkoi v. 1992 Matthias Lautnerin toimesta. Projekti vastuuhenkilö vaihtunut vuosien varrella ja vuodesta 2004 lähtien vastuussa on ollut Bart Oldeman.
+
+\lipsum[1-3]
 
 Tähän vitun hieno kaavio
 
@@ -674,6 +680,17 @@ Tässä vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmää ajetaa
 Virtualisoinnin ollessa varsin yleistä, niin virtualisointiratkaisuita tarjoavia yrityksiä ja ohjelmistoja on paljon. Työpöytävirtualisointiin riittävillä ominaisuuksilla (mm. sarjaporttien välitys virtuaalikoneille) sopii esimerkiksi avoimen lähdekoodin QEMU-hypervisori tai Oraclen Virtualbox -hypervisori. Myös Microsoft tarjoaa Windows-ympäristöön VirtualPC-hypervistoria. Kaupallisista tarjoajista VMWarella on olemassa VMWare Workstation ja VMWare Player -hypervisori.
 
 % Blaah. Esittely QEMUsta, Virtualboxista, VirtualPC:stä, VMWaren shaibasta
+\subsection{QEMU}
+QEMU (Quick Emulator) on avoimen lähdekoodin emulaattori ja hypervisor, joka toimii Linuxin lisäksi myös Windowsissa ,sekä Mac OS X:ssä. QEMU tukee erilaisia toimintamoodeja:
+
+User-mode emulation
+In this mode QEMU runs single Linux or Darwin/Mac OS X programs that were compiled for a different instruction set. System calls are thunked for endianness and for 32/64 bit mismatches. Fast cross-compilation and cross-debugging are the main targets for user-mode emulation.
+System emulation
+In this mode QEMU emulates a full computer system, including peripherals. It can be used to provide virtual hosting of several virtual computers on a single computer. QEMU can boot many guest operating systems, including Linux, Solaris, Microsoft Windows, DOS, and BSD;[5] it supports emulating several instruction sets, including x86, MIPS, 32-bit ARMv7, ARMv8, PowerPC, SPARC, ETRAX CRIS and MicroBlaze.
+KVM Hosting
+Here QEMU deals with the setting up and migration of KVM images. It is still involved in the emulation of hardware, but the execution of the guest is done by KVM as requested by QEMU.
+Xen Hosting
+
 
 \lipsum[1-5]
 
