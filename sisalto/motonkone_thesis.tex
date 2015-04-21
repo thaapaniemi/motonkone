@@ -680,16 +680,35 @@ Tässä vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmää ajetaa
 Virtualisoinnin ollessa varsin yleistä, niin virtualisointiratkaisuita tarjoavia yrityksiä ja ohjelmistoja on paljon. Työpöytävirtualisointiin riittävillä ominaisuuksilla (mm. sarjaporttien välitys virtuaalikoneille) sopii esimerkiksi avoimen lähdekoodin QEMU-hypervisori tai Oraclen Virtualbox -hypervisori. Myös Microsoft tarjoaa Windows-ympäristöön VirtualPC-hypervistoria. Kaupallisista tarjoajista VMWarella on olemassa VMWare Workstation ja VMWare Player -hypervisori.
 
 % Blaah. Esittely QEMUsta, Virtualboxista, VirtualPC:stä, VMWaren shaibasta
+%http://qemu.weilnetz.de/qemu-tech.html#intro_005ffeatures
 \subsection{QEMU}
-QEMU (Quick Emulator) on avoimen lähdekoodin emulaattori ja hypervisor, joka toimii Linuxin lisäksi myös Windowsissa ,sekä Mac OS X:ssä. QEMU tukee erilaisia toimintamoodeja:
+QEMU (Quick Emulator) on avoimen lähdekoodin emulaattori ja hypervisor, joka toimii Linuxin lisäksi myös Windowsissa ,sekä Mac OS X:ssä. QEMU tukee erilaisia toimintamoodeja.
 
-User-mode emulation
-In this mode QEMU runs single Linux or Darwin/Mac OS X programs that were compiled for a different instruction set. System calls are thunked for endianness and for 32/64 bit mismatches. Fast cross-compilation and cross-debugging are the main targets for user-mode emulation.
-System emulation
-In this mode QEMU emulates a full computer system, including peripherals. It can be used to provide virtual hosting of several virtual computers on a single computer. QEMU can boot many guest operating systems, including Linux, Solaris, Microsoft Windows, DOS, and BSD;[5] it supports emulating several instruction sets, including x86, MIPS, 32-bit ARMv7, ARMv8, PowerPC, SPARC, ETRAX CRIS and MicroBlaze.
-KVM Hosting
-Here QEMU deals with the setting up and migration of KVM images. It is still involved in the emulation of hardware, but the execution of the guest is done by KVM as requested by QEMU.
-Xen Hosting
+QEMU käyttää dynaamista muunnosta (dynamic translation) nopeuttakseen emulointinopeutta. Dynaamisessa muutoksessa kakataan koodin päälle ja toivotaan ettei kukaan huomaa.
+%TODO: Dynaaminen muutos
+QEMU:n suoritusnopeus emuloinnissa on jotain, luokkaa 50\%? Jotain kakkaa se on. Tähän cite. 
+
+\subsubsection{Käyttäjätilan emulointi}
+%In this mode QEMU runs single Linux or Darwin/Mac OS X programs that were compiled for a different instruction set. System calls are thunked for endianness and for 32/64 bit mismatches. Fast cross-compilation and cross-debugging are the main targets for user-mode emulation.
+%http://qemu.weilnetz.de/qemu-tech.html#User-emulation-specific-details
+Käyttäjätilan emuloinnilla voidaan emuloida samalle käyttöjärjestelmälle, mutta eri arkkitehtuurille käännettyjen ohjelmien suoritus. QEMU suorittaa ohjelmille järjestelmäkutsujen ja i/o:n käännön ja korjauksen, signaalien välityksen, sekä säikeiden emuloinnin jonka avulla alkuperäiset ohjelmat saadaan suoritettua kohdearkkitehtuurilla.
+
+QEMU:n avulla voidaan emuloida esimerkiksi Wine-yhteensopivuuskerroksen ajo, jolloin x86-Windows -ohjelmat saadaan suoritettua myös muilla arkkitehtuureilla.
+
+
+\subsubsection{Järjestelmäemulointi}
+%In this mode QEMU emulates a full computer system, including peripherals. It can be used to provide virtual hosting of several virtual computers on a single computer. QEMU can boot many guest operating systems, including Linux, Solaris, Microsoft Windows, DOS, and BSD;[5] it supports emulating several instruction sets, including x86, MIPS, 32-bit ARMv7, ARMv8, PowerPC, SPARC, ETRAX CRIS and MicroBlaze.
+Järjestelmäemuloinnissa QEMU emuloi koko tietokoneeen, mukaanlukien laitteistot. Emuloimalla kohdejärjestelmän arkkitehtuurin ei tarvitse olla sama kuin isäntäkoneella. 
+
+QEMU:n järjestelmäemulointi tukee seuraavia arkkitehtuureita: x86, MIPS, 32-bit ARMv7, ARMv8, PowerPC, SPARC, ETRAX CRIS and MicroBlaze. Toimivat kohdekäyttöjärestelmät ovat mm. kaikki Windows -versiot, Linux-versiot, DOS, Solaris- ja BSD-variantit.
+
+
+\subsubsection{KVM Hosting}
+%Here QEMU deals with the setting up and migration of KVM images. It is still involved in the emulation of hardware, but the execution of the guest is done by KVM as requested by QEMU.
+KVM (Kernel Mode Virtualization) on kakkaaa jonka avulla virtualisointi on toteutettu.
+
+\subsubsection{Xen Hosting}
+%QEMU is involved only in the emulation of hardware; the execution of the guest is done within Xen and is totally hidden from QEMU.
 
 
 \lipsum[1-5]
