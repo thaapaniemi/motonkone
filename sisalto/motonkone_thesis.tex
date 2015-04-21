@@ -622,6 +622,10 @@ Pääpiirteittäin tulkkaa, mutta saattaa virtualisoida joitain laitteistorajapi
 % Lina -> Linux on MacOSX
 % Darling -> OSX on Linux
 
+% vanhoja
+% http://en.wikipedia.org/wiki/Wabi_(software)
+% https://www.freshports.org/emulators/twin/ , http://gnu.gds.tuwien.ac.at/directory/libs/willowstwin.html
+
 
 Ohjelmistojen rajapintojen yhteensopivuuskerros-vaihtoehdossa  käytetään käyttöjärjestelmän ja ohjelman välissä sopivia rajapintakerroksia, jolloin saadaan käyttöjärjestelmän kanssa yhteensopimattomat ohjelmat toimimaan keskenään. Vaihtoehto vaatii yhteensopivan laitteistoarkkitehtuurin alkuperäisen järjestelmän kanssa (x86). Nykyiset Windows-versiot (Windows XP+) sisältävät jo valmiiksi yhteensopivuustilan, joka mahdollistaa vanhempien ohjelmien käyttämisen uudemmissa käyttöjärjestelmissä. Linuxissa Wine-rajapinta mahdollistaa kaikenikäisten Windows-sovellusten ajamisen Linuxissa. Myös DOS:lle löytyy rajapintakerrostoteutus Linuxiin.
 
@@ -682,9 +686,13 @@ Virtualisoinnin ollessa varsin yleistä, niin virtualisointiratkaisuita tarjoavi
 % Blaah. Esittely QEMUsta, Virtualboxista, VirtualPC:stä, VMWaren shaibasta
 %http://qemu.weilnetz.de/qemu-tech.html#intro_005ffeatures
 \subsection{QEMU}
-QEMU (Quick Emulator) on avoimen lähdekoodin emulaattori ja hypervisor, joka toimii Linuxin lisäksi myös Windowsissa ,sekä Mac OS X:ssä. QEMU tukee erilaisia toimintamoodeja.
+QEMU (Quick Emulator) on avoimen lähdekoodin emulaattori ja virtuaalikone, joka toimii Linuxin lisäksi myös Windowsissa ,sekä Mac OS X:ssä. QEMU tukee erilaisia toimintamoodeja. QEMU:n rakenne on jaettu backendiin, joka vastaa isäntäkoneen arkkitehtuurituesta, sekä frontendiin, joka vastaa kohdeprosessorin emuloinnin toteuttamisesta. Tällä rakenteella on saatu aikaiseksi järjestelmä, joka on sekä helppo portata sekä johon on helppo toteuttaa uusia prosessoreita eri käskykannoilla.
 
-QEMU käyttää dynaamista muunnosta (dynamic translation) nopeuttakseen emulointinopeutta. Dynaamisessa muutoksessa kakataan koodin päälle ja toivotaan ettei kukaan huomaa.
+%http://qemu.weilnetz.de/qemu-tech.html#QEMU-compared-to-other-emulators
+QEMU käyttää dynaamista käännöstä (dynamic translation) nopeuttakseen emulointinopeutta. Dynaamisessa käännöksessä tulkitaan ja käännetään ajettavaa tiedostoa pieni osa, blokki, kerrallaan. Blokki on haarautumiseen ja hyppykäskyihin asti oleva pätkä käskyjä. Koska yleensä dynaamiset kääntäjät ovat monimutkaisia ja arkkitehtuurisidonnaisia, on QEMU:n kääntäjä TCG (Tiny Code Generator) pidetty yksinkertaisena ja helposti siirrettävänä (portattavana). TCG:n perusidea on jakaa jokainen käsky TCG:n RISC-tyylisiksi käskyiksi, jotka sitten muutetaan kohdejärjestelmän käskyiksi.
+%Dynaamisessa muutoksessa kakataan koodin päälle ja toivotaan ettei kukaan huomaa.
+%http://git.qemu.org/?p=qemu.git;a=blob_plain;f=tcg/README;hb=HEAD
+
 %TODO: Dynaaminen muutos
 QEMU:n suoritusnopeus emuloinnissa on jotain, luokkaa 50\%? Jotain kakkaa se on. Tähän cite. 
 
@@ -695,17 +703,24 @@ Käyttäjätilan emuloinnilla voidaan emuloida samalle käyttöjärjestelmälle,
 
 QEMU:n avulla voidaan emuloida esimerkiksi Wine-yhteensopivuuskerroksen ajo, jolloin x86-Windows -ohjelmat saadaan suoritettua myös muilla arkkitehtuureilla.
 
+QEMU:n käyttäjätilan emulointi tukee seuraavia arkkitehtuureita: xx86, PowerPC, ARM, 32-bit MIPS, Sparc32/64, ColdFire(m68k), CRISv32 ja MicroBlaze. Toimivat kohdekäyttöjärestelmät ovat mm. kaikki Windows -versiot, Linux-versiot, DOS, Solaris- ja BSD-variantit.
+
 
 \subsubsection{Järjestelmäemulointi}
 %In this mode QEMU emulates a full computer system, including peripherals. It can be used to provide virtual hosting of several virtual computers on a single computer. QEMU can boot many guest operating systems, including Linux, Solaris, Microsoft Windows, DOS, and BSD;[5] it supports emulating several instruction sets, including x86, MIPS, 32-bit ARMv7, ARMv8, PowerPC, SPARC, ETRAX CRIS and MicroBlaze.
-Järjestelmäemuloinnissa QEMU emuloi koko tietokoneeen, mukaanlukien laitteistot. Emuloimalla kohdejärjestelmän arkkitehtuurin ei tarvitse olla sama kuin isäntäkoneella. 
+Järjestelmäemuloinnissa QEMU emuloi koko tietokoneeen, mukaanlukien laitteistot. Emuloimalla kohdejärjestelmän arkkitehtuurin ei tarvitse olla sama kuin isäntäkoneella. QEMU:Sta löytyy totetuttuna suhteellisen laaja määrä erilaisia laitteita, kuten 11 erilaista USB Hostia, 8 erilaista verkkokorttia, 5 erilaista näytönohjainta, sekä 8 äänikorttia.
 
-QEMU:n järjestelmäemulointi tukee seuraavia arkkitehtuureita: x86, MIPS, 32-bit ARMv7, ARMv8, PowerPC, SPARC, ETRAX CRIS and MicroBlaze. Toimivat kohdekäyttöjärestelmät ovat mm. kaikki Windows -versiot, Linux-versiot, DOS, Solaris- ja BSD-variantit.
+QEMU:ssa on käytetty GIL:liä (Global Interpreter Lock) synkronoimaan suoritusta, joten se suorittaa järjestelmäemuloinnin yksisäikeisesti, vaikka kohdejärjestelmälle olisikin toisin väitetty. 
+
+% http://en.wikibooks.org/wiki/QEMU/Devices
+%http://wiki.qemu.org/download/qemu-doc.html
+
 
 
 \subsubsection{KVM Hosting}
 %Here QEMU deals with the setting up and migration of KVM images. It is still involved in the emulation of hardware, but the execution of the guest is done by KVM as requested by QEMU.
 KVM (Kernel Mode Virtualization) on kakkaaa jonka avulla virtualisointi on toteutettu.
+KVM (Kernel Mode Virtualization) on Linux-ytimeen rakennettu tuki virtualisoinnille. KVM vaatii prosessorilta virtualisointituen. Tällä hetkellä ainoastaan QEMU on ainoa virtuaalikone, joka hyödyntää KVM:ää. KVM ei itsessään emuloi mitään, vaan tarjoaa käyttäjätasolle rajapinnan prosessorin virtualisointiominaisuuksiin.
 
 \subsubsection{Xen Hosting}
 %QEMU is involved only in the emulation of hardware; the execution of the guest is done within Xen and is totally hidden from QEMU.
