@@ -433,13 +433,23 @@ QEMU:ssa on käytetty GIL:liä (Global Interpreter Lock) synkronoimaan suoritust
 %Here QEMU deals with the setting up and migration of KVM images. It is still involved in the emulation of hardware, but the execution of the guest is done by KVM as requested by QEMU.
 KVM (Kernel Mode Virtualization) on Linux-ytimeen rakennettu tuki virtualisoinnille. KVM vaatii prosessorilta virtualisointituen. KVM ei itsessään emuloi mitään, vaan tarjoaa käyttäjätasolle rajapinnan prosessorin virtualisointiominaisuuksiin. QEMU hoitaa virtualisoinnin KVM:n avulla. QEMU emuloi tarvittavat laitteet ja KVM hoitaa itse virtualisoinnin.
 
+
+
 \subsubsection{Xen Hosting}
+%http://wiki.xenproject.org/wiki/Xen_Overview
 %QEMU is involved only in the emulation of hardware; the execution of the guest is done within Xen and is totally hidden from QEMU.
+Xen on Cambridgen yliopistossa kehitetty virtuaalikone. Xen suoritetaan käynnistyslataimesta (bootloaderista), jolloin se asettautuu laitteiston ja virtuaalikoneiden väliin. Xen vaatiikiin aina suoritettavaksi yhden virtuaalikoneen eli ns. isäntäkoneen eli Dom0:n. Dom0 hoitaa interaktion laitteiston sekä muiden virtuaalikoneiden kanssa. Lisäksi ainoastaan Dom0:lla on pääsy Xenin rajapintaa jota kautta hallitaan järjestelmää.
+
+Xen vaatii erillisen tuen kohdekäyttöjärjestelmiltä jotta niitä voidaan käyttää Xenin avulla (para)virtualisoituina (pl. rautatason virtualisointi jolloin kohde ei tarvitse muutoksia). Tuki Xenin paravirtualisoinnille löytyy kuitenkin useimmista Linux- ja BSD-jakeluista. Windowsissa ei ole tukea Xenin paravirtualisoinnille, mutta sitä voidaan ajaa laitteistoavusteisen virtualisoinnin avulla Xenin päällä.
+
+Xeniä käytettäessä QEMU hoitaa ainoastaan laitteistoemuloinnin, itse virtuaalikoneen suoritus tapahtuu Xenin kautta eikä QEMUlla ole siihen pääsyä.
+
+%The Control Domain (or Domain 0) is a specialized Virtual Machine that has special privileges like the capability to access the hardware directly, handles all access to the system’s I/O functions and interacts with the other Virtual Machines. It also exposes a control interface to the outside world, through which the system is controlled. The Xen Project hypervisor is not usable without Domain 0, which is the first VM started by the system.
 
 
-\lipsum[1-5]
+\lipsum[1-2]
 
-Joku paska kaavio
+Joku paska kaavio Xenin arkkitehtuurista
 
 \subsection{Windows Virtual PC}
 Windows Virtual PC on Microsoftin ilmaiseksi tarjoama virtuaalikone.
