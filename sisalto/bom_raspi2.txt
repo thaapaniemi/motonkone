@@ -1,0 +1,26 @@
+Raspi2 based computer: Bill of Materials
+
+Raspberry Pi 2 - Model B - ARMv7 with 1G RAM PID: 2358
+$39.95
+
+Adafruit Raspberry Pi B+ / Pi 2 Case - Smoke Base w/ Clear Top PID: 2258
+$7.95
+
+SD/MicroSD Memory Card (4 GB SDHC) PID: 102
+$7.95
+
+HDMI 4 Pi - 10.1" Display 1280x800 IPS - HDMI/VGA/NTSC/PAL PID: 1287
+$144.95
+
+HDMI Flat Cable - 1 foot / 30cm long PID: 2197
+$3.95
+
+10x Brass M2.5 Standoffs for Pi HATs - Black Plated - Pack of 2 PID: 2336
+$6.80
+
+UBEC DC/DC Step-Down (Buck) Converter - 5V @ 3A output PID: 1385
+$9.95
+
+TOTAL (USD) $221.50 + Taxes + Shipping
+(Shipping $45.85)
++Suomen ALV
