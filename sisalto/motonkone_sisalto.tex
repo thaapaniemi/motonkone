@@ -1,0 +1,711 @@
+\begin{document}
+\counterwithout{lstlisting}{chapter}
+
+%page number always on the top right, clear the "chapter/section" head
+\pagestyle{myheadings}
+\markright{}
+%clear chapter "title" foot page
+\makeevenfoot{plain}{}{}{}
+\makeoddfoot{plain}{}{}{}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\maketitle
+\newpage
+\LRCornerWallPaper{1}{footer}
+
+%----------------------------------------------------------------------------------------
+%    Tiivistelmä
+%----------------------------------------------------------------------------------------
+
+\thispagestyle{tiivis}
+\begin{tabular}{ | p{4,7cm} | p{10,3cm} |}
+  \hline
+  Tekijä(t) \newline
+  Otsikko \newline\newline
+
+  Sivumäärä \newline
+  Aika 
+  & 
+  \makeatletter
+  \@author \newline 
+  \tiivistelmaotsikko \newline\newline   
+  \makeatother
+  \pageref*{LastPage} sivua + \total{chapter} liitettä \newline %! if no appendices, risk to count total of chapter :D
+  \pvm		
+  \\ \hline
+  Tutkinto & \tutkinto
+  \\ \hline
+  Koulutusohjelma & \kohjelma
+  \\ \hline
+  Suuntautumisvaihtoehto & \suuntautumis
+  \\ \hline
+  Ohjaaja(t) & \ohjaajat
+  \\ \hline
+  \multicolumn{2}{|p{15cm}|}{\begin{singlespacing}\vspace{-22pt}
+  %Tämä on tiivistelmän ensimmäinen kappale. Tiivistelmän kappaleet loppuvat komentoon newline, jotta saadaan yksi tyhjä rivi aikaiseksi. \newline
+  Tämän insinöörityön tarkoituksena on selvittää 17 vuotta vanhan Valmet 901 II- hakkuukoneen ajoneuvotietokoneen korvausmahdollisuudet. Työ tehtiin yksityiselle yrittäjälle. Loppukäyttäjän (hakkuukoneen kuljettajan) toiveesta korvaus tulisi toteuttaa siten, että korvaavassa ajoneuvotietokoneessa toimisivat alkuperäisessä ajoneuvotietokoneessa käytetyt ohjelmistot. Työn tarkoituksena on tuottaa lisää tietoa käytössä olevan hakkuukoneen käyttöiän ennusteesta koneen tietotekniikan osalta. Tavoitteena oli saada hakkuukoneeseen toimintakuntoinen, fyysisiltä ulkomitoiltaan yhteensopiva ajoneuvotietokone alkuperäisen tilalle. Koska alkuperäinen järjestelmä osoittautuikin vielä korjauskelpoiseksi ja korvaavan järjestelmän tuottamisen arvioitiin vievän liikaa aikaa, päädyttiin insinöörityö rajaamaan selvitykseksi järkevän budjetin ja aikataulun rajoissa olevista päivitysmahdollisuuksista.\newline
+
+  Haasteita työlle asetti hakkuukoneen sijainti metsässä 30 km Oriveden keskustasta, jonne on matkaa kotoani Kirkkonummelta noin 200 km. Prosessin aikana käytiin alkuperäisen ajoneuvotietokoneen huoltojen yhteydessä hakkuukoneen luona yhteensä kolme kertaa. Lisäksi laitetta ja sen osia huollettiin etätyönä yrittäjän lähetettyä ne postitse, jolloin matka Orivedelle ei ollut välttämätön.\newline
+
+  Työssä selviää, että hakkuukoneen järjestelmien kommunikointi ajoneuvotietokoneen kanssa tapahtuu standardin RS-232 -sarjaväylän kautta ja käytettävät ohjelmat on mahdollista saada toimimaan uudemmissa käyttöjärjestelmissä. Tämä mahdollistaa uudempien ajoneuvotietokoneiden tai fyysiseltä kestävyydeltään vastaavien tietokoneiden käytön hakkuukoneessa ilman muutoksia hakkuukoneen järjestelmiin. Vaatimuksina uudelle tietokoneelle on lähinnä tarvittava olosuhteiden kesto sekä tarvittavat liittimet. Hakkuukoneen järjestelmät vaativat kaksi sarjaporttiliitäntää, joilla kommunikointi hakkuukoneen ja ajoneuvotietokoneen välillä tapahtuu. Hakkuukoneen sähköjärjestelmä on 24V, mikä tulee ottaa huomioon tietokoneen sähkönsyöttöä pohdittaessa. \newline
+
+  Parhaana vaihtoehtona pidän tällä hetkellä ajoneuvotietokoneen korvaamista Panasonic Toughbook CF-19 tietokoneella. Myös Raspberry Pi 2-pohjainen ratkaisu on harkitsemisen arvoinen.\newline
+
+  
+ % Tämä on tiivistlemän toinen kappale.
+  \end{singlespacing}} \\[14cm] \hline
+  Avainsanat & \avainsanat
+  \\ \hline
+\end{tabular}
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\pagestyle{abstract}
+\begin{tabular}{ | p{4,7cm} | p{10,3cm} |}
+  \hline
+  Author(s) \newline
+  Title \newline\newline 
+  Number of Pages \newline
+  Date
+  & 
+  \makeatletter
+  \@author \newline
+  \@title \newline
+  \pageref*{LastPage} pages + \total{chapter} appendices \newline %! if no appendices, risk to count total of chapter :D
+  \IfLanguageName {finnish} {\foreignlanguage{english}{\longdate\@date}} {\@date}
+  \makeatother
+  \\ \hline
+  Degree & \metropoliadegree
+  \\ \hline
+  Degree Programme & \metropoliadegreeprogramme
+  \\ \hline
+  Specialisation option & \metropoliaspecialisation
+  \\ \hline
+  Instructor(s) & \metropoliainstructors
+  \\ \hline
+  \multicolumn{2}{|p{15cm}|}{\begin{singlespacing}\vspace{-22pt}
+  
+The purpose of this thesis is to find out whether it is possible to replace the original computer in 17 y. old harvester with a newer computer so that there is no need to do any changes to the harvester's electronical systems. Therefore original communication protocols and controlling software must work in the new computer. User Experience of system with the new computer should be similar with the original computer.\newline
+
+This thesis was done for a private entrepreneur and the results are intended to provide additional information about the life expectation of harvester from the viewpoint of computer systems. The original goal of the thesis was to produce a drop in -replacement computer for the original systems, but because the original system proved to be repairable and the time estimation for producing a durable replacement was too high it was decided to limit the thesis to be only a report about the possibility to upgrade the original system with reasonable budget and time.\newline
+
+The location of the harvester, which was approx. 30 km to forest from the Orivesi city center set some challenges for the thesis. Distance to Orivesi is approx. 200 kilometres from my home at Kirkkonummi. Harvester was visited total of three times. All visits took place after maintenance of the harvester's original computer. In addition the entrepreneur sent some parts for maintenance by mail so that a visit to Orivesi wasn't necessary.\newline
+
+Result of the thesis is that all required communication with harvester is through standard RS-232 serial bus. All required software was proven to work in newer operating systems which allows the possible new system to be selected from a broader range of availabe rugged computer models without any modifications to harvester's electronical systems. \newline
+
+Requirements for a new computer are durability in existing conditions and availability of required connectors. The harvester's systems require two serial port connections for communication between harverter's systems and vehicle computer. The harvester's electrical system is 24V DC, which must be taken into account when selecting the computer's power supply. 
+
+In my opinion, currently the best option for the vehicle computer replacement is Panasonic Toughbook CF-19 laptop. Also, Raspberry Pi 2-based solution is worth considering.
+
+
+  \end{singlespacing}} \\[14cm] \hline
+  Keywords & \metropoliakeywords
+  \\ \hline
+\end{tabular}
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	Acknowledgement ?
+%----------------------------------------------------------------------------------------
+%\chapter*{Acknowledgement}
+%Thanks to my cat
+%\clearpage
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\makeevenhead{plain}{}{}{}
+\makeoddhead{plain}{}{}{}
+\pagestyle{empty} %remove page number in toc (if longer than 2 pages)
+\tableofcontents*
+\pagestyle{empty} %remove page number in toc (if longer than 1 pages)
+\clearpage
+\pagestyle{plain}
+
+%list of figure, tables comes here...
+
+
+%----------------------------------------------------------------------------------------
+%    Lyhenteet / Abbreviation
+%----------------------------------------------------------------------------------------
+
+\pagestyle{empty}
+\setlength{\parskip}{1cm}
+\IfLanguageName {finnish} {
+  \chapter*{Lyhenteet}
+  \cftaddtitleline{toc}{chapter}{Lyhenteet}{}
+} {
+  \chapter*{Abbreviation}
+  \cftaddtitleline{toc}{chapter}{Abbreviation}{}
+}
+\begin{table}[h]
+\setlength{\tabcolsep}{8pt}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{l p{12cm}}
+x86 & Yleisnimitys Intelin 1987 julkaisemalle CISC-prosessorikäskykannalle. Työssä x86:lla viitataan myös 80386:ssa käytössä olleeseen ja myöhempiin 32-bittisiin versioihin kyseisestä käskykannasta.\\
+PS/2 & Sarjaväyläinen, alunperin IBM PS/2 koneessa ollut liitäntäprotokolla, joka yleistyi PC-koneiden standardiliitännäksi näppäimistölle ja hiirelle ennen USB-protokollaa.\\
+RS232 & Alunperin v. 1962 esitelty asynkroninen sarjaliitäntäprotokolla, joka oli ennen USB-liitännän yleistymistä yleisin PC-koneiden oheislaitteiden liitäntäväylä.\\
+USB & Universal Serial BUS, vuonna 1996 esitelty sarjaväyläinen liitäntä oheislaitteiden liitäntään.\\
+IDE/PATA & Integrated Drive Electronics (Parallel AT Attachments), kiintolevyjen ja optisten asemien liittämiseen tarkoitettu 16-bittinen rinnakkainen liitäntäväylä vuodelta 1986.\\
+CAN & Controller Area Network, vikasietoinen, differentiaalinen kaksijohtoinen automaatioväylä, jossa liikenne lähetetään priorisoituina sanomina vuodelta 1986\\
+Apteeraus & Puun rungon jako eri puutavaralajeiksi mitta- ja laatuvaatimukset huomioiden\\
+GPS & Global Positioning System, Maapalloa kiertäviin satelliitteihin perustuva paikannusjärjestelmä\\
+DPGS & Differential GPS, DGPS:ssä tarkennetaan sijaintitietoa käyttämällä apuna kiinteiden maa-asemien mittaamaa ja välittämää alueellista paikannusvirhettä.\\
+Hypervisor & Järjestelmä tai ohjelmisto joka hallitsee ja suorittaa virtuaalikoneita.\\
+%
+%OMG & Oh my god\\
+%WTF & What the F\\
+%TL;DR & Too long, didn't read\\
+\end{tabular}
+\end{table}
+
+\newpage
+
+%page number always on top right; also for chapter "title" page
+\pagestyle{plain}
+\makeevenhead{plain}{}{}{\thepage}
+\makeoddhead{plain}{}{}{\thepage}
+
+\setcounter{page}{1} %page 1 should be Introduction
+\ClearWallPaper
+%----------------------------------------------------------------------------------------
+%	CONTENT
+%----------------------------------------------------------------------------------------
+
+\chapter{Johdanto}
+
+Tietokoneiden käyttöikä on varsinkin vaativissa kohteissa rajallinen. Kun järjestelmät vanhenevat, niin huollon tarve lisääntyy, mutta varaosien saatavuus vähenee. Viimein voi tulla eteen piste, jossa ainoa mahdollinen vaihtoehto on korvata vanha järjestelmä uudella. Tämä saattaa vaatia suuriakin muutostöitä myös järjestelmää käyttäviin laitteisiin ja usein on järkevämpää vaihtaa koko kohde kuin tehdä siihen suuria muutostöitä.
+
+Insinöörityön kohteena on vuonna 1998 valmistetun hakkuukoneen ajoneuvotietokoneen päivitysmahdollisuuksien tutkiminen. Alkuperäisessä, myös vuodelta 1998 olevassa ajoneuvotietokoneessa on alkanut näkyä ikääntymisen merkkejä. Laitteen komponentit hajoavat yksitellen ja se ylikuumenee etenkin kesäisin siten, että käyttöaika on vain pari tuntia kerrallaan. Osien saatavuus näin vanhaan tietokoneeseen alkaa luonnollisesti olemaan hankalaa.
+
+Insinöörityö pyrkii selvittämään hakkuukoneen ja ajoneuvotietokoneen väliset liitännät sekä ajoneuvotietokoneen ohjelmistot ja etsimään mahdolliset korvaavat ratkaisut. Tarkoituksena on, että loppukäyttäjän (hakkuukoneen kuljettajan) toiveesta korvaava järjestelmä vaatisi mahdollisimman vähän muutoksia hakkuukoneeseen sekä olisi hakkuukoneen kuljettajalle toiminnallisuudeltaan vastaava kuin alkuperäinen järjestelmä. 
+
+Haasteita työlle tuovat huollettavan hakkuukoneen sijainti yli 200 kilometrin päässä sekä alkuperäisten ohjelmien mahdollisesti asettamat vaatimukset. Lisäksi on huomioitava hakkuukoneen käyttöympäristö, joka asettaa ajoneuvotietokoneelle erityisiä vaatimuksia pölyn siedon, lämpötilan muutosten sekä tärinän keston suhteen. Lähtötilanteessa käytetyistä/alkuperäisestä järjestelmistä ei ollut lainkaan tietoja, eikä tiedetty miten ja mitä käyttöjärjestelmiä käyttäen järjestelmä on toteutettu. 
+
+\newpage
+
+\chapter{Nykyinen järjestelmä}
+
+\section{VALMET 901 II}
+
+Hakkuukoneet eli motot (monitoimikoneet) ovat metsätraktoreita, joiden tehtävänä on hakkuun kaikki työvaiheet. Hakkuukoneet sisältävät tietokoneohjatut mittalaitteet, joilla puiden katkonta ja mittaus saadaan hoidettua tarkasti.
+
+Työn kohteena oleva hakkuukone on nelipyöräinen Valmet 901 II vuosimallia 1998. Kone on otettu käyttöön joulukuussa 1998. Värityksenä on Valmetin vanhempi punamusta-väritys. Valmet 901 on Valmetin sen aikaisen malliston pienin hakkuukone, joka on tarkoitettu ensisijaisesti harvennushakkuisiin. Alkuperäinen hakkuupää on jälkikäteen vaihdettu toiseksi, jolloin myös apteeraukseen käytettävä ohjelmisto vaihtui. Hakkuukoneen alkuperäinen teleskooppipuomisto on vaihdettu liikeratapuomiksi.
+\newline
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.700\textwidth]{moto_2.jpg}
+\caption{Valmet 901 II}
+\end{figure}
+
+\section{Motomit-mittalaite}
+
+Työn kohteena olevaan hakkuukoneeseen on jälkiasennettu Motomit-IT
+-mittalaite, joka on korvannut hakkuukoneen alkuperäiset mittalaitteet
+ja ohjelmiston. Motomit IT tukee StanForD-standardin mukaista
+apteerausohjeiden tiedonsiirtoa. Motomit IT hoitaa sisäisen
+kommunikaation CAN-väylää pitkin. Kommunikaatiossa alkuperäisen
+ajoneuvotietokoneen kanssa käytetään RS232-väylää ja MotomitPC
+-ohjelmistoa. (P. L. Oy 2008)
+\newline
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.800\textwidth]{motomit_kaavio.png}
+\caption{Motomit IT:n moduulikaavio}
+\end{figure}
+\newpage
+
+Motomit PC on Motomit IT:n Windows-pohjainen näyttö- ja hallintaohjelmisto Motomit IT-järjestelmälle. Motomit PC kommunikoi Motomit IT:n MCI-moduulin (Mitron CAN Interface) kanssa RS-232 -sarjaväylän avulla.
+ \cite{motomit:esite}.
+\newline
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\hsize]{motomit_original.jpg}
+\caption{Motomit PC Nero-ajoneuvopc:n ruudulla}
+\end{figure}
+
+\section{Ajoneuvo-PC Sunit Nero / Valmet Maxi}
+
+Hakkuukoneessa käytetty tietokone on Sunitin valmistama Sunit Nero (myös nimellä Valmet MAXI)-ajoneuvotietokone. Nero on paketoitu näyttöineen ja keskusyksikköineen yhdeksi all-in-one -tyyliseksi iskunkestäväksi paketiksi. Vaikka kyseessä ei olekaan sama yksilö mikä on alunperin ollut kiinni kyseisessä hakkuukoneeessa, on se samanlainen kuin alkuperäinen ja samaa ikäluokkaa (noin 17 vuotta, vuodelta 1998). Tietokoneen mitat ovat 315 mm x 252 mm x 115 mm ja paino 4,2 kg. Virrankulutus Nerolla on n. 25W.
+
+Nero täyttää CEN:n standardin EN55022 class A ja class B -vaatimukset ja Sunit vakuuttaa laitteen täyttävän EU:n direktiivien vaatimukset CE-merkinnällä. Neron kotelointi on tuuletusta lukuunottamaat IP54-luokkaa, joka tarkoittaa suojausta pölyltä, sekä suojausta vesiroiskeita vastaan. \cite{nero:manual}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.000\hsize]{valmet_maxi.jpg}
+\caption{Sunit Nero / Valmet Maxi}
+\end{figure}
+
+Sunit Nero osoittautui olemaan toteutettu PC-tekniikalla, sisältäen tavallisen x86-prosessorin ja Windows 98-käyttöjärjestelmän. Emolevyn northbridge-ohjaimena on SiS 5571-ohjain. Tässä Nero-yksilössä prosessorina on AMD:n 300 MHz Socket 7-kantainen K6-prosessori vuodelta 1998 (alkuperäinen prosessori on vaihdettu useita vuosia sitten tehdyn huollon yhteydessä toiseen), 64 Mb keskusmuistia. Tietokoneen kiintolevynä oli tutkintahetkellä Western Digitalin 120 Gb:n Scorpio Blue-kiintolevy, joka sekin on vaihdettu kyseiseen yksilöön useaan kertaan. Nero-tietokoneesta löytyy 3,5" levykseasema, sekä cd-asema. Näyttöpaneelissa on 12" LCD-paneeli 800x600 pikselin resoluutiolla. Kuvasuhde on 4:3. Lisäksi koneessa on NiMH-akku BIOSin asetusten säilyttämiseen. Tietokoneesta löytyy liitännät sekä 12V että 24V jännitteille.
+\newline\newline
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.000\hsize]{processor.jpg}
+\caption{AMD K6 66 MHz}
+\end{figure}
+
+Sunitin huolto on ilmoittanut, etteivät he suostu/pysty enää huoltamaan näin vanhaa tietokonetta, mikä on myös osasyynä korvaavien vaihtoehtojen kartoittamiseen.
+
+Sunit Nerosta löytyy 3+1 sarjaporttiliitäntää (3x 9pin standardi RS-232, sekä yksi yhdistetty liitin), rinnakkaisporttiliitin (25pin Centronics), Sunitin oma BUS-liitin PS/2 hiirelle ja näppäimistölle, yhdistetty virta/GPRS/GPS -liitin sekä Data I/O-liitin, joka on tarkoitettu optiona oleville CAN- ja SCSI-väylälle, mutta nämä eivät ole kyseisessä yksilössä käytössä.  Käytössä on kolme sarjaporttia ja virtaliitin. Sarjaporteista yksi on alkuperäiselle Terman-ohjaukselle, yksi Motomit IT:lle ja kolmas on käytöstä poistetulle GSM-moduulille.
+
+Sunit Neroon on ollut lisäoptiona myös GPS ja DGPS-moduulit, jotka olisivat mahdollistaneet kartat paikannuksella. Työn kohteena olevassa yksilössä on GPS-moduuli. Neroon on ollut liitettynä myös ulkoinen GSM-moduuli \cite{nero:manual}. GPS- ja GSM-moduulit eivät ole nykyisessä järjestelmässä käytössä eikä niitä tarvitse ottaa huomioon korvaavassa tietokoneessa.\newline\newline
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\hsize]{sunit_nero_liitannat.jpg}
+\caption{Sunit Neron liitännät}
+\end{figure}
+
+Sunit Nero on rakennettu kolmeen kerrokseen kahden 31 cm x 23 cm -kokoisen metallilevyn väliin, joka on ankkuroitu koteloon kiinni neljällä  läpivientiruuvilla. Ensimmäisessä kerroksessa on Neron käyttämä emolevy, keskellä kiintolevy, levykeasema, cd-asema sekä vara-akku. Viimeisessä kerroksessa on 12" LCD -näyttöpaneeli.
+
+\section{Valmet Terman}
+Terman on Valmetin alkuperäinen DOS-pohjainen hallinta- ja apteerausohjelmisto käytettävälle hakkuukoneelle. Ohjelmiston versio on riippuvainen käytettävästä hakkuukoneesta. Kommunikointi hakkukoneen kanssa tapahtuu 9600 bitin nopeudella RS-232-sarjaporttia käyttäen. Koska mittauslaite on vaihdettu Motomit IT-järjestelmälle, käytetään Termania lähinnä hakkuukoneen ajo- ja moottoriasetusten hallintaan.
+\newline\newline
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\hsize]{terman_original.jpg}
+\caption{Terman Nero-ajoneuvopc:n ruudulla}
+\end{figure}
+
+\newpage
+\section{Päälohkokaavio}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\hsize]{saatanan_kaavio.png}
+\caption{Hakkuukoneen järjestelmien lohkokaavio}
+\end{figure}
+
+Lohkokaavioon on kuvattu Valmet 901 -hakkuukoneen tärkeimmät osat, niiden käyttämät väylät sekä alkuperäisessä järjestelmässä olleet laitteet. Hakkuukoneessa ei ole itsessään käytössä vielä CAN-väylää, mutta Motomitin mittalaitejärjestelmä käyttää CAN-väylää sisäisesti sekä hakkuupään ohjaukseen.
+
+Kaaviosta näkyvistä järjestelmistä ollaan korvaamassa keltaisella näkyvä Nero-ajoneuvotietokone sekä siihen liitetyt hiiri ja näppäimistö.
+
+\newpage
+\chapter{Mahdolliset toteuttamisvaihtoehdot ohjelmistojen siirrolle}
+
+Loppukäyttäjän (hakkuukoneen kuljettajan) toiveena on, että tietokoneen vaihtuessa käytössä olevat Terman- ja Motomit PC-ohjelmistot toimivat uudessa koneessa samaan tapaan kuin vanhassa ja näkyvät samalla tavalla kuin ohjelmistot aiemminkin ovat näkyneet. Loppukäyttäjän toiveiden lisäksi on huomioitava tietokoneen käyttöolosuhteiden asettamat vaatimukset sekä aiheeseen liittyvä lainsäädäntö ja standardit.
+
+\section{Natiivi ympäristö}
+
+Natiivilla ympäristöllä tarkoitetaan, että laitteiston ja käyttöjärjestelmän välissä ei ole virtualistointi- tai yhteensopivuusrajapintaa, vaan käyttöjärjestelmällä on suora pääsy fyysisen laitteiston rajapintoihin.
+
+% Natiivin ympäristön hyviä puolia:
+% * Suoritusnopeus
+% * Ohjelman ja laitteiston välisen kommunikoinnin kutsupolku? lyhyempi
+% * toimiessaan yksinkertaisin
+
+% Natiivin ympäristön Haittapuolia ja rajoituksia:
+% * Vanhat käyttöjärjestelmät eivät toimi uusien laitteiden kanssa
+% ** koska ei löydy laiteajureita
+% ** koska uudet laitteet ovat liian nopeita tai liian isolla kapasiteetilla varustettuja suhteessa vanhojen käyttöjärjestelmien toteutuksiin
+% * Uudet käyttöjärjestelmät eivät ole välttämättä yhteensopivia vanhojen ohjelmien kanssa
+% * (ei liity työhön) 
+% ** Hyötysuhde huono
+% ** Kaikilla ohjelmilla (käyttöjärjestelmästä riippuen) pääsy toisensa tiedostoihin
+
+
+Natiivin ympäristön vaihtoehdossa ohjelmistoja käytetään ympäristössä, johon ne on aikoinaan suunniteltu toimivaksi. Hyvänä puolena tässä vaihtoehdossa on se, että ohjelmat toimivat varmasti siten kuin ne on suunniteltu. Koska käytettävät ohjelmistot ovat vanhoja, DOS- ja Windows 98- aikaisia, vaatisi natiivin ympäristön käyttäminen kuitenkin suunnilleen samaa alkuperäisen tietokoneen kanssa samaa ikäluokkaa olevan laitteiston käyttämisen. Uudemmat laitteistot eivät ole enää yhteensopivia Windows 98SE / ME:n kanssa ja lisäksi Windows 98:lla on maksimirajoituksia käytettävälle laitteistolle kuten maksimi luotettavasti käytettävä määrä keskusmuistia 1024 Mb ja kiintolevyosiolle rajattu maksimikoko 127,5 Gb \cite{win98:maxspecs}. Uudemmille laitteille ei myöskään löydy välttämättä toimivia ajureita, mikä rajoittaa entisestään mahdollisia laitteistovaihtoehtoja. Koska ajoneuvotietokone ei ole yhdistettynä Internetiin ja koneelle on rajattu pääsy, ei tässä käyttöympäristössä Windows 98:n paikkaamattomilla haavoittuvuuksilla (Windows 98: 84 kpl, Windows 98SE 61 kpl \cite{win98:vulns}) ole erityistä merkitystä käytettävyyteen.
+
+\section{Ohjelmistojen rajapintojen yhteensopivuuskerros}
+
+Käyttöjärjestelmän ja ohjelmiston välissä voidaan ajaa erillistä rajapintasovellusta, joka toteuttaa toisen käyttöjärjestelmän järjestelmäkirjastot ja järjestelmäkutsut ja mahdollistaa näin muuten yhteensopimattomien, mutta samaa prosessoriarkkitehtuuria käyttävien ohjelmistojen suorituksen.
+
+Pääpiirteittäin tulkkaa, mutta saattaa virtualisoida joitain laitteistorajapintoja tarvittaessa (näyttö, äänet, HID).
+
+
+% Toteutuksia:
+% Windows NTVDM DOS ja Windows 3.x -ohjelmia varten
+% WOW: a compatibility layer of 32-bit versions of the Microsoft Windows NT family of operating systems that extends the NTVDM to provide limited support for running legacy Win16 applications 
+%  WoW64 : subsystem of the Windows operating system capable of running 32-bit applications and is included on all 64-bit versions of Windows
+% 
+% Wine (program loader and the Windows API implemented in DLLs)
+% Dosemu
+
+% (työhön liittymättömiä)
+% Lina -> Linux on MacOSX
+% Darling -> OSX on Linux
+
+% vanhoja
+% http://en.wikipedia.org/wiki/Wabi_(software)
+% https://www.freshports.org/emulators/twin/ , http://gnu.gds.tuwien.ac.at/directory/libs/willowstwin.html
+
+
+Ohjelmistojen rajapintojen yhteensopivuuskerros-vaihtoehdossa  käytetään käyttöjärjestelmän ja ohjelman välissä sopivia rajapintakerroksia, jolloin saadaan käyttöjärjestelmän kanssa yhteensopimattomat ohjelmat toimimaan keskenään. Vaihtoehto vaatii yhteensopivan laitteistoarkkitehtuurin alkuperäisen järjestelmän kanssa (x86). Nykyiset Windows-versiot (Windows XP+) sisältävät jo valmiiksi yhteensopivuustilan, joka mahdollistaa vanhempien ohjelmien käyttämisen uudemmissa käyttöjärjestelmissä. Linuxissa Wine-rajapinta mahdollistaa kaikenikäisten Windows-sovellusten ajamisen Linuxissa. Myös DOS:lle löytyy rajapintakerrostoteutus Linuxiin.
+
+\subsection{NTVDM ja WOW}
+
+\lipsum[1-5]
+
+Huomioitavaa on, että NT-pohjaisissa 32-bittisissä Windowseissa (NT4/2000/XP/Vista/7) on käytössä Windows NTVDM -järjestelmäkomponentti/alijärjestelmä (NT Virtual Dos Machine), joka käyttöjärjestelmästä riippuen virtualisoi tai emuloi 16- ja 32-bittisen DOS-ympäristön DOS-ohjelmien ajamiseksi Windowsissa. NTVDM ei rajaa suoritusnopeutta ja monien oheislaitteiden toteutus siinä on yksinkertainen ja puutteelinen. NTVDM ei myöskään anna DOS-ohjelmien ottaa yhteyttä suoraan laitteistoon joka rajoittaa sen kautta ajettavien ohjelmien toimivuutta.
+
+Tähän ruma kaavio
+
+\subsection{Wine}
+%https://www.winehq.org/docs/winedev-guide/x2884
+Wine on POSIX-yhteensopiville käyttöjärjestelmille kehitetty yhteensopivuuskerros, jolla Windows-ohjelmat saadaan toimimaan muissa käyttöjärjestelmissä. Wineen on toteutettu Windowsin kernelin järjestelmäkutsut, sekä useita tarvittavia DLL-kirjastoja. 
+
+Wineen pystyy asettamaan käyttöön tarvittaessa alkuperäisen järjestelmän jaettuja DLL-kirjastoja. Alkuperäinen DLL tarjoaa täyden yhteensopivuuden kirjaston toteuttamille rutiineille. Näiden käytön vaarana on, että ne voivat yrittää käyttää Windowsin järjestelmäkomponentteja joita Wineen ei ole toteutettu, jolloin toiminnallisuus kärsii. Winen sisäänrakennetut DLL:t sisältävät tarvittavilta osin lisäyksiä ja välityskoodia / käärekoodia joilla kirjastot saadaan toimimaan Unixissa käytetyjen ratkaisuiden kanssa yhteen. 
+
+Wine ei tue Windowsin ajurien käyttöä, koska Winen kernel-ratkaisut eivät sisällä tähän mahdollisuutta. Wine tukee joitain laitteita, jos ja vain jos niille löytyy käytettävästä käyttöjärjestelmästä ajurituki, sekä itse Wineen on toteutettu tarvittavat rajapintamuunnokset kyseiselle laitteelle. Winessä on kuitenkin ohitettu ajurien tarve toteuttamalla monet DLL-kirjastot siten, että ne käyttävät Unixin rajapintoja (tulostus, äänet, näyttö). Jokainen Wine-prosessi (==suoritettava exe) ajetaan omana prosessina, jolloin niillä on omat osoiteavaruudet (eivätkä ne voi sörkkiä toisetensa muistia).
+
+Winen kehitys alkoi jo vuonna 1993, kun Bob Amstadt halusi suorittaa sen aikaisia Windows 3.1 -ohjelmia Windowsin puolella. Kehitysvastuu v. 1994 Alexandre Julliard:lle, joka on toiminut Wine Projectin johtohahmona ja projektin vetäjänä siitä lähtien. Winen koodista n. puolet on kirjoitettu vapaaehtoisten toimesta. Yrityspuolelta projektin pääasiallinen sponsori on CodeWeavers, jonka työntekijöitä myös moni Wine-kehittäjä on. CodeWeavers on kehittänyt CrossOver linux-tuotteensa joka on kaupallistettu, käyttäjäystävällisempi versio Winestä. CodeWeavers tarjoaa myös ohjelmistojen porttaus- ja tukipalveluita Winelle.
+
+Winen 1.0 -versio julkaistiin vuonna 2008. Winestä julkaistaan uusi vakaa (stabiili,virallinen,tuettu,jotain) versio kahden vuoden välein. Viimeisin vakaa versio on 1.6. Wine käyttää versionumeroinnissaan sekventiaalista Major.Minor.Build -tyyliä, jossa parilliset Minor-versiot ovat vakaita julkaisuita ja parittomat kehitysversioita. 
+
+\lipsum[1-3]
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\hsize]{kaaviot/wine_pino.png}
+\caption{Vasemmalla Windows NT:n käyttämä arkkitehtuuri, oikealla Wineen toteutettu arkkitehtuuri}
+\end{figure}
+
+Wine serverin avulla on totetutettu IPC:n (prosessien välinen kommmunikointi), synkronointi, ja prosessien/säikeiden hallinta. Windows-alijärjestelmistä on toteutettuna vain Win32-alijärjestelmä (Kernel32). Winen toteuttamien DLL-tiedostojen nimeämiskäytäntö on pyritty pitämään mahdollisimman lähellä Windowsin nimeämiskäytäntöä, jos vain se on ollut mahdollista. \cite{wine:architecture}
+
+\subsection{Dosemu}
+% Mikä doesmu
+%mitä tulkitaan
+% mitä emuloidaan
+
+Dosemu on Linuxille kehitetty yhteensopivuuskerros, jolla saa ajettua DOS-ohjelmia x86/x64-arkkitehtuuria käyttävässä Linux-käyttöjärjestelmässä. Dosemu on käyttäjätason ohjelma (ei vaadi pääkäyttäjän/root-oikeuksia), joka hyödyntää 80386:n ja Linux -kernelin erityisominaisuuksia ajaakseen DOS-ohjelmia eriytettynä prosesseina. Dosemu virtualisoi kaiken i/o-liikenteen, simuloi laitteistoa johon DOS-ohjelmilla on suora pääsy, sekä tarjoaa virtuaalisen kiintolevyn joka oikeasti on tiedostopolku Linuxissa.
+
+Tekstipohjaiset DOS-ohjelmat saa suoritettua DOSEMU:n avulla suoraan konsolissa, mutta siitä löytyy myös CGA/EGA/VGA-emulaation DOS:n graafista moodia käyttäville ohjelmille(Mode 13h 320x200 256 väriä). Dosemu sisältää myös tuen sarja- ja rinnakkaisporteille.
+
+% http://www.dosemu.org/docs/HOWTO/x596.html#AEN598
+Dosemun kehitys alkoi v. 1992 Matthias Lautnerin toimesta. Projekti vastuuhenkilö vaihtunut vuosien varrella ja vuodesta 2004 lähtien vastuussa on ollut Bart Oldeman.
+
+\lipsum[1-3]
+
+Tähän vitun hieno kaavio
+
+
+
+\section{Virtualisointi}
+
+Tässä vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmää ajetaan virtuaalikoneessa toisen käyttöjärjestelmän päällä. Näin saavutetaan varmin yhteensopivuus ohjelmistotasolla. Oheislaitteiden siirtämisessä virtualisoidun koneen käyttöön on rajoituksia, jotka pitää huomioida virtualisointiohjelmistoja valittaessa. Vaihtoehto kuluttaa muistia enemmän ja on hieman hitaampi kuin natiivi toteutus, hyötysuhteen ollessa \textasciitilde{}90\%  natiivista \cite{virtnat_anadtech}. 
+
+Virtualisoinnin ollessa varsin yleistä, niin virtualisointiratkaisuita tarjoavia yrityksiä ja ohjelmistoja on paljon. Työpöytävirtualisointiin riittävillä ominaisuuksilla (mm. sarjaporttien välitys virtuaalikoneille) sopii esimerkiksi avoimen lähdekoodin QEMU-hypervisori tai Oraclen Virtualbox -hypervisori. Myös Microsoft tarjoaa Windows-ympäristöön VirtualPC-hypervistoria. Kaupallisista tarjoajista VMWarella on olemassa VMWare Workstation ja VMWare Player -hypervisori.
+
+% Blaah. Esittely QEMUsta, Virtualboxista, VirtualPC:stä, VMWaren shaibasta
+%http://qemu.weilnetz.de/qemu-tech.html#intro_005ffeatures
+\subsection{QEMU}
+QEMU (Quick Emulator) on avoimen lähdekoodin emulaattori ja virtuaalikone, joka toimii Linuxin lisäksi myös Windowsissa ,sekä Mac OS X:ssä. QEMU tukee erilaisia toimintamoodeja. QEMU:n rakenne on jaettu backendiin, joka vastaa isäntäkoneen arkkitehtuurituesta, sekä frontendiin, joka vastaa kohdeprosessorin emuloinnin toteuttamisesta. Tällä rakenteella on saatu aikaiseksi järjestelmä, joka on sekä helppo portata sekä johon on helppo toteuttaa uusia prosessoreita eri käskykannoilla.
+
+%http://qemu.weilnetz.de/qemu-tech.html#QEMU-compared-to-other-emulators
+QEMU käyttää dynaamista käännöstä (dynamic translation) nopeuttakseen emulointinopeutta. Dynaamisessa käännöksessä tulkitaan ja käännetään ajettavaa tiedostoa pieni osa, blokki, kerrallaan. Blokki on haarautumiseen ja hyppykäskyihin asti oleva pätkä käskyjä. Koska yleensä dynaamiset kääntäjät ovat monimutkaisia ja arkkitehtuurisidonnaisia, on QEMU:n kääntäjä TCG (Tiny Code Generator) pidetty yksinkertaisena ja helposti siirrettävänä (portattavana). TCG:n perusidea on jakaa jokainen käsky TCG:n RISC-tyylisiksi käskyiksi, jotka sitten muutetaan kohdejärjestelmän käskyiksi.
+%Dynaamisessa muutoksessa kakataan koodin päälle ja toivotaan ettei kukaan huomaa.
+%http://git.qemu.org/?p=qemu.git;a=blob_plain;f=tcg/README;hb=HEAD
+
+%TODO: Dynaaminen muutos
+QEMU:n suoritusnopeus emuloinnissa on jotain, luokkaa 50\%? Jotain kakkaa se on. Tähän cite. 
+
+\subsubsection{Käyttäjätilan emulointi}
+%In this mode QEMU runs single Linux or Darwin/Mac OS X programs that were compiled for a different instruction set. System calls are thunked for endianness and for 32/64 bit mismatches. Fast cross-compilation and cross-debugging are the main targets for user-mode emulation.
+%http://qemu.weilnetz.de/qemu-tech.html#User-emulation-specific-details
+Käyttäjätilan emuloinnilla voidaan emuloida samalle käyttöjärjestelmälle, mutta eri arkkitehtuurille käännettyjen ohjelmien suoritus. QEMU suorittaa ohjelmille järjestelmäkutsujen ja i/o:n käännön ja korjauksen, signaalien välityksen, sekä säikeiden emuloinnin jonka avulla alkuperäiset ohjelmat saadaan suoritettua kohdearkkitehtuurilla.
+
+QEMU:n avulla voidaan emuloida esimerkiksi Wine-yhteensopivuuskerroksen ajo, jolloin x86-Windows -ohjelmat saadaan suoritettua myös muilla arkkitehtuureilla.
+
+QEMU:n käyttäjätilan emulointi tukee seuraavia arkkitehtuureita: xx86, PowerPC, ARM, 32-bit MIPS, Sparc32/64, ColdFire(m68k), CRISv32 ja MicroBlaze. Toimivat kohdekäyttöjärestelmät ovat mm. kaikki Windows -versiot, Linux-versiot, DOS, Solaris- ja BSD-variantit.
+
+
+\subsubsection{Järjestelmäemulointi}
+%In this mode QEMU emulates a full computer system, including peripherals. It can be used to provide virtual hosting of several virtual computers on a single computer. QEMU can boot many guest operating systems, including Linux, Solaris, Microsoft Windows, DOS, and BSD;[5] it supports emulating several instruction sets, including x86, MIPS, 32-bit ARMv7, ARMv8, PowerPC, SPARC, ETRAX CRIS and MicroBlaze.
+Järjestelmäemuloinnissa QEMU emuloi koko tietokoneeen, mukaanlukien laitteistot. Emuloimalla kohdejärjestelmän arkkitehtuurin ei tarvitse olla sama kuin isäntäkoneella. QEMU:Sta löytyy totetuttuna suhteellisen laaja määrä erilaisia laitteita, kuten 11 erilaista USB Hostia, 8 erilaista verkkokorttia, 5 erilaista näytönohjainta, sekä 8 äänikorttia.
+
+QEMU:ssa on käytetty GIL:liä (Global Interpreter Lock) synkronoimaan suoritusta, joten se suorittaa järjestelmäemuloinnin yksisäikeisesti, vaikka kohdejärjestelmälle olisikin toisin väitetty. 
+
+% http://en.wikibooks.org/wiki/QEMU/Devices
+%http://wiki.qemu.org/download/qemu-doc.html
+
+\subsubsection{KVM Hosting}
+%Here QEMU deals with the setting up and migration of KVM images. It is still involved in the emulation of hardware, but the execution of the guest is done by KVM as requested by QEMU.
+KVM (Kernel Mode Virtualization) on Linux-ytimeen rakennettu tuki virtualisoinnille. KVM vaatii prosessorilta virtualisointituen. KVM ei itsessään emuloi mitään, vaan tarjoaa käyttäjätasolle rajapinnan prosessorin virtualisointiominaisuuksiin. QEMU hoitaa virtualisoinnin KVM:n avulla. QEMU emuloi tarvittavat laitteet ja KVM hoitaa itse virtualisoinnin.
+
+\subsubsection{Xen Hosting}
+%QEMU is involved only in the emulation of hardware; the execution of the guest is done within Xen and is totally hidden from QEMU.
+
+
+\lipsum[1-5]
+
+Joku paska kaavio
+
+\subsection{Windows Virtual PC}
+Windows Virtual PC on Microsoftin ilmaiseksi tarjoama virtuaalikone.
+
+Connectix kehitti alunperin Virtual PC:n Machintonin System 7.5 -käyttöjärjestelmälle v. 1997. Windows-versio julkaistiin 2001. Microsoft osti Virtual PC:n Connectix:lta vuonna 2003. 2006 Microsoft julkaisi Virtual PC 2004 SP1:n ilmaiseksi. v. 2009 Virtual PC:n nimi vaihdettiin olemaan Windows Virtual PC, joka tukee ainoastaan Windows 7:aa ja sen jälkeen julkaistuja Windowseja.
+
+
+\section{Järjestelmäemulointi}
+
+Tässä vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmä ajetaan emulaattorissa toisen järjestelmän päällä. Emuloimalla saavutetaan laitteistoarkkitehtuuririippumattomuus isäntäkoneen ja emuloitavan järjestelmän välillä. Emuloinnin haittapuolena on hitaus. Nyrkkisääntönä on 20\% hyötysuhde \cite{tinycc} parhaiden emulaattorien päästessä n. 40-80\% hyötysuhteeseen \cite{40pperf}. Esimerksiksi Eltechs tarjoaa ExaGear Desktop-ohjelmistoa, jolla voi ajaa x86-ohjelmia ARMv7 -ympäristössä. \cite{eltechs:exagear}. 
+
+Avoimen lähdekoodin QEMU on myös prosessoriemulaattori, josta löytyy tuki usealle eri ohjelmistoarkkitehtuurille, yleisimpinä mm x86,PowerPC,ARM ja SPARC. Bochs on toinen suosittu prosessoriemulaattori x86/x64 -arkkitehtuureille.
+
+\lipsum[1-5]
+
+QEMUN emuloinnin esittely
+
+Bohcsin esittely
+\subsection{Bohcs}
+Bochs on x86-arkkitehtuuriin keskittynyt avoimen lähdekoodin emulaattori.
+
+%http://bochs.sourceforge.net/doc/docbook/user/introduction.html
+%http://lwn.net/2000/0323/a/mand-bochs.html
+Bochs:n ensimmäinen versio julkaistiin vuonna 1994, jolloin se oli vielä kaupallinen tuote jota myytiin 25 USD:n hintaan. Vuonna 2000 Mandrakesoft (ranskalainen yritys, joka on erikoistunut Linuxiin) osti bochsin sen kehittäjältä Kevin Lawtonilta ja julkaisi lähdekoodit LGPL-lisenssillä.
+
+Bochsia käytetään mm. käyttöjärjestelmäkehityksessä apuuna ja sisältääkin mm. emuloinnin 8-ytimiselle prosessorille ja kehittyneet vianetsintätyökalut.
+
+
+Eltechsin ratkaisusta tarkemmin
+
+
+\section{Ohjelmistojen emulointi}
+
+Tässä vaihtoehdossa emuloidaan vain ohjelmat koko pc:n sijasta. Tämä onnistuu tietyillä ohjelmilla tiettyjen ohjelmistoarkkitehtuurien välillä \cite{tinycc},\cite{qemu_use}. Vaihtoehdolla voi ajaa mm. x86-ohjelmia ARM-prosessoreilla.
+
+Vähän QEMUn ratkaisusta. Selvitä onko muita
+
+\lipsum[1-5]
+
+\newpage
+
+\chapter{Lainsäädäntö ja standardit}
+
+Lain ja olosuhteiden asettamia vaatimuksia ajoneuvotietokoneelle on käsitelty seuraavissa direktiiveissä ja standardeissa:
+
+CEN EN55022 -standardi määrittää kevyen teollisuuden laitteiden ja tietokonelaitteiden säteilypäästöjen raja-arvot sekä määrittää, miten mittaus tulee suorittaa. Standardissa laitteet on jaoteltu kahteen luokkaan, A ja B, joista B-luokan laitteet ovat paremmin suojattuja.\cite{EN55022}
+
+EU-direktiivi 2004/104/EY (Autoteollisuuden EMC-direktiivi) määrittää, että
+1.7.2006 alkaen valmistettujen ajoneuvojen ja kiinteästi asennetun
+ajoneuvoelektroniikan aiheuttamat säteilypäästöt ja päästöjen sietokyky
+mitataan kyseisen direktiivin mukaisesti. Direktiiviin on julkaistu
+lisäys 2005/83/EY, joka tarkentaa direktiiviä. Uusi direktiivi korvaa
+aiemman direktiivin 95/54/EY.
+
+Uusi direktiivi vaatii tyyppihyväksynnän vain laitteilta, joilla on
+vaikutusta ajoneuvon hallintaan, kuljettajan asennon muuttamiseen tai
+kuljettajan näkyvyysalueeseen. Laitteiden, joiden ei tarvitse olla
+tyyppihyväksyttyjä, pitää täyttää kuitenkin EMC-direktiivin 89/336/ETY
+tai radio- ja telepäätelaitedirektiivin 1999/5/EY vaatimukset. (S. Oy
+2006) \cite{1999/5/EY} \cite{89/336/ETY}
+
+EMC-direktiivi 89/336/ETY määrittelee ainoastaan laitteistolta
+vaadittavat ominaisuudet sähkömagneettisen yhteensopivuuden
+takaamiseksi. Direktiivin tarkoitus on ohjeistaa valmistajia tekemään
+elektromagneettisesti yhteensopivia laitteita. Direktiivi koskee kaikkia
+sähkölaitteita ja -asennuksia, joita ei direktiivissä ole erikseen
+rajattu sen ulkopuolelle \cite{89/336/ETY}. Direktiivi 2004/108/EY
+kumosi vanhemman direktiivin 89/336/ETY 20.7.2004 alkaen. 2004/108/EY
+mm. erotteli kiinteille asennuksille ja laitteille tehtävät asennukset,
+sekä yksinkertaisti vaatimustenmukaisuuden arviointimenettelyä.
+\cite{2004/108/EY}
+
+Radio- ja telepäätelaitedirektiivi 1999/5/EY määrittää radio- ja
+telepäätelaitteiden yhteensopivuuden Euroopan laajuisesti. Kaikkiin
+direktiivin piiriin kuuluvien laitteiden tulee olla turvallisia
+käyttäjälle ja muille henkilöille sekä täyttää vaaditut
+suojavaatimukset sähkömagneettisen yhteensopivuuden osalta. Lisäksi
+direktiivi määrittää, että laitteistojen tulee olla rakennettuja siten,
+että ne käyttävät tehokaasti radioviestintään varattua spektriä ja
+resursseja. Tietyille laiteluokille on lisäksi määritelty vielä muita
+vaadittuja lisäominaisuuksia kuten yksityisyyden suojan takaaminen,
+yhteensopivuus muiden laitteistojen välillä, petoksia
+ehkäisevien ominaisuuksien sisältäminen, tuki hätäpalveluihin pääsyn takaaville
+ominaisuuksille ja/tai ominaisuudet, joilla laitteistojen
+käyttö tehdään helpommaksi vammaisille {[}@1999/5/EY{]}. Direktiivi
+1999/5/EY on kumottu 13.6.2016 alkaen direktiivillä 2014/53/EU
+radiolaitteiden asettamista saataville markkinoilla koskevan
+jäsenvaltioiden lainsäädännön yhdenmukaistamisesta. {[}@2014/53/EU{]}
+
+IP-suojaluokitus on standardissa IEC 60529 määritetty järjestelmä sähkölaitteiden tiiveyden määrittämiseksi. IP-luokitus kertoo laitteiden suojauksen pölyä ja vettä vastaan. \cite{IEC60529}
+
+IP54-suojaluokitetut tuotteet ovat pölysuojattuja (ei täydellistä tiiveyttä, mutta ei pölykertymiä), sekä roiskesuojattuja.
+
+IP67/66 -suojaluokitetut tuotteet ovat täysin pölytiiviitä ja kestävät suurella paineella tulevan vesiruiskun. IP67/66-tuotteet kestävät tärinää ja iskuja 5M3-vaatimusten mukaisesti. (DIN EN 60721-3-5, MIL-STD 810F.)
+
+Kuten aiemmin mainittiin, nykyisessä järjestelmässä Nero täyttää EN55022-standardin vaatimukset ja on IP54-suojattu. Uuden valmiina hankittavan järjestelmän tulisi täyttää EN55022-standardin ja direktiivin  2004/104/EY vaatimukset.
+
+\newpage
+\chapter{Tehdyt tutkimukset ja huollot}
+
+\section{Tutustuminen Nero-ajoneuvotietokoneeseen}
+
+Ensimmäinen kerran tutustuin Sunitin Nero-ajoneuvotietokoneeseen toukokuussa 2014, kun työn kohteena olevasta yksilöstä oli hajonnut kiintolevy. Tällöin tutkin ja selvitin tietokoneen ominaisuudet, liitännät ja ohjelmistot. Koska ohjelmistot oli saatavana kopioina Motomit-jälleenmyyjältä ja Valmetilta, ei alkuperäistä kiintolevyn sisältöä tarvinnut saada talteen. Tietokoneeseen hankittiin käytetty Hitachin 40Gb 2,5" IDE-kiintolevy, asennettiin käyttöjärjestelmä (Windows 98) ja ohjelmistot valmiiksi virtuaalikoneessa ja varmuuskopioitiin asennus. Lopuksi 1.7.2014 testattiin toimivuus tuotantoympäristössä.
+
+Ensimmäisessä huollossa vaihdettu kiintolevy hajosi vain muutaman kuukauden käytön jälkeen. Koska kiintolevyn koolla ja nopeudella ei ole kyseisessä tietokoneessa erityisemmin väliä, valittiin uudeksi kiintolevykorvikkeeksi paremmin tärinää ja vaihtelevia lämpö-olosuhteita kestävä SD-IDE-muistikorttiadapteri ja 2 Gb:n muistikortti. Alkuperäinen SecureDigital-standardi mahdollistaa vain 2Gb:n kapasiteetin ja väylän maksiminopeuden 12,5 Mb/s (kirjoitusnopeuden ollessa huomattavasti vähemmän, n. 1-2 Mb/s )\cite{sd:2gb}.
+
+Huhtikuussa 2015 Nero-ajoneuvotietokoneesta hajosi BIOS:n CMOS-asetuksia ylläpitänyt NiMH-akku, jonka seurauksena ajoneuvotietokone kadottaa asetuksensa aina päävirtojen katkaisun yhteydessä. Kiintolevy pitää erikseen etsiä jokaisen päävirran katkaisun jälkeen BIOS:sta, mikä tekee tietokoneen käytön hankalaksi tai jopa mahdottomaksi hakkuukoneen kuljettajalle. Akkupaketin NiMH-kennot uusittiin ja BIOS-asetukset määritettiin uudelleen, jolloin kone saatiin taas takaisin käyttöön.
+
+\section{Perustelut valitulle toteutustavalle}
+
+Johtuen saatavissa olevista laitteistoista sekä alkuperäisten ohjelmistojen arkkitehtuurista päädyin valitsemaan testaukseen X86-arkkitehtuurilla ja Linux-käyttöjärjestelmällä toteutettavan kokonaisuuden, jossa on asennettuna sekä Winen, Dosboxin että Dosemun päälle tarvittavat Motomit- ja Terman-ohjelmat. Lisäksi asensin virtuaalikoneeseen (Virtualbox) alkuperäisen Windows 98-käyttöjärjestelmän ja alkuperäiset ohjelmat kokeiltavaksi. Näin saan kokeiltua Linuxin sekä virtualisoinnin sopivuuden varsinaisen uuden ajoneuvotietokoneen mahdollisiksi toteutustavoiksi.
+
+Linux valittiin kohdekäyttöjärjestelmäksi, koska Windows tiedetään Motomitin osalta toimivaksi vaihtoehdoksi (Motomitistä löytyy Windows 7-yhteensopiva versio). DOS-ohjelmia ei voi ajaa suoraan Windowsin päällä, sillä vaikka myös uudemmista 32-bittisistä versioista (XP+) Windowseista löytyy \"Virtual DOS machine\", niin se ei rajoita ohjelmien ajonopeutta eikä tue suorayhteyttä sarjaväylälle, minkä takia lähes kaikissa toteustavoissa tarvitaan jokin lisäohjelma, jotta sarjaportti saadaan toimimaan DOS:n puolella (ref: Virtual Dos Machine). Dosboxista löytyy lisäksi sekä Windows- että Linux-versiot, minkä takia yhteensopivuuden pystyy testaamaan alustavasti Linuxin avulla. Päätökseen valita Linux vaikutti myös vahvasti oman osaamisen ja mieltymysten painottuminen Linux-puolelle. En siis nähnyt erityistä estettä olla kokeilematta järjestelmän toimivuutta Linux-käyttöjärjestelmässä.
+
+Muita mahdollisia vaihtoehtoja toteutukselle olisi ollut X86 -pohjainen Windows 7 tai Windows 8 -käyttöjärjestelmällä oleva kannettava. Tätä ratkaisua ei käytetty johtuen osittain käytettävästä testauskoneesta, osittain siitä, että haluttiin kartoittaa käytettävien ohjelmien toiminta myös Linux-puolella sekä osittain puuttuvan Windows-lisenssin takia.
+
+ARMv7-pohjaisista kehitysalustoista/tietokoneista, kuten Raspberry Pi 2, sekä BeagleBone Black, voisi yhdessä Eltechs ExaGear Desktop x86-tulkkausohjelmiston kanssa rakentaa kevyen ajoneuvotietokoneen. Tämä vaihtoehto ei kuitenkaan ollut vielä insinöörityön selvitysvaiheessa tiedossa, vaan tuli esille vasta helmikuussa 2015, kun Raspberry Pi 2 julkaistiin. Koska itse tehty järjestelmä olisi vaatinut huomattavasti enemmän suunnittelua, rakentelua ja testausta, todettiin ratkaisu tällä aikataululla liian työlääksi ja epävarmaksi. Kuten sanottua, nykyinen ajoneuvotietokone osoittautui vielä korjattavissa olevaksi. Nykyisen järjestelmän korvaavista vaihtoehdoista kerron tarkemmin luvussa \ref{ch:korvaava_jarjestelma}.
+
+\section{Käytetyt laitteistot}
+
+Testaukseen käytetään vanhaa Fujitsu-Siemensin Amilo Pa 2510-kannettavaa vuodelta 2007. Amilo Pa 2510:ssa on AMD Turion 64 X2 TL-50 1.6 GHz prosessori, ATI Radeon Xpress X1200 128 Mb näytönohjain, 2 Gb keskusmuistia, 15.4" näyttö, sekä 120 Gb:n kiintolevy. Nämä speksit riittävät hyvin ohjelmistojen testaukseen sekä virtuaalikoneen kanssa että emuloituna+ohjelmistorajapinnan kautta \cite{fs_amilo:review}. Puutteena kannettavassa on mm. sarjaporttien puute sekä rikkoutunut näppäimistö. 
+
+Sarjaporttiliittimet ovat poistuneet kannettavista USB:n yleistyttyä jo 2000-luvun alussa, vaikka vielä löytyykin myynnissä yrityskäyttöön kannettavia, joista löytyy vähintään yksi natiivi sarjaporttiliitin\cite{hp:laptop}. Sarjaportin puuttuminen korvataan tässä tapauksessa USB-sarjaporttiadapterilla, jonka avulla kyseistä kannettavaa tietokonetta voidaan käyttää testaukseen.
+
+Rikkinäinen näppäimistö korvataan erillisellä USB-väylään liitettävällä näppäimistöllä testauksen ajaksi. Sähkönsyöttö testauksen ajan hoituu kannettavan omalla akulla, jossa on vielä kapasiteettia pitää kannettava käynnissä testauksen ajan.
+
+Käytettävä USB-sarjaporttiadapteri on eBaystä testaukseen hankittu 2-porttinen Unitek USB to Dual Serial Cable Y-106 \cite{serial:unitek}. Y-106 -adapteri käyttää MosChip Semiconductorin MCS7820 -piiriä muunnokseen. Adapteri valittiin, koska siinä oli tarvittavat 2 sarjaporttia, sen myyntihinta oli edullinen (n. 25€ sisältäen toimituksen) ja käytetylle muunninpiirille löytyi ajurituki sekä Windows- että Linux -käyttöjärjestelmille.
+
+
+\section{Käytetyt ohjelmat}
+
+Xubuntu 14.04 on Ubuntu 14.04:aan perustuva (joka taas on Debianiin perustuva) Linux-distro, jossa 
+käyttöliittymäksi on vaihdettu XFCE 4.10 ja mukana toimitettavista ohjelmistoista on valittu kevyemmät 
+versiot kuin Ubuntussa.\cite{xubuntu:about}. Xubuntu valittiin käyttöjärjestelmäksi, koska testaamiseen 
+käytettävä kannettava on hieman vanhempi ja Xubuntu on todettu jo aiemmin toimivaksi käyttöjärjestelmäksi ko. kannettavassa.
+
+Käyttöjärjestelmäksi valittiin Xubuntusta pitkän tuen versio 14.04.
+Xubuntu asennettiin oletusasetuksilla testikoneeseen. Lisäksi Xubuntu
+laitettiin kirjautumaan sisään automaattisesti ja Dosbox ja MotomitPC
+laitettiin käynnistymään automaattisesti sisäänkirjautumisen yhteydessä.
+
+Wine on Windows-yhteensopivuuskerros Unixin kaltaisiin (mm. Unix/Linux/OS X/Solaris) käyttöjärjestelmiin, mikä mahdollistaa Windows-ohjelmien käyttämisen käytetyssä käyttöjärjestelmässä. Wineä tarvitaan, jotta apteeraukseen käytettävä Motomit PC-ohjelmisto saadaan toimimaan Linuxissa. Vaikka Motomit sisältääkin taustajärjestelmänään Linuxin\cite{motomit:manual}, on käyttöliittymäänä toimivasta Motomit PC -ohjelmasta olemassa vain Windows-versio.
+
+Dosbox on DOS-emulaattori, joka emuloi IBM PC-yhteensopivaa tietokonetta 286/386-prosessorilla sekä monia muita kyseisen aikakauden laitteistoja. Dosbox sisältää lisäksi suoratuen sarjaportille, minkä takia se on valittu käytettäväksi DOS-emulaattoriksi. Dosboxia tarvitaan, että Terman-ohjelmisto saadaan toimimaan uudemmissa Windowseissa ja Linuxeissa.
+
+Dosemu on virtuaalikone / DOS-rajapintakerros Linuxille, joka mahdollistaa DOS-ohjelmien ajamisen x86-arkkitehtuuria käyttävässä Linux-käyttöjärjestelmässä. Dosemu valittiin myös testattavaksi vaihtoehdoksi Termanin saamiseksi toimimaan Linux-käyttöjärjestelmässä.
+
+\section{Asennus ja asetusten säätö}
+Käytetylle USB-sarjaporttiadapterille lisättiin oma udev-sääntö, jonka ansiosta adapterin kaksi sarjaporttia tulevat näkyviin Linuxissa samoilla laitetiedosto (Device file)-nimillä, vaikka tietokoneeseen olisi kytkettynä useampi erillainen USB-sarjaporttiadapteri.
+
+Jotta sarjaportit saa toimimaan Winessä Windowsin käyttämillä COM-porttinimillä Windows-ohjelmien puolella, tulee laitetiedostoista tehdä symboliset linkit \textasciitilde{}/.wine/dosdevices/ -hakemistoon halutuilla nimillä (COM1 ja COM2).\cite[s. 21]{wine:manual}
+
+Dosboxin ja Dosemun asetuksiin tuli määrittää käytetävät sarjaportit. Lisäksi Dosboxista muutettiin suoritusnopeutta ja ruudun kokoa suuremmaksi, jotta käytettävyys olisi parempi \cite{dosbox:conf}. Molemmat ohjelmat jätettiin ikkunointimoodiin, jotta yhteiskäyttö Motomit PC:n kanssa olisi helpompaa.
+
+\section{Testaus}
+%% %-merkki on kommentti, teksti ei tule työhön
+%Kootun Linux-järjestelmän testaus suoritettiin huhtikuussa 2015 metsässä hakkuukoneen luona. Rajoittavaksi tekijäksi asettui testikannettavan akun kesto, joka oli vain n. 15 minuuttia. Tässä ajassa saatiin kuitenkin testattua alustavasti Motomit PC- ja Terman-ohjelmistojen toimivuus Winen ja Dosbox/Dosemun avulla suoritettuna. Valitettavasti virtuaalikoneeseen asennettuja ohjelmia ei ehditty testaamaan ennen kuin akku loppui.
+
+%Blaah kakkaa
+Testaukseen päädyttiin käyttämään käyttöjärjestelmänä Linux-distribuutiota Xubuntu 14.04. Alkuperäiset ohjelmistot Motomit PC ja Terman sovitettiin käyttöön Wine-rajapinnan ja Dosbox/Dosemu DOS -emulaattorin avulla. Järjestelmä asennettiin testausta varten vanhaan Fujitsu-Siemensin kannettavaan. Johtuen rankoista olosuhteita, tavallista kannettavaa käytetään vain käyttöjärjestelmän ja ohjelmien testaamiseksi yhdessä Moton kanssa.
+
+Kannettavan avulla käytiin testaamassa ohjelmistojen yhteensopivuutta Linuxin, USB-sarja-adapterin sekä hakkuukoneen järjestelmien kanssa huhtikuussa 2015. Selvisi, että sekä Motomit PC että Terman toimivat ja ovat käyttökelposia Linux-käyttöjärjestelmässä sarjaporttiadapterin avulla, mikä väljentää tulevan koneen vaatimuksia sarjaporttien määrän osalta.
+
+Testissä selvisi että kannettava tietokone olisi muuten sellaisenaan sopiva korvike alkuperäiselle järjestelmälle, mutta rajallisen tilan vuoksi se on epäkäytännöllinen viedessään liikaa tilaa vaakatasossa. Tämän vuoksi se sopii vain väliaikaiseen käytöön, mutta ei kiinteästi asennettuna.
+
+Insinöörityöstä jäi puuttumaan alustava analyysi Terman- ja Motomit PC-ohjelmistojen käyttämille protokollille, koska viimeisellä mahdollisella testausmatkalla testikannettavan akku petti, enkä lyhyeksi jääneen akunkeston vuoksi saanut tallennettua näytettä sarjaporttien liikenteestä. Tämän liikenteen avulla olisi voinut myös simuloida hakkuukonetta syöttämällä kaapatun datan mikrokontrollerin tai toisen tietokoneen avulla testikannettavaan.\newline
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\hsize]{motomit_linux.png}
+\caption{Motomit PC-ohjelmisto Winessä ajettuna.}
+\end{figure}
+
+\newpage
+
+\chapter{Korvaava järjestelmä}
+\label{ch:korvaava_jarjestelma}
+
+Tämän työn aikana tehtyjen tutkimusten perusteella olen päätynyt esittämään yrittäjälle seuraavia vaihtoehtoja ajoneuvotietokoneen korvaamiseksi.
+
+\section{Uusi ajoneuvotietokone}
+
+Ehdotan ajoneuvotietokoneeksi Panasonic Toughbook CF-19 tietokonetta. Toughbook CF-19 on tabletiksi kääntyvä, täysvahvistettu kannettava joka on suunnitteltu ääriolosuhteisiin. CF-19 on suojattu niin, että se kestää pölyä, tärinää, iskuja ja -20 ja +60 °C välisen lämpötila-vaihtelun. CF-19 on varustettu Intel Core 2 Duo U7500 -prosessorilla, 4 Gb:n muistilla ja 10.4 \" näytöllä. Laite on IP54-suojattu kuten alkuperäinen ajoneuvotietokone ja se täyttää sähkömagneettisen yhteensopivuuden, tärinän, tiputuksen, vesi- ja pölytiiviyden, lämpötilankeston ja kosteudenkeston osalta Yhdysvaltain armeijan asettamat standardit. \cite{cf19}
+
+Valitsin Toughbook CF-19 korvaajaksi, koska kääntyvän näytön takia sen saa n. 5 cm paksuksi, mikä mahdollistaa sen, että ko. kannettavalle voidaan toteuttaa helposti teline joko alkuperäiseen pidikkeeseen tai erillisenä kiinnityksenä. CF-19:sta löytyy lisäksi vakiona yksi RS-232 -sarjaportti, joka on luotettavuudeltaan parempi kuin USB-pohjaiset adapterit. Tällöin Motomit PC voidaan liittää sarjaporttiin ja Terman laittaa menemään USB-adapterin kautta tulevasta sarjaportista. Vaikka Panasonic Toughbook CF-19 on suhteellisen vanha (julkaistu v. 2007) \cite{cf19}, niin kyseistä mallia on hyvin saatavissa käytettyjen ja kunnostettujen tietokoneiden myyntiin erikoistuneista liikkeistä. Kosketusnäytön ansiosta erillistä hiirtä ei tarvita ja näppäimistöksi riittää ulkoinen näppäimistö.
+
+\lipsum[1-5]
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.50\hsize]{cf19.jpg}
+\caption{Panasonic Toughbook CF-19.}
+\end{figure}
+
+
+\section{Uusi ajoneuvotietokone vanhoihin kuoriin}
+
+Toinen vaihtoehto on toteuttaa uusi tietokone Sunit Neron koteloon. Tämän vaihtoehdon etuna on se, että se olisi varmasti yhteensopiva alkuperäisen pidikkeen kanssa. Vaihtoehto vaatii tarkan mietinnän komponenttien valinnan ja kiinnityksen osalta, jotta toteutus saadaan kestämään varsinkin lämpötilavaihteluita ja tärinää. Alkuperäinen kotelointi tarjoaa IP54-luokiteltuna riittävän suojan pölyä ja vesiroiskeita vastaan.
+
+Itse tietokoneeksi valitsisin esimerkiksi Intelin NUC-konseptin D53427RKE emolevyn, jossa on integroituna Intel i5 -prosessori. Liitäntöinä emolevyssä on HDMI näytölle ja miniPCIe SSD-levylle  \cite{D53427RKE}. Lisäksi emolevyssä on 5 USB-liitintä oheislaitteita varten. Näyttöpaneeliksi valitsin 10,1" IPS LCD-paneelin, jossa on mukana LCD-ajuripiirilevy HDMI-liitännällä. Alkuperäisen kuoren paneelin koko on 12" 4:3, joten 16:9 10,1" paneeli mahtuu hyvin tilalle koteloon. Paneeli käyttää 9-12V jännitettä, joten se sopii hyvin projektiin. Virtalähteeksi valitaan 24V jännitteellä toimiva M3-ATX, 125W ulostulolla oleva autokäyttöön suunniteltu virtalähde.
+
+Hintaa itse tehtynä tulisi n. 300€ (emolevy) + 150€ (paneeli) + 70€ (virtalähde) + muut tarvikkeet (muistit, ssd-levy, sekalaiset pientarvikkeet) ~100-200€?, jolloin lopullinen hinta olisin n. 600-700 € + työt. Kun tätä verrataan Panasonic Toughbook CF-19:n hintaan (n. 750€) ja otetaan huomioon tietokoneen tuleva käyttöympäristö, en pidä kannattavana koneen itse rakentamista vaan suosittelen valmiiksi olosuhteita kestävän tietokoneen hankkimista.
+
+\lipsum[1-5]
+
+%http://www.adafruit.com/products/1287
+%http://www.mini-box.com/M3-ATX-DC-DC-ATX-Automotive-Computer-car-PC-Power-Supply
+
+\section{Raspberry Pi 2}
+
+Raspberry Pi Foundation julkaisi helmikuussa 2015 uuden version suositusta yhden piirin Raspberry Pi -tietokoneestaan, Raspberry Pi 2:n. Raspberry Pi 2 sisältää järjestelmäpiirinä ARMv7-arkkitehtuuria käyttävän Broadcom BCM2836 -piirin sekä 1 Gb muistia. Raspberry Pi 2 on sovelluksesta riippuen 4-8 kertaa ensimmäisen Raspberry Pi:n käyttämää BCM2835 -piiriä nopeampi \cite{raspi2:perf}. Koska Raspberry Pi on saatavissa ominaisuuksiin nähden edulliseen n. 50€ hintaan, se antaa aihetta vähintäänkin harkita järjestelmän toteutusta RP2:n avulla.
+
+Fyysisesti toteutus olisi D53427RKE-pohjaisen ratkaisun kanssa yhtenevä, mutta tarvittavia osia olisi vain itse Raspberry Pi 2, microSD -kortti käyttöjärjestelmälle, 10,1" näyttöpaneeli sekä virtalähde. Virtalähteen ei tarvitse olla kovin tehokas, koska käytettävien osien tehonkulutus pudottaa osien vaatiman keskikulutuksen n. 10 Wattiin (Raspberry Pi 2: 4W, näyttöpaneeli n. 5W).
+
+Suuntaa antavasti hintaa Raspberry Pi 2-pohjaiselle ratkaisulle tulisi n. 50€ (Rpi2) + 20€ (32 Gb muistikortti) + 150€ (paneeli) + 30€ (virtalähde). Yhteensä siis n. 250€ + työt.
+
+ARM-arkkitehtuurista johtuen ohjelmistojen siirto tulee toteuttaa joko täysin emuloimalla esimerkiksi QEMU- tai Bohcs-emulaattorissa tai vaihtoehtoisesti käyttämällä esimerkiksi kaupallista Eltech Desktop x86 -binääritulkkainta. Näiden vaihtoehtojen toimivuutta ei kuitenkaan ole selvitetty tässä insinöörityössä ja ne vaatisivat lisäselvityksiä ja testauksia ennen mahdollista toteutusta.
+
+Raspberry Pi 2:ta ei ole ainakaan vielä julkisesti testattu EMC-määritysten osalta. Alkuperäinen Raspberry Pi on testattu EU:n asettamien määritysten mukaiseksi  \cite{raspi:emctesting}. EMC-vaatimusten täyttäminen on pakollista vasta valmiille, tuotantokäyttöön sellaisenaan tarkoitetuille tuotteille, mutta toteutuksessa kannattaa huomioida, että tulevan tietokoneen suojauksissa on otettu myös mahdolliset molempiin suuntiin kohdistuvat sähkömagneettiset häiriöt huomioon.
+
+\lipsum[1-5]
+
+
+\newpage
+
+\chapter{Yhteenveto}\
+
+Insinöörityön tavoitteena oli selvittää työn kohteena olevan 17 vuotta vanhan hakkuukoneen alkuperäisen ajoneuvotietokoneen liitännät ja ohjelmistot sekä tutkia mahdolliset vaihtoehdot korvata vanha, käyttöikänsä loppupäässä oleva alkuperäinen ajoneuvotietokone uudemmalla, hakkuukoneen järjestelmien kanssa yhteensopivalla vaihtoehdolla.
+
+Alkuperäistä ajoneuvotietokonetta tutkimalla sekä mahdollisia vaihtoehtoja punnitsemalla päädyttiin testaamaan alkuperäisten ohjelmistojen toimivuutta yhteensopivuusrajapintojen kautta tavallisessa, useamman vuoden vanhassa Linux-käyttöjärjestelmällä varustetussa kannettavassa tietokoneessa. Testaamalla selvisi, että käytettävät alkuperäiset ohjelmistot toimivat USB-sarjaporttiadapterin ja Linuxin kautta suoritettuina. Tästä voidaan päätellä että alkuperäinen Sunit Nero-ajoneuvotietokone on helpostikin korvattavissa uudemmalla olosuhteita kestävällä ajoneuvotietokoneella tai kannettavalla.
+
+Vaatimuksina uudelle tietokoneelle on lähinnä tarvittava olosuhteiden kesto sekä tarvittavat liittimet. Hakkuukoneen järjestelmät vaativat kaksi sarjaporttiliitäntää, joilla kommunikointi hakkuukoneen ja ajoneuvotietokoneen välillä tapahtuu. Hakkuukoneen sähköjärjestelmä on 24V, mikä tulee ottaa huomioon tietokoneen sähkönsyöttöä pohdittaessa.
+
+Parhaana vaihtoehtona pidän tällä hetkellä ajoneuvotietokoneen korvaamista Panasonic Toughbook CF-19 tietokoneella. Myös Raspberry Pi 2-pohjainen ratkaisu on harkitsemisen arvoinen.
+
+Suurimmat haasteet insinöörityössä liittyivät pääsyyn työn kohteena olevalle hakkuukoneelle. Hakkuukone oli aktiivisessa käytössä Oriveden metsissä koko insinöörityön ajan ja vierailut koneelle saatiin lopulta järjestettyä alkuperäisen ajoneuvotietokoneen huoltojen yhteydessä. Hakkuukoneen kommunikointi ajoneuvotietokoneen kanssa osoittautui kuitenkin yksinkertaiseksi, joten järjestyneet käyntikerrat riittivät hyvin selvittämään alkuperäisen järjestelmän toimintaa sekä testaamaan mahdollisessa uudessa tietokoneessa käytettäviä ratkaisuja.
+
+%Muita haasteita työn toteutukselle toi hektinen arki. Tyttäreni syntyi joulukuussa vaikean raskauden päätteeksi ja mukana menossa on myös neljävuotias esikoinen. Täysipäiväisesti töitä tekevänä isänä en koe valitettavasti pystyneeni täysin antamaan insinöörityölle sen ansaitsemaa panostusta. Aion kuitenkin hyödyntää tekemääni työtä toteuttamalla uuden ajoneuvotietokoneen myös käytännössä.
+
+Insinöörityössä saavutettiin asetetut tavoitteet uuden tietokoneen vaatimusten ja toteutusvaihtoehtojen selvittämisestä. Tarkoitus on, että hakkuukoneeseen hankitaan vielä tämän vuoden aikana edellä mainitun suunnitelman mukaisesti uusi ajoneuvotietokone, joka voidaan ottaa käyttöön alkuperäisen ajoneuvotietokoneen hajotessa seuraavan kerran.
+
+%Lopuksi haluaisin kiittää rakasta vaimoani Jennikaa kannustuksesta ja oikolukuavusta, poikaani Tuukkaa toimimisesta apulaisena alkuperäisen koneen huollon ja tutkimisen yhteydessä sekä hakkuukoneen omistajaa Arto Saalia, joka oli suureksi avuksi kaikissa käytännön järjestelyissä.\newline
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.80\textwidth]{tuukka_auttaa.jpg}
+\caption{Tuukka Haapaniemi valmistelemassa ajoneuvotietokoneen huoltoa}
+\end{figure}
+\newpage
+
+%----------------------------------------------------------------------------------------
+%   BIBLIOGRAPHY 
+%----------------------------------------------------------------------------------------
+
+\IfLanguageName{finnish}{\bibliographystyle{vancouver_fi}}{\bibliographystyle{vancouver}}
+%line space
+%\singlespacing %removed otherwise the appendix are also single space
+\begin{flushleft}
+\begin{singlespacing}
+\bibliography{motonkone_biblio}
+\end{singlespacing}
+\end{flushleft}
+
+%for conting the pages
+\label{LastPage}~
+
+\end{document}

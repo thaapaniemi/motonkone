@@ -1,0 +1,97 @@
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%   APPENDICES 
+%----------------------------------------------------------------------------------------
+%avoid that the last page of bib get appendix header
+\clearpage
+%start appendix
+\appendix
+%no page number for appendix in table of content
+\addtocontents{toc}{\cftpagenumbersoff{chapter}}
+%appendix sections and subsections not in table of content
+\settocdepth{chapter}
+%add "Appendices" in the table of content
+\addappheadtotoc
+%force smaller vertical spacing in table of content
+%!!! There can be some fun depending if the appendices have (sub)sections or not :D
+% You will have to play with these numbers and eventually copy the \pretocmd line on before some \chapter and force another number.
+\addtocontents{toc}{\vspace{11pt}}
+\pretocmd{\chapter}{\addtocontents{toc}{\protect\vspace{-24pt}}}{}{}
+%have Appendix 1 (instead of Appendix A)
+\renewcommand{\thechapter}{\arabic{chapter}} 
+
+\newcommand\liite[1]{
+%each appendix restart page num to one
+\setcounter{page}{1}
+%special counter for appendix TODO: this is a ugly quick hack :( Should find a better way to count the page per appendix.
+\newtotcounter{appx#1}
+%overwrite the header
+\makeevenhead{plain}{}{}{\appname \thechapter \\ \thepage\,(\stepcounter{appx#1}\total{appx#1})}
+\makeoddhead{plain}{}{}{\appname \thechapter \\ \thepage\,(\stepcounter{appx#1}\total{appx#1})}}
+
+\liite{1}
+\chapter{Linux configurations}\label{appx:first}
+
+\section{Udev rules}
+\begin{lstlisting}
+#/etc/udev/rules.d/10-local.rules
+ACTION=="add", DRIVERS=="mos7840",ATTRS{port_number}=="0", SYMLINK+="ttyMoto0"
+ACTION=="add", DRIVERS=="mos7840",ATTRS{port_number}=="1", SYMLINK+="ttyMoto1"
+\end{lstlisting}
+
+\section{Dosbox configuration file}
+\begin{lstlisting}
+[sdl]
+fullscreen=false
+fulldouble=false
+fullresolution=800x600
+windowresolution=800x600
+output=overlay
+autolock=false
+sensitivity=100
+waitonerror=true
+priority=higher,normal
+mapperfile=mapper-0.74.map
+usescancodes=true
+
+[cpu]
+core=auto
+cputype=auto
+cycles=max
+cycleup=10
+cycledown=20
+
+[serial]
+serial1=directserial realport:ttyMoto0
+serial2=directserial realport:ttyMoto1
+\end{lstlisting}
+
+\section{Dosemu configuration file}
+\begin{lstlisting}
+$_X_lin_filt = (on)
+$_com1 = "/dev/ttyMoto0"
+$_com2 = "/dev/ttyMoto1"
+
+\end{lstlisting}
+
+\section{Wine configurations}
+\begin{lstlisting}
+#Create symbolic links to .wine/dosdevices/
+sudo ln -s /dev/ttyMoto0 /home/user/.wine/dosdevices/com1
+sudo ln -s /dev/ttyMoto1 /home/user/.wine/dosdevices/com2
+\end{lstlisting}
+
+\newpage
+\liite{2}
+\chapter{Ratkaisun kaaviot ja BOM}\label{appx:2}
+Tänne QCAD:lla tai jollain muulla kököllä töherretyt kökkokuvat
+
+\newpage
+\liite{3}
+\chapter{Sunit Nero mitat}\label{appx:nero}
+Tähän Tänne QCAD:lla tai jollain muulla kököllä töherretyt kökkokuvat Neron mitoista
+
+
+\end{document}
