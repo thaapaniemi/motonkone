@@ -715,12 +715,9 @@ QEMU:ssa on käytetty GIL:liä (Global Interpreter Lock) synkronoimaan suoritust
 % http://en.wikibooks.org/wiki/QEMU/Devices
 %http://wiki.qemu.org/download/qemu-doc.html
 
-
-
 \subsubsection{KVM Hosting}
 %Here QEMU deals with the setting up and migration of KVM images. It is still involved in the emulation of hardware, but the execution of the guest is done by KVM as requested by QEMU.
-KVM (Kernel Mode Virtualization) on kakkaaa jonka avulla virtualisointi on toteutettu.
-KVM (Kernel Mode Virtualization) on Linux-ytimeen rakennettu tuki virtualisoinnille. KVM vaatii prosessorilta virtualisointituen. Tällä hetkellä ainoastaan QEMU on ainoa virtuaalikone, joka hyödyntää KVM:ää. KVM ei itsessään emuloi mitään, vaan tarjoaa käyttäjätasolle rajapinnan prosessorin virtualisointiominaisuuksiin.
+KVM (Kernel Mode Virtualization) on Linux-ytimeen rakennettu tuki virtualisoinnille. KVM vaatii prosessorilta virtualisointituen. KVM ei itsessään emuloi mitään, vaan tarjoaa käyttäjätasolle rajapinnan prosessorin virtualisointiominaisuuksiin. QEMU hoitaa virtualisoinnin KVM:n avulla. QEMU emuloi tarvittavat laitteet ja KVM hoitaa itse virtualisoinnin.
 
 \subsubsection{Xen Hosting}
 %QEMU is involved only in the emulation of hardware; the execution of the guest is done within Xen and is totally hidden from QEMU.
