@@ -104,7 +104,7 @@ def main2():
 
 	os.chdir(original_cwd)
 
-	#shutil.rmtree(tempdir)
+	shutil.rmtree(tempdir)
 	#print tempdir
 
 def main():
