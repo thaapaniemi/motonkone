@@ -26,6 +26,9 @@ def preprocess(filenames):
 	shutil.copytree(execdir+"/template",tempdir)
 	shutil.copy(execdir+"/template/vancouver_fi.bst",tempdir)
 
+	for filename in filenames:
+		shutil.copy(original_cwd+"/"+filename,tempdir)
+
 	bibpieces = []
 	i = 0
 	for bibpiece in texfile.split("\\bibliography{"):
