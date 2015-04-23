@@ -22,6 +22,8 @@ def preprocess(filenames):
 	texfile = add_metadata_to_tex(filenames)
 	texfile = texfile.replace("\graphicspath{{illustration/}}","\graphicspath{{"+ original_cwd +"/illustration/}}")
 
+	shutil.rmtree(tempdir)
+	shutil.copytree(execdir+"/template",tempdir)
 	shutil.copy(execdir+"/template/vancouver_fi.bst",tempdir)
 
 	bibpieces = []
@@ -74,6 +76,8 @@ def main2():
 
 	os.chdir(tempdir)
 
+	originalFileName, originalFileExtension = os.path.splitext(sys.argv[1])
+
 	fileName, fileExtension = os.path.splitext(pf["texfilename"])
 	fileName = os.path.basename(fileName)
 
@@ -88,12 +92,12 @@ def main2():
 
 	print "ok"
 
-	shutil.copy(fileName+".pdf",original_cwd+"/"+fileName+".pdf")
+	shutil.copy(fileName+".pdf",original_cwd+"/"+originalFileName+".pdf")
 
 	os.chdir(original_cwd)
 
 	shutil.rmtree(tempdir)
-	print tempdir
+	#print tempdir
 
 def main():
 	filename_original = sys.argv[1]
