@@ -427,9 +427,19 @@ Xen vaatii erillisen tuen kohdekäyttöjärjestelmiltä jotta niitä voidaan kä
 
 
 \subsubsection{KVM}
-KVM (Kernel Mode Virtualization) on Linux-ytimeen rakennettu tuki virtualisoinnille. KVM vaatii prosessorilta virtualisointituen. KVM ei itsessään emuloi mitään, vaan tarjoaa käyttäjätasolle rajapinnan prosessorin virtualisointiominaisuuksiin. 
+%http://www.linuxthoughts.com/?p=110
+%https://www.youtube.com/watch?v=6n-ANRWqll8
+KVM (Kernel Mode Virtualization) on Linux-ytimeen rakennettu tuki virtualisoinnille. KVM vaatii prosessorilta virtualisointituen. KVM ei itsessään emuloi mitään, vaan tarjoaa käyttäjätasolle rajapinnan prosessorin virtualisointiominaisuuksiin. KVM on toteutettu siten, että se että oikeastaan muuttaa Linux-kernelin hypervisoriksi/virtuaalikoneeksi  (hyödyntäen muita Linuxin komponentteja, kuten scheduleria (vuorottaja) , sekä muistinhallintaa)
 
-KVM koostuu kernelin KVM-moduuleista (kvm.ko, kvm-intel.ko, and kvm-amd.ko) providing the core virtualization infrastructure and processor-specific drivers, sekä käyttäjätason ohjelmasta (qemu-system-ARCH) that provides emulation for virtual devices and control mechanisms to manage VM Guests (virtual machines).
+% http://www.linux-kvm.org/wiki/images/6/61/KvmForum2007$kf2007-keynote.pdf
+KVM:n kehitys alkoi v. 2006, Ensimmäinen vakaa, Linuxin kernelin mukanaa toimitettava versio julkaistiin syyskuussa 2012.
+
+KVM koostuu kernelin KVM-moduuleista (kvm.ko, kvm-intel.ko, and kvm-amd.ko) providing the core virtualization infrastructure and processor-specific drivers,
+, joissa toteutetaan 
+
+ sekä käyttäjätason ohjelmasta (qemu-system-ARCH) joka emuloi laitteiston ja toteuttaa virtuaalikoneiden (guest) hallinnan. Alussa hallintaan käytettiin muunneltua QEMU:n versiota, mutta xxxxxxx lähtien tarvittavat muutokset on lisätty QEMU:un.
+
+ KVM:lle ei toistaiseksi ole toteutettu muita käyttäjätason ohjelmia kuin QEMU.
 
 
 %https://www.suse.com/documentation/sles-12/book_virt/data/sec_kvm_intro_arch.html
