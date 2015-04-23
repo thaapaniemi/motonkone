@@ -10,7 +10,7 @@ import subprocess
 import shutil
 import tempfile
 
-from make_metropolia_tex import add_metadata_to_tex
+from make_metropolia_tex import add_metadata_to_tex, load_file
 
 execdir = os.path.dirname(os.path.realpath(sys.argv[0]))
 original_cwd = os.getcwd()
@@ -21,6 +21,9 @@ def preprocess(filenames):
 	pass
 	texfile = add_metadata_to_tex(filenames)
 	texfile = texfile.replace("\graphicspath{{illustration/}}","\graphicspath{{"+ original_cwd +"/illustration/}}")
+	texfile = texfile.replace("\ThisCenterWallPaper{1}{viiva}","\ThisCenterWallPaper{1}{"+tempdir+"/viiva}")
+	texfile = texfile.replace("\ThisLRCornerWallPaper{1}{metropolia}","\ThisLRCornerWallPaper{1}{"+tempdir+"/metropolia}")
+	texfile = texfile.replace("\LRCornerWallPaper{1}{footer}","\LRCornerWallPaper{1}{"+tempdir+"/footer}")
 
 	shutil.rmtree(tempdir)
 	shutil.copytree(execdir+"/template",tempdir)
@@ -30,18 +33,20 @@ def preprocess(filenames):
 		shutil.copy(original_cwd+"/"+filename,tempdir)
 
 	bibpieces = []
-	i = 0
-	for bibpiece in texfile.split("\\bibliography{"):
-		if i== 0:
-			i += 1
-			continue
-		bibpiece = bibpiece.split("}")[0]
-		bibpieces.append(bibpiece + ".bib")
-		i +=1
+
+	for ff in filenames:
+		content = load_file( tempdir + "/" + os.path.basename(ff))
+		i = 0
+		for bibpiece in content.split("\\bibliography{"):
+			if i== 0:
+				i += 1
+				continue
+			bibpiece = bibpiece.split("}")[0]
+			bibpieces.append(bibpiece + ".bib")
+			i +=1
 
 	bibpieces_normalized = []
 	for f in bibpieces:
-		print f
 		if os.path.isfile(f):
 			shutil.copy(f,tempdir)
 			bibpieces_normalized.append( tempdir + "/" + os.path.basename(f+".bib") )
@@ -99,7 +104,7 @@ def main2():
 
 	os.chdir(original_cwd)
 
-	shutil.rmtree(tempdir)
+	#shutil.rmtree(tempdir)
 	#print tempdir
 
 def main():

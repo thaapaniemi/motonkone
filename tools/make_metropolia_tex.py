@@ -33,6 +33,7 @@ def add_metadata_to_tex(filenames,layout_name=None):
 	for key in md:
 		layout = layout.replace("__"+key.upper()+"__",md[key])
 
+	temp = ""
 	for filename1 in filenames:
 		fileName, fileExtension = os.path.splitext(filename1)
 		if fileExtension == ".bib":
@@ -40,13 +41,13 @@ def add_metadata_to_tex(filenames,layout_name=None):
 
 		#content = load_file(filename1)
 
-		#for key in md:
-		#	content = content.replace("__"+key.upper()+"__",md[key])
-
+		temp += "\n\\include{"+ ".".join(filename1.split(".")[:-1]) +"}"
 		#layout += "\n"+content
-		layout += "\n\\input{"+ ".".join(filename1.split(".")[:-1]) +"}"
+		#layout.replace("__CONTENT__",".".join(filename1.split(".")[:-1]) +"}")
+		#layout += "\n\\input{"+ ".".join(filename1.split(".")[:-1]) +"}"
 
-	layout +="\n"
+	layout = layout.replace("__CONTENT__",temp)
+	#layout +="\n"
 	
 	return layout
 

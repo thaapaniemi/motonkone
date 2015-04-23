@@ -283,3 +283,26 @@ xleftmargin=1cm
 \makepagestyle{abstract}
 \makeevenhead{abstract}{}{}{Abstract}
 \makeoddhead{abstract}{}{}{Abstract}
+
+\begin{document}
+
+\counterwithout{lstlisting}{chapter}
+
+%page number always on the top right, clear the "chapter/section" head
+\pagestyle{myheadings}
+\markright{}
+%clear chapter "title" foot page
+\makeevenfoot{plain}{}{}{}
+\makeoddfoot{plain}{}{}{}
+
+%----------------------------------------------------------------------------------------
+% TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\maketitle
+\newpage
+\LRCornerWallPaper{1}{footer}
+
+__CONTENT__
+
+\end{document}
