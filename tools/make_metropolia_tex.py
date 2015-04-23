@@ -23,17 +23,22 @@ def save_file(filename,content):
 	with open(filename,"wb") as fh:
 		fh.write(content)
 
-def add_metadata_to_tex(filename):
-	md = metadata.harvest_yaml(filename)
-	layout = load_file("th_layout.tex")
-	
-	filenames = sys.argv[1:]
+def add_metadata_to_tex(filenames,layout_name=None):
+	if layout_name is None:
+		layout_name = os.path.dirname(os.path.realpath(sys.argv[0])) + "/th_layout.tex"
+
+	md = metadata.harvest_yaml(filenames[0])
+	layout = load_file( layout_name)
 
 	for key in md:
 		layout = layout.replace("__"+key.upper()+"__",md[key])
 
-	for filename in filenames:
-		content = load_file(filename)
+	for filename1 in filenames:
+		fileName, fileExtension = os.path.splitext(filename1)
+		if fileExtension == ".bib":
+			continue
+
+		content = load_file(filename1)
 
 		for key in md:
 			content = content.replace("__"+key.upper()+"__",md[key])
@@ -46,5 +51,5 @@ def add_metadata_to_tex(filename):
 	return layout
 
 if __name__ == '__main__':
-	save_file( "test_out.tex", add_metadata_to_tex(sys.argv[1]) )
+	save_file( "test_out.tex", add_metadata_to_tex(sys.argv[1:]) )
 
