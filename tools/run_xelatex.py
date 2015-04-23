@@ -13,29 +13,38 @@ import tempfile
 from make_metropolia_tex import add_metadata_to_tex
 
 execdir = os.path.dirname(os.path.realpath(sys.argv[0]))
-curdir = os.getcwd()
+original_cwd = os.getcwd()
 
 tempdir = tempfile.mkdtemp()
 
 def preprocess(filenames):
 	pass
 	texfile = add_metadata_to_tex(filenames)
-	texfile = texfile.replace("\graphicspath{{illustration/}}","\graphicspath{{"+ curdir +"/illustration/}}")
+	texfile = texfile.replace("\graphicspath{{illustration/}}","\graphicspath{{"+ original_cwd +"/illustration/}}")
+
+	shutil.copy(execdir+"/template/vancouver_fi.bst",tempdir)
 
 	bibpieces = []
+	i = 0
 	for bibpiece in texfile.split("\\bibliography{"):
+		if i== 0:
+			i += 1
+			continue
 		bibpiece = bibpiece.split("}")[0]
-		bibpieces.append(bibpiece)
+		bibpieces.append(bibpiece + ".bib")
+		i +=1
 
 	bibpieces_normalized = []
 	for f in bibpieces:
+		print f
 		if os.path.isfile(f):
 			shutil.copy(f,tempdir)
-			bibpieces_normalized.append( tempdir + "/" + os.path.basename(f) )
+			bibpieces_normalized.append( tempdir + "/" + os.path.basename(f+".bib") )
 
-	temp = tempfile.mkstemp()
-	temp[0].write(texfile)
-	close(temp[0])
+	temp = tempfile.mkstemp(dir=tempdir,suffix=".tex")
+	
+	with os.fdopen(temp[0],"wb") as fh:
+		fh.write(texfile)
 
 	return {"texfilename":temp[1],"bibpieces":bibpieces_normalized}
 
@@ -61,19 +70,30 @@ def run_ext(array,stdin=None):
 		raise e
 
 def main2():
-	pf = preprocess(sys.arv[1:])
+	pf = preprocess(sys.argv[1:])
 
-	print run_ext(["xelatex", pf["texfilename"] ])[0]
+	os.chdir(tempdir)
 
-	for b in pf["bibpieces"]:
-		print run_ext(["bibtex", b])[0]
+	fileName, fileExtension = os.path.splitext(pf["texfilename"])
+	fileName = os.path.basename(fileName)
+
+	print run_ext(["xelatex", fileName+fileExtension ])[0]
+
+	#for b in pf["bibpieces"]:
+	#	print run_ext(["bibtex", b])[0]
+	print run_ext(["bibtex", fileName+".aux"])[0]
 	
-	print run_ext(["xelatex", pf["texfilename"] ])[0]
-	print run_ext(["xelatex", pf["texfilename"] ])[0]	
+	print run_ext(["xelatex", fileName+fileExtension ])[0]
+	print run_ext(["xelatex", fileName+fileExtension ])[0]	
 
 	print "ok"
 
+	shutil.copy(fileName+".pdf",original_cwd+"/"+fileName+".pdf")
+
+	os.chdir(original_cwd)
+
 	shutil.rmtree(tempdir)
+	print tempdir
 
 def main():
 	filename_original = sys.argv[1]

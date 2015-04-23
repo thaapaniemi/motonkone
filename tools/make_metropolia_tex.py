@@ -25,7 +25,7 @@ def save_file(filename,content):
 
 def add_metadata_to_tex(filenames,layout_name=None):
 	if layout_name is None:
-		layout_name = os.path.dirname(os.path.realpath(sys.argv[0])) + "/th_layout.tex"
+		layout_name = os.path.dirname(os.path.realpath(sys.argv[0])) +"/template/th_layout.tex"
 
 	md = metadata.harvest_yaml(filenames[0])
 	layout = load_file( layout_name)
