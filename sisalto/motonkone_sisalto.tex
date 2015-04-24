@@ -440,14 +440,34 @@ Alussa hallintaan käytettiin muunneltua QEMU:n versiota, mutta QEMU 1.3:sta lä
 \caption{KVM:n arkkitehtuurikaavio.}
 \end{figure}
 
-\subsubsection{Virtualbox}
+\subsubsection{Oracle Virtualbox}
 
 %https://shop.oracle.com/pls/ostore/product?p1=OracleVMVirtualBoxEnterprise&p2=&p3=&p4=&p5=&intcmp=ocom_virtualization_vmvirtualboxenterprise
-Virtualboxin perusversio (v. 2010 lähtien) on ilmainen koti- ja arviointikäyttöön, Oracle myy Enterprise-versiota n. 50 USD hintaan. 
 
-Virtualboxin perusratkaisut ovat avointa lähdekoodia (GPLv2 -lisenssillä). 
+%With version 4 of VirtualBox, released in December 2010, the core package is free software released under GNU General Public License version 2 (GPLv2). This is the fully featured package, excluding some proprietary components not available under GPLv2. 
+Virtualboxin perusohjelmisto on GPLv2-lisenssoitua ja siihen tarjotaan  PUEL-lisenssoituja suljetun lähdekoodin lisäpaketteja. 
 
-Virtualboxin kehitys aloitettiin v. xxxxx yrityksen yyyy toimesta. Sitten Sun osti. Sitten Oracle osti.
+Virtualboxin ensimmäinen versio julkaistiin 15.1.2007 yrityksen Innotek GmbH toimesta. Sun Microsystems Inc. osti Innotekin helmikuussa 2008. Oracle Corporation osti Sun Microsystemsin 27.1.2010 ja vastaa Virtualboxin myynnistä ja kehityksestä. 
+
+%https://www.virtualbox.org/wiki/VirtualBox_PUEL
+%https://www.virtualbox.org/wiki/Licensing_FAQ
+%Personal use is when you install the product on one or more PCs yourself and you make use of it (or even your friend, sister and grandmother). It doesn't matter whether you just use it for fun or run your multi-million euro business with it. Also, if you install it on your work PC at some large company, this is still personal use. However, if you are an administrator and want to deploy it to the 500 desktops in your company, this would no longer qualify as personal use. Well, you could ask each of your 500 employees to install VirtualBox but don't you think we deserve some money in this case? We'd even assist you with any issue you might have.
+
+Virtualbox on ilmainen koti- ja arviointikäyttöön. Oracle myy Enterprise-versiota n. 50 USD hintaan. 
+Virtualboxin PUEL-lisenssin mukaan Virtualboxin ilmaisen version käyttö on sallittua kaupallisestikin jos ohjelmiston asennus ja käyttö on yksittäisen henkilön hallittavissa. Maksullinen Enterprise -versio tarvitaan jos ohjelmistoa toimitetaan esiasennettuna tai sen asennusta ja käyttöä vaaditaan tai hallitaan yritystasolla.
+
+Virtuaalikoneita hallitaan sekä Virtualboxin graafisella käyttöliittymällä, että VBoxManage -komentoriviohjelmistolla joka tarjoaa graafinen käyttöliittymän ominaisuuksien lisäksi pääsyn kaikkiin virtualisointimoottorin ominaisuuksiin.
+
+
+Virtualboxin ominaisuuksiin kuuluu mm. virtuaalikoineiden moniprosessorituki, USB-laitteiden tuki, sekä snapshotit. Virtualbox tukee 2 sarjaportin välittämistä kohdejärjestelmälle.
+
+
+\subsubsection{VMWare Player}
+VMWare Player on VMWare Inc.:n v. 2008 julkaistu kaupallinen virtualisointiohjelmisto. Uusin versio on joulukuussa 2014 julkaistu 7.0. VMWare Player on kotikäyttöön ilmainen, mutta kaupallinen käyttö vaatii lisenssin hankkimisen. VMWare Player käyttää samaa virtualisointiydintä VMWare Workstationin kanssa, josta riisuttu versio Player oikeastaan on.
+
+
+
+
 
 % Blaah. Esittely QEMUsta, Virtualboxista, VirtualPC:stä, VMWaren shaibasta
 %http://qemu.weilnetz.de/qemu-tech.html#intro_005ffeatures
