@@ -396,14 +396,18 @@ Tässä vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmää ajetaa
 
 Virtualisoinnin ollessa varsin yleistä, niin virtualisointiratkaisuita tarjoavia yrityksiä ja ohjelmistoja on paljon. Työpöytävirtualisointiin riittävillä ominaisuuksilla (mm. sarjaporttien välitys virtuaalikoneille) sopii esimerkiksi avoimen lähdekoodin QEMU-hypervisori tai Oraclen Virtualbox -hypervisori. Myös Microsoft tarjoaa Windows-ympäristöön VirtualPC-hypervistoria. Kaupallisista tarjoajista VMWarella on olemassa VMWare Workstation ja VMWare Player -hypervisori.
 
+Hypervisorit on jaettu kahteen tyyppiin, 1 -tyypin natiiveihin hypervisoreihin joita ajetaan laitteiston ja käyttöjärjestelmän välissä, sekä 2-tyypin \"hosted\" -hypervisoreihin jotka suoritetaan tavallisina ohjelmina käyttöjärjestelmästä. Tämä jako ei kuitenkaa ole kaikkien hypervisoreiden kohdalla näin selvä (wink wink KVM)
+
 
 \subsection{Virtuaalikoneet}
 \subsubsection{Xen}
 %http://wiki.xenproject.org/wiki/Xen_Overview
 %QEMU is involved only in the emulation of hardware; the execution of the guest is done within Xen and is totally hidden from QEMU.
-Xen on Cambridgen yliopistossa kehitetty virtuaalikone. Xen suoritetaan käynnistyslataimesta (bootloaderista), jolloin se asettautuu laitteiston ja virtuaalikoneiden väliin. Xen vaatiikiin aina suoritettavaksi yhden virtuaalikoneen eli ns. isäntäkoneen eli Dom0:n. Dom0 hoitaa interaktion laitteiston sekä muiden virtuaalikoneiden kanssa. Lisäksi ainoastaan Dom0:lla on pääsy Xenin rajapintaa jota kautta hallitaan järjestelmää.
+Xen on Cambridgen yliopistossa kehitetty 1-tyypin hypervisor/virtuaalikone. Xen suoritetaan käynnistyslataimesta (bootloaderista), jolloin se asettautuu laitteiston ja virtuaalikoneiden väliin. Xen vaatiikiin aina suoritettavaksi yhden virtuaalikoneen eli ns. isäntäkoneen eli Dom0:n. Dom0 hoitaa interaktion laitteiston sekä muiden virtuaalikoneiden kanssa. Lisäksi ainoastaan Dom0:lla on pääsy Xenin rajapintaa jota kautta hallitaan järjestelmää.
 
 Xen vaatii erillisen tuen kohdekäyttöjärjestelmiltä jotta niitä voidaan käyttää Xenin avulla (para)virtualisoituina (pl. rautatason virtualisointi jolloin kohde ei tarvitse muutoksia). Tuki Xenin paravirtualisoinnille löytyy kuitenkin useimmista Linux- ja BSD-jakeluista. Windowsissa ei ole tukea Xenin paravirtualisoinnille, mutta sitä voidaan ajaa laitteistoavusteisen virtualisoinnin avulla Xenin päällä.
+
+Xenin kehitys alkoi xxxxx, versiota tuli pyllystä.
 
 %The Control Domain (or Domain 0) is a specialized Virtual Machine that has special privileges like the capability to access the hardware directly, handles all access to the system’s I/O functions and interacts with the other Virtual Machines. It also exposes a control interface to the outside world, through which the system is controlled. The Xen Project hypervisor is not usable without Domain 0, which is the first VM started by the system.
 
@@ -422,12 +426,11 @@ KVM (Kernel Mode Virtualization) on Linux-ytimeen rakennettu tuki virtualisoinni
 % http://www.linux-kvm.org/wiki/images/6/61/KvmForum2007$kf2007-keynote.pdf
 KVM:n kehitys alkoi v. 2006, Ensimmäinen vakaa, Linuxin kernelin mukanaa toimitettava versio julkaistiin syyskuussa 2012.
 
-KVM koostuu kernelin KVM-moduuleista (kvm.ko, kvm-intel.ko, and kvm-amd.ko) providing the core virtualization infrastructure and processor-specific drivers,
-, joissa toteutetaan 
+KVM koostuu kernel -moduulista kvm.ko joka toteuttaa virtualisoinnin perusrakenteet, prosessoririppuvaisista kernel-moduuleista (esim kvm-intel.ko ja kvm-amd.ko.) sekä käyttäjätason ohjelmasta (qemu-system-ARCH) joka emuloi laitteiston ja toteuttaa virtuaalikoneiden (guest) hallinnan. Jokaiselle virtuaalikoneelle emuloidaan omat laitteistot.
 
- sekä käyttäjätason ohjelmasta (qemu-system-ARCH) joka emuloi laitteiston ja toteuttaa virtuaalikoneiden (guest) hallinnan. Alussa hallintaan käytettiin muunneltua QEMU:n versiota, mutta xxxxxxx lähtien tarvittavat muutokset on lisätty QEMU:un.
+Alussa hallintaan käytettiin muunneltua QEMU:n versiota, mutta QEMU 1.3:sta lähtien tarvittavat muutokset on lisätty QEMU:un. 
 
- KVM:lle ei toistaiseksi ole toteutettu muita käyttäjätason hallintaohjelmia kuin QEMU.
+ KVM:lle ei toistaiseksi ole toteutettu muita käyttäjätason hallintaohjelmia kuin QEMU. QEMU:n päälle on kuitenkin toteutettu laaja joukko hallintaohjelmia (libvirt).
 
 
 %https://www.suse.com/documentation/sles-12/book_virt/data/sec_kvm_intro_arch.html
@@ -437,6 +440,14 @@ KVM koostuu kernelin KVM-moduuleista (kvm.ko, kvm-intel.ko, and kvm-amd.ko) prov
 \caption{KVM:n arkkitehtuurikaavio.}
 \end{figure}
 
+\subsubsection{Virtualbox}
+
+%https://shop.oracle.com/pls/ostore/product?p1=OracleVMVirtualBoxEnterprise&p2=&p3=&p4=&p5=&intcmp=ocom_virtualization_vmvirtualboxenterprise
+Virtualboxin perusversio (v. 2010 lähtien) on ilmainen koti- ja arviointikäyttöön, Oracle myy Enterprise-versiota n. 50 USD hintaan. 
+
+Virtualboxin perusratkaisut ovat avointa lähdekoodia (GPLv2 -lisenssillä). 
+
+Virtualboxin kehitys aloitettiin v. xxxxx yrityksen yyyy toimesta. Sitten Sun osti. Sitten Oracle osti.
 
 % Blaah. Esittely QEMUsta, Virtualboxista, VirtualPC:stä, VMWaren shaibasta
 %http://qemu.weilnetz.de/qemu-tech.html#intro_005ffeatures
