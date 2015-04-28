@@ -346,17 +346,18 @@ Ohjelmistojen rajapintojen yhteensopivuuskerros-vaihtoehdossa  käytetään käy
 %https://kb.iu.edu/d/acxn
 %https://technet.microsoft.com/library/cc767884.aspx
 
-NTVDM NT Virtual DOS Machine ja WOW Windows On Windows ovat Windows -käyttöjärjestelmän alijärjestelmiä, jotka DOS- ja 16 -bittisten Windows 3.x -ohjelmien suorittamisen uudemmissa NT -kerneliin pohjautuvissa Windows -versioissa. NTVDM ja WOW on poistettu 64 -bittisisitä Windows -versioista.
+Virtual Dos Machine on teknologia, mikä mahdollistaa DOS-ohjelmien suorituksen muissa käyttöjjärjestelmissä. VDM -toteutuksia löytyy niin Windowseista 3.x -käyttöjärjestelmästä lähtien, OS/2 sisälsi hyvän DOS-tuen oman MVDM -toteutuksensa takia. VDM on toteutettu myös Wineen lähinnä 16 -bittisten Windows 3.x -ohjelmien tuen takia.
 
-NTVDM emuloi x86-prosessorin (tarkempi versio NT-versioriippuvainen) suorittamassa MS-DOS -käyttöjärjestelmää. NTVDM:n ratkaisu DOS:n tietoturvaongelmiin on ajaa jokaista DOS-ohjelmaa omassa VDM-prosessissa, jolloin ohjelmat ovat suojattuja toisiltaan. NTVDM tulkkaa DOS-ohjelmien tekemät suorat laitteiston manipulointipyynnöt Windowsin API-pyynnöiksi. DOS-ohjelmien kaatuminen ei vaikuta muihin ohjelmiin / suoritettaviin prosesseihin, koska jokainen suoritettava DOS-ohjelma on oma VDM-prosessinsa (Win7+:ssa sama, siellä pitää erikseen määrittää erillinen muistiavaruus käyttöön).
+NTVDM NT Virtual DOS Machine ja WOW Windows On Windows ovat Windows -käyttöjärjestelmän alijärjestelmiä, jotka DOS- ja 16 -bittisten Windows 3.x -ohjelmien suorittamisen uudemmissa NT -kerneliin pohjautuvissa Windows -versioissa. NTVDM oli toteutettu emulaattorina myös Windows NT:n MIPS- ja Alpha-versiolle . NTVDM ja WOW on poistettu 64 -bittisisitä Windows -versioista.
 
-NTVDM ei rajaa suoritusnopeutta ja monien oheislaitteiden toteutus siinä on yksinkertainen ja puutteelinen. NTVDM ei myöskään anna DOS-ohjelmien ottaa yhteyttä suoraan laitteistoon joka rajoittaa sen kautta ajettavien ohjelmien toimivuutta.
+NTVDM emuloi x86-prosessorin suorittamassa MS-DOS -käyttöjärjestelmää. Se tulkkaa DOS-ohjelmien tekemät suorat laitteiston manipulointipyynnöt Windowsin API-pyynnöiksi. Emuloitujen laitteistojen tuki on kuitenkin NTVDM:ssä yksinkertainen ja rajoittunut. Se ei rajaa ohjelmien suoritusnopeutta, jolloin moni DOS-ohjelma pyörii nykylaitteistolla liian lujaa eikä kommunikointi laitteiston kanssa välttämättä onnistu koska ohjelmat eivät odota vastausta tarpeeksi pitkään.
+
+NTVDM:n ratkaisu DOS:n tietoturvaongelmiin on ajaa jokaista DOS-ohjelmaa omassa VDM-prosessissa, jolloin ohjelmat ovat suojattuja toisiltaan. DOS-ohjelmien kaatuminen ei vaikuta muihin ohjelmiin / suoritettaviin prosesseihin, koska jokainen suoritettava DOS-ohjelma on oma VDM-prosessinsa. Uudemmissa käyttöjärjestelmissä (Windows 7+) voi määritellä ajetaanko ohjelmat omina prosesseinaan vai yhden VDM-prosessin alla.
 
 
-\lipsum[1-2]
+WOW, Win16 on Win32, on Windowsin alijärjestelmä joka täydentää NTVDM:ään tuen 16 -bittisille Windows -ohjelmille. Win16 -ohjelmat ajetaan yhdessä VDM -prosessissa omina säikeinään. Tällä tavoin on saatu aikaan paras yhteensopivuus Windows 3.x:n kanssa. Haittapuolena tulee jaettu muistiavaruus kaikkien 16 -bittisten ohjelmien kanssa joka voi aiheuttaa epävakautta alijärjestelmän sisällä. Alijärjestelmän kaatuminen sulkee kaikki 16 -bittiset ohjelmat, muttei vaikuta käyttöjärjestelmän toimintaan muuten.
 
 
-Tähän ruma kaavio
 
 \subsection{Wine}
 %https://www.winehq.org/docs/winedev-guide/x2884
