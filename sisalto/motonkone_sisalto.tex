@@ -525,7 +525,6 @@ QEMU hoitaa virtualisoinnin KVM:n avulla. QEMU emuloi tarvittavat laitteet ja KV
 %QEMU is involved only in the emulation of hardware; the execution of the guest is done within Xen and is totally hidden from QEMU.
 Xeniä käytettäessä QEMU hoitaa ainoastaan laitteistoemuloinnin, itse virtuaalikoneen suoritus tapahtuu Xenin kautta eikä QEMUlla ole siihen pääsyä.
 
-\lipsum[1-2]
 
 
 \subsection{Windows Virtual PC}
@@ -538,14 +537,11 @@ Connectix kehitti alunperin Virtual PC:n Machintonin System 7.5 -käyttöjärjes
 
 Tässä vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmä ajetaan emulaattorissa toisen järjestelmän päällä. Emuloimalla saavutetaan laitteistoarkkitehtuuririippumattomuus isäntäkoneen ja emuloitavan järjestelmän välillä. Emuloinnin haittapuolena on hitaus. Nyrkkisääntönä on 20\% hyötysuhde \cite{tinycc} parhaiden emulaattorien päästessä n. 40-80\% hyötysuhteeseen \cite{40pperf}. Esimerksiksi Eltechs tarjoaa ExaGear Desktop-ohjelmistoa, jolla voi ajaa x86-ohjelmia ARMv7 -ympäristössä. \cite{eltechs:exagear}. 
 
-Avoimen lähdekoodin QEMU on myös prosessoriemulaattori, josta löytyy tuki usealle eri ohjelmistoarkkitehtuurille, yleisimpinä mm x86,PowerPC,ARM ja SPARC. Bochs on toinen suosittu prosessoriemulaattori x86/x64 -arkkitehtuureille.
 
-\lipsum[1-5]
+QEMU on myös prosessoriemulaattori, josta löytyy tuki usealle eri ohjelmistoarkkitehtuurille, yleisimpinä mm x86,PowerPC,ARM ja SPARC. 
 
-QEMUN emuloinnin esittely
 
-Bohcsin esittely
-\subsection{Bohcs}
+\subsection{Bochs}
 Bochs on x86-arkkitehtuuriin keskittynyt avoimen lähdekoodin emulaattori.
 
 %http://bochs.sourceforge.net/doc/docbook/user/introduction.html
@@ -555,14 +551,43 @@ Bochs:n ensimmäinen versio julkaistiin vuonna 1994, jolloin se oli vielä kaupa
 Bochsia käytetään mm. käyttöjärjestelmäkehityksessä apuuna ja sisältääkin mm. emuloinnin 8-ytimiselle prosessorille ja kehittyneet vianetsintätyökalut.
 
 
-Eltechsin ratkaisusta tarkemmin
-
 
 \section{Ohjelmistojen emulointi}
 
 Tässä vaihtoehdossa emuloidaan vain ohjelmat koko pc:n sijasta. Tämä onnistuu tietyillä ohjelmilla tiettyjen ohjelmistoarkkitehtuurien välillä \cite{tinycc},\cite{qemu_use}. Vaihtoehdolla voi ajaa mm. x86-ohjelmia ARM-prosessoreilla.
 
 Vähän QEMUn ratkaisusta. Selvitä onko muita
+
+%http://eltechs.com/product/exagear-desktop/
+%http://magazine.odroid.com/assets/201502/pdf/ODROID-Magazine-201502.pdf
+\section{Eltechs ExaGear Desktop}
+Eltechs ExaGear Desktop on kaupallinen toteutus Linuxille 32 -bittisten x86 -ohjelmien ajamiseksi ARMv7 -arkkitehtuurin prosessoreilla. Ohjelmisto julkaistiin lokakuussa 2014. ExaGear Desktopin etuna QEMUun nähden on nopeus. Se on (omien testiensä) perusteella 5x QEMU:a nopeampi. Suoritusnopeus on SysBench:n synteettisten testien perusteella 50-85 \% natiivista nopeudesta.
+
+ExaGear Desktop ei sisällä grafiikan laitteistokiihdytystukea, joten OpenGL/DirectX Winellä vaativat ohjelmistot suoritetaan ohjelmistorenderöijällä. Tämä on hidasta eikä softarenderöijä tue kaikkia OpenGL -standardin ominaisuuksia. Lisäksi on raportoitu ongelmista äänentoistossa jos ääntä tuotetaan useasta lähteestä yhtäaikaa.
+
+% Caveats
+% There are some quirks with ExaGear that make things a little bit harder to use. For example, the file access in the ExaGear
+% environment is somewhat slow. Starting TeamViewer can take anywhere from 30 seconds up to a minute on an
+% ODROID-U3, which happens regardless of whether you’re using an eMMC module or SD card. You should occasionally
+% run “apt-get update” in your ExaGear environment in order to update the package lists, or else some packages may not be
+% installed during the TeamViewer or Skype installation. If you perform a system update using “apt-get upgrade” and/
+% or “apt-get dist-upgrade” command, you might encounter several issues, since the image was highly modified. I noticed that
+% a few things were forgotten, such as altering the initramfs-tools to disable the creation of an initrd.img file, which isn’t possible
+% anyway. Also, some packages will fail to update, which requires some Linux expertise to fix, but an upgrade is probably not really
+% necessary once everything is working. Another issue is that ExaGear distributes tasks over all CPU
+% cores, which is generally a very good thing since it uses all the power it can get, but it also can lead to a very hot CPU if an
+% application uses a lot of CPU power. For example, I was running a Windows application called Blender on my XU3 using
+% ExaGear and Wine, which resulted in all 8 cores running at 100%, and even with the fan spinning at its maximum speed,
+% the temperature rose to over 94°C (200°F)! Overall, I really like what you can do with ExaGear, and
+% although I was very skeptical when it was first announced, I have to say it’s doing a very good job.
+
+% Wine
+% If you use ExaGear with Wine, a very convenient program is PlayOnLinux, which allows you to easily configure and install
+% Windows applications under Wine. If you try to run fullscreen applications such as games using Wine, you need to configure
+% Wine to run in a fake desktop with a size of 800x600 or 1024x768, rather than allow it to run natively in Linux. PlayOnLinux
+% may spare you some of these resolution problems, especially with the C1, which cannot change resolutions on the fly.
+% PlayOnLinux also makes recovery easier when a program hangs, since it is able to actually close the specific program
+
 
 \lipsum[1-5]
 
