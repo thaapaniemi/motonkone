@@ -707,9 +707,28 @@ Jotta sarjaportit saa toimimaan Winessä Windowsin käyttämillä COM-porttinimi
 
 Dosboxin ja Dosemun asetuksiin tuli määrittää käytetävät sarjaportit. Lisäksi Dosboxista muutettiin suoritusnopeutta ja ruudun kokoa suuremmaksi, jotta käytettävyys olisi parempi \cite{dosbox:conf}. Molemmat ohjelmat jätettiin ikkunointimoodiin, jotta yhteiskäyttö Motomit PC:n kanssa olisi helpompaa.
 
+%Xubuntu ohjattiin kirjautumaan automaattisesti oletuskäyttäjätunnuksilla sisään käynnistysvaiheessa. Ohjelmat laitettiin käynnistymään automaattisesti sisäänkirjautumnisen yhteydessä (lisäksi tarvittiin vielä Dosboxiin ja Dosemun AUTOEXEC.BAT -tiedostoon lisätä Terman käynnistymään automaattisesti). Kun asetukset oli säädetty toimimaan, asetetaan tiedostojärjestelmä vain luku-tilaan, jotta saadaan parannettua kokoonpanon luotettavuutta.
+
 \section{Testaus}
 %% %-merkki on kommentti, teksti ei tule työhön
-%Kootun Linux-järjestelmän testaus suoritettiin huhtikuussa 2015 metsässä hakkuukoneen luona. Rajoittavaksi tekijäksi asettui testikannettavan akun kesto, joka oli vain n. 15 minuuttia. Tässä ajassa saatiin kuitenkin testattua alustavasti Motomit PC- ja Terman-ohjelmistojen toimivuus Winen ja Dosbox/Dosemun avulla suoritettuna. Valitettavasti virtuaalikoneeseen asennettuja ohjelmia ei ehditty testaamaan ennen kuin akku loppui.
+
+% Kokeiltavaksi testiympäristöksi päätettiin valita tavallinen x86-pohjainen kannettava tietokone, johon asennettiin valittu käyttöjärjestelmä, sekä tarvittavat ohjelmat. Johtuen rankoista olosuhteita, tavallista kannettavaa käytetään vain käyttöjärjestelmän ja ohjelmien testaamiseksi yhdessä Moton kanssa.
+
+%Blaah kakkaa
+%Testaukseen päädyttiin käyttämään käyttöjärjestelmänä Linux-distribuutiota Xubuntu 14.04. Alkuperäiset ohjelmistot Motomit PC ja Terman sovitettiin käyttöön Wine-rajapinnan ja Dosbox/Dosemu DOS -emulaattorin avulla. Järjestelmä asennettiin testausta varten vanhaan Fujitsu-Siemensin kannettavaan. Johtuen rankoista olosuhteita, tavallista kannettavaa käytetään vain käyttöjärjestelmän ja ohjelmien testaamiseksi yhdessä Moton kanssa.
+
+% Kannettavan avulla käytiin testaamassa ohjelmistojen yhteensopivuutta Linuxin, USB-sarja-adapterin sekä hakkuukoneen järjestelmien kanssa huhtikuussa 2015. Selvisi, että sekä Motomit PC että Terman toimivat ja ovat käyttökelposia Linux-käyttöjärjestelmässä sarjaporttiadapterin avulla, mikä väljentää tulevan koneen vaatimuksia sarjaporttien määrän osalta.
+
+% Testissä selvisi että kannettava tietokone olisi muuten sellaisenaan sopiva korvike alkuperäiselle järjestelmälle, mutta rajallisen tilan vuoksi se on epäkäytännöllinen viedessään liikaa tilaa vaakatasossa. Tämän vuoksi se sopii vain väliaikaiseen käytöön, mutta ei kiinteästi asennettuna.
+
+% Insinöörityöstä jäi puuttumaan alustava analyysi Terman- ja Motomit PC-ohjelmistojen käyttämille protokollille, koska viimeisellä mahdollisella testausmatkalla testikannettavan akku petti, enkä lyhyeksi jääneen akunkeston vuoksi saanut tallennettua näytettä sarjaporttien liikenteestä. Tämän liikenteen avulla olisi voinut myös simuloida hakkuukonetta syöttämällä kaapatun datan mikrokontrollerin tai toisen tietokoneen avulla testikannettavaan.
+
+
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=1.00\hsize]{motomit_linux.png}
+% \caption{Motomit PC-ohjelmisto Winessä ajettuna.}
+% \end{figure}
 
 \section{Simple Serial Repeater}
 
@@ -730,6 +749,7 @@ Vastaanotettu data tallennetaan vastaanottojoukkoina, joiden koon määrittää 
 \subsubsection{SQL-taulut ja tietotyypit}
 
 \begin{table}[h]
+\centering
 \caption{Header-taulu}
 \begin{tabular}{ c|c }
 \centering
@@ -747,6 +767,7 @@ meta\_device & Text \\\bottomrule
 \vspace{10mm}
 
 \begin{table}[h]
+\centering
 \caption{Data-taulu}
 \begin{tabular}{ c|c }
 nimi & SQL-tyyppi \\\toprule
@@ -779,29 +800,7 @@ SRPT:n voisi rakentaa myös omaksi laitteekseen, jolla tallennus/toisto onnistui
 
 Tallennetava data voitaisiin myös pakata jo vastaanottovaiheessa esimerkiksi jollain yleisimmistä pakkausmetodeista (DEFLATE, LZ-variantit). Sopivalla pakkausalgoritmillä pakkaaminen ja purkaminen olisivat myös suht. nopeita hitaamallakin tietokoneella, joten pakkaaminen tuskin aiheuttaisi ongelmia tallenteiden käytössä. Tallenteet ovat tosin valmiiksi jo varsin pieniä, joten tiedon pakkaamiselle ei varsinaisesti ole tarvetta.
 
-Passthrough-ominaisuus, jotta voitaisiin tallentaa dataa lennosta.
-
-\begin{itemize}
-\item passthrough
-\end{itemize}
-
-
-
-%Blaah kakkaa
-% Testaukseen päädyttiin käyttämään käyttöjärjestelmänä Linux-distribuutiota Xubuntu 14.04. Alkuperäiset ohjelmistot Motomit PC ja Terman sovitettiin käyttöön Wine-rajapinnan ja Dosbox/Dosemu DOS -emulaattorin avulla. Järjestelmä asennettiin testausta varten vanhaan Fujitsu-Siemensin kannettavaan. Johtuen rankoista olosuhteita, tavallista kannettavaa käytetään vain käyttöjärjestelmän ja ohjelmien testaamiseksi yhdessä Moton kanssa.
-
-% Kannettavan avulla käytiin testaamassa ohjelmistojen yhteensopivuutta Linuxin, USB-sarja-adapterin sekä hakkuukoneen järjestelmien kanssa huhtikuussa 2015. Selvisi, että sekä Motomit PC että Terman toimivat ja ovat käyttökelposia Linux-käyttöjärjestelmässä sarjaporttiadapterin avulla, mikä väljentää tulevan koneen vaatimuksia sarjaporttien määrän osalta.
-
-% Testissä selvisi että kannettava tietokone olisi muuten sellaisenaan sopiva korvike alkuperäiselle järjestelmälle, mutta rajallisen tilan vuoksi se on epäkäytännöllinen viedessään liikaa tilaa vaakatasossa. Tämän vuoksi se sopii vain väliaikaiseen käytöön, mutta ei kiinteästi asennettuna.
-
-% Insinöörityöstä jäi puuttumaan alustava analyysi Terman- ja Motomit PC-ohjelmistojen käyttämille protokollille, koska viimeisellä mahdollisella testausmatkalla testikannettavan akku petti, enkä lyhyeksi jääneen akunkeston vuoksi saanut tallennettua näytettä sarjaporttien liikenteestä. Tämän liikenteen avulla olisi voinut myös simuloida hakkuukonetta syöttämällä kaapatun datan mikrokontrollerin tai toisen tietokoneen avulla testikannettavaan.
-
-
-% \begin{figure}[H]
-% \centering
-% \includegraphics[width=1.00\hsize]{motomit_linux.png}
-% \caption{Motomit PC-ohjelmisto Winessä ajettuna.}
-% \end{figure}
+SPRT:hen voisi lisätä myös mahdollisuuden ns. passthrough:n, jolloin sarjaliikenettä kuunneltaessa pystyisi käyttämään myös alkuperäistä laitetta. Passthrough voitaisiin toteuttaa erillisenä laitepalikkana, joka jakaisi sarjaportin liikenteestä erillisen pelkän kuunteluun sopivan portin. Toinen vaihtoehto olisi ohjata kuunneltu liikenne (sekä lähetetty toiseen suuntaan) toiseen sarjaporttilaitteeseen.
 
 \newpage
 
