@@ -709,27 +709,6 @@ Dosboxin ja Dosemun asetuksiin tuli määrittää käytetävät sarjaportit. Lis
 
 %Xubuntu ohjattiin kirjautumaan automaattisesti oletuskäyttäjätunnuksilla sisään käynnistysvaiheessa. Ohjelmat laitettiin käynnistymään automaattisesti sisäänkirjautumnisen yhteydessä (lisäksi tarvittiin vielä Dosboxiin ja Dosemun AUTOEXEC.BAT -tiedostoon lisätä Terman käynnistymään automaattisesti). Kun asetukset oli säädetty toimimaan, asetetaan tiedostojärjestelmä vain luku-tilaan, jotta saadaan parannettua kokoonpanon luotettavuutta.
 
-\section{Testaus}
-%% %-merkki on kommentti, teksti ei tule työhön
-
-% Kokeiltavaksi testiympäristöksi päätettiin valita tavallinen x86-pohjainen kannettava tietokone, johon asennettiin valittu käyttöjärjestelmä, sekä tarvittavat ohjelmat. Johtuen rankoista olosuhteita, tavallista kannettavaa käytetään vain käyttöjärjestelmän ja ohjelmien testaamiseksi yhdessä Moton kanssa.
-
-%Blaah kakkaa
-%Testaukseen päädyttiin käyttämään käyttöjärjestelmänä Linux-distribuutiota Xubuntu 14.04. Alkuperäiset ohjelmistot Motomit PC ja Terman sovitettiin käyttöön Wine-rajapinnan ja Dosbox/Dosemu DOS -emulaattorin avulla. Järjestelmä asennettiin testausta varten vanhaan Fujitsu-Siemensin kannettavaan. Johtuen rankoista olosuhteita, tavallista kannettavaa käytetään vain käyttöjärjestelmän ja ohjelmien testaamiseksi yhdessä Moton kanssa.
-
-% Kannettavan avulla käytiin testaamassa ohjelmistojen yhteensopivuutta Linuxin, USB-sarja-adapterin sekä hakkuukoneen järjestelmien kanssa huhtikuussa 2015. Selvisi, että sekä Motomit PC että Terman toimivat ja ovat käyttökelposia Linux-käyttöjärjestelmässä sarjaporttiadapterin avulla, mikä väljentää tulevan koneen vaatimuksia sarjaporttien määrän osalta.
-
-% Testissä selvisi että kannettava tietokone olisi muuten sellaisenaan sopiva korvike alkuperäiselle järjestelmälle, mutta rajallisen tilan vuoksi se on epäkäytännöllinen viedessään liikaa tilaa vaakatasossa. Tämän vuoksi se sopii vain väliaikaiseen käytöön, mutta ei kiinteästi asennettuna.
-
-% Insinöörityöstä jäi puuttumaan alustava analyysi Terman- ja Motomit PC-ohjelmistojen käyttämille protokollille, koska viimeisellä mahdollisella testausmatkalla testikannettavan akku petti, enkä lyhyeksi jääneen akunkeston vuoksi saanut tallennettua näytettä sarjaporttien liikenteestä. Tämän liikenteen avulla olisi voinut myös simuloida hakkuukonetta syöttämällä kaapatun datan mikrokontrollerin tai toisen tietokoneen avulla testikannettavaan.
-
-
-% \begin{figure}[H]
-% \centering
-% \includegraphics[width=1.00\hsize]{motomit_linux.png}
-% \caption{Motomit PC-ohjelmisto Winessä ajettuna.}
-% \end{figure}
-
 \section{Simple Serial Repeater}
 
 Simple Serial Repeater (SRPT) on ohjelmisto sarjaliikenteen tallentamiseen ja toistoon. Sen tarkoitus on mahdollistaa sarjaliikenteen helppo tallennus ja toisto sekä virtuaalisille, että fyysisille sarjaporteille. SRPT kehitettiin testauksen avuksi, jotta pystyttiin testaamaan tiedonsiirron toimivuus, ilman että testausta tarvitsisi mennä tekemään joka kerralla työn kohteena olevan moton luokse. Tässä tarkoituksessa SRPT toimikin hyvin ja projektin edetessä pantiin merkille muutamia kehitysideoita, joilla testaustyökalua saataisiin vielä monikäyttöisemmäksi.
@@ -802,18 +781,26 @@ Tallennetava data voitaisiin myös pakata jo vastaanottovaiheessa esimerkiksi jo
 
 SPRT:hen voisi lisätä myös mahdollisuuden ns. passthrough:n, jolloin sarjaliikenettä kuunneltaessa pystyisi käyttämään myös alkuperäistä laitetta. Passthrough voitaisiin toteuttaa erillisenä laitepalikkana, joka jakaisi sarjaportin liikenteestä erillisen pelkän kuunteluun sopivan portin. Toinen vaihtoehto olisi ohjata kuunneltu liikenne (sekä lähetetty toiseen suuntaan) toiseen sarjaporttilaitteeseen.
 
+\section{Testaus}
+%% %-merkki on kommentti, teksti ei tule työhön
+
+Kokeiltavaksi testiympäristöksi päätettiin valita tavallinen x86-pohjainen kannettava tietokone, johon asennettiin valittu käyttöjärjestelmä, sekä tarvittavat ohjelmat. Johtuen rankoista olosuhteita, tavallista kannettavaa käytetään vain käyttöjärjestelmän ja ohjelmien testaamiseksi yhdessä Moton kanssa. Alkuperäiset ohjelmistot Motomit PC ja Terman sovitettiin käyttöön Wine-rajapinnan ja Dosbox/Dosemu DOS -emulaattorin avulla.
+
+%Blaah kakkaa
+Testaukseen päädyttiin käyttämään käyttöjärjestelmänä Linux-distribuutiota Xubuntu 14.04. Alkuperäiset ohjelmistot Motomit PC ja Terman sovitettiin käyttöön Wine-rajapinnan ja Dosbox/Dosemu DOS -emulaattorin avulla. Järjestelmä asennettiin testausta varten vanhaan Fujitsu-Siemensin kannettavaan. Johtuen rankoista olosuhteita, tavallista kannettavaa käytetään vain käyttöjärjestelmän ja ohjelmien testaamiseksi yhdessä Moton kanssa. Kannettavan avulla käytiin testaamassa ohjelmistojen yhteensopivuutta Linuxin, USB-sarja-adapterin sekä hakkuukoneen järjestelmien kanssa. Selvisi, että sekä Motomit PC että Terman toimivat ja ovat käyttökelposia Linux-käyttöjärjestelmässä sarjaporttiadapterin avulla, mikä väljentää tulevan koneen vaatimuksia rautatason sarjaporttien määrän osalta.
+
+Testissä selvisi että kannettava tietokone olisi muuten sellaisenaan sopiva korvike alkuperäiselle järjestelmälle, mutta rajallisen tilan vuoksi se on epäkäytännöllinen viedessään liikaa tilaa vaakatasossa. Tämän vuoksi se sopii vain väliaikaiseen testauskäyttöön, mutta ei kiinteästi asennettuna.
+
+% Insinöörityöstä jäi puuttumaan alustava analyysi Terman- ja Motomit PC-ohjelmistojen käyttämille protokollille, koska viimeisellä mahdollisella testausmatkalla testikannettavan akku petti, enkä lyhyeksi jääneen akunkeston vuoksi saanut tallennettua näytettä sarjaporttien liikenteestä. Tämän liikenteen avulla olisi voinut myös simuloida hakkuukonetta syöttämällä kaapatun datan mikrokontrollerin tai toisen tietokoneen avulla testikannettavaan.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\hsize]{motomit_linux.png}
+\caption{Motomit PC-ohjelmisto Winessä ajettuna.}
+\end{figure}
+
+
 \newpage
-
-%%%%%%%%%%%%%%%%%%%%%%
-% \chapter{Testiohjelma}
-% \label{ch:Testiohjelma}
-%
-% Testiohjelman avulla pystyy tallentamaan ja toistamaan sarjaliikennettä.
-% * Eri porttinopeuksien tallennus
-% * viiveiden tallennus (aka toistettavuus alkuperäisen datan tapaan)
-% * formaatin määritys ja ohjelman perusrakenne
-%%%%%%%%%%%%%%%%%%%%
-
 
 \chapter{Korvaava järjestelmä}
 \label{ch:korvaava_jarjestelma}
@@ -822,17 +809,26 @@ Tämän työn aikana tehtyjen tutkimusten perusteella olen päätynyt esittämä
 
 \section{Uusi ajoneuvotietokone}
 
-%Ehdotan ajoneuvotietokoneeksi Panasonic Toughbook CF-19 tietokonetta. Toughbook CF-19 on tabletiksi kääntyvä, täysvahvistettu kannettava joka on suunnitteltu ääriolosuhteisiin. CF-19 on suojattu niin, että se kestää pölyä, tärinää, iskuja ja -20 ja +60 °C välisen lämpötila-vaihtelun. CF-19 on varustettu Intel Core 2 Duo U7500 -prosessorilla, 4 Gb:n muistilla ja 10.4 \" näytöllä. Laite on IP54-suojattu kuten alkuperäinen ajoneuvotietokone ja se täyttää sähkömagneettisen yhteensopivuuden, tärinän, tiputuksen, vesi- ja pölytiiviyden, lämpötilankeston ja kosteudenkeston osalta Yhdysvaltain armeijan asettamat standardit. \cite{cf19}
+Ehdotan ajoneuvotietokoneeksi Panasonic Toughbook CF-19 tietokonetta. Toughbook CF-19 on tabletiksi kääntyvä, täysvahvistettu kannettava joka on suunnitteltu ääriolosuhteisiin. CF-19 on suojattu niin, että se kestää pölyä, tärinää, iskuja ja -20 ja +60 °C välisen lämpötila-vaihtelun. CF-19 on varustettu Intel Core 2 Duo U7500 -prosessorilla, 4 Gb:n muistilla ja 10.4 \" näytöllä. Laite on IP54-suojattu kuten alkuperäinen ajoneuvotietokone ja se täyttää sähkömagneettisen yhteensopivuuden, tärinän, tiputuksen, vesi- ja pölytiiviyden, lämpötilankeston ja kosteudenkeston osalta Yhdysvaltain armeijan asettamat standardit. \cite{cf19}
 
-%Valitsin Toughbook CF-19 korvaajaksi, koska kääntyvän näytön takia sen saa n. 5 cm paksuksi, mikä mahdollistaa sen, että ko. kannettavalle voidaan toteuttaa helposti teline joko alkuperäiseen pidikkeeseen tai erillisenä kiinnityksenä. CF-19:sta löytyy lisäksi vakiona yksi RS-232 -sarjaportti, joka on luotettavuudeltaan parempi kuin USB-pohjaiset adapterit. Tällöin Motomit PC voidaan liittää sarjaporttiin ja Terman laittaa menemään USB-adapterin kautta tulevasta sarjaportista. Vaikka Panasonic Toughbook CF-19 on suhteellisen vanha (julkaistu v. 2007) \cite{cf19}, niin kyseistä mallia on hyvin saatavissa käytettyjen ja kunnostettujen tietokoneiden myyntiin erikoistuneista liikkeistä. Kosketusnäytön ansiosta erillistä hiirtä ei tarvita ja näppäimistöksi riittää ulkoinen näppäimistö.
+Valitsin Toughbook CF-19 korvaajaksi, koska kääntyvän näytön takia sen saa n. 5 cm paksuksi, mikä mahdollistaa sen, että ko. kannettavalle voidaan toteuttaa helposti teline joko alkuperäiseen pidikkeeseen tai erillisenä kiinnityksenä. CF-19:sta löytyy lisäksi vakiona yksi RS-232 -sarjaportti, joka on luotettavuudeltaan parempi kuin USB-pohjaiset adapterit. Tällöin Motomit PC voidaan liittää sarjaporttiin ja Terman laittaa menemään USB-adapterin kautta tulevasta sarjaportista. Vaikka Panasonic Toughbook CF-19 on suhteellisen vanha (julkaistu v. 2007) \cite{cf19}, niin kyseistä mallia on hyvin saatavissa käytettyjen ja kunnostettujen tietokoneiden myyntiin erikoistuneista liikkeistä. Kosketusnäytön ansiosta erillistä hiirtä ei tarvita ja näppäimistöksi riittää ulkoinen näppäimistö.
 
-\lipsum[1-3]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.50\hsize]{cf19.jpg}
+\caption{Panasonic Toughbook CF-19.}
+\end{figure}
 
-% \begin{figure}[H]
-% \centering
-% \includegraphics[width=0.50\hsize]{cf19.jpg}
-% \caption{Panasonic Toughbook CF-19.}
-% \end{figure}
+\section{Vaihtoehto2}
+
+Vaihtoehtona on myös suunnitella ja rakentaa vanhan kiinnikkeen kanssa yhteensopiva kotelo, johon asennetaan sopivan kokoinen näyttö, esim. RPI/2 -tietokone tai vastaava, sekä tarvittavat virtalähteet. RPIlle löytyy sekä Dosbox/rpix86 DOS-emulointiin, sekä ExaGearin avulla pitäisi pystyä ajamaan wineä.
+
+Alkuperäinen kotelo on mitattu huollon yhteydessä, jotta uutta koteloa voisi harkita. Uusi kotelo antaa enemmän liikkumavaraa osien koolle ja sijoittelulle, mutta on huomattavasti työläämpi. Kotelosta suunnitellaan 3D-malli, joka sitten 3D-tulostaa.
+
+
+Pienemmissä 3D-tulostimissa käytetään pääsääntöisesti 2 eri muovityyppiä, ABS-muovia sekä PLA:ta. ABS (akryylinitriilibutadieenistyreeni) on muovina jäykkää, kestävää ja kevyttä, sekä edullista. Sitä käytetäänkin mm. autojen muoviosissa, sekä Lego-palikoissa. Tulostuksessa ABS-muovin haittapuolina on tulostuksen aikainen vääntyily (jota ehkäistään lämpölevyllä), sekä korkeahko sulamislämpötila.
+
+PLA (Polylaktidi) on uusiutuvista raaka-aineista tuotetuttu muovi. PLA on kovempaa kuin ABS, sekä se sulaa pienemmässä lämpötilassa. PLA on kuitenkin biohajoavaa, joten sen sopivuus motossa olevaan käyttöympäristöön ei ole taattua.
 
 
 \section{Uusi ajoneuvotietokone vanhoihin kuoriin}
