@@ -22,17 +22,17 @@
 \thispagestyle{tiivis}
 \begin{tabular}{ | p{4,7cm} | p{10,3cm} |}
   \hline
-  Tekijä(t) \newline
+  Tekijä (t)\newline
   Otsikko \newline\newline
 
   Sivumäärä \newline
   Aika
   &
   \makeatletter
-  \@author \newline
-  \tiivistelmaotsikko \newline\newline
+  \@author\newline
+  \tiivistelmaotsikko\newline\newline
   \makeatother
-  \pageref*{LastPage} sivua + \total{chapter} liitettä \newline %! if no appendices, risk to count total of chapter :D
+  \pageref*{LastPage} sivua + \total{chapter} liitettä\newline %! if no appendices, risk to count total of chapter :D
   \pvm
   \\ \hline
   Tutkinto & \tutkinto
@@ -356,7 +356,6 @@ NTVDM:n ratkaisu DOS:n tietoturvaongelmiin on ajaa jokaista DOS-ohjelmaa omassa 
 
 
 WOW, Win16 on Win32, on Windowsin alijärjestelmä joka täydentää NTVDM:ään tuen 16 -bittisille Windows -ohjelmille. Win16 -ohjelmat ajetaan yhdessä VDM -prosessissa omina säikeinään. Tällä tavoin on saatu aikaan paras yhteensopivuus Windows 3.x:n kanssa. Haittapuolena tulee jaettu muistiavaruus kaikkien 16 -bittisten ohjelmien kanssa joka voi aiheuttaa epävakautta alijärjestelmän sisällä. Alijärjestelmän kaatuminen sulkee kaikki 16 -bittiset ohjelmat, muttei vaikuta käyttöjärjestelmän toimintaan muuten.
-
 
 
 \subsection{Wine}
@@ -823,12 +822,9 @@ Valitsin Toughbook CF-19 korvaajaksi, koska kääntyvän näytön takia sen saa 
 
 Vaihtoehtona on myös suunnitella ja rakentaa vanhan kiinnikkeen kanssa yhteensopiva kotelo, johon asennetaan sopivan kokoinen näyttö, esim. RPI/2 -tietokone tai vastaava, sekä tarvittavat virtalähteet. RPIlle löytyy sekä Dosbox/rpix86 DOS-emulointiin, sekä ExaGearin avulla pitäisi pystyä ajamaan wineä.
 
-Alkuperäinen kotelo on mitattu huollon yhteydessä, jotta uutta koteloa voisi harkita. Uusi kotelo antaa enemmän liikkumavaraa osien koolle ja sijoittelulle, mutta on huomattavasti työläämpi. Kotelosta suunnitellaan 3D-malli, joka sitten 3D-tulostaa.
+Alkuperäinen kotelo on mitattu huollon yhteydessä, jotta uutta koteloa voisi harkita. Uusi kotelo antaa enemmän liikkumavaraa osien koolle ja sijoittelulle, mutta vaatii tarkempaa suunnitelua ja sovittelua. Kotelosta suunnitellaan 3D-malli, joka sitten voidaan esimerkiksi 3D-tulostaa.
 
-
-Pienemmissä 3D-tulostimissa käytetään pääsääntöisesti 2 eri muovityyppiä, ABS-muovia sekä PLA:ta. ABS (akryylinitriilibutadieenistyreeni) on muovina jäykkää, kestävää ja kevyttä, sekä edullista. Sitä käytetäänkin mm. autojen muoviosissa, sekä Lego-palikoissa. Tulostuksessa ABS-muovin haittapuolina on tulostuksen aikainen vääntyily (jota ehkäistään lämpölevyllä), sekä korkeahko sulamislämpötila.
-
-PLA (Polylaktidi) on uusiutuvista raaka-aineista tuotetuttu muovi. PLA on kovempaa kuin ABS, sekä se sulaa pienemmässä lämpötilassa. PLA on kuitenkin biohajoavaa, joten sen sopivuus motossa olevaan käyttöympäristöön ei ole taattua.
+Tulostaessa tulee huomioida. että pienemmissä 3D-tulostimissa käytetään pääsääntöisesti 2 eri muovityyppiä, ABS-muovia sekä PLA:ta. ABS (akryylinitriilibutadieenistyreeni) on muovina jäykkää, kestävää ja kevyttä, sekä edullista. Sitä käytetäänkin mm. autojen muoviosissa, sekä Lego-palikoissa. Tulostuksessa ABS-muovin haittapuolina on tulostuksen aikainen vääntyily (jota ehkäistään lämpölevyllä), sekä korkeahko sulamislämpötila. PLA (Polylaktidi) on uusiutuvista raaka-aineista tuotetuttu muovi. PLA on kovempaa kuin ABS, sekä se sulaa pienemmässä lämpötilassa. PLA on kuitenkin biohajoavaa, joten sen sopivuus motossa olevaan käyttöympäristöön ei ole taattua.
 
 
 \section{Uusi ajoneuvotietokone vanhoihin kuoriin}
@@ -905,6 +901,6 @@ Vaatimuksina uudelle tietokoneelle on lähinnä tarvittava olosuhteiden kesto se
 \end{flushleft}
 
 %for conting the pages
-\label{LastPage}~
+\label{LastPage}%~
 
 %\end{document}
