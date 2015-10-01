@@ -408,12 +408,10 @@ Hypervisorit on jaettu kahteen tyyppiin, 1 -tyypin natiiveihin hypervisoreihin j
 \subsubsection{Xen}
 %http://wiki.xenproject.org/wiki/Xen_Overview
 %QEMU is involved only in the emulation of hardware; the execution of the guest is done within Xen and is totally hidden from QEMU.
-Xen on Cambridgen yliopistossa kehitetty 1-tyypin hypervisor/virtuaalikone. Xen suoritetaan käynnistyslataimesta (bootloaderista), jolloin se asettautuu laitteiston ja virtuaalikoneiden väliin. Xen vaatiikiin aina suoritettavaksi yhden virtuaalikoneen eli ns. isäntäkoneen eli Dom0:n. Dom0 hoitaa interaktion laitteiston sekä muiden virtuaalikoneiden kanssa. Lisäksi ainoastaan Dom0:lla on pääsy Xenin rajapintaa jota kautta hallitaan järjestelmää.
+Xen on Cambridgen yliopistossa kehitetty 1-tyypin hypervisor/virtuaalikone. % http://www.xenproject.org/about/history.html
+Xenin kehitystyö aloitettiin 1990-luvun loppupuolella Xenoserver -projektin yhteydessä ja ensimmäinen julkinen avoin versio julkaistiin lokakuussa 2003, jonka jälkeen uusia versioita on julkaistu säännöllisesti, uusimman ollessa v. 4.5. Xen suoritetaan käynnistyslataimesta (bootloaderista), jolloin se asettautuu laitteiston ja virtuaalikoneiden väliin. Xen vaatiikiin aina suoritettavaksi yhden virtuaalikoneen eli ns. isäntäkoneen eli Dom0:n. Dom0 hoitaa interaktion laitteiston sekä muiden virtuaalikoneiden kanssa. Lisäksi ainoastaan Dom0:lla on pääsy Xenin rajapintaa jota kautta hallitaan järjestelmää.
 
-Xen vaatii erillisen tuen kohdekäyttöjärjestelmiltä jotta niitä voidaan käyttää Xenin avulla (para)virtualisoituina (pl. rautatason virtualisointi jolloin kohde ei tarvitse muutoksia). Tuki Xenin paravirtualisoinnille löytyy kuitenkin useimmista Linux- ja BSD-jakeluista. Windowsissa ei ole tukea Xenin paravirtualisoinnille, mutta sitä voidaan ajaa laitteistoavusteisen virtualisoinnin avulla Xenin päällä.
-
-% http://www.xenproject.org/about/history.html
-Xenin kehitystyö aloitettiin 1990-luvun loppupuolella Xenoserver -projektin yhteydessä ja ensimmäinen julkinen avoin versio julkaistiin lokakuussa 2003, jonka jälkeen uusia versioita on julkaistu säännöllisesti, uusimman ollessa v. 4.5.
+Xen vaatii erillisen tuen kohdekäyttöjärjestelmiltä jotta niitä voidaan käyttää Xenin avulla paravirtualisoituina (pl. rautatason virtualisointi jolloin kohde ei tarvitse muutoksia). Tuki Xenin paravirtualisoinnille löytyy kuitenkin useimmista Linux- ja BSD-jakeluista. Windowsissa ei ole tukea Xenin paravirtualisoinnille, mutta sitä voidaan ajaa laitteistoavusteisen virtualisoinnin avulla Xenin päällä. Xen on tarkoitettu palvelinten virtualisointiin ja siten sen ratkaisut ja toteutus tekevät siitä epäkäytännöllisen tätä projektia ajatellen.
 
 %The Control Domain (or Domain 0) is a specialized Virtual Machine that has special privileges like the capability to access the hardware directly, handles all access to the system’s I/O functions and interacts with the other Virtual Machines. It also exposes a control interface to the outside world, through which the system is controlled. The Xen Project hypervisor is not usable without Domain 0, which is the first VM started by the system.
 
@@ -422,7 +420,6 @@ Xenin kehitystyö aloitettiin 1990-luvun loppupuolella Xenoserver -projektin yht
 \includegraphics[width=0.60\hsize]{Xen_Arch_Diagram.png}
 \caption{Xenin arkkitehtuurikaavio.}
 \end{figure}
-
 
 \subsubsection{KVM}
 %http://www.linuxthoughts.com/?p=110
@@ -824,7 +821,9 @@ Vaihtoehtona on myös suunnitella ja rakentaa vanhan kiinnikkeen kanssa yhteenso
 
 Alkuperäinen kotelo on mitattu huollon yhteydessä, jotta uutta koteloa voisi harkita. Uusi kotelo antaa enemmän liikkumavaraa osien koolle ja sijoittelulle, mutta vaatii tarkempaa suunnitelua ja sovittelua. Kotelosta suunnitellaan 3D-malli, joka sitten voidaan esimerkiksi 3D-tulostaa.
 
-Tulostaessa tulee huomioida. että pienemmissä 3D-tulostimissa käytetään pääsääntöisesti 2 eri muovityyppiä, ABS-muovia sekä PLA:ta. ABS (akryylinitriilibutadieenistyreeni) on muovina jäykkää, kestävää ja kevyttä, sekä edullista. Sitä käytetäänkin mm. autojen muoviosissa, sekä Lego-palikoissa. Tulostuksessa ABS-muovin haittapuolina on tulostuksen aikainen vääntyily (jota ehkäistään lämpölevyllä), sekä korkeahko sulamislämpötila. PLA (Polylaktidi) on uusiutuvista raaka-aineista tuotetuttu muovi. PLA on kovempaa kuin ABS, sekä se sulaa pienemmässä lämpötilassa. PLA on kuitenkin biohajoavaa, joten sen sopivuus motossa olevaan käyttöympäristöön ei ole taattua.
+\lipsum[2-4]
+
+%Tulostaessa tulee huomioida. että pienemmissä 3D-tulostimissa käytetään pääsääntöisesti 2 eri muovityyppiä, ABS-muovia sekä PLA:ta. ABS (akryylinitriilibutadieenistyreeni) on muovina jäykkää, kestävää ja kevyttä, sekä edullista. Sitä käytetäänkin mm. autojen muoviosissa, sekä Lego-palikoissa. Tulostuksessa ABS-muovin haittapuolina on tulostuksen aikainen vääntyily (jota ehkäistään lämpölevyllä), sekä korkeahko sulamislämpötila. PLA (Polylaktidi) on uusiutuvista raaka-aineista tuotetuttu muovi. PLA on kovempaa kuin ABS, sekä se sulaa pienemmässä lämpötilassa. PLA on kuitenkin biohajoavaa, joten sen sopivuus motossa olevaan käyttöympäristöön ei ole taattua.
 
 
 \section{Uusi ajoneuvotietokone vanhoihin kuoriin}
