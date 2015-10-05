@@ -830,7 +830,7 @@ Alkuperäinen kotelo on mitattu huollon yhteydessä, jotta uutta koteloa voisi h
 
 \lipsum[4-6]
 
-% Toinen vaihtoehto on toteuttaa uusi tietokone Sunit Neron koteloon. Tämän vaihtoehdon etuna on se, että se olisi varmasti yhteensopiva alkuperäisen pidikkeen kanssa. Vaihtoehto vaatii tarkan mietinnän komponenttien valinnan ja kiinnityksen osalta, jotta toteutus saadaan kestämään varsinkin lämpötilavaihteluita ja tärinää. Alkuperäinen kotelointi tarjoaa IP54-luokiteltuna riittävän suojan pölyä ja vesiroiskeita vastaan.
+Toinen vaihtoehto on toteuttaa uusi tietokone Sunit Neron koteloon. Tämän vaihtoehdon etuna on se, että se olisi varmasti yhteensopiva alkuperäisen pidikkeen kanssa. Vaihtoehto vaatii tarkan mietinnän komponenttien valinnan ja kiinnityksen osalta, jotta toteutus saadaan kestämään varsinkin lämpötilavaihteluita ja tärinää. Alkuperäinen kotelointi tarjoaa IP54-luokiteltuna riittävän suojan pölyä ja vesiroiskeita vastaan.
 
 % Itse tietokoneeksi valitsisin esimerkiksi Intelin NUC-konseptin D53427RKE emolevyn, jossa on integroituna Intel i5 -prosessori. Liitäntöinä emolevyssä on HDMI näytölle ja miniPCIe SSD-levylle  \cite{D53427RKE}. Lisäksi emolevyssä on 5 USB-liitintä oheislaitteita varten. Näyttöpaneeliksi valitsin 10,1" IPS LCD-paneelin, jossa on mukana LCD-ajuripiirilevy HDMI-liitännällä. Alkuperäisen kuoren paneelin koko on 12" 4:3, joten 16:9 10,1" paneeli mahtuu hyvin tilalle koteloon. Paneeli käyttää 9-12V jännitettä, joten se sopii hyvin projektiin. Virtalähteeksi valitaan 24V jännitteellä toimiva M3-ATX, 125W ulostulolla oleva autokäyttöön suunniteltu virtalähde.
 
@@ -860,11 +860,16 @@ Alkuperäinen kotelo on mitattu huollon yhteydessä, jotta uutta koteloa voisi h
 
 \chapter{Yhteenveto}\
 
-Insinöörityön tavoitteena oli selvittää työn kohteena olevan 17 vuotta vanhan hakkuukoneen alkuperäisen ajoneuvotietokoneen liitännät ja ohjelmistot sekä tutkia mahdolliset vaihtoehdot korvata vanha, käyttöikänsä loppupäässä oleva alkuperäinen ajoneuvotietokone uudemmalla, hakkuukoneen järjestelmien kanssa yhteensopivalla vaihtoehdolla.
+Insinöörityön tavoitteena oli selvittää työn kohteena olevan 17 vuotta vanhan hakkuukoneen alkuperäisen ajoneuvotietokoneen liitännät ja ohjelmistot sekä tutkia mahdolliset vaihtoehdot korvata vanha, käyttöikänsä loppupäässä oleva alkuperäinen ajoneuvotietokone uudemmalla, hakkuukoneen järjestelmien kanssa yhteensopivalla vaihtoehdolla. Alkuperäinen tarkoitus oli tutkia vaihtoehdot, sekä toteuttaa käyttökuntoon asti korvaava tietokone. Projektin aikana kuitenkin alkuperäisen tietokoneen huollon jälkeisen toiminnan parantuminen, sekä taloustilanteen huonontumisen takia päädyttiin jättämään varsinainen toteutus varavaihtoehdoksi ja keskittymään totetuksen esivalmisteluun.
 
 Alkuperäistä ajoneuvotietokonetta tutkimalla sekä mahdollisia vaihtoehtoja punnitsemalla päädyttiin testaamaan alkuperäisten ohjelmistojen toimivuutta yhteensopivuusrajapintojen kautta tavallisessa, useamman vuoden vanhassa Linux-käyttöjärjestelmällä varustetussa kannettavassa tietokoneessa. Testaamalla selvisi, että käytettävät alkuperäiset ohjelmistot toimivat USB-sarjaporttiadapterin ja Linuxin kautta suoritettuina. Tästä voidaan päätellä että alkuperäinen Sunit Nero-ajoneuvotietokone on helpostikin korvattavissa uudemmalla olosuhteita kestävällä ajoneuvotietokoneella tai kannettavalla.
 
 Vaatimuksina uudelle tietokoneelle on lähinnä tarvittava olosuhteiden kesto sekä tarvittavat liittimet. Hakkuukoneen järjestelmät vaativat kaksi sarjaporttiliitäntää, joilla kommunikointi hakkuukoneen ja ajoneuvotietokoneen välillä tapahtuu. Hakkuukoneen sähköjärjestelmä on 24V, mikä tulee ottaa huomioon tietokoneen sähkönsyöttöä pohdittaessa.
+
+Suurimmat haasteet insinöörityössä liittyivät pääsyyn työn kohteena olevalle hakkuukoneelle. Hakkuukone oli aktiivisessa käytössä Oriveden metsissä koko insinöörityön ajan ja vierailut koneelle saatiin lopulta järjestettyä alkuperäisen ajoneuvotietokoneen huoltojen yhteydessä. Hakkuukoneen kommunikointi ajoneuvotietokoneen kanssa osoittautui kuitenkin suhteellisen yksinkertaiseksi standardinmukaiseksi RS-232 sarjamuotoiseksi liikenteeksi.
+
+Alkuperäinen suunnitelma valmiista ajoneuvotietokoneen korvaajasta jäi saavuttamatta, mutta projekti on saatu pisteeseen, josta on helppo jatkaa toteutukseen. Ohjelmistoista on tehty valmiit levykuvat käytettäville arkkitehtuureille, sekä tarvittavat osat on mietitty ja alustavasti suunniteltu.
+
 
 \lipsum[12-14]
 
