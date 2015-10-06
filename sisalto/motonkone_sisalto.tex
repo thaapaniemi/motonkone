@@ -817,9 +817,9 @@ Valitsin Toughbook CF-19 korvaajaksi, koska kääntyvän näytön takia sen saa 
 
 \section{Vaihtoehto2}
 
-Vaihtoehtona on myös suunnitella ja rakentaa vanhan kiinnikkeen kanssa yhteensopiva kotelo, johon asennetaan sopivan kokoinen näyttö, esim. RPI/2 -tietokone tai vastaava, sekä tarvittavat virtalähteet. RPIlle löytyy sekä Dosbox/rpix86 DOS-emulointiin, sekä ExaGearin avulla pitäisi pystyä ajamaan wineä.
+Vaihtoehtona on myös suunnitella ja rakentaa vanhan kiinnikkeen kanssa yhteensopiva kotelo, johon asennetaan sopivan kokoinen näyttö, esim. RPI/2 -tietokone tai vastaava, sekä tarvittavat virtalähteet. RPIlle löytyy sekä Dosbox/rpix86 DOS-emulointiin, sekä ExaGearin avulla pitäisi pystyä ajamaan wineä. X86-tietokoneita löytyy myös riittävillä tehoilla pieninä mini-ITX -versioina.
 
-Alkuperäinen kotelo on mitattu huollon yhteydessä, jotta uutta koteloa voisi harkita. Uusi kotelo antaa enemmän liikkumavaraa osien koolle ja sijoittelulle, mutta vaatii tarkempaa suunnitelua ja sovittelua. Kotelosta suunnitellaan 3D-malli, joka sitten voidaan esimerkiksi 3D-tulostaa.
+Alkuperäinen kotelo on mitattu huollon yhteydessä, jotta uutta koteloa voisi harkita. Uusi kotelo antaa enemmän liikkumavaraa osien koolle ja sijoittelulle, mutta vaatii tarkempaa suunnitelua ja sovittelua. Kotelosta suunnitellaan 3D-malli, joka sitten voidaan 3D-tulostaa (tai tulostuttaa). Kotelon mitat on sen verran suuria, että osien suoratulostus ei taida olla kuluttajalaitteilla mahdollista ja täten 3D-mallia suunnitellessa se tulee ottaa huomioon.
 
 \lipsum[2-4]
 
@@ -831,6 +831,8 @@ Alkuperäinen kotelo on mitattu huollon yhteydessä, jotta uutta koteloa voisi h
 \lipsum[4-6]
 
 Toinen vaihtoehto on toteuttaa uusi tietokone Sunit Neron koteloon. Tämän vaihtoehdon etuna on se, että se olisi varmasti yhteensopiva alkuperäisen pidikkeen kanssa. Vaihtoehto vaatii tarkan mietinnän komponenttien valinnan ja kiinnityksen osalta, jotta toteutus saadaan kestämään varsinkin lämpötilavaihteluita ja tärinää. Alkuperäinen kotelointi tarjoaa IP54-luokiteltuna riittävän suojan pölyä ja vesiroiskeita vastaan.
+
+Tässä vaihtoehdossa toteutus on vastaava kuin uusien kuorien tekemisessä, nyt vain sovitetaan vastaavat osat jo olemassa olevaan runkoon. Vanhan kotelon hyödyntämisessä on muutamia käytännön esteitä. Alkuperäistä konetta ei tulla ottamaan pois käytöstä, joten ainoaksi vaihtoehdoksi jää vastaavan koneen hankinta käytettynä. Koska kyseessä on kuitenkin jo 17 v vanha, erityiskäyttöön suunniteltu laite, niin vastaavan koneen/kuorien saatavuus on heikko ja hintapyynti voi olla kova suhteessa vastaavan kotelon uudelleentoteutukseen.
 
 % Itse tietokoneeksi valitsisin esimerkiksi Intelin NUC-konseptin D53427RKE emolevyn, jossa on integroituna Intel i5 -prosessori. Liitäntöinä emolevyssä on HDMI näytölle ja miniPCIe SSD-levylle  \cite{D53427RKE}. Lisäksi emolevyssä on 5 USB-liitintä oheislaitteita varten. Näyttöpaneeliksi valitsin 10,1" IPS LCD-paneelin, jossa on mukana LCD-ajuripiirilevy HDMI-liitännällä. Alkuperäisen kuoren paneelin koko on 12" 4:3, joten 16:9 10,1" paneeli mahtuu hyvin tilalle koteloon. Paneeli käyttää 9-12V jännitettä, joten se sopii hyvin projektiin. Virtalähteeksi valitaan 24V jännitteellä toimiva M3-ATX, 125W ulostulolla oleva autokäyttöön suunniteltu virtalähde.
 
