@@ -288,6 +288,9 @@ Terman on Valmetin alkuperäinen DOS-pohjainen hallinta- ja apteerausohjelmisto 
 
 Lohkokaavioon on kuvattu Valmet 901 -hakkuukoneen tärkeimmät osat, niiden käyttämät väylät sekä alkuperäisessä järjestelmässä olleet laitteet. Hakkuukoneessa ei ole itsessään käytössä vielä CAN-väylää, mutta Motomitin mittalaitejärjestelmä käyttää CAN-väylää sisäisesti sekä hakkuupään ohjaukseen.
 
+% KORJAUSKOMMENTTI
+% Onko siis puomin ohjauksessa CAN vai pelkästään hakkuupäässä? Mikä väylä/ohjaustapa niissä osissa on, jotka eivät käytä CAN-väylää?
+
 Kaaviosta näkyvistä järjestelmistä ollaan korvaamassa keltaisella näkyvä Nero-ajoneuvotietokone sekä siihen liitetyt hiiri ja näppäimistö.
 
 \newpage
@@ -320,7 +323,8 @@ Natiivin ympäristön vaihtoehdossa ohjelmistoja käytetään ympäristössä, j
 
 Käyttöjärjestelmän ja ohjelmiston välissä voidaan ajaa erillistä rajapintasovellusta, joka toteuttaa toisen käyttöjärjestelmän järjestelmäkirjastot ja järjestelmäkutsut ja mahdollistaa näin muuten yhteensopimattomien, mutta samaa prosessoriarkkitehtuuria käyttävien ohjelmistojen suorituksen.
 
-Pääpiirteittäin tulkkaa, mutta saattaa virtualisoida joitain laitteistorajapintoja tarvittaessa (näyttö, äänet, HID).
+% Pääpiirteittäin tulkkaa, mutta saattaa virtualisoida joitain laitteistorajapintoja tarvittaessa (näyttö, äänet, HID).
+% KORJAUSKOMMENTTI: Yhdistä edelliseen tai jälkimmäiseen kappaleeseen. Yhden lauseen kappaleita ei pidä käyttää.
 
 
 % Toteutuksia:
@@ -398,6 +402,9 @@ Dosemun kehitys alkoi v. 1992 Matthias Lautnerin toimesta. Projekti vastuuhenkil
 \section{Virtualisointi}
 
 Tässä vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmää ajetaan virtuaalikoneessa toisen käyttöjärjestelmän päällä. Näin saavutetaan varmin yhteensopivuus ohjelmistotasolla. Oheislaitteiden siirtämisessä virtualisoidun koneen käyttöön on rajoituksia, jotka pitää huomioida virtualisointiohjelmistoja valittaessa. Vaihtoehto kuluttaa muistia enemmän ja on hieman hitaampi kuin natiivi toteutus, hyötysuhteen ollessa \textasciitilde{}90\%  natiivista \cite{virtnat_anadtech}.
+
+%KORJAUSKOMMENTTI: Viittaa lähteeseen!
+% KKOMMENTTI: Lähdeviittaukset olemassa, ei docx:ssä
 
 Virtualisoinnin ollessa varsin yleistä, niin virtualisointiratkaisuita tarjoavia yrityksiä ja ohjelmistoja on paljon. Työpöytävirtualisointiin riittävillä ominaisuuksilla (mm. sarjaporttien välitys virtuaalikoneille) sopii esimerkiksi avoimen lähdekoodin QEMU-hypervisori tai Oraclen Virtualbox -hypervisori. Myös Microsoft tarjoaa Windows-ympäristöön VirtualPC-hypervistoria. Kaupallisista tarjoajista VMWarella on olemassa VMWare Workstation ja VMWare Player -hypervisori.
 
