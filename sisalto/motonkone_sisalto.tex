@@ -286,10 +286,11 @@ Terman on Valmetin alkuperäinen DOS-pohjainen hallinta- ja apteerausohjelmisto 
 \caption{Hakkuukoneen järjestelmien lohkokaavio}
 \end{figure}
 
-Lohkokaavioon on kuvattu Valmet 901 -hakkuukoneen tärkeimmät osat, niiden käyttämät väylät sekä alkuperäisessä järjestelmässä olleet laitteet. Hakkuukoneessa ei ole itsessään käytössä vielä CAN-väylää, mutta Motomitin mittalaitejärjestelmä käyttää CAN-väylää sisäisesti sekä hakkuupään ohjaukseen.
+Lohkokaavioon on kuvattu Valmet 901 -hakkuukoneen tärkeimmät osat, niiden käyttämät väylät sekä alkuperäisessä järjestelmässä olleet laitteet. Hakkuukoneessa ei ole itsessään käytössä vielä CAN-väylää, mutta jälkikäteen asennettu hakkuupää, sekä Motomitin mittalaitejärjestelmä käyttää CAN-väylää sisäisesti sekä hakkuupään ohjaukseen. Hakkuukoneen alkuperäiset järjestelmät on ohjattu jokainen laite omalla ohjausjohtimellaan.
 
 % KORJAUSKOMMENTTI
 % Onko siis puomin ohjauksessa CAN vai pelkästään hakkuupäässä? Mikä väylä/ohjaustapa niissä osissa on, jotka eivät käytä CAN-väylää?
+% -> lisätty
 
 Kaaviosta näkyvistä järjestelmistä ollaan korvaamassa keltaisella näkyvä Nero-ajoneuvotietokone sekä siihen liitetyt hiiri ja näppäimistö.
 
@@ -321,8 +322,6 @@ Natiivin ympäristön vaihtoehdossa ohjelmistoja käytetään ympäristössä, j
 
 \section{Ohjelmistojen rajapintojen yhteensopivuuskerros}
 
-Käyttöjärjestelmän ja ohjelmiston välissä voidaan ajaa erillistä rajapintasovellusta, joka toteuttaa toisen käyttöjärjestelmän järjestelmäkirjastot ja järjestelmäkutsut ja mahdollistaa näin muuten yhteensopimattomien, mutta samaa prosessoriarkkitehtuuria käyttävien ohjelmistojen suorituksen.
-
 % Pääpiirteittäin tulkkaa, mutta saattaa virtualisoida joitain laitteistorajapintoja tarvittaessa (näyttö, äänet, HID).
 % KORJAUSKOMMENTTI: Yhdistä edelliseen tai jälkimmäiseen kappaleeseen. Yhden lauseen kappaleita ei pidä käyttää.
 
@@ -344,27 +343,26 @@ Käyttöjärjestelmän ja ohjelmiston välissä voidaan ajaa erillistä rajapint
 % https://www.freshports.org/emulators/twin/ , http://gnu.gds.tuwien.ac.at/directory/libs/willowstwin.html
 
 
-Ohjelmistojen rajapintojen yhteensopivuuskerros-vaihtoehdossa  käytetään käyttöjärjestelmän ja ohjelman välissä sopivia rajapintakerroksia, jolloin saadaan käyttöjärjestelmän kanssa yhteensopimattomat ohjelmat toimimaan keskenään. Vaihtoehto vaatii yhteensopivan laitteistoarkkitehtuurin alkuperäisen järjestelmän kanssa (x86). Nykyiset Windows-versiot (Windows XP+) sisältävät jo valmiiksi yhteensopivuustilan, joka mahdollistaa vanhempien ohjelmien käyttämisen uudemmissa käyttöjärjestelmissä. Linuxissa Wine-rajapinta mahdollistaa kaikenikäisten Windows-sovellusten ajamisen Linuxissa. Myös DOS:lle löytyy rajapintakerrostoteutus Linuxiin.
+Käyttöjärjestelmän ja ohjelmiston välissä voidaan ajaa erillistä rajapintasovellusta, joka toteuttaa toisen käyttöjärjestelmän järjestelmäkirjastot ja järjestelmäkutsut ja mahdollistaa näin muuten yhteensopimattomien, mutta samaa prosessoriarkkitehtuuria käyttävien ohjelmistojen suorituksen \cite{ntvdm_kb}. Ohjelmistojen rajapintojen yhteensopivuuskerros-vaihtoehdossa  käytetään käyttöjärjestelmän ja ohjelman välissä sopivia rajapintakerroksia, jolloin saadaan käyttöjärjestelmän kanssa yhteensopimattomat ohjelmat toimimaan keskenään. Vaihtoehto vaatii yhteensopivan laitteistoarkkitehtuurin alkuperäisen järjestelmän kanssa (x86). Nykyiset Windows-versiot (Windows XP+) sisältävät jo valmiiksi yhteensopivuustilan, joka mahdollistaa vanhempien ohjelmien käyttämisen uudemmissa käyttöjärjestelmissä. Linuxissa Wine-rajapinta mahdollistaa kaikenikäisten Windows-sovellusten ajamisen Linuxissa. Myös DOS:lle löytyy rajapintakerrostoteutus Linuxiin.
 
 \subsection{NTVDM ja WOW}
 %https://kb.iu.edu/d/acxn
 %https://technet.microsoft.com/library/cc767884.aspx
 
-Virtual Dos Machine on teknologia, mikä mahdollistaa DOS-ohjelmien suorituksen muissa käyttöjärjestelmissä. VDM -toteutuksia löytyy niin Windowseista 3.x -käyttöjärjestelmästä lähtien, OS/2 sisälsi hyvän DOS-tuen oman MVDM -toteutuksensa takia. VDM on toteutettu myös Wineen lähinnä 16 -bittisten Windows 3.x -ohjelmien tuen takia.
+Virtual Dos Machine on teknologia, mikä mahdollistaa DOS-ohjelmien suorituksen muissa käyttöjärjestelmissä. VDM -toteutuksia löytyy niin Windowseista 3.x -käyttöjärjestelmästä lähtien, OS/2 sisälsi hyvän DOS-tuen oman MVDM -toteutuksensa takia. VDM on toteutettu myös Wineen lähinnä 16 -bittisten Windows 3.x -ohjelmien tuen takia. 16-bittisten ohjelmien tukea tarvitaan työssä TERMAN-ohjelmistolle.
 
-NTVDM NT Virtual DOS Machine ja WOW Windows On Windows ovat Windows -käyttöjärjestelmän alijärjestelmiä, jotka DOS- ja 16 -bittisten Windows 3.x -ohjelmien suorittamisen uudemmissa NT -kerneliin pohjautuvissa Windows -versioissa. NTVDM oli toteutettu emulaattorina myös Windows NT:n MIPS- ja Alpha-versiolle . NTVDM ja WOW on poistettu 64 -bittisisitä Windows -versioista.
+NTVDM NT Virtual DOS Machine ja WOW Windows On Windows ovat Windows -käyttöjärjestelmän alijärjestelmiä, jotka DOS- ja 16 -bittisten Windows 3.x -ohjelmien suorittamisen uudemmissa NT -kerneliin pohjautuvissa Windows -versioissa. NTVDM oli toteutettu emulaattorina myös Windows NT:n MIPS- ja Alpha-versiolle . NTVDM ja WOW on poistettu 64 -bittisisistä Windows -versioista. \cite{ntvdm_2}
 
 NTVDM emuloi x86-prosessorin suorittamassa MS-DOS -käyttöjärjestelmää. Se tulkkaa DOS-ohjelmien tekemät suorat laitteiston manipulointipyynnöt Windowsin API-pyynnöiksi. Emuloitujen laitteistojen tuki on kuitenkin NTVDM:ssä yksinkertainen ja rajoittunut. Se ei rajaa ohjelmien suoritusnopeutta, jolloin moni DOS-ohjelma pyörii nykylaitteistolla liian lujaa eikä kommunikointi laitteiston kanssa välttämättä onnistu koska ohjelmat eivät odota vastausta tarpeeksi pitkään.
 
 NTVDM:n ratkaisu DOS:n tietoturvaongelmiin on ajaa jokaista DOS-ohjelmaa omassa VDM-prosessissa, jolloin ohjelmat ovat suojattuja toisiltaan. DOS-ohjelmien kaatuminen ei vaikuta muihin ohjelmiin / suoritettaviin prosesseihin, koska jokainen suoritettava DOS-ohjelma on oma VDM-prosessinsa. Uudemmissa käyttöjärjestelmissä (Windows 7+) voi määritellä ajetaanko ohjelmat omina prosesseinaan vai yhden VDM-prosessin alla.
 
-
-WOW, Win16 on Win32, on Windowsin alijärjestelmä joka täydentää NTVDM:ään tuen 16 -bittisille Windows -ohjelmille. Win16 -ohjelmat ajetaan yhdessä VDM -prosessissa omina säikeinään. Tällä tavoin on saatu aikaan paras yhteensopivuus Windows 3.x:n kanssa. Haittapuolena tulee jaettu muistiavaruus kaikkien 16 -bittisten ohjelmien kanssa joka voi aiheuttaa epävakautta alijärjestelmän sisällä. Alijärjestelmän kaatuminen sulkee kaikki 16 -bittiset ohjelmat, muttei vaikuta käyttöjärjestelmän toimintaan muuten.
+WOW, Win16 on Win32, on Windowsin alijärjestelmä joka täydentää NTVDM:ään tuen 16 -bittisille Windows -ohjelmille. Win16 -ohjelmat ajetaan yhdessä VDM -prosessissa omina säikeinään. Tällä tavoin on saatu aikaan paras yhteensopivuus Windows 3.x:n kanssa. Haittapuolena tulee jaettu muistiavaruus kaikkien 16 -bittisten ohjelmien kanssa joka voi aiheuttaa epävakautta alijärjestelmän sisällä. Alijärjestelmän kaatuminen sulkee kaikki 16 -bittiset ohjelmat, muttei vaikuta käyttöjärjestelmän toimintaan muuten. \cite{ntvdm_1}
 
 
 \subsection{Wine}
 %https://www.winehq.org/docs/winedev-guide/x2884
-Wine on POSIX-yhteensopiville käyttöjärjestelmille kehitetty yhteensopivuuskerros, jolla Windows-ohjelmat saadaan toimimaan muissa käyttöjärjestelmissä. Wineen on toteutettu Windowsin kernelin järjestelmäkutsut, sekä useita tarvittavia DLL-kirjastoja.
+Wine on POSIX-yhteensopiville käyttöjärjestelmille kehitetty yhteensopivuuskerros, jolla 32- ja 64-bittiset Windows-ohjelmat saadaan toimimaan muissa käyttöjärjestelmissä. Wineen on toteutettu Windowsin kernelin järjestelmäkutsut, sekä useita tarvittavia DLL-kirjastoja. Työssä tarvitaan 32-bittistä Windows-tukea Motomitin hallintaohjelmistolle.
 
 Wineen pystyy asettamaan käyttöön tarvittaessa alkuperäisen järjestelmän jaettuja DLL-kirjastoja. Alkuperäinen DLL tarjoaa täyden yhteensopivuuden kirjaston toteuttamille rutiineille. Näiden käytön vaarana on, että ne voivat yrittää käyttää Windowsin järjestelmäkomponentteja joita Wineen ei ole toteutettu, jolloin toiminnallisuus kärsii. Winen sisäänrakennetut DLL:t sisältävät tarvittavilta osin lisäyksiä ja välityskoodia / käärekoodia joilla kirjastot saadaan toimimaan Unixissa käytetyjen ratkaisuiden kanssa yhteen.
 
@@ -388,7 +386,7 @@ Wine serverin avulla on totetutettu IPC:n (prosessien välinen kommmunikointi), 
 %mitä tulkitaan
 % mitä emuloidaan
 
-Dosemu on Linuxille kehitetty yhteensopivuuskerros, jolla saa ajettua DOS-ohjelmia x86/x64-arkkitehtuuria käyttävässä Linux-käyttöjärjestelmässä. Dosemu on käyttäjätason ohjelma (ei vaadi pääkäyttäjän/root-oikeuksia), joka hyödyntää 80386:n ja Linux -kernelin erityisominaisuuksia ajaakseen DOS-ohjelmia eriytettynä prosesseina. Dosemu virtualisoi kaiken i/o-liikenteen, simuloi laitteistoa johon DOS-ohjelmilla on suora pääsy, sekä tarjoaa virtuaalisen kiintolevyn joka oikeasti on tiedostopolku Linuxissa.
+Dosemu on Linuxille kehitetty yhteensopivuuskerros, jolla saa ajettua 16-bittisiä DOS-ohjelmia x86/x64-arkkitehtuuria käyttävässä Linux-käyttöjärjestelmässä. Dosemu on käyttäjätason ohjelma (ei vaadi pääkäyttäjän/root-oikeuksia), joka hyödyntää 80386:n ja Linux -kernelin erityisominaisuuksia ajaakseen DOS-ohjelmia eriytettynä prosesseina. Dosemu virtualisoi kaiken i/o-liikenteen, simuloi laitteistoa johon DOS-ohjelmilla on suora pääsy, sekä tarjoaa virtuaalisen kiintolevyn joka oikeasti on tiedostopolku Linuxissa. Dosemu on yhtenä mahdollisuutena TERMAN-ohjelmiston suorittamiseen kohdejärjestelmässä.
 
 Tekstipohjaiset DOS-ohjelmat saa suoritettua DOSEMU:n avulla suoraan konsolissa, mutta siitä löytyy myös CGA/EGA/VGA-emulaation DOS:n graafista moodia käyttäville ohjelmille(Mode 13h 320x200 256 väriä). Dosemu sisältää myös tuen sarja- ja rinnakkaisporteille.
 
@@ -406,7 +404,7 @@ Tässä vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmää ajetaa
 %KORJAUSKOMMENTTI: Viittaa lähteeseen!
 % KKOMMENTTI: Lähdeviittaukset olemassa, ei docx:ssä
 
-Virtualisoinnin ollessa varsin yleistä, niin virtualisointiratkaisuita tarjoavia yrityksiä ja ohjelmistoja on paljon. Työpöytävirtualisointiin riittävillä ominaisuuksilla (mm. sarjaporttien välitys virtuaalikoneille) sopii esimerkiksi avoimen lähdekoodin QEMU-hypervisori tai Oraclen Virtualbox -hypervisori. Myös Microsoft tarjoaa Windows-ympäristöön VirtualPC-hypervistoria. Kaupallisista tarjoajista VMWarella on olemassa VMWare Workstation ja VMWare Player -hypervisori.
+Virtualisoinnin ollessa varsin yleistä, niin virtualisointiratkaisuita tarjoavia yrityksiä ja ohjelmistoja on paljon. Työpöytävirtualisointiin riittävillä ominaisuuksilla (mm. sarjaporttien välitys virtuaalikoneille) sopii esimerkiksi avoimen lähdekoodin QEMU-hypervisori tai Oraclen Virtualbox -hypervisori. Myös Microsoft tarjoaa Windows-ympäristöön VirtualPC-hypervistoria. Kaupallisista tarjoajista VMWarella on olemassa VMWare Workstation ja VMWare Player -hypervisori. Virtualisoinnin avulla pyritään ajamaan alkuperäisen ajoneuvotietokoneen Windows 98 -käyttöjärjestelmää, sekä ohjelmia, ilman erillisiä rajapintakerroksia.
 
 Hypervisorit on jaettu kahteen tyyppiin, 1 -tyypin natiiveihin hypervisoreihin joita ajetaan laitteiston ja käyttöjärjestelmän välissä, sekä 2-tyypin \"hosted\" -hypervisoreihin jotka suoritetaan tavallisina ohjelmina käyttöjärjestelmästä. Tämä jako ei kuitenkaan ole kaikkien hypervisoreiden kohdalla näin selvä (wink wink KVM)
 
@@ -416,9 +414,9 @@ Hypervisorit on jaettu kahteen tyyppiin, 1 -tyypin natiiveihin hypervisoreihin j
 %http://wiki.xenproject.org/wiki/Xen_Overview
 %QEMU is involved only in the emulation of hardware; the execution of the guest is done within Xen and is totally hidden from QEMU.
 Xen on Cambridgen yliopistossa kehitetty 1-tyypin hypervisor/virtuaalikone. % http://www.xenproject.org/about/history.html
-Xenin kehitystyö aloitettiin 1990-luvun loppupuolella Xenoserver -projektin yhteydessä ja ensimmäinen julkinen avoin versio julkaistiin lokakuussa 2003, jonka jälkeen uusia versioita on julkaistu säännöllisesti, uusimman ollessa v. 4.5. Xen suoritetaan käynnistyslataimesta (bootloaderista), jolloin se asettautuu laitteiston ja virtuaalikoneiden väliin. Xen vaatiikiin aina suoritettavaksi yhden virtuaalikoneen eli ns. isäntäkoneen eli Dom0:n. Dom0 hoitaa interaktion laitteiston sekä muiden virtuaalikoneiden kanssa. Lisäksi ainoastaan Dom0:lla on pääsy Xenin rajapintaa jota kautta hallitaan järjestelmää.
+Xenin kehitystyö aloitettiin 1990-luvun loppupuolella Xenoserver -projektin yhteydessä ja ensimmäinen julkinen avoin versio julkaistiin lokakuussa 2003, jonka jälkeen uusia versioita on julkaistu säännöllisesti, uusimman ollessa v. 4.5. \cite{xen_history} Xen suoritetaan käynnistyslataimesta (bootloaderista), jolloin se asettautuu laitteiston ja virtuaalikoneiden väliin. Xen vaatiikiin aina suoritettavaksi yhden virtuaalikoneen eli ns. isäntäkoneen eli Dom0:n. Dom0 hoitaa interaktion laitteiston sekä muiden virtuaalikoneiden kanssa. Lisäksi ainoastaan Dom0:lla on pääsy Xenin rajapintaa jota kautta hallitaan järjestelmää.
 
-Xen vaatii erillisen tuen kohdekäyttöjärjestelmiltä jotta niitä voidaan käyttää Xenin avulla paravirtualisoituina (pl. rautatason virtualisointi jolloin kohde ei tarvitse muutoksia). Tuki Xenin paravirtualisoinnille löytyy kuitenkin useimmista Linux- ja BSD-jakeluista. Windowsissa ei ole tukea Xenin paravirtualisoinnille, mutta sitä voidaan ajaa laitteistoavusteisen virtualisoinnin avulla Xenin päällä. Xen on tarkoitettu palvelinten virtualisointiin ja siten sen ratkaisut ja toteutus tekevät siitä epäkäytännöllisen tätä projektia ajatellen.
+Xen vaatii erillisen tuen kohdekäyttöjärjestelmiltä jotta niitä voidaan käyttää Xenin avulla paravirtualisoituina (pl. rautatason virtualisointi jolloin kohde ei tarvitse muutoksia). Tuki Xenin paravirtualisoinnille löytyy kuitenkin useimmista Linux- ja BSD-jakeluista. Windowsissa ei ole tukea Xenin paravirtualisoinnille, mutta sitä voidaan ajaa laitteistoavusteisen virtualisoinnin avulla Xenin päällä. Xen on tarkoitettu palvelinten virtualisointiin ja siten sen ratkaisut ja toteutus tekevät siitä epäkäytännöllisen tätä projektia ajatellen. \cite{xen_overview}
 
 %The Control Domain (or Domain 0) is a specialized Virtual Machine that has special privileges like the capability to access the hardware directly, handles all access to the system’s I/O functions and interacts with the other Virtual Machines. It also exposes a control interface to the outside world, through which the system is controlled. The Xen Project hypervisor is not usable without Domain 0, which is the first VM started by the system.
 
@@ -431,23 +429,17 @@ Xen vaatii erillisen tuen kohdekäyttöjärjestelmiltä jotta niitä voidaan kä
 \subsubsection{KVM}
 %http://www.linuxthoughts.com/?p=110
 %https://www.youtube.com/watch?v=6n-ANRWqll8
-KVM (Kernel Mode Virtualization) on Linux-ytimeen rakennettu tuki virtualisoinnille. KVM vaatii prosessorilta virtualisointituen. KVM ei itsessään emuloi mitään, vaan tarjoaa käyttäjätasolle rajapinnan prosessorin virtualisointiominaisuuksiin. KVM on toteutettu siten, että se että oikeastaan muuttaa Linux-kernelin hypervisoriksi/virtuaalikoneeksi  (hyödyntäen muita Linuxin komponentteja, kuten scheduleria (vuorottaja) , sekä muistinhallintaa)
+KVM (Kernel Mode Virtualization) on Linux-ytimeen rakennettu tuki virtualisoinnille. KVM vaatii prosessorilta virtualisointituen. KVM ei itsessään emuloi mitään, vaan tarjoaa käyttäjätasolle rajapinnan prosessorin virtualisointiominaisuuksiin. KVM on toteutettu siten, että se että oikeastaan muuttaa Linux-kernelin hypervisoriksi/virtuaalikoneeksi hyödyntäen muita Linuxin komponentteja, kuten vuorottelijaa, sekä muistinhallintaa. \cite{kvm1}
 
 % http://www.linux-kvm.org/wiki/images/6/61/KvmForum2007$kf2007-keynote.pdf
-KVM:n kehitys alkoi v. 2006, Ensimmäinen vakaa, Linuxin kernelin mukanaa toimitettava versio julkaistiin syyskuussa 2012.
-
-KVM koostuu kernel -moduulista kvm.ko joka toteuttaa virtualisoinnin perusrakenteet, prosessoririppuvaisista kernel-moduuleista (esim kvm-intel.ko ja kvm-amd.ko.) sekä käyttäjätason ohjelmasta (qemu-system-ARCH) joka emuloi laitteiston ja toteuttaa virtuaalikoneiden (guest) hallinnan. Jokaiselle virtuaalikoneelle emuloidaan omat laitteistot.
-
-Alussa hallintaan käytettiin muunneltua QEMU:n versiota, mutta QEMU 1.3:sta lähtien tarvittavat muutokset on lisätty QEMU:un.
-
- KVM:lle ei toistaiseksi ole toteutettu muita käyttäjätason hallintaohjelmia kuin QEMU. QEMU:n päälle on kuitenkin toteutettu laaja joukko hallintaohjelmia (libvirt).
+KVM:n kehitys alkoi v. 2006 \cite{kvm3}, Ensimmäinen vakaa, Linuxin kernelin mukanaa toimitettava versio julkaistiin syyskuussa 2012. KVM koostuu kernel -moduulista kvm.ko joka toteuttaa virtualisoinnin perusrakenteet, prosessoririppuvaisista kernel-moduuleista (esim kvm-intel.ko ja kvm-amd.ko.) sekä käyttäjätason ohjelmasta (qemu-system-ARCH) joka emuloi laitteiston ja toteuttaa virtuaalikoneiden (guest) hallinnan. Jokaiselle virtuaalikoneelle emuloidaan omat laitteistot. Alussa hallintaan käytettiin muunneltua QEMU:n versiota, mutta QEMU 1.3:sta lähtien tarvittavat muutokset on lisätty QEMU:un. KVM:lle ei toistaiseksi ole toteutettu muita käyttäjätason hallintaohjelmia kuin QEMU. QEMU:n päälle on kuitenkin toteutettu laaja joukko hallintaohjelmia (libvirt). \cite{kvm2}
 
 
 %https://www.suse.com/documentation/sles-12/book_virt/data/sec_kvm_intro_arch.html
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.60\hsize]{kvm_qemu.png}
-\caption{KVM:n arkkitehtuurikaavio.}
+\caption{KVM:n arkkitehtuurikaavio.\cite{kvm4}}
 \end{figure}
 
 \subsubsection{Oracle Virtualbox}
