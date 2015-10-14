@@ -444,49 +444,34 @@ KVM:n kehitys alkoi v. 2006 \cite{kvm3}, Ensimmäinen vakaa, Linuxin kernelin mu
 
 \subsubsection{Oracle Virtualbox}
 
-%https://shop.oracle.com/pls/ostore/product?p1=OracleVMVirtualBoxEnterprise&p2=&p3=&p4=&p5=&intcmp=ocom_virtualization_vmvirtualboxenterprise
+Oracle Virtualbox on henkilökohtaisessa käytössä ilmainen virtuaalikone Windows-, sekä *NIX-käyttöjärjestelmille. Se toimii 2-tason hypervisorina (käyttöjärjestelmän päällä ajettavana virtuaalikoneena) ja tukee x86- sekä x64 -käyttöjärjestelmien virtualisointia \cite{virtualbox_manual}. Virtualboxin perusohjelmisto on GPLv2-lisensoitua ja siihen tarjotaan  PUEL-lisenssoituja suljetun lähdekoodin lisäpaketteja. Virtualboxin ensimmäinen versio julkaistiin 15.1.2007 yrityksen Innotek GmbH toimesta. Sun Microsystems Inc. osti Innotekin helmikuussa 2008. Oracle Corporation osti Sun Microsystemsin 27.1.2010 ja vastaa Virtualboxin myynnistä ja kehityksestä.
+
 
 %With version 4 of VirtualBox, released in December 2010, the core package is free software released under GNU General Public License version 2 (GPLv2). This is the fully featured package, excluding some proprietary components not available under GPLv2.
-Virtualboxin perusohjelmisto on GPLv2-lisenssoitua ja siihen tarjotaan  PUEL-lisenssoituja suljetun lähdekoodin lisäpaketteja.
-
-Virtualboxin ensimmäinen versio julkaistiin 15.1.2007 yrityksen Innotek GmbH toimesta. Sun Microsystems Inc. osti Innotekin helmikuussa 2008. Oracle Corporation osti Sun Microsystemsin 27.1.2010 ja vastaa Virtualboxin myynnistä ja kehityksestä.
-
 %https://www.virtualbox.org/wiki/VirtualBox_PUEL
 %https://www.virtualbox.org/wiki/Licensing_FAQ
 %Personal use is when you install the product on one or more PCs yourself and you make use of it (or even your friend, sister and grandmother). It doesn't matter whether you just use it for fun or run your multi-million euro business with it. Also, if you install it on your work PC at some large company, this is still personal use. However, if you are an administrator and want to deploy it to the 500 desktops in your company, this would no longer qualify as personal use. Well, you could ask each of your 500 employees to install VirtualBox but don't you think we deserve some money in this case? We'd even assist you with any issue you might have.
 
 Virtualbox on ilmainen koti- ja arviointikäyttöön. Oracle myy Enterprise-versiota n. 50 USD hintaan.
-Virtualboxin PUEL-lisenssin mukaan Virtualboxin ilmaisen version käyttö on sallittua kaupallisestikin jos ohjelmiston asennus ja käyttö on yksittäisen henkilön hallittavissa. Maksullinen Enterprise -versio tarvitaan jos ohjelmistoa toimitetaan esiasennettuna tai sen asennusta ja käyttöä vaaditaan tai hallitaan yritystasolla.
+Virtualboxin PUEL-lisenssin mukaan Virtualboxin ilmaisen version käyttö on sallittua kaupallisestikin jos ohjelmiston asennus ja käyttö on yksittäisen henkilön hallittavissa. Maksullinen Enterprise -versio tarvitaan jos ohjelmistoa toimitetaan esiasennettuna tai sen asennusta ja käyttöä vaaditaan tai hallitaan yritystasolla.\cite{virtualbox_puel}\cite{virtualbox_licensing}
 
-Virtuaalikoneita hallitaan sekä Virtualboxin graafisella käyttöliittymällä, että VBoxManage -komentoriviohjelmistolla joka tarjoaa graafinen käyttöliittymän ominaisuuksien lisäksi pääsyn kaikkiin virtualisointimoottorin ominaisuuksiin.
-
-
-%http://xmodulo.com/vmware-player-vs-virtualbox-feature-comparison.html
-Virtualboxin ominaisuuksiin kuuluu mm. virtuaalikoineiden moniprosessorituki, USB-laitteiden tuki, sekä snapshotit. Virtualbox tukee 2 sarjaportin välittämistä kohdejärjestelmälle. Lisäksi VirtualBoxista löytyy version Windows-, Linux-, OSX-, (Open)Solaris-, sekä FreeBSD-käyttöjärjestelmille.
-
-Virtualboxin puutteita ovat rajoittunut virtuaalikoneiden verkonhallinta useiden virtuaalikoneiden tapauksessa, USB 3.0- tuen puuttuminen sekä sisäkkäisten virtuualikoneiden ajon tuki.
+Virtuaalikoneita hallitaan sekä Virtualboxin graafisella käyttöliittymällä, että VBoxManage -komentoriviohjelmistolla joka tarjoaa graafinen käyttöliittymän ominaisuuksien lisäksi pääsyn kaikkiin virtualisointimoottorin ominaisuuksiin\cite{virtualbox_manual}. Virtualboxin ominaisuuksiin kuuluu mm. virtuaalikoineiden moniprosessorituki, USB-laitteiden tuki, sekä snapshotit. Virtualbox tukee 2 sarjaportin välittämistä kohdejärjestelmälle. Lisäksi VirtualBoxista löytyy version Windows-, Linux-, OSX-, (Open)Solaris-, sekä FreeBSD-käyttöjärjestelmille. Virtualboxin puutteita ovat rajoittunut virtuaalikoneiden verkonhallinta useiden virtuaalikoneiden tapauksessa, USB 3.0- tuen puuttuminen sekä sisäkkäisten virtuualikoneiden ajon tuki \cite{vplayervsvbox}.
 
 
 \subsubsection{VMWare Player}
-VMWare Player on VMWare Inc.:n v. 2008 julkaistu kaupallinen virtualisointiohjelmisto. Uusin versio on joulukuussa 2014 julkaistu 7.0. VMWare Player on kotikäyttöön ilmainen, mutta kaupallinen käyttö vaatii lisenssin hankkimisen. VMWare Player käyttää samaa virtualisointiydintä VMWare Workstationin kanssa, josta riisuttu versio Player oikeastaan on.
+VMWare Player on VMWare Inc.:n v. 2008 julkaistu kaupallinen virtualisointiohjelmisto. Uusin versio on joulukuussa 2014 julkaistu 7.0. VMWare Player on kotikäyttöön ilmainen, mutta kaupallinen käyttö vaatii lisenssin hankkimisen. VMWare Player käyttää samaa virtualisointiydintä VMWare Workstationin kanssa, josta riisuttu versio Player oikeastaan on. VMware playerin ominaisuuksiin kuuluu 4 sarjaportin välitys kohdejärjestelmälle, xxxxxxxx. Laitteiston välitystuki on suht. hyvä Playerissa . VMware Playerista on versiot Windows- ja Linux -käyttöjärjestelmille. \cite{vmware1}
 
-%https://www.vmware.com/pdf/desktop/vmware_player70.pdf
-VMware playerin ominaisuuksiin kuuluu 4 sarjaportin välitys kohdejärjestelmälle, xxxxxxxx. Laitteiston välitystuki on suht. hyvä Playerissa . VMware Playerista on versiot Windows- ja Linux -käyttöjärjestelmille.
 
-Playerista puuttuu snapshotit, ja siinä on hyvin rajoittunut komentorivi -käyttöliittymä.
-
-% http://xmodulo.com/vmware-player-vs-virtualbox-performance-comparison.html
-Suoritusnopeudessa VMware Player voittaa Virtualboxin pienellä erolla.\cite{vplayervsvbox}
-
+Playerista puuttuu snapshotit, ja siinä on hyvin rajoittunut komentorivi -käyttöliittymä. Suoritusnopeudessa VMware Player voittaa Virtualboxin pienellä erolla.\cite{vplayervsvbox}
 
 
 % Blaah. Esittely QEMUsta, Virtualboxista, VirtualPC:stä, VMWaren shaibasta
 %http://qemu.weilnetz.de/qemu-tech.html#intro_005ffeatures
 \subsection{QEMU}
-QEMU (Quick Emulator) on avoimen lähdekoodin emulaattori ja virtuaalikone, joka toimii Linuxin lisäksi myös Windowsissa ,sekä Mac OS X:ssä. QEMU tukee erilaisia toimintamoodeja. QEMU:n rakenne on jaettu backendiin, joka vastaa isäntäkoneen arkkitehtuurituesta, sekä frontendiin, joka vastaa kohdeprosessorin emuloinnin toteuttamisesta. Tällä rakenteella on saatu aikaiseksi järjestelmä, joka on sekä helppo portata sekä johon on helppo toteuttaa uusia prosessoreita eri käskykannoilla.
+QEMU (Quick Emulator) on avoimen lähdekoodin emulaattori ja virtuaalikone, joka toimii Linuxin lisäksi myös Windowsissa ,sekä Mac OS X:ssä. QEMU tukee erilaisia toimintamoodeja. QEMU:n rakenne on jaettu backendiin, joka vastaa isäntäkoneen arkkitehtuurituesta, sekä frontendiin, joka vastaa kohdeprosessorin emuloinnin toteuttamisesta. Tällä rakenteella on saatu aikaiseksi järjestelmä, joka on sekä helppo portata sekä johon on helppo toteuttaa uusia prosessoreita eri käskykannoilla. \cite{qemu_doc}
 
 %http://qemu.weilnetz.de/qemu-tech.html#QEMU-compared-to-other-emulators
-QEMU käyttää dynaamista käännöstä (dynamic translation) nopeuttakseen emulointinopeutta. Dynaamisessa käännöksessä tulkitaan ja käännetään ajettavaa tiedostoa pieni osa, blokki, kerrallaan. Blokki on haarautumiseen ja hyppykäskyihin asti oleva pätkä käskyjä. Koska yleensä dynaamiset kääntäjät ovat monimutkaisia ja arkkitehtuurisidonnaisia, on QEMU:n kääntäjä TCG (Tiny Code Generator) pidetty yksinkertaisena ja helposti siirrettävänä (portattavana). TCG:n perusidea on jakaa jokainen käsky TCG:n RISC-tyylisiksi käskyiksi, jotka sitten muutetaan kohdejärjestelmän käskyiksi.
+QEMU käyttää dynaamista käännöstä (dynamic translation) nopeuttakseen emulointinopeutta. Dynaamisessa käännöksessä tulkitaan ja käännetään ajettavaa tiedostoa pieni osa, blokki, kerrallaan. Blokki on haarautumiseen ja hyppykäskyihin asti oleva pätkä käskyjä. Koska yleensä dynaamiset kääntäjät ovat monimutkaisia ja arkkitehtuurisidonnaisia, on QEMU:n kääntäjä TCG (Tiny Code Generator) pidetty yksinkertaisena ja helposti siirrettävänä (portattavana). TCG:n perusidea on jakaa jokainen käsky TCG:n RISC-tyylisiksi käskyiksi, jotka sitten muutetaan kohdejärjestelmän käskyiksi. \cite{qemu_tech}
 %Dynaamisessa muutoksessa kakataan koodin päälle ja toivotaan ettei kukaan huomaa.
 %http://git.qemu.org/?p=qemu.git;a=blob_plain;f=tcg/README;hb=HEAD
 
@@ -496,18 +481,16 @@ QEMU käyttää dynaamista käännöstä (dynamic translation) nopeuttakseen emu
 \subsubsection{Käyttäjätilan emulointi}
 %In this mode QEMU runs single Linux or Darwin/Mac OS X programs that were compiled for a different instruction set. System calls are thunked for endianness and for 32/64 bit mismatches. Fast cross-compilation and cross-debugging are the main targets for user-mode emulation.
 %http://qemu.weilnetz.de/qemu-tech.html#User-emulation-specific-details
-Käyttäjätilan emuloinnilla voidaan emuloida samalle käyttöjärjestelmälle, mutta eri arkkitehtuurille käännettyjen ohjelmien suoritus. QEMU suorittaa ohjelmille järjestelmäkutsujen ja i/o:n käännön ja korjauksen, signaalien välityksen, sekä säikeiden emuloinnin jonka avulla alkuperäiset ohjelmat saadaan suoritettua kohdearkkitehtuurilla.
+Käyttäjätilan emuloinnilla voidaan emuloida samalle käyttöjärjestelmälle, mutta eri arkkitehtuurille käännettyjen ohjelmien suoritus. QEMU suorittaa ohjelmille järjestelmäkutsujen ja i/o:n käännön ja korjauksen, signaalien välityksen, sekä säikeiden emuloinnin jonka avulla alkuperäiset ohjelmat saadaan suoritettua kohdearkkitehtuurilla. \cite{qemu_tech}
 
-QEMU:n avulla voidaan emuloida esimerkiksi Wine-yhteensopivuuskerroksen ajo, jolloin x86-Windows -ohjelmat saadaan suoritettua myös muilla arkkitehtuureilla.
-
-QEMU:n käyttäjätilan emulointi tukee seuraavia arkkitehtuureita: xx86, PowerPC, ARM, 32-bit MIPS, Sparc32/64, ColdFire(m68k), CRISv32 ja MicroBlaze. Toimivat kohdekäyttöjärestelmät ovat mm. kaikki Windows -versiot, Linux-versiot, DOS, Solaris- ja BSD-variantit.
+QEMU:n avulla voidaan emuloida esimerkiksi Wine-yhteensopivuuskerroksen ajo, jolloin x86-Windows -ohjelmat saadaan suoritettua myös muilla arkkitehtuureilla. QEMU:n käyttäjätilan emulointi tukee seuraavia arkkitehtuureita: xx86, PowerPC, ARM, 32-bit MIPS, Sparc32/64, ColdFire(m68k), CRISv32 ja MicroBlaze. Toimivat kohdekäyttöjärestelmät ovat mm. kaikki Windows -versiot, Linux-versiot, DOS, Solaris- ja BSD-variantit.
 
 
 \subsubsection{Järjestelmäemulointi}
 %In this mode QEMU emulates a full computer system, including peripherals. It can be used to provide virtual hosting of several virtual computers on a single computer. QEMU can boot many guest operating systems, including Linux, Solaris, Microsoft Windows, DOS, and BSD;[5] it supports emulating several instruction sets, including x86, MIPS, 32-bit ARMv7, ARMv8, PowerPC, SPARC, ETRAX CRIS and MicroBlaze.
-Järjestelmäemuloinnissa QEMU emuloi koko tietokoneeen, mukaanlukien laitteistot. Emuloimalla kohdejärjestelmän arkkitehtuurin ei tarvitse olla sama kuin isäntäkoneella. QEMU:Sta löytyy totetuttuna suhteellisen laaja määrä erilaisia laitteita, kuten 11 erilaista USB Hostia, 8 erilaista verkkokorttia, 5 erilaista näytönohjainta, sekä 8 äänikorttia.
+Järjestelmäemuloinnissa QEMU emuloi koko tietokoneeen, mukaanlukien laitteistot. Emuloimalla kohdejärjestelmän arkkitehtuurin ei tarvitse olla sama kuin isäntäkoneella. QEMU:Sta löytyy totetuttuna suhteellisen laaja määrä erilaisia laitteita, kuten 11 erilaista USB Hostia, 8 erilaista verkkokorttia, 5 erilaista näytönohjainta, sekä 8 äänikorttia.\cite{qemu_doc}
 
-QEMU:ssa on käytetty GIL:liä (Global Interpreter Lock) synkronoimaan suoritusta, joten se suorittaa järjestelmäemuloinnin yksisäikeisesti, vaikka kohdejärjestelmälle olisikin toisin väitetty.
+QEMU:ssa on käytetty GIL:liä (Global Interpreter Lock) synkronoimaan suoritusta, joten se suorittaa järjestelmäemuloinnin yksisäikeisesti, vaikka kohdejärjestelmälle olisikin toisin väitetty. \cite{qemu_tech}
 
 % http://en.wikibooks.org/wiki/QEMU/Devices
 %http://wiki.qemu.org/download/qemu-doc.html
@@ -537,13 +520,10 @@ QEMU on myös prosessoriemulaattori, josta löytyy tuki usealle eri ohjelmistoar
 
 
 \subsection{Bochs}
-Bochs on x86-arkkitehtuuriin keskittynyt avoimen lähdekoodin emulaattori.
-
 %http://bochs.sourceforge.net/doc/docbook/user/introduction.html
 %http://lwn.net/2000/0323/a/mand-bochs.html
-Bochs:n ensimmäinen versio julkaistiin vuonna 1994, jolloin se oli vielä kaupallinen tuote jota myytiin 25 USD:n hintaan. Vuonna 2000 Mandrakesoft (ranskalainen yritys, joka on erikoistunut Linuxiin) osti bochsin sen kehittäjältä Kevin Lawtonilta ja julkaisi lähdekoodit LGPL-lisenssillä.
 
-Bochsia käytetään mm. käyttöjärjestelmäkehityksessä apuuna ja sisältääkin mm. emuloinnin 8-ytimiselle prosessorille ja kehittyneet vianetsintätyökalut.
+Bochs on x86-arkkitehtuuriin keskittynyt avoimen lähdekoodin emulaattori. Bochs:n ensimmäinen versio julkaistiin vuonna 1994, jolloin se oli vielä kaupallinen tuote jota myytiin 25 USD:n hintaan. Vuonna 2000 Mandrakesoft (ranskalainen yritys, joka on erikoistunut Linuxiin) osti bochsin sen kehittäjältä Kevin Lawtonilta ja julkaisi lähdekoodit LGPL-lisenssillä \cite{bochs0}. Bochsia käytetään mm. käyttöjärjestelmäkehityksessä apuna ja sisältääkin mm. emuloinnin 8-ytimiselle prosessorille ja kehittyneet vianetsintätyökalut. \cite{bochs_doc}
 
 
 
@@ -557,9 +537,9 @@ Tässä vaihtoehdossa emuloidaan vain ohjelmat koko pc:n sijasta. Tämä onnistu
 %http://eltechs.com/product/exagear-desktop/
 %http://magazine.odroid.com/assets/201502/pdf/ODROID-Magazine-201502.pdf
 \section{Eltechs ExaGear Desktop}
-Eltechs ExaGear Desktop on kaupallinen toteutus Linuxille 32 -bittisten x86 -ohjelmien ajamiseksi ARMv7 -arkkitehtuurin prosessoreilla. Ohjelmisto julkaistiin lokakuussa 2014. ExaGear Desktopin etuna QEMUun nähden on nopeus. Se on (omien testiensä) perusteella 5x QEMU:a nopeampi. Suoritusnopeus on SysBench:n synteettisten testien perusteella 50-85 \% natiivista nopeudesta.
+Eltechs ExaGear Desktop on kaupallinen toteutus Linuxille 32 -bittisten x86 -ohjelmien ajamiseksi ARMv7 -arkkitehtuurin prosessoreilla. Ohjelmisto julkaistiin lokakuussa 2014. ExaGear Desktopin etuna QEMUun nähden on nopeus. Se on (omien testiensä) perusteella 5x QEMU:a nopeampi \cite{eltechs:exagear}. Suoritusnopeus on SysBench:n synteettisten testien perusteella 50-85 \% natiivista nopeudesta.
 
-ExaGear Desktop ei sisällä grafiikan laitteistokiihdytystukea, joten OpenGL/DirectX Winellä vaativat ohjelmistot suoritetaan ohjelmistorenderöijällä. Tämä on hidasta eikä softarenderöijä tue kaikkia OpenGL -standardin ominaisuuksia. Lisäksi on raportoitu ongelmista äänentoistossa jos ääntä tuotetaan useasta lähteestä yhtäaikaa.
+ExaGear Desktop ei sisällä grafiikan laitteistokiihdytystukea, joten OpenGL/DirectX Winellä vaativat ohjelmistot suoritetaan ohjelmistorenderöijällä. Tämä on hidasta eikä softarenderöijä tue kaikkia OpenGL -standardin ominaisuuksia. Lisäksi on raportoitu ongelmista äänentoistossa jos ääntä tuotetaan useasta lähteestä yhtäaikaa. Tätä projektia ajatellen nämä puutteet eivät haittaa, koska käytettävät ohjelmat eivät tarvitse 3D-kiihdytystä, eikä ääniä. \cite{eltechs:odroid}
 
 % Caveats
 % There are some quirks with ExaGear that make things a little bit harder to use. For example, the file access in the ExaGear
