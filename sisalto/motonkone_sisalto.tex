@@ -357,7 +357,7 @@ NTVDM emuloi x86-prosessorin suorittamassa MS-DOS -käyttöjärjestelmää. Se t
 
 NTVDM:n ratkaisu DOS:n tietoturvaongelmiin on ajaa jokaista DOS-ohjelmaa omassa VDM-prosessissa, jolloin ohjelmat ovat suojattuja toisiltaan. DOS-ohjelmien kaatuminen ei vaikuta muihin ohjelmiin / suoritettaviin prosesseihin, koska jokainen suoritettava DOS-ohjelma on oma VDM-prosessinsa. Uudemmissa käyttöjärjestelmissä (Windows 7+) voi määritellä ajetaanko ohjelmat omina prosesseinaan vai yhden VDM-prosessin alla.
 
-WOW, Win16 on Win32, on Windowsin alijärjestelmä joka täydentää NTVDM:ään tuen 16 -bittisille Windows -ohjelmille. Win16 -ohjelmat ajetaan yhdessä VDM -prosessissa omina säikeinään. Tällä tavoin on saatu aikaan paras yhteensopivuus Windows 3.x:n kanssa. Haittapuolena tulee jaettu muistiavaruus kaikkien 16 -bittisten ohjelmien kanssa joka voi aiheuttaa epävakautta alijärjestelmän sisällä. Alijärjestelmän kaatuminen sulkee kaikki 16 -bittiset ohjelmat, muttei vaikuta käyttöjärjestelmän toimintaan muuten. \cite{ntvdm_1}
+WOW, Win16 on Win32, on Windowsin alijärjestelmä joka täydentää NTVDM:ään tuen 16 -bittisille Windows -ohjelmille. Win16 -ohjelmat ajetaan yhdessä VDM -prosessissa omina säikeinään. Tällä tavoin on saatu aikaan paras yhteensopivuus Windows 3.x:n kanssa. Haittapuolena tulee jaettu muistiavaruus kaikkien 16 -bittisten ohjelmien kanssa joka voi aiheuttaa epävakautta alijärjestelmän sisällä. Alijärjestelmän kaatuminen sulkee kaikki 16 -bittiset ohjelmat, muttei vaikuta käyttöjärjestelmän toimintaan muuten. \cite{ntvdm_kb}
 
 
 \subsection{Wine}
@@ -508,35 +508,38 @@ QEMU:ssa on käytetty GIL:liä (Global Interpreter Lock) synkronoimaan suoritust
 \subsection{Windows Virtual PC}
 Windows Virtual PC on Microsoftin ilmaiseksi tarjoama virtuaalikone.
 
-Connectix kehitti alunperin Virtual PC:n Machintonin System 7.5 -käyttöjärjestelmälle v. 1997. Windows-versio julkaistiin 2001. Microsoft osti Virtual PC:n Connectix:lta vuonna 2003. 2006 Microsoft julkaisi Virtual PC 2004 SP1:n ilmaiseksi. v. 2009 Virtual PC:n nimi vaihdettiin olemaan Windows Virtual PC, joka tukee ainoastaan Windows 7:aa ja sen jälkeen julkaistuja Windowseja.
+Connectix kehitti alunperin Virtual PC:n Machintonin System 7.5 -käyttöjärjestelmälle v. 1997. Windows-versio julkaistiin 2001. Microsoft osti Virtual PC:n Connectix:lta vuonna 2003. 2006 Microsoft julkaisi Virtual PC 2004 SP1:n ilmaiseksi. v. 2009 Virtual PC:n nimi vaihdettiin olemaan Windows Virtual PC, joka tukee ainoastaan Windows 7:aa ja sen jälkeen julkaistuja Windowseja. Virtual PC:n asettamat käyttöjärjestelmärajoitukset sulkevat sen pois mahdollisten virtuaalikoneiden listalta.
 
 
 \section{Järjestelmäemulointi}
 
-Tässä vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmä ajetaan emulaattorissa toisen järjestelmän päällä. Emuloimalla saavutetaan laitteistoarkkitehtuuririippumattomuus isäntäkoneen ja emuloitavan järjestelmän välillä. Emuloinnin haittapuolena on hitaus. Nyrkkisääntönä on 20\% hyötysuhde \cite{tinycc} parhaiden emulaattorien päästessä n. 40-80\% hyötysuhteeseen \cite{40pperf}. Esimerksiksi Eltechs tarjoaa ExaGear Desktop-ohjelmistoa, jolla voi ajaa x86-ohjelmia ARMv7 -ympäristössä. \cite{eltechs:exagear}.
+Tässä vaihtoehdossa alkuperäisiä ohjelmistoja+käyttöjärjestelmä ajetaan emulaattorissa toisen järjestelmän päällä. Emuloimalla saavutetaan laitteistoarkkitehtuuririippumattomuus isäntäkoneen ja emuloitavan järjestelmän välillä. Emuloinnin haittapuolena on hitaus. Nyrkkisääntönä on 20\% hyötysuhde \cite{tinycc} parhaiden emulaattorien päästessä n. 40-80\% hyötysuhteeseen \cite{40pperf}.
 
-
-QEMU on myös prosessoriemulaattori, josta löytyy tuki usealle eri ohjelmistoarkkitehtuurille, yleisimpinä mm x86,PowerPC,ARM ja SPARC.
+Johtuen emuloinnnin hitaudesta, se ei ole erityisen suotuisa vaihtoehto huomattavasti nopeampaan virtualisointiin verrattuna. Työssä käytettävät ohjelmat eivät kuitenkaan ole mitenkään resurssisyöppöjä, joten emulointia voi ajatella varteenotettavana vaihtoehtona, jotta työssä voidaan mahdollisesti käyttää x86-arkkitehtuurin lisäksi muita prosessoriarkkitehtuureita, joista ARM on laajan suosionsa takia vaihtoehtojen kärjessä.
 
 
 \subsection{Bochs}
-%http://bochs.sourceforge.net/doc/docbook/user/introduction.html
-%http://lwn.net/2000/0323/a/mand-bochs.html
 
-Bochs on x86-arkkitehtuuriin keskittynyt avoimen lähdekoodin emulaattori. Bochs:n ensimmäinen versio julkaistiin vuonna 1994, jolloin se oli vielä kaupallinen tuote jota myytiin 25 USD:n hintaan. Vuonna 2000 Mandrakesoft (ranskalainen yritys, joka on erikoistunut Linuxiin) osti bochsin sen kehittäjältä Kevin Lawtonilta ja julkaisi lähdekoodit LGPL-lisenssillä \cite{bochs0}. Bochsia käytetään mm. käyttöjärjestelmäkehityksessä apuna ja sisältääkin mm. emuloinnin 8-ytimiselle prosessorille ja kehittyneet vianetsintätyökalut. \cite{bochs_doc}
+Bochs on pelkästään x86-arkkitehtuuriin keskittynyt avoimen lähdekoodin emulaattori. Bochs:n ensimmäinen versio julkaistiin vuonna 1994, jolloin se oli vielä kaupallinen tuote jota myytiin 25 USD:n hintaan. Vuonna 2000 Mandrakesoft (ranskalainen yritys, joka on erikoistunut Linuxiin) osti bochsin sen kehittäjältä Kevin Lawtonilta ja julkaisi lähdekoodit LGPL-lisenssillä \cite{bochs0}. Bochsia käytetään mm. käyttöjärjestelmäkehityksessä apuna ja sisältääkin mm. emuloinnin 8-ytimiselle prosessorille ja kehittyneet vianetsintätyökalut. \cite{bochs_doc}.
 
+Bochs tukee sarjaportin välitystä isäntäkäyttöjärjestelmän ja emuloidun koneen välillä ja se pystyy emuloimaan alkuperäisen ajoneuvotietokoneen käytössä ollutta Windows 98-käyttöjärjestelmää, joten bochsia pystyisi siten käyttämään emulaattorina tässä työssä. QEMUun verrattuna bochsin käyttö ei kuitenkaan tuo mitään ylimääräistä arvoa vaihtoehtona, joten en suosittele se käyttöä tässä tarkoituksessa.
 
 
 \section{Ohjelmistojen emulointi}
 
-Tässä vaihtoehdossa emuloidaan vain ohjelmat koko pc:n sijasta. Tämä onnistuu tietyillä ohjelmilla tiettyjen ohjelmistoarkkitehtuurien välillä \cite{tinycc},\cite{qemu_use}. Vaihtoehdolla voi ajaa mm. x86-ohjelmia ARM-prosessoreilla.
+Tällä vaihtoehdolla tarkoitetaan käyttäjätilan emulointia, jossa voidaan suorittaa kohdejärjestelmän ohjelmia suoraan ilman, että emuloidaan koko tietokone käyttöjärjestelmineen väliin. Tämä onnistuu tietyillä ohjelmilla tiettyjen ohjelmistoarkkitehtuurien välillä \cite{tinycc},\cite{qemu_use}. Vaihtoehdolla voi ajaa mm. x86-ohjelmia ARM-prosessoreilla.
 
-%Vähän QEMUn ratkaisusta. Selvitä onko muita
-%\lipsum[7]
+\subsection{QEMU}
+QEMU tarjoaa virtualisoinnin, sekä laitetason emuloinnin lisäksi myös käyttäjätilan emulointia Linux-, OSX, sekä BSD-käyttöjärjestelmissä \cite{qemu_use}. Tuettuja kohdeprosessoriarkkitehtuureita ovat x86 (i386), ARM, M68K, sekä SPARC.
+
+Käyttäjätilan emuloinnissa QEMU suorittaa järjestelmäkutsujen tulkkauksen, joka korjaa myös mahdolliset endianness-, sekä 32/64 -bittisyydestä aiheutuvat ongelmat. Linuxin signalointi pystytään suurimmaksi osaksi hoitamaan suoraan isäntäkoneelle. Vain signaalinkäsittelyn sigaction signaalien tutkimiseen, sekä sigreturn signaalinkäsittelijästä poistumisen on tarvinnut emuloida. Lisäksi järjestelmäkutsuista uusien säikeiden luonti on hoidettu tekemällä jokaista säiettä varten uusi virtuaaliprosessori. \cite{qemu_tech}
+
+QEMU:lla onnistuu oman dokumentaationsa mukaan myös Winen emulointi, jota tarvitaan, jotta ajoneuvotietokoneen ohjelmat (Motomit) saadaan toimimaan \cite{qemu_use}. QEMUn käyttäjätilan emulointi vaikuttaakin tutustumisenarvoiselta ominaisuudelta tässä varsin monipuolisessa virtualisointi- ja emulointiohjelmistossa.
+
 
 %http://eltechs.com/product/exagear-desktop/
 %http://magazine.odroid.com/assets/201502/pdf/ODROID-Magazine-201502.pdf
-\section{Eltechs ExaGear Desktop}
+\subsection{Eltechs ExaGear Desktop}
 Eltechs ExaGear Desktop on kaupallinen toteutus Linuxille 32 -bittisten x86 -ohjelmien ajamiseksi ARMv7 -arkkitehtuurin prosessoreilla. Ohjelmisto julkaistiin lokakuussa 2014. ExaGear Desktopin etuna QEMUun nähden on nopeus. Se on (omien testiensä) perusteella 5x QEMU:a nopeampi \cite{eltechs:exagear}. Suoritusnopeus on SysBench:n synteettisten testien perusteella 50-85 \% natiivista nopeudesta.
 
 ExaGear Desktop ei sisällä grafiikan laitteistokiihdytystukea, joten OpenGL/DirectX Winellä vaativat ohjelmistot suoritetaan ohjelmistorenderöijällä. Tämä on hidasta eikä softarenderöijä tue kaikkia OpenGL -standardin ominaisuuksia. Lisäksi on raportoitu ongelmista äänentoistossa jos ääntä tuotetaan useasta lähteestä yhtäaikaa. Tätä projektia ajatellen nämä puutteet eivät haittaa, koska käytettävät ohjelmat eivät tarvitse 3D-kiihdytystä, eikä ääniä. \cite{eltechs:odroid}
@@ -612,18 +615,14 @@ vaadittuja lisäominaisuuksia kuten yksityisyyden suojan takaaminen,
 yhteensopivuus muiden laitteistojen välillä, petoksia
 ehkäisevien ominaisuuksien sisältäminen, tuki hätäpalveluihin pääsyn takaaville
 ominaisuuksille ja/tai ominaisuudet, joilla laitteistojen
-käyttö tehdään helpommaksi vammaisille {[}@1999/5/EY{]}. Direktiivi
+käyttö tehdään helpommaksi vammaisille \cite{1999/5/EY}. Direktiivi
 1999/5/EY on kumottu 13.6.2016 alkaen direktiivillä 2014/53/EU
 radiolaitteiden asettamista saataville markkinoilla koskevan
-jäsenvaltioiden lainsäädännön yhdenmukaistamisesta. {[}@2014/53/EU{]}
+jäsenvaltioiden lainsäädännön yhdenmukaistamisesta. \cite{2014/53/EU}
 
-IP-suojaluokitus on standardissa IEC 60529 määritetty järjestelmä sähkölaitteiden tiiveyden määrittämiseksi. IP-luokitus kertoo laitteiden suojauksen pölyä ja vettä vastaan. \cite{IEC60529}
+IP-suojaluokitus on standardissa IEC 60529 määritetty järjestelmä sähkölaitteiden tiiveyden määrittämiseksi. IP-luokitus kertoo laitteiden suojauksen pölyä ja vettä vastaan. \cite{IEC60529} IP54-suojaluokitetut tuotteet ovat pölysuojattuja (ei täydellistä tiiveyttä, mutta ei pölykertymiä), sekä roiskesuojattuja.
 
-IP54-suojaluokitetut tuotteet ovat pölysuojattuja (ei täydellistä tiiveyttä, mutta ei pölykertymiä), sekä roiskesuojattuja.
-
-IP67/66 -suojaluokitetut tuotteet ovat täysin pölytiiviitä ja kestävät suurella paineella tulevan vesiruiskun. IP67/66-tuotteet kestävät tärinää ja iskuja 5M3-vaatimusten mukaisesti. (DIN EN 60721-3-5, MIL-STD 810F.)
-
-Kuten aiemmin mainittiin, nykyisessä järjestelmässä Nero täyttää EN55022-standardin vaatimukset ja on IP54-suojattu. Uuden valmiina hankittavan järjestelmän tulisi täyttää EN55022-standardin ja direktiivin  2004/104/EY vaatimukset.
+IP67/66 -suojaluokitetut tuotteet ovat täysin pölytiiviitä ja kestävät suurella paineella tulevan vesiruiskun. IP67/66-tuotteet kestävät tärinää ja iskuja 5M3-vaatimusten mukaisesti. (DIN EN 60721-3-5, MIL-STD 810F.) Kuten aiemmin mainittiin, nykyisessä järjestelmässä Nero täyttää EN55022-standardin vaatimukset ja on IP54-suojattu. Uuden valmiina hankittavan järjestelmän tulisi täyttää EN55022-standardin ja direktiivin  2004/104/EY vaatimukset.
 
 \newpage
 \chapter{Tehdyt tutkimukset ja huollot}
@@ -757,8 +756,6 @@ Tallennetava data voitaisiin myös pakata jo vastaanottovaiheessa esimerkiksi jo
 SPRT:hen voisi lisätä myös mahdollisuuden ns. passthrough:n, jolloin sarjaliikenettä kuunneltaessa pystyisi käyttämään myös alkuperäistä laitetta. Passthrough voitaisiin toteuttaa erillisenä laitepalikkana, joka jakaisi sarjaportin liikenteestä erillisen pelkän kuunteluun sopivan portin. Toinen vaihtoehto olisi ohjata kuunneltu liikenne (sekä lähetetty toiseen suuntaan) toiseen sarjaporttilaitteeseen.
 
 \section{Testaus}
-%% %-merkki on kommentti, teksti ei tule työhön
-
 Kokeiltavaksi testiympäristöksi päätettiin valita tavallinen x86-pohjainen kannettava tietokone, johon asennettiin valittu käyttöjärjestelmä, sekä tarvittavat ohjelmat. Johtuen rankoista olosuhteita, tavallista kannettavaa käytetään vain käyttöjärjestelmän ja ohjelmien testaamiseksi yhdessä Moton kanssa. Alkuperäiset ohjelmistot Motomit PC ja Terman sovitettiin käyttöön Wine-rajapinnan ja Dosbox/Dosemu DOS -emulaattorin avulla.
 
 %Blaah kakkaa
@@ -841,7 +838,11 @@ Tässä vaihtoehdossa toteutus on vastaava kuin uusien kuorien tekemisessä, nyt
 
 \chapter{Yhteenveto}\
 
-Insinöörityön tavoitteena oli selvittää työn kohteena olevan 17 vuotta vanhan hakkuukoneen alkuperäisen ajoneuvotietokoneen liitännät ja ohjelmistot sekä tutkia mahdolliset vaihtoehdot korvata vanha, käyttöikänsä loppupäässä oleva alkuperäinen ajoneuvotietokone uudemmalla, hakkuukoneen järjestelmien kanssa yhteensopivalla vaihtoehdolla. Alkuperäinen tarkoitus oli tutkia vaihtoehdot, sekä toteuttaa käyttökuntoon asti korvaava tietokone. Projektin aikana kuitenkin alkuperäisen tietokoneen huollon jälkeisen toiminnan parantuminen, sekä taloustilanteen huonontumisen takia päädyttiin jättämään varsinainen toteutus varavaihtoehdoksi ja keskittymään totetuksen esivalmisteluun.
+%% KORJAUSKOMMENTTI: Kolmas asia on työn tulokset. Minä en raportoisi siitä mitä metsäkoneelle ei tehty, vaan kertoisin vain mitä on tehty: valmis levykuva/asennuspaketti emulointiympäristöineen, testaus nauhoitetulla datalla, sopivan tietokoneen valinta ja kiinnityksen kuvaus. Se, että pakettia ei ole vielä asennettu (eikä ehkä asennetakaan) on asia, jonka esittely turhaan laskee työn arvoa. Työssähän on alussa todettu että kone on aktiivikäytössä, joten voit vaikka todeta että asennusvalmius on sitten kun tulee seuraavan ison huoltoseisokin aika tms....
+
+Insinöörityön tavoitteena oli selvittää työn kohteena olevan 17 vuotta vanhan hakkuukoneen alkuperäisen ajoneuvotietokoneen liitännät ja ohjelmistot sekä tutkia mahdolliset vaihtoehdot korvata vanha, käyttöikänsä loppupäässä oleva alkuperäinen ajoneuvotietokone uudemmalla, hakkuukoneen järjestelmien kanssa yhteensopivalla vaihtoehdolla. Alkuperäinen tarkoitus oli tutkia vaihtoehdot, sekä toteuttaa käyttökuntoon asti korvaava tietokone.
+
+%Projektin aikana kuitenkin alkuperäisen tietokoneen huollon jälkeisen toiminnan parantuminen, sekä taloustilanteen huonontumisen takia päädyttiin jättämään varsinainen toteutus varavaihtoehdoksi ja keskittymään totetuksen esivalmisteluun.
 
 Alkuperäistä ajoneuvotietokonetta tutkimalla sekä mahdollisia vaihtoehtoja punnitsemalla päädyttiin testaamaan alkuperäisten ohjelmistojen toimivuutta yhteensopivuusrajapintojen kautta tavallisessa, useamman vuoden vanhassa Linux-käyttöjärjestelmällä varustetussa kannettavassa tietokoneessa. Testaamalla selvisi, että käytettävät alkuperäiset ohjelmistot toimivat USB-sarjaporttiadapterin ja Linuxin kautta suoritettuina. Tästä voidaan päätellä että alkuperäinen Sunit Nero-ajoneuvotietokone on helpostikin korvattavissa uudemmalla olosuhteita kestävällä ajoneuvotietokoneella tai kannettavalla.
 
@@ -849,7 +850,9 @@ Vaatimuksina uudelle tietokoneelle on lähinnä tarvittava olosuhteiden kesto se
 
 Suurimmat haasteet insinöörityössä liittyivät pääsyyn työn kohteena olevalle hakkuukoneelle. Hakkuukone oli aktiivisessa käytössä Oriveden metsissä koko insinöörityön ajan ja vierailut koneelle saatiin lopulta järjestettyä alkuperäisen ajoneuvotietokoneen huoltojen yhteydessä. Hakkuukoneen kommunikointi ajoneuvotietokoneen kanssa osoittautui kuitenkin suhteellisen yksinkertaiseksi standardinmukaiseksi RS-232 sarjamuotoiseksi liikenteeksi.
 
-Alkuperäinen suunnitelma valmiista ajoneuvotietokoneen korvaajasta jäi saavuttamatta, mutta projekti on saatu pisteeseen, josta on helppo jatkaa toteutukseen. Ohjelmistoista on tehty valmiit levykuvat käytettäville arkkitehtuureille, sekä tarvittavat osat on mietitty ja alustavasti suunniteltu.
+%Alkuperäinen suunnitelma valmiista ajoneuvotietokoneen korvaajasta jäi saavuttamatta, mutta projekti on saatu pisteeseen, josta on helppo jatkaa toteutukseen. Ohjelmistoista on tehty valmiit levykuvat käytettäville arkkitehtuureille, sekä tarvittavat osat on mietitty ja alustavasti suunniteltu.
+
+
 
 
 %\lipsum[12-14]
