@@ -448,14 +448,14 @@ Oracle Virtualbox on henkilökohtaisessa käytössä ilmainen virtuaalikone Wind
 Virtualbox on ilmainen koti- ja arviointikäyttöön. Oracle myy Enterprise-versiota n. 50 USD hintaan.
 Virtualboxin PUEL-lisenssin mukaan Virtualboxin ilmaisen version käyttö on sallittua kaupallisestikin jos ohjelmiston asennus ja käyttö on yksittäisen henkilön hallittavissa. Maksullinen Enterprise -versio tarvitaan jos ohjelmistoa toimitetaan esiasennettuna tai sen asennusta ja käyttöä vaaditaan tai hallitaan yritystasolla.\cite{virtualbox_puel}\cite{virtualbox_licensing}
 
-Virtuaalikoneita hallitaan sekä Virtualboxin graafisella käyttöliittymällä, että VBoxManage -komentoriviohjelmistolla joka tarjoaa graafinen käyttöliittymän ominaisuuksien lisäksi pääsyn kaikkiin virtualisointimoottorin ominaisuuksiin\cite{virtualbox_manual}. Virtualboxin ominaisuuksiin kuuluu mm. virtuaalikoineiden moniprosessorituki, USB-laitteiden tuki, sekä snapshotit. Virtualbox tukee 2 sarjaportin välittämistä kohdejärjestelmälle. Lisäksi VirtualBoxista löytyy version Windows-, Linux-, OSX-, (Open)Solaris-, sekä FreeBSD-käyttöjärjestelmille. Virtualboxin puutteita ovat rajoittunut virtuaalikoneiden verkonhallinta useiden virtuaalikoneiden tapauksessa, USB 3.0- tuen puuttuminen sekä sisäkkäisten virtuualikoneiden ajon tuki \cite{vplayervsvbox}.
+Virtuaalikoneita hallitaan sekä Virtualboxin graafisella käyttöliittymällä, että VBoxManage -komentoriviohjelmistolla joka tarjoaa graafinen käyttöliittymän ominaisuuksien lisäksi pääsyn kaikkiin virtualisointimoottorin ominaisuuksiin\cite{virtualbox_manual}. Virtualboxin ominaisuuksiin kuuluu mm. virtuaalikoineiden moniprosessorituki, USB-laitteiden tuki, sekä snapshotit. Virtualbox tukee 2 sarjaportin välittämistä kohdejärjestelmälle. Lisäksi VirtualBoxista löytyy version Windows-, Linux-, OSX-, (Open)Solaris-, sekä FreeBSD-käyttöjärjestelmille. Virtualboxin puutteita ovat rajoittunut virtuaalikoneiden verkonhallinta useiden virtuaalikoneiden tapauksessa, USB 3.0- tuen puuttuminen sekä sisäkkäisten virtuualikoneiden ajon tuki \cite{vplayervsvbox}. Ajotietokoneen virtualisointia ajatellen Virtualbox on yksi harkinnanarvoinen ohjelmisto toteutukseen.
 
 
 \subsubsection{VMWare Player}
-VMWare Player on VMWare Inc.:n v. 2008 julkaistu kaupallinen virtualisointiohjelmisto. Uusin versio on joulukuussa 2014 julkaistu 7.0. VMWare Player on kotikäyttöön ilmainen, mutta kaupallinen käyttö vaatii lisenssin hankkimisen. VMWare Player käyttää samaa virtualisointiydintä VMWare Workstationin kanssa, josta riisuttu versio Player oikeastaan on. VMware playerin ominaisuuksiin kuuluu 4 sarjaportin välitys kohdejärjestelmälle, xxxxxxxx. Laitteiston välitystuki on suht. hyvä Playerissa . VMware Playerista on versiot Windows- ja Linux -käyttöjärjestelmille. \cite{vmware1}
+VMWare Player on VMWare Inc.:n v. 2008 julkaistu kaupallinen virtualisointiohjelmisto. Uusin versio on joulukuussa 2014 julkaistu 7.0. VMWare Player on kotikäyttöön ilmainen, mutta kaupallinen käyttö vaatii lisenssin hankkimisen. VMWare Player käyttää samaa virtualisointiydintä VMWare Workstationin kanssa, josta riisuttu versio Player oikeastaan on. VMware playerin ominaisuuksiin kuuluu 4 sarjaportin välitys kohdejärjestelmälle. Laitteiston välitystuki on suht. hyvä Playerissa . VMware Playerista on versiot Windows- ja Linux -käyttöjärjestelmille. \cite{vmware1}
 
 
-Playerista puuttuu snapshotit, ja siinä on hyvin rajoittunut komentorivi -käyttöliittymä. Suoritusnopeudessa VMware Player voittaa Virtualboxin pienellä erolla.\cite{vplayervsvbox}
+Playerista puuttuu snapshotit, ja siinä on hyvin rajoittunut komentorivi -käyttöliittymä. Suoritusnopeudessa VMware Player voittaa Virtualboxin pienellä erolla \cite{vplayervsvbox}. VMware Player on Virtualboxin kannsa ominaisuuksiltaan muuten hyvin tasaväkinen, mutta maksullinen, mistä syystä Player pudotettiin pois harkinnanarvoisista virtuaalikoneohjelmistoista ajoneuvotietokoneen virtualisoimiseksi.
 
 
 % Blaah. Esittely QEMUsta, Virtualboxista, VirtualPC:stä, VMWaren shaibasta
@@ -465,11 +465,7 @@ QEMU (Quick Emulator) on avoimen lähdekoodin emulaattori ja virtuaalikone, joka
 
 %http://qemu.weilnetz.de/qemu-tech.html#QEMU-compared-to-other-emulators
 QEMU käyttää dynaamista käännöstä (dynamic translation) nopeuttakseen emulointinopeutta. Dynaamisessa käännöksessä tulkitaan ja käännetään ajettavaa tiedostoa pieni osa, blokki, kerrallaan. Blokki on haarautumiseen ja hyppykäskyihin asti oleva pätkä käskyjä. Koska yleensä dynaamiset kääntäjät ovat monimutkaisia ja arkkitehtuurisidonnaisia, on QEMU:n kääntäjä TCG (Tiny Code Generator) pidetty yksinkertaisena ja helposti siirrettävänä (portattavana). TCG:n perusidea on jakaa jokainen käsky TCG:n RISC-tyylisiksi käskyiksi, jotka sitten muutetaan kohdejärjestelmän käskyiksi. \cite{qemu_tech}
-%Dynaamisessa muutoksessa kakataan koodin päälle ja toivotaan ettei kukaan huomaa.
-%http://git.qemu.org/?p=qemu.git;a=blob_plain;f=tcg/README;hb=HEAD
 
-%TODO: Dynaaminen muutos
-%QEMU:n suoritusnopeus emuloinnissa on jotain, luokkaa 50\%? Jotain kakkaa se on. Tähän cite.
 
 \subsubsection{Käyttäjätilan emulointi}
 %In this mode QEMU runs single Linux or Darwin/Mac OS X programs that were compiled for a different instruction set. System calls are thunked for endianness and for 32/64 bit mismatches. Fast cross-compilation and cross-debugging are the main targets for user-mode emulation.
@@ -535,7 +531,7 @@ QEMU:lla onnistuu oman dokumentaationsa mukaan myös Winen emulointi, jota tarvi
 \subsection{Eltechs ExaGear Desktop}
 Eltechs ExaGear Desktop on kaupallinen toteutus Linuxille 32 -bittisten x86 -ohjelmien ajamiseksi ARMv7 -arkkitehtuurin prosessoreilla. Ohjelmisto julkaistiin lokakuussa 2014. ExaGear Desktopin etuna QEMUun nähden on nopeus. Se on (omien testiensä) perusteella 5x QEMU:a nopeampi \cite{eltechs:exagear}. Suoritusnopeus on SysBench:n synteettisten testien perusteella 50-85 \% natiivista nopeudesta.
 
-ExaGear Desktop ei sisällä grafiikan laitteistokiihdytystukea, joten OpenGL/DirectX Winellä vaativat ohjelmistot suoritetaan ohjelmistorenderöijällä. Tämä on hidasta eikä softarenderöijä tue kaikkia OpenGL -standardin ominaisuuksia. Lisäksi on raportoitu ongelmista äänentoistossa jos ääntä tuotetaan useasta lähteestä yhtäaikaa. Tätä projektia ajatellen nämä puutteet eivät haittaa, koska käytettävät ohjelmat eivät tarvitse 3D-kiihdytystä, eikä ääniä. \cite{eltechs:odroid}
+ExaGear Desktop ei sisällä grafiikan laitteistokiihdytystukea, joten OpenGL/DirectX Winellä vaativat ohjelmistot suoritetaan ohjelmistorenderöijällä. Tämä on hidasta eikä softarenderöijä tue kaikkia OpenGL -standardin ominaisuuksia. Lisäksi on raportoitu ongelmista äänentoistossa jos ääntä tuotetaan useasta lähteestä yhtäaikaa. Ajoneuvotietokoneen tarpeita ajatellen nämä puutteet eivät haittaa, koska käytettävät ohjelmat eivät tarvitse 3D-kiihdytystä, eikä ääniä. \cite{eltechs:odroid}
 
 % Caveats
 % There are some quirks with ExaGear that make things a little bit harder to use. For example, the file access in the ExaGear
@@ -710,7 +706,7 @@ meta\_device & Text \\\bottomrule
 \end{tabular}
 \end{table}
 
-\vspace{10mm}
+\vspace{20mm}
 
 \begin{table}[h]
 \centering
@@ -774,7 +770,7 @@ Tämän työn aikana tehtyjen tutkimusten perusteella olen päätynyt esittämä
 
 \section{Uusi ajoneuvotietokone}
 
-Ehdotan ajoneuvotietokoneeksi Panasonic Toughbook CF-19 tietokonetta. Toughbook CF-19 on tabletiksi kääntyvä, täysvahvistettu kannettava joka on suunnitteltu ääriolosuhteisiin. CF-19 on suojattu niin, että se kestää pölyä, tärinää, iskuja ja -20 ja +60 °C välisen lämpötila-vaihtelun. CF-19 on varustettu Intel Core 2 Duo U7500 -prosessorilla, 4 Gb:n muistilla ja 10.4 \" näytöllä. Laite on IP54-suojattu kuten alkuperäinen ajoneuvotietokone ja se täyttää sähkömagneettisen yhteensopivuuden, tärinän, tiputuksen, vesi- ja pölytiiviyden, lämpötilankeston ja kosteudenkeston osalta Yhdysvaltain armeijan asettamat standardit. \cite{cf19}
+Ehdotan ajoneuvotietokoneeksi Panasonic Toughbook CF-19 tietokonetta. Toughbook CF-19 on tabletiksi kääntyvä, täysvahvistettu kannettava joka on suunnitteltu ääriolosuhteisiin. CF-19 on suojattu niin, että se kestää pölyä, tärinää, iskuja ja -20 ja +60 °C välisen lämpötila-vaihtelun. CF-19 on varustettu Intel Core 2 Duo U7500 -prosessorilla, 4 Gb:n muistilla ja 10.4" näytöllä. Laite on IP54-suojattu kuten alkuperäinen ajoneuvotietokone ja se täyttää sähkömagneettisen yhteensopivuuden, tärinän, tiputuksen, vesi- ja pölytiiviyden, lämpötilankeston ja kosteudenkeston osalta Yhdysvaltain armeijan asettamat standardit. \cite{cf19}
 
 Valitsin Toughbook CF-19 korvaajaksi, koska kääntyvän näytön takia sen saa n. 5 cm paksuksi, mikä mahdollistaa sen, että ko. kannettavalle voidaan toteuttaa helposti teline joko alkuperäiseen pidikkeeseen tai erillisenä kiinnityksenä. CF-19:sta löytyy lisäksi vakiona yksi RS-232 -sarjaportti, joka on luotettavuudeltaan parempi kuin USB-pohjaiset adapterit. Tällöin Motomit PC voidaan liittää sarjaporttiin ja Terman laittaa menemään USB-adapterin kautta tulevasta sarjaportista. Vaikka Panasonic Toughbook CF-19 on suhteellisen vanha (julkaistu v. 2007) \cite{cf19}, niin kyseistä mallia on hyvin saatavissa käytettyjen ja kunnostettujen tietokoneiden myyntiin erikoistuneista liikkeistä. Kosketusnäytön ansiosta erillistä hiirtä ei tarvita ja näppäimistöksi riittää ulkoinen näppäimistö.
 
@@ -786,7 +782,7 @@ Valitsin Toughbook CF-19 korvaajaksi, koska kääntyvän näytön takia sen saa 
 
 \section{Uusi ajoneuvotietokone vanhaan kiinnikkeeseen}
 
-Vaihtoehtona on myös suunnitella ja rakentaa vanhan kiinnikkeen kanssa yhteensopiva kotelo, johon asennetaan sopivan kokoinen näyttö, esim. RPI/2 -tietokone tai vastaava, sekä tarvittavat virtalähteet. RPIlle löytyy sekä Dosbox/rpix86 DOS-emulointiin, sekä ExaGearin avulla pitäisi pystyä ajamaan wineä. X86-tietokoneita löytyy myös riittävillä tehoilla pieninä mini-ITX -versioina.
+Vaihtoehtona on myös suunnitella ja rakentaa vanhan kiinnikkeen kanssa yhteensopiva kotelo, johon asennetaan sopivan kokoinen näyttö, sekä esim. Raspberry Pi 2 -tietokone tai vastaava yhden kortin tietokone, sekä tarvittavat virtalähteet. Raspberry Pi:lle löytyy sekä Dosbox/rpix86 DOS-emulointiin, sekä ExaGearin avulla pitäisi pystyä ajamaan wineä. X86-tietokoneita löytyy myös riittävillä tehoilla pieninä mini-ITX -versioina.
 
 Alkuperäinen kotelo on mitattu huollon yhteydessä, jotta uutta koteloa voisi harkita. Uusi kotelo antaa enemmän liikkumavaraa osien koolle ja sijoittelulle, mutta vaatii tarkempaa suunnitelua ja sovittelua. Kotelosta suunnitellaan 3D-malli, joka sitten voidaan 3D-tulostaa (tai tulostuttaa). Kotelon mitat on sen verran suuria, että osien suoratulostus ei taida olla kuluttajalaitteilla mahdollista ja täten 3D-mallia suunnitellessa se tulee ottaa huomioon. Myös pöly- ja kosteudenkesto tulee huomioida suunnittelussa ja toteutuksessa.
 
