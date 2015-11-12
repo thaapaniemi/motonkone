@@ -44,13 +44,12 @@
   \\ \hline
   \multicolumn{2}{|p{15cm}|}{\begin{singlespacing}\vspace{-22pt}
   %Tämä on tiivistelmän ensimmäinen kappale. Tiivistelmän kappaleet loppuvat komentoon newline, jotta saadaan yksi tyhjä rivi aikaiseksi. \newline
-  Tämän insinöörityön tarkoituksena on selvittää 17 vuotta vanhan Valmet 901 II- hakkuukoneen ajoneuvotietokoneen korvausmahdollisuudet. Työ tehtiin yksityiselle yrittäjälle. Loppukäyttäjän (hakkuukoneen kuljettajan) toiveesta korvaus tulisi toteuttaa siten, että korvaavassa ajoneuvotietokoneessa toimisivat alkuperäisessä ajoneuvotietokoneessa käytetyt ohjelmistot. Työn tarkoituksena on tuottaa lisää tietoa käytössä olevan hakkuukoneen käyttöiän ennusteesta koneen tietotekniikan osalta. Tavoitteena oli saada hakkuukoneeseen toimintakuntoinen, fyysisiltä ulkomitoiltaan yhteensopiva ajoneuvotietokone alkuperäisen tilalle. Koska alkuperäinen järjestelmä osoittautuikin vielä korjauskelpoiseksi ja korvaavan järjestelmän tuottamisen arvioitiin vievän liikaa aikaa, päädyttiin insinöörityö rajaamaan selvitykseksi järkevän budjetin ja aikataulun rajoissa olevista päivitysmahdollisuuksista.\newline
+  Tämän insinöörityön tarkoituksena on selvittää 17 vuotta vanhan Valmet 901 II- hakkuukoneen ajoneuvotietokoneen korvausmahdollisuudet. Työ tehtiin yksityiselle yrittäjälle. Loppukäyttäjän (hakkuukoneen kuljettajan) toiveesta korvaus tulisi toteuttaa siten, että korvaavassa ajoneuvotietokoneessa toimisivat alkuperäisessä ajoneuvotietokoneessa käytetyt ohjelmistot. Työn tarkoituksena on tuottaa lisää tietoa käytössä olevan hakkuukoneen käyttöiän ennusteesta koneen tietotekniikan osalta. Tavoitteena oli saada hakkuukoneeseen toimintakuntoinen, fyysisiltä ulkomitoiltaan yhteensopiva ajoneuvotietokone alkuperäisen tilalle. Insinöörityö rajattiin selvitykseksi kohtuullisen budjetin ja aikataulun rajoissa olevista päivitysmahdollisuuksista.\newline
 
   Haasteita työlle asetti hakkuukoneen sijainti metsässä 30 km Oriveden keskustasta, jonne on matkaa kotoani Kirkkonummelta noin 200 km. Prosessin aikana käytiin alkuperäisen ajoneuvotietokoneen huoltojen yhteydessä hakkuukoneen luona yhteensä kolme kertaa. Lisäksi laitetta ja sen osia huollettiin etätyönä yrittäjän lähetettyä ne postitse, jolloin matka Orivedelle ei ollut välttämätön.\newline
 
   Työssä selviää, että hakkuukoneen järjestelmien kommunikointi ajoneuvotietokoneen kanssa tapahtuu standardin RS-232 -sarjaväylän kautta ja käytettävät ohjelmat on mahdollista saada toimimaan uudemmissa käyttöjärjestelmissä. Tämä mahdollistaa uudempien ajoneuvotietokoneiden tai fyysiseltä kestävyydeltään vastaavien tietokoneiden käytön hakkuukoneessa ilman muutoksia hakkuukoneen järjestelmiin. Vaatimuksina uudelle tietokoneelle on lähinnä tarvittava olosuhteiden kesto sekä tarvittavat liittimet. Hakkuukoneen järjestelmät vaativat kaksi sarjaporttiliitäntää, joilla kommunikointi hakkuukoneen ja ajoneuvotietokoneen välillä tapahtuu. Hakkuukoneen sähköjärjestelmä on 24V, mikä tulee ottaa huomioon tietokoneen sähkönsyöttöä pohdittaessa. \newline
 
-  Parhaana vaihtoehtona pidän tällä hetkellä ajoneuvotietokoneen korvaamista Panasonic Toughbook CF-19 tietokoneella. Myös Raspberry Pi 2-pohjainen ratkaisu on harkitsemisen arvoinen.\newline
   \end{singlespacing}} \\[14cm] \hline
   Avainsanat & \avainsanat
   \\ \hline
@@ -88,15 +87,13 @@
 
 The purpose of this thesis is to find out whether it is possible to replace the original computer in 17 y. old harvester with a newer computer so that there is no need to do any changes to the harvester's electronical systems. Therefore original communication protocols and controlling software must work in the new computer. User Experience of system with the new computer should be similar with the original computer.\newline
 
-This thesis was done for a private entrepreneur and the results are intended to provide additional information about the life expectation of harvester from the viewpoint of computer systems. The original goal of the thesis was to produce a drop in -replacement computer for the original systems, but because the original system proved to be repairable and the time estimation for producing a durable replacement was too high it was decided to limit the thesis to be only a report about the possibility to upgrade the original system with reasonable budget and time.\newline
+This thesis was done for a private entrepreneur and the results are intended to provide additional information about the life expectation of harvester from the viewpoint of computer systems. The original goal of the thesis was to produce a drop in -replacement computer for the original systems. Thesis is now  a report about the possibility to upgrade the original system with reasonable budget and time.\newline
 
 The location of the harvester, which was approx. 30 km to forest from the Orivesi city center set some challenges for the thesis. Distance to Orivesi is approx. 200 kilometres from my home at Kirkkonummi. Harvester was visited total of three times. All visits took place after maintenance of the harvester's original computer. In addition the entrepreneur sent some parts for maintenance by mail so that a visit to Orivesi wasn't necessary.\newline
 
 Result of the thesis is that all required communication with harvester is through standard RS-232 serial bus. All required software was proven to work in newer operating systems which allows the possible new system to be selected from a broader range of availabe rugged computer models without any modifications to harvester's electronical systems. \newline
 
 Requirements for a new computer are durability in existing conditions and availability of required connectors. The harvester's systems require two serial port connections for communication between harverter's systems and vehicle computer. The harvester's electrical system is 24V DC, which must be taken into account when selecting the computer's power supply.
-
-In my opinion, currently the best option for the vehicle computer replacement is Panasonic Toughbook CF-19 laptop. Also, Raspberry Pi 2-based solution is worth considering.
 
 
   \end{singlespacing}} \\[14cm] \hline
@@ -176,7 +173,7 @@ Hypervisor & Järjestelmä tai ohjelmisto joka hallitsee ja suorittaa virtuaalik
 
 \chapter{Johdanto}
 
-Tietokoneiden käyttöikä on varsinkin vaativissa kohteissa rajallinen. Kun järjestelmät vanhenevat, niin huollon tarve lisääntyy, mutta varaosien saatavuus vähenee. Viimein voi tulla eteen piste, jossa ainoa mahdollinen vaihtoehto on korvata vanha järjestelmä uudella. Tämä saattaa vaatia suuriakin muutostöitä myös järjestelmää käyttäviin laitteisiin ja usein on järkevämpää vaihtaa koko kohde kuin tehdä siihen suuria muutostöitä.
+Tietokoneiden käyttöikä on varsinkin vaativissa kohteissa rajallinen. Kun järjestelmät vanhenevat, niin huollon tarve lisääntyy, mutta varaosien saatavuus vähenee. Viimein voi tulla eteen piste, jossa ainoa mahdollinen vaihtoehto on korvata vanha järjestelmä uudella. Tämä saattaa vaatia suuriakin muutostöitä myös järjestelmää käyttäviin laitteisiin ja siten usein on järkevämpää vaihtaa koko kohde kuin vaihtaa kohteen järjestelmät.
 
 Insinöörityön kohteena on vuonna 1998 valmistetun hakkuukoneen ajoneuvotietokoneen päivitysmahdollisuuksien tutkiminen. Alkuperäisessä, myös vuodelta 1998 olevassa ajoneuvotietokoneessa on alkanut näkyä ikääntymisen merkkejä. Laitteen komponentit hajoavat yksitellen ja se ylikuumenee etenkin kesäisin siten, että käyttöaika on vain pari tuntia kerrallaan. Osien saatavuus näin vanhaan tietokoneeseen alkaa luonnollisesti olemaan hankalaa.
 
@@ -558,8 +555,7 @@ Uusi direktiivi vaatii tyyppihyväksynnän vain laitteilta, joilla on
 vaikutusta ajoneuvon hallintaan, kuljettajan asennon muuttamiseen tai
 kuljettajan näkyvyysalueeseen. Laitteiden, joiden ei tarvitse olla
 tyyppihyväksyttyjä, pitää täyttää kuitenkin EMC-direktiivin 89/336/ETY
-tai radio- ja telepäätelaitedirektiivin 1999/5/EY vaatimukset. (S. Oy
-2006) \cite{1999/5/EY} \cite{89/336/ETY}
+tai radio- ja telepäätelaitedirektiivin 1999/5/EY vaatimukset. \cite{1999/5/EY} \cite{89/336/ETY}
 
 EMC-direktiivi 89/336/ETY määrittelee ainoastaan laitteistolta
 vaadittavat ominaisuudet sähkömagneettisen yhteensopivuuden
@@ -750,9 +746,9 @@ Tämän työn aikana tehtyjen tutkimusten perusteella olen päätynyt esittämä
 
 \section{Uusi ajoneuvotietokone}
 
-Ehdotan ajoneuvotietokoneeksi Panasonic Toughbook CF-19 tietokonetta. Toughbook CF-19 on tabletiksi kääntyvä, täysvahvistettu kannettava joka on suunnitteltu ääriolosuhteisiin. CF-19 on suojattu niin, että se kestää pölyä, tärinää, iskuja ja -20 ja +60 °C välisen lämpötila-vaihtelun. CF-19 on varustettu Intel Core 2 Duo U7500 -prosessorilla, 4 Gb:n muistilla ja 10.4" näytöllä. Laite on IP54-suojattu kuten alkuperäinen ajoneuvotietokone ja se täyttää sähkömagneettisen yhteensopivuuden, tärinän, tiputuksen, vesi- ja pölytiiviyden, lämpötilankeston ja kosteudenkeston osalta Yhdysvaltain armeijan asettamat standardit. \cite{cf19}
+Ehdotan ajoneuvotietokoneeksi Panasonic Toughbook CF-19 tietokonetta. Toughbook CF-19 on tabletiksi kääntyvä, täysvahvistettu kannettava joka on suunnitteltu ääriolosuhteisiin. CF-19 on suojattu niin, että se kestää pölyä, tärinää, iskuja ja -20 ja +60 °C välisen lämpötila-vaihtelun. CF-19 on varustettu Intel Core 2 Duo U7500 -prosessorilla, 4 Gb:n muistilla ja 10.4" näytöllä. Laite on IP54-suojattu kuten alkuperäinen ajoneuvotietokone ja se täyttää sähkömagneettisen yhteensopivuuden, tärinän, tiputuksen, vesi- ja pölytiiviyden, lämpötilankeston ja kosteudenkeston osalta Yhdysvaltain armeijan asettamat standardit \cite{cf19}. Tabletiksi kääntyminen mahdollistaa tietokoneen pienemmän tilanviennin ns. tavallisiin kannettaviin verrattuna.
 
-Valitsin Toughbook CF-19 korvaajaksi, koska kääntyvän näytön takia sen saa n. 5 cm paksuksi, mikä mahdollistaa sen, että ko. kannettavalle voidaan toteuttaa helposti teline joko alkuperäiseen pidikkeeseen tai erillisenä kiinnityksenä. CF-19:sta löytyy lisäksi vakiona yksi RS-232 -sarjaportti, joka on luotettavuudeltaan parempi kuin USB-pohjaiset adapterit. Tällöin Motomit PC voidaan liittää sarjaporttiin ja Terman laittaa menemään USB-adapterin kautta tulevasta sarjaportista. Vaikka Panasonic Toughbook CF-19 on suhteellisen vanha (julkaistu v. 2007) \cite{cf19}, niin kyseistä mallia on hyvin saatavissa käytettyjen ja kunnostettujen tietokoneiden myyntiin erikoistuneista liikkeistä. Kosketusnäytön ansiosta erillistä hiirtä ei tarvita ja näppäimistöksi riittää ulkoinen näppäimistö.
+Valitsin Toughbook CF-19 korvaajaksi, koska kääntyvän näytön takia sen saa n. 5 cm paksuksi, mikä mahdollistaa sen, että ko. kannettavalle voidaan toteuttaa helposti teline joko alkuperäiseen pidikkeeseen tai erillisenä kiinnityksenä. CF-19:sta löytyy lisäksi vakiona yksi RS-232 -sarjaportti, joka on luotettavuudeltaan parempi kuin USB-pohjaiset adapterit. Tällöin Motomit PC voidaan liittää sarjaporttiin ja Terman laittaa menemään USB-adapterin kautta tulevasta sarjaportista. Vaikka Panasonic Toughbook CF-19 on suhteellisen vanha (julkaistu v. 2007) \cite{cf19}, niin kyseistä mallia on hyvin saatavissa käytettyjen ja kunnostettujen tietokoneiden myyntiin erikoistuneista liikkeistä. Kosketusnäytön ansiosta erillistä hiirtä ei tarvita ja näppäimistöksi riittää ulkoinen näppäimistö, jonka pystyy laittamaan hakkuukoneessa sivuun normaalikäytösssä.
 
 \begin{figure}[H]
 \centering
@@ -814,7 +810,9 @@ Alkuperäistä ajoneuvotietokonetta tutkimalla sekä mahdollisia vaihtoehtoja pu
 
 Vaatimuksina uudelle tietokoneelle on lähinnä tarvittava olosuhteiden kesto sekä tarvittavat liittimet. Hakkuukoneen järjestelmät vaativat kaksi sarjaporttiliitäntää, joilla kommunikointi hakkuukoneen ja ajoneuvotietokoneen välillä tapahtuu. Hakkuukoneen sähköjärjestelmä on 24V, mikä tulee ottaa huomioon tietokoneen sähkönsyöttöä pohdittaessa.
 
-Työssä saatiin totetutettua ajoneuvokoneen korvaavan tietokoneen levykuva sekä suoravaiivaiset asennusohjeet uudelleenasennukseen. Levykuvan ja tavallisen kannettavan avulla saatiin testattua ohjelmistojen toimivuus ajoneuvotietokoneen kanssa. Korvaavaksi tietokoneeksi sekä sen kiinnittämiseksi metsäkoneeseen on tehty selvitykset. Koska alkuperäinen metsäkone ajoneuvotietokoneineen on aktiivikäytössä ja metsässä suurimman osan ajasta, pystytään uusi ajoneuvotietokone saattamaan asennusvalmiiksi metsäkoneen seuraavan isomman huollon yhteydessä.
+Työssä saatiin totetutettua ajoneuvokoneen korvaavan tietokoneen levykuva sekä suoraviivaiset asennusohjeet uudelleenasennukseen. Levykuva on Xubuntu-pohjainen Linux-käyttöjärjestelmä, johon on asennettu alkuperäiset ohjelmistot toimimaan Winen ja Dosboxin avulla. Oraclen Virtualboxia käytettiin lisäksi vararatkaisuna, jolla tarvittaessa saa ajettua ohjelmistot alkuperäisesssä Windows 98 -käyttöjärjestelmässä.
+
+Levykuvan ja tavallisen kannettavan avulla saatiin testattua ohjelmistojen toimivuus ajoneuvotietokoneen kanssa. Korvaavaksi tietokoneeksi sekä sen kiinnittämiseksi metsäkoneeseen on tehty selvitykset, joissa päädyttiin ehdottamaan Toughbook CF-19 -tietokonetta järkevimmäksi vaihtoehdoksi ajoneuvotietokoneeksi. Koska alkuperäinen metsäkone ajoneuvotietokoneineen on aktiivikäytössä ja metsässä suurimman osan ajasta, pystytään uusi ajoneuvotietokone saattamaan asennusvalmiiksi metsäkoneen seuraavan isomman huollon yhteydessä.
 
 
 %Alkuperäinen suunnitelma valmiista ajoneuvotietokoneen korvaajasta jäi saavuttamatta, mutta projekti on saatu pisteeseen, josta on helppo jatkaa toteutukseen. Ohjelmistoista on tehty valmiit levykuvat käytettäville arkkitehtuureille sekä tarvittavat osat on mietitty ja alustavasti suunniteltu.
