@@ -4,9 +4,9 @@
 % language: finnish
 % title_fi: Ajoneuvotietokoneen päivitysmahdollisuudet hakkuukoneessa
 % title_en: Possibilities to upgrade Sunit Nero -embedded computer in Valmet 901 II -Harvester
-% subtitle: Sunit Nero / Valmet 901 II
+% subtitle: ""
 % author: Tomi Haapaniemi
-% instructors_fi: Keijo Länsikunnas, Lehtori
+% instructors_fi: Lehtori Keijo Länsikunnas
 % instructors_en: Keijo Länsikunnas, Lecturer
 % keywords_fi: Hakkuukone, ajoneuvotietokone
 % keywords_en: harvester, in-vehicle computer
@@ -22,8 +22,8 @@
 \thispagestyle{tiivis}
 \begin{tabular}{ | p{4,7cm} | p{10,3cm} |}
   \hline
-  Tekijä (t)\newline
-  Otsikko \newline
+  Tekijä \newline
+  Otsikko \newline\newline
   Sivumäärä \newline
   Aika
   &
@@ -40,7 +40,7 @@
   \\ \hline
   Suuntautumisvaihtoehto & \suuntautumis
   \\ \hline
-  Ohjaaja(t) & \ohjaajat
+  Ohjaaja & \ohjaajat
   \\ \hline
   \multicolumn{2}{|p{15cm}|}{\begin{singlespacing}\vspace{-22pt}
   %Tämä on tiivistelmän ensimmäinen kappale. Tiivistelmän kappaleet loppuvat komentoon newline, jotta saadaan yksi tyhjä rivi aikaiseksi. \newline
@@ -844,6 +844,14 @@ Levykuvan ja tavallisen kannettavan avulla saatiin testattua ohjelmistojen toimi
 %----------------------------------------------------------------------------------------
 %   BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
+
+\setmainfont
+[BoldFont=LiberationSans-Bold.ttf,
+ItalicFont=LiberationSans-Italic.ttf,
+BoldItalicFont=LiberationSans-BoldItalic.ttf]
+{LiberationSans-Regular.ttf}
+%line space
+\linespread{1}
 
 \IfLanguageName{finnish}{\bibliographystyle{vancouver_fi}}{\bibliographystyle{vancouver}}
 %line space
