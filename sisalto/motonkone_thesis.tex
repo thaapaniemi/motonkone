@@ -25,7 +25,7 @@
 
 \def\thesislang{finnish} %change this depending on your language
 \author{Tomi Haapaniemi}
-\def\thesis{Insinöörityö/Thesis}
+\def\thesis{Insinöörityö}
 \def\alaotsikko{}
 %\def\alaotsikko{Alaotsikko/Subtitle}
 
@@ -33,19 +33,19 @@
 \def\otsikko{Ajoneuvotietokoneen päivitysmahdollisuudet hakkuukoneessa}
 \def\tiivistelmaotsikko{ \otsikko : \alaotsikko}
 \def\tutkinto{Insinööri (AMK)}
-\def\kohjelma{Tietotekniikan koulutusohjelma}
-\def\suuntautumis{Ohjelmistotekniikka/Sulautettu tietotekniikka}
+\def\kohjelma{Tietotekniikka}
+\def\suuntautumis{Sulautettu tietotekniikka}
 \def\ohjaajat{
-Keijo Länsikunnas, Lehtori%\newline
+Lehtori Keijo Länsikunnas%\newline
 }
-\def\avainsanat{Hakkuukone, ajoneuvotietokone}
-\def\pvm{\ddmmyyyydate\today}
+\def\avainsanat{hakkuukone, ajoneuvotietokone}
+\def\pvm{\specialdate\today}
 
 %English section, for abstract
-\title{Possibilities to upgrade Sunit Nero -embedded computer in Valmet 901 II -Harvester}
+\title{Possibilities to upgrade embedded computer in old harvester}
 \def\metropoliadegree {Bachelor of Engineering}
-\def\metropoliadegreeprogramme {Degree Programme in Information Technology}
-\def\metropoliaspecialisation {Software Engineering/Embedded Engineering}
+\def\metropoliadegreeprogramme {Information Technology}
+\def\metropoliaspecialisation {Embedded Engineering}
 \def\metropoliainstructors {
 Keijo Länsikunnas, Lecturer %(for example: Project Manager)\newline
 %First name Last name, Title (for example: Principal Lecturer)
@@ -117,6 +117,8 @@ Keijo Länsikunnas, Lecturer %(for example: Project Manager)\newline
 
 \newcommand\tn[1]{\textnormal{#1}} %use \tn instead of \textnormal
 \newcommand\reaction[1]{\begin{equation}\ce{#1}\end{equation}} %\reaction{} for chemical reactions
+
+\newdateformat{specialdate}{\twodigit{\THEMONTH}.\THEYEAR}
 
 %NORMAL TEXT
 %all text, title, etc. in the same font: Arial
@@ -270,7 +272,7 @@ xleftmargin=1cm
   \metropoliadegree \\
   \metropoliadegreeprogramme \\
   \thesis\\
-  \ddmmyyyydate\today %to be checked date format? 
+  \specialdate\today %to be checked date format? 
 }
 }
 \ThisLRCornerWallPaper{1}{metropolia}
