@@ -30,8 +30,8 @@
 %\def\alaotsikko{Alaotsikko/Subtitle}
 
 %Finnish section
-\def\otsikko{Ajoneuvotietokoneen päivitysmahdollisuudet hakkuukoneessa}
-\def\tiivistelmaotsikko{ \otsikko : \alaotsikko}
+\def\otsikko{Hakkuukoneen ajoneuvotietokoneen päivitysmahdollisuudet}
+\def\tiivistelmaotsikko{ \otsikko}
 \def\tutkinto{Insinööri (AMK)}
 \def\kohjelma{Tietotekniikka}
 \def\suuntautumis{Sulautettu tietotekniikka}
@@ -115,10 +115,33 @@ Keijo Länsikunnas, Lecturer %(for example: Project Manager)\newline
 
 \usepackage{lipsum} % For lorem ipsum 
 
+%\usepackage{cite}
+%\newcommand{\citep}[1]{
+%  \renewcommand\citeright{.]}
+%  \cite{#1}
+%  \renewcommand\citeright{]}
+%}
+
+\makeatletter
+\def\@citex[#1]#2{%
+  \let\@citea\@empty
+  \@cite{\@for\@citeb:=#2\do
+    {\@citea\def\@citea{;\penalty\@m\ }%
+     \edef\@citeb{\expandafter\@firstofone\@citeb}%
+     \if@filesw\immediate\write\@auxout{\string\citation{\@citeb}}\fi
+     \@ifundefined{b@\@citeb}{\mbox{\reset@font\bfseries ?}%
+       \G@refundefinedtrue
+       \@latex@warning
+         {Citation `\@citeb' on page \thepage \space undefined}}%
+       {\csname b@\@citeb\endcsname}}}{#1}}
+\makeatother
+
+
 \newcommand\tn[1]{\textnormal{#1}} %use \tn instead of \textnormal
 \newcommand\reaction[1]{\begin{equation}\ce{#1}\end{equation}} %\reaction{} for chemical reactions
 
 \newdateformat{specialdate}{\twodigit{\THEMONTH}.\THEYEAR}
+
 
 %NORMAL TEXT
 %all text, title, etc. in the same font: Arial
