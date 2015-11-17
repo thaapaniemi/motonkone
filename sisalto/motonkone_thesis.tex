@@ -115,26 +115,14 @@ Keijo Länsikunnas, Lecturer %(for example: Project Manager)\newline
 
 \usepackage{lipsum} % For lorem ipsum 
 
-%\usepackage{cite}
-%\newcommand{\citep}[1]{
-%  \renewcommand\citeright{.]}
-%  \cite{#1}
-%  \renewcommand\citeright{]}
-%}
-
-\makeatletter
-\def\@citex[#1]#2{%
-  \let\@citea\@empty
-  \@cite{\@for\@citeb:=#2\do
-    {\@citea\def\@citea{;\penalty\@m\ }%
-     \edef\@citeb{\expandafter\@firstofone\@citeb}%
-     \if@filesw\immediate\write\@auxout{\string\citation{\@citeb}}\fi
-     \@ifundefined{b@\@citeb}{\mbox{\reset@font\bfseries ?}%
-       \G@refundefinedtrue
-       \@latex@warning
-         {Citation `\@citeb' on page \thepage \space undefined}}%
-       {\csname b@\@citeb\endcsname}}}{#1}}
-\makeatother
+% for citations, citep for [?.], multiple [?; ?]
+\usepackage{cite}
+\renewcommand\citepunct{; }
+\newcommand{\citep}[1]{
+ \renewcommand\citeright{.]}
+ \cite{#1}
+ \renewcommand\citeright{]}
+}
 
 
 \newcommand\tn[1]{\textnormal{#1}} %use \tn instead of \textnormal

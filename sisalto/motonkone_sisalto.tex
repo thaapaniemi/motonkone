@@ -184,7 +184,7 @@ Haasteita työlle tuovat huollettavan hakkuukoneen sijainti yli 200 kilometrin p
 
 \chapter{Nykyinen järjestelmä}
 
-\subsubsection{VALMET 901 II-hakkuukone}
+\subsubsection{VALMET 901 II -hakkuukone}
 Hakkuukoneet eli motot (monitoimikoneet) ovat metsätraktoreita, joiden tehtävänä ovat hakkuun kaikki työvaiheet. Hakkuukoneet sisältävät tietokoneohjatut mittalaitteet, joilla puiden katkonta ja mittaus saadaan hoidettua tarkasti.
 
 Työn kohteena oleva hakkuukone on kuvassa \ref{hakkuukone} oleva, nelipyöräinen Valmet 901 II vuosimallia 1998. Kone on otettu käyttöön joulukuussa 1998. Värityksenä on Valmetin vanhempi punamusta-väritys. Valmet 901 on Valmetin senaikaisen malliston pienin hakkuukone, ja se tarkoitettu ensisijaisesti harvennushakkuisiin. Alkuperäinen hakkuupää on jälkikäteen vaihdettu toiseksi, jolloin myös apteeraukseen käytettävä ohjelmisto vaihtui. Hakkuukoneen alkuperäinen teleskooppipuomisto on vaihdettu liikeratapuomiksi.
@@ -193,12 +193,12 @@ Työn kohteena oleva hakkuukone on kuvassa \ref{hakkuukone} oleva, nelipyöräin
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.700\textwidth]{moto_2.jpg}
-\caption{Valmet 901 II-hakkuukone.}
+\caption{Valmet 901 II -hakkuukone.}
 \label{hakkuukone}
 \end{figure}
 
 \subsubsection{Motomit-mittalaite}
-Työn kohteena olevaan hakkuukoneeseen on jälkiasennettu Motomit-IT-mittalaite, joka on korvannut hakkuukoneen alkuperäiset mittalaitteet ja ohjelmiston. Motomit IT tukee StanForD-standardin mukaista apteerausohjeiden tiedonsiirtoa. Se hoitaa sisäisen kommunikaation CAN-väylää pitkin. Kommunikaatiossa alkuperäisen ajoneuvotietokoneen kanssa käytetään RS232-väylää ja MotomitPC-ohjelmistoa kuvassa \ref{motomit:modulikaavio} näkyvällä tavalla \cite{motomit:esite}.
+Työn kohteena olevaan hakkuukoneeseen on jälkiasennettu Motomit-IT-mittalaite, joka on korvannut hakkuukoneen alkuperäiset mittalaitteet ja ohjelmiston. Motomit IT tukee StanForD-standardin mukaista apteerausohjeiden tiedonsiirtoa. Se hoitaa sisäisen kommunikaation CAN-väylää pitkin. Kommunikaatiossa alkuperäisen ajoneuvotietokoneen kanssa käytetään RS232-väylää ja MotomitPC-ohjelmistoa kuvassa \ref{motomit:modulikaavio} näkyvällä tavalla \citep{motomit:esite}
 \newline
 
 \begin{figure}[H]
@@ -209,7 +209,7 @@ Työn kohteena olevaan hakkuukoneeseen on jälkiasennettu Motomit-IT-mittalaite,
 \end{figure}
 \newpage
 
-Motomit PC (kuva \ref{motomit:kuvankaappaus}) on Motomit IT:n Windows-pohjainen näyttö- ja hallintaohjelmisto Motomit IT-järjestelmälle. Se kommunikoi Motomit IT:n MCI-moduulin (Mitron CAN Interface) kanssa RS-232-sarjaväylän avulla \cite{motomit:esite}.
+Motomit PC (kuva \ref{motomit:kuvankaappaus}) on Motomit IT:n Windows-pohjainen näyttö- ja hallintaohjelmisto Motomit IT-järjestelmälle. Se kommunikoi Motomit IT:n MCI-moduulin (Mitron CAN Interface) kanssa RS-232-sarjaväylän avulla \citep{motomit:esite}
 \newline
 \begin{figure}[H]
 \centering
@@ -221,7 +221,7 @@ Motomit PC (kuva \ref{motomit:kuvankaappaus}) on Motomit IT:n Windows-pohjainen 
 \subsubsection{Ajoneuvo-PC Sunit Nero (Valmet Maxi)}
 Hakkuukoneessa käytetty tietokone on kuvassa \ref{kuva_nero} oleva, Sunitin valmistama Sunit Nero (myös nimellä Valmet MAXI) -ajoneuvotietokone. Nero on paketoitu näyttöineen ja keskusyksikköineen yhdeksi all-in-one-tyyliseksi iskunkestäväksi paketiksi. Vaikka kyseessä ei olekaan sama yksilö, joka on alun perin ollut kiinni hakkuukoneeessa, se on samanlainen kuin alkuperäinen ja samaa ikäluokkaa (noin 17 vuotta, vuodelta 1998). Tietokoneen mitat ovat 315 mm x 252 mm x 115 mm ja paino 4,2 kg. Sunit Neron virrankulutus on noin 25W.
 
-Nero täyttää CEN:n standardin EN55022 class A- ja class B -vaatimukset, ja Sunit vakuuttaa laitteen täyttävän EU:n direktiivien vaatimukset CE-merkinnällä. Neron kotelointi on tuuletusta lukuun ottamatta IP54-luokkaa, mikä tarkoittaa suojausta pölyltä ja suojausta vesiroiskeita vastaan \cite{nero:manual}.
+Nero täyttää CEN:n standardin EN55022 class A- ja class B -vaatimukset, ja Sunit vakuuttaa laitteen täyttävän EU:n direktiivien vaatimukset CE-merkinnällä. Neron kotelointi on tuuletusta lukuun ottamatta IP54-luokkaa, mikä tarkoittaa suojausta pölyltä ja suojausta vesiroiskeita vastaan \citep{nero:manual}
 
 \begin{figure}[H]
 \centering
@@ -230,7 +230,7 @@ Nero täyttää CEN:n standardin EN55022 class A- ja class B -vaatimukset, ja Su
 \label{kuva_nero}
 \end{figure}
 
-Sunit Nero osoittautui olevan toteutettu PC-tekniikalla. Se sisältää tavallisen x86-prosessorin ja Windows 98 -käyttöjärjestelmän. Emolevyn northbridge-ohjaimena on SiS 5571 -ohjain. Tässä Nero-yksilössä prosessorina on AMD:n 300 MHz:n Socket 7 -kantainen K6-prosessori vuodelta 1998 (kuva \label{kuva_prossu}, alkuperäinen prosessori on vaihdettu useita vuosia sitten tehdyn huollon yhteydessä toiseen) ja 64 Mb keskusmuistia. Tietokoneen kiintolevynä oli tutkintahetkellä Western Digitalin 120 Gb:n Scorpio Blue -kiintolevy, joka sekin on vaihdettu useaan kertaan. Nero-tietokoneessa on 3,5" -levykeasema ja cd-asema. Näyttöpaneeli on 12":n LCD-paneeli 800 x 600 pikselin resoluutiolla. Kuvasuhde on 4:3. Lisäksi koneessa on NiMH-akku BIOSin asetusten säilyttämiseen. Tietokoneessa on liitännät 12 V:n ja 24 V:n jännitteille \cite{nero:manual}.
+Sunit Nero osoittautui olevan toteutettu PC-tekniikalla. Se sisältää tavallisen x86-prosessorin ja Windows 98 -käyttöjärjestelmän. Emolevyn northbridge-ohjaimena on SiS 5571 -ohjain. Tässä Nero-yksilössä prosessorina on AMD:n 300 MHz:n Socket 7 -kantainen K6-prosessori vuodelta 1998 (kuva \label{kuva_prossu}, alkuperäinen prosessori on vaihdettu useita vuosia sitten tehdyn huollon yhteydessä toiseen) ja 64 Mb keskusmuistia. Tietokoneen kiintolevynä oli tutkintahetkellä Western Digitalin 120 Gb:n Scorpio Blue -kiintolevy, joka sekin on vaihdettu useaan kertaan. Nero-tietokoneessa on 3,5" -levykeasema ja cd-asema. Näyttöpaneeli on 12":n LCD-paneeli 800 x 600 pikselin resoluutiolla. Kuvasuhde on 4:3. Lisäksi koneessa on NiMH-akku BIOSin asetusten säilyttämiseen. Tietokoneessa on liitännät 12 V:n ja 24 V:n jännitteille \citep{nero:manual}
 \newline\newline
 
 \begin{figure}[H]
@@ -266,7 +266,7 @@ Terman on Valmetin alkuperäinen DOS-pohjainen hallinta- ja apteerausohjelmisto 
 \label{kuva_terman}
 \end{figure}
 
-\newpage
+%\newpage
 \subsubsection{Päälohkokaavio}
 Kuvan \ref{kuva_lohkokaavio} lohkokaavioon on kuvattu Valmet 901 -hakkuukoneen tärkeimmät osat, niiden käyttämät väylät ja alkuperäisessä järjestelmässä olleet laitteet. Hakkuukoneessa ei ole itsessään käytössä vielä CAN-väylää, mutta jälkikäteen asennettu hakkuupää ja Motomitin mittalaitejärjestelmä käyttävät CAN-väylää sisäisesti ja hakkuupään ohjaukseen. Hakkuukoneen alkuperäiset järjestelmät on ohjattu jokainen laite omalla ohjausjohtimellaan. Kaaviosta näkyvistä järjestelmistä korvattiin keltaisella näkyvä Nero-ajoneuvotietokone ja siihen liitetyt hiiri ja näppäimistö.
 
@@ -308,13 +308,13 @@ Käyttöjärjestelmän ja ohjelmiston välissä voidaan suorittaa erillistä raj
 \subsubsection{NTVDM ja WOW}
 Virtual Dos Machine mahdollistaa DOS-ohjelmien suorituksen muissa käyttöjärjestelmissä. VDM-toteutuksia on ollut olemassa Windowseista 3.x -käyttöjärjestelmästä lähtien, ja OS/2 sisälsi hyvän DOS-tuen oman MVDM-toteutuksensa takia. VDM on toteutettu myös Wineen lähinnä 16-bittisten Windows 3.x -ohjelmien tuen takia. 16-bittisten ohjelmien tukea tarvitaan työssä Terman-ohjelmistolle.
 
-NTVDM (NT Virtual DOS Machine) ja WOW (Windows On Windows) ovat Windows-käyttöjärjestelmän alijärjestelmiä, jotka mahdollistavat DOS- ja 16 -bittisten Windows 3.x -ohjelmien suorittamisen uudemmissa NT -ytimeen pohjautuvissa Windows -versioissa. NTVDM oli toteutettu emulaattorina myös Windows NT:n MIPS- ja Alpha-versiolle. NTVDM ja WOW on poistettu 64-bittisisistä Windows-versioista \cite{ntvdm_2}.
+NTVDM (NT Virtual DOS Machine) ja WOW (Windows On Windows) ovat Windows-käyttöjärjestelmän alijärjestelmiä, jotka mahdollistavat DOS- ja 16 -bittisten Windows 3.x -ohjelmien suorittamisen uudemmissa NT -ytimeen pohjautuvissa Windows -versioissa. NTVDM oli toteutettu emulaattorina myös Windows NT:n MIPS- ja Alpha-versiolle. NTVDM ja WOW on poistettu 64-bittisisistä Windows-versioista \citep{ntvdm_2}
 
 NTVDM emuloi x86-prosessorin suorittamaa MS-DOS-käyttöjärjestelmää. Se tulkkaa DOS-ohjelmien tekemät suorat laitteiston manipulointipyynnöt Windowsin API-pyynnöiksi. Emuloitujen laitteistojen tuki on kuitenkin NTVDM:ssä yksinkertainen ja rajoittunut. Se ei rajaa ohjelmien suoritusnopeutta, jolloin moni DOS-ohjelma suoritetaan nykylaitteistolla liian nopeasti eikä kommunikointi laitteiston kanssa välttämättä onnistu, koska ohjelmat eivät odota vastausta tarpeeksi pitkään. Työn kannalta nämä NTVDM:n rajoitukset tulevat esteeksi, jotta Terman-ohjelmiston saisi kommunikoimaan sarjaväylälaitteen kanssa luotettavasti.
 
 NTVDM:n ratkaisu DOS:n tietoturvaongelmiin on suorittaa jokaista DOS-ohjelmaa omassa VDM-prosessissaan, jolloin ohjelmat ovat suojattuja toisiltaan. DOS-ohjelmien kaatuminen ei vaikuta muihin suoritettaviin prosesseihin, koska jokainen suoritettava DOS-ohjelma on oma VDM-prosessinsa. Uudemmissa käyttöjärjestelmissä (Windows 7+) voi määritellä, suoritetaanko DOS-ohjelmat omina prosesseinaan vai yhden VDM-prosessin alla.
 
-WOW (Win16 on Win32) on Windowsin alijärjestelmä joka täydentää NTVDM:ään tuen 16-bittisille Windows -ohjelmille. Win16-ohjelmat suoritetaan yhdessä VDM-prosessissa omina säikeinään. Tällä tavoin on saatu aikaan paras yhteensopivuus Windows 3.x:n kanssa. Haittapuolena tulee jaettu muistiavaruus kaikkien 16-bittisten ohjelmien kanssa, ja se voi aiheuttaa epävakautta alijärjestelmän sisällä. Alijärjestelmän kaatuminen sulkee kaikki 16-bittiset ohjelmat, mutta ei vaikuta käyttöjärjestelmän toimintaan muuten \cite{ntvdm_kb}.
+WOW (Win16 on Win32) on Windowsin alijärjestelmä joka täydentää NTVDM:ään tuen 16-bittisille Windows -ohjelmille. Win16-ohjelmat suoritetaan yhdessä VDM-prosessissa omina säikeinään. Tällä tavoin on saatu aikaan paras yhteensopivuus Windows 3.x:n kanssa. Haittapuolena tulee jaettu muistiavaruus kaikkien 16-bittisten ohjelmien kanssa, ja se voi aiheuttaa epävakautta alijärjestelmän sisällä. Alijärjestelmän kaatuminen sulkee kaikki 16-bittiset ohjelmat, mutta ei vaikuta käyttöjärjestelmän toimintaan muuten \citep{ntvdm_kb}
 
 
 \subsubsection{Wine-yhteensopivuuskerros}
@@ -327,7 +327,7 @@ Wineen pystyy asettamaan käyttöön tarvittaessa alkuperäisen järjestelmän j
 
 Winen ytimen (kuva \ref{wine_pino}) ratkaisut eivät sisällä mahdollisuutta Windowsin ajurien käyttöön. Tiettyjä laitteita tuetaan, mikäli niille löytyy käytettävästä käyttöjärjestelmästä ajurituki ja jos itse Wineen on toteutettu tarvittavat rajapintamuunnokset. Winessä on kuitenkin ohitettu ajurien tarve toteuttamalla monet DLL-kirjastot siten, että ne käyttävät suoraan Unixin rajapintoja (tulostus, äänet, näyttö). Jokainen Wine-prosessi (suoritettava Windows-ohjelma) suoritetaan omana prosessina, jolloin niillä on omat osoiteavaruudet, eikä niillä ole pääsyä muiden Winen suorittamien ohjelmien muistialueille.
 
-Winen kehitys alkoi jo vuonna 1993, kun Winen alkuperäinen kehittäjä Bob Amstadt halusi suorittaa sen aikaisia Windows 3.1 -ohjelmia Windowsin puolella. Kehitysvastuu siirtyi vuonna 1994 Alexandre Julliardille, joka on toiminut Wine Projectin johtohahmona ja projektin vetäjänä siitä lähtien. Vapaaehtoiset kehittäjät ovat kirjoittaneet noin puolet Winen koodista. Yrityspuolelta projektin pääasiallinen sponsori on CodeWeavers, jonka työntekijöitä myös moni Wine-kehittäjä on. CodeWeavers on kehittänyt CrossOver Linux-tuotteensa joka on kaupallistettu, käyttäjäystävällisempi versio Winestä. CodeWeavers tarjoaa myös ohjelmistojen porttaus- ja tukipalveluita Winelle \cite{wine:codeweavers}.
+Winen kehitys alkoi jo vuonna 1993, kun Winen alkuperäinen kehittäjä Bob Amstadt halusi suorittaa sen aikaisia Windows 3.1 -ohjelmia Windowsin puolella. Kehitysvastuu siirtyi vuonna 1994 Alexandre Julliardille, joka on toiminut Wine Projectin johtohahmona ja projektin vetäjänä siitä lähtien. Vapaaehtoiset kehittäjät ovat kirjoittaneet noin puolet Winen koodista. Yrityspuolelta projektin pääasiallinen sponsori on CodeWeavers, jonka työntekijöitä myös moni Wine-kehittäjä on. CodeWeavers on kehittänyt CrossOver Linux-tuotteensa joka on kaupallistettu, käyttäjäystävällisempi versio Winestä. CodeWeavers tarjoaa myös ohjelmistojen porttaus- ja tukipalveluita Winelle \citep{wine:codeweavers}
 
 
 \begin{figure}[H]
@@ -337,7 +337,7 @@ Winen kehitys alkoi jo vuonna 1993, kun Winen alkuperäinen kehittäjä Bob Amst
 \label{wine_pino}
 \end{figure}
 
-Wine-palvelimen avulla on totetutettu IPC:n (prosessien välinen kommmunikointi) synkronointi ja prosessien hallinta. Windows-alijärjestelmistä on toteutettuna vain Win32-alijärjestelmä (Kernel32). Winen toteuttamien DLL-tiedostojen nimeämiskäytäntö on pyritty pitämään mahdollisimman lähellä Windowsin nimeämiskäytäntöä, jos vain se on ollut mahdollista \cite{wine:architecture}.
+Wine-palvelimen avulla on totetutettu IPC:n (prosessien välinen kommmunikointi) synkronointi ja prosessien hallinta. Windows-alijärjestelmistä on toteutettuna vain Win32-alijärjestelmä (Kernel32). Winen toteuttamien DLL-tiedostojen nimeämiskäytäntö on pyritty pitämään mahdollisimman lähellä Windowsin nimeämiskäytäntöä, jos vain se on ollut mahdollista \citep{wine:architecture}
 
 \subsubsection{Dosemu}
 % Mikä doesmu
@@ -348,14 +348,14 @@ Dosemu on Linuxille kehitetty yhteensopivuuskerros, jolla saa suoritettua 16-bit
 Tekstipohjaiset DOS-ohjelmat saa suoritettua Dosemun avulla suoraan konsolissa, mutta siinä on lisäksi CGA/EGA/VGA-emulaatio DOS:n graafista moodia käyttäville ohjelmille (DOS:n Mode 13h eli resoluutio 320 x 200 ja 256 väriä). Dosemu sisältää myös tuen sarja- ja rinnakkaisporteille.
 
 % http://www.dosemu.org/docs/HOWTO/x596.html#AEN598
-Dosemun kehitys alkoi vuonna 1992 Matthias Lautnerin toimesta. Projektin vastuuhenkilö on vaihtunut vuosien varrella ja vuodesta 2004 lähtien vastuussa on ollut Bart Oldeman \cite{dosemu:history}.
+Dosemun kehitys alkoi vuonna 1992 Matthias Lautnerin toimesta. Projektin vastuuhenkilö on vaihtunut vuosien varrella ja vuodesta 2004 lähtien vastuussa on ollut Bart Oldeman \citep{dosemu:history}
 
 %Tähän vitun hieno kaavio? DOS on kyllä niin aneeminen että en tiedä löytyykö
 
 
 
 \section{Virtualisointi}
-Virtualisoinnissa alkuperäisiä ohjelmistoja ja käyttöjärjestelmää suoritetaan virtuaalikoneessa toisen käyttöjärjestelmän päällä. Näin saavutetaan varmin yhteensopivuus ohjelmistotasolla. Oheislaitteiden siirtämisessä virtualisoidun koneen käyttöön on rajoituksia, jotka pitää huomioida virtualisointiohjelmistoja valittaessa. Vaihtoehto kuluttaa muistia enemmän ja on hieman hitaampi kuin natiivi toteutus, hyötysuhteen ollessa noin 90\%  natiivista \cite{virtnat_anadtech}.
+Virtualisoinnissa alkuperäisiä ohjelmistoja ja käyttöjärjestelmää suoritetaan virtuaalikoneessa toisen käyttöjärjestelmän päällä. Näin saavutetaan varmin yhteensopivuus ohjelmistotasolla. Oheislaitteiden siirtämisessä virtualisoidun koneen käyttöön on rajoituksia, jotka pitää huomioida virtualisointiohjelmistoja valittaessa. Vaihtoehto kuluttaa muistia enemmän ja on hieman hitaampi kuin natiivi toteutus, hyötysuhteen ollessa noin 90\%  natiivista \citep{virtnat_anadtech}
 
 %KORJAUSKOMMENTTI: Viittaa lähteeseen!
 % KKOMMENTTI: Lähdeviittaukset olemassa, ei docx:ssä
@@ -372,7 +372,7 @@ Hypervisorit on jaettu kahteen tyyppiin: 1-tyypin natiiveihin hypervisoreihin, j
 Xen on Cambridgen yliopistossa kehitetty 1-tyypin hypervisor. % http://www.xenproject.org/about/history.html
 Xenin kehitystyö aloitettiin 1990-luvun loppupuolella Xenoserver-projektin yhteydessä, ja ensimmäinen julkinen avoin versio julkaistiin lokakuussa 2003, minkä jälkeen uusia versioita on julkaistu säännöllisesti; uusin on versio 4.5 \cite{xen_history}. Xen suoritetaan käynnistyslataimesta (bootloaderista), jolloin se asettautuu laitteiston ja virtuaalikoneiden väliin kuvassa \ref{kuva_xen} olevan arkkitehtuurikavion mukaisesti. Xen vaatiikiin aina suoritettavaksi yhden virtuaalikoneen eli niin sanottu isäntäkoneen eli Dom0:n. Dom0 hoitaa interaktion laitteiston ja muiden virtuaalikoneiden kanssa. Lisäksi ainoastaan Dom0:lla on pääsy Xenin rajapintaan, minkä kautta hallitaan järjestelmää.
 
-Xen vaatii erillisen tuen kohdekäyttöjärjestelmiltä, jotta niitä voidaan käyttää Xenin avulla paravirtualisoituina (poikkeuksena laitteistoavustettu virtualisointi, jolloin kohde ei tarvitse muutoksia). Tuki Xenin paravirtualisoinnille on kuitenkin useimmissa Linux- ja BSD-jakeluissa. Windowsissa ei ole tukea Xenin paravirtualisoinnille, mutta sitä voidaan suorittaa laitteistoavusteisen virtualisoinnin avulla Xenin päällä. Xen on tarkoitettu palvelinten virtualisointiin ja siten sen ratkaisut ja toteutus tekevät siitä epäkäytännöllisen tätä projektia ajatellen \cite{xen_overview}.
+Xen vaatii erillisen tuen kohdekäyttöjärjestelmiltä, jotta niitä voidaan käyttää Xenin avulla paravirtualisoituina (poikkeuksena laitteistoavustettu virtualisointi, jolloin kohde ei tarvitse muutoksia). Tuki Xenin paravirtualisoinnille on kuitenkin useimmissa Linux- ja BSD-jakeluissa. Windowsissa ei ole tukea Xenin paravirtualisoinnille, mutta sitä voidaan suorittaa laitteistoavusteisen virtualisoinnin avulla Xenin päällä. Xen on tarkoitettu palvelinten virtualisointiin ja siten sen ratkaisut ja toteutus tekevät siitä epäkäytännöllisen tätä projektia ajatellen \citep{xen_overview}
 
 %The Control Domain (or Domain 0) is a specialized Virtual Machine that has special privileges like the capability to access the hardware directly, handles all access to the system’s I/O functions and interacts with the other Virtual Machines. It also exposes a control interface to the outside world, through which the system is controlled. The Xen Project hypervisor is not usable without Domain 0, which is the first VM started by the system.
 
@@ -386,7 +386,7 @@ Xen vaatii erillisen tuen kohdekäyttöjärjestelmiltä, jotta niitä voidaan k�
 \subsubsection{KVM}
 %http://www.linuxthoughts.com/?p=110
 %https://www.youtube.com/watch?v=6n-ANRWqll8
-KVM (Kernel Mode Virtualization) on Linux-ytimeen rakennettu tuki virtualisoinnille. KVM vaatii prosessorilta virtualisointituen. KVM ei itsessään emuloi mitään, vaan tarjoaa käyttäjätasolle rajapinnan prosessorin virtualisointiominaisuuksiin. KVM on toteutettu siten, että se muuttaa Linux-ytimen hypervisoriksi hyödyntäen muita Linuxin komponentteja, kuten vuorottelijaa ja muistinhallintaa, kuvan \ref{kuva_kvm} mukaisesti \cite{kvm1}.
+KVM (Kernel Mode Virtualization) on Linux-ytimeen rakennettu tuki virtualisoinnille. KVM vaatii prosessorilta virtualisointituen. KVM ei itsessään emuloi mitään, vaan tarjoaa käyttäjätasolle rajapinnan prosessorin virtualisointiominaisuuksiin. KVM on toteutettu siten, että se muuttaa Linux-ytimen hypervisoriksi hyödyntäen muita Linuxin komponentteja, kuten vuorottelijaa ja muistinhallintaa, kuvan \ref{kuva_kvm} mukaisesti \citep{kvm1}
 
 % http://www.linux-kvm.org/wiki/images/6/61/KvmForum2007$kf2007-keynote.pdf
 KVM:n kehitys alkoi vuonna 2006 \cite{kvm3}. Ensimmäinen vakaa, Linuxin ytimen mukana toimitettava versio julkaistiin syyskuussa 2012. KVM koostuu ydin -moduulista kvm.ko, joka toteuttaa virtualisoinnin perusrakenteet, prosessoririppuvaisista ydin-moduuleista (esim. kvm-intel.ko ja kvm-amd.ko.) ja käyttäjätason ohjelmasta (qemu-system-ARCH), joka emuloi laitteiston ja toteuttaa virtuaalikoneiden (guest) hallinnan. Jokaiselle virtuaalikoneelle emuloidaan omat laitteistot. Alussa hallintaan käytettiin muunneltua QEMU:n versiota, mutta QEMU 1.3:sta lähtien tarvittavat muutokset on lisätty QEMU:un. KVM:lle ei toistaiseksi ole toteutettu muita käyttäjätason hallintaohjelmia kuin QEMU. QEMU:n päälle on kuitenkin toteutettu laaja joukko hallintaohjelmia (libvirt) \cite{kvm2}. KVM on yksi harkinnanarvoinen virtuaalikone, jos ajoneuvotietokoneen alkuperäinen käyttöjärjestelmä täytyy saada virtualisoitua.
@@ -416,7 +416,7 @@ Virtuaalikoneita hallitaan ja Virtualboxin graafisella käyttöliittymällä ett
 
 
 \subsubsection{VMWare Player}
-VMWare Player on VMWaren vuonna 2008 julkaistu kaupallinen virtualisointiohjelmisto. Uusin versio on joulukuussa 2014 julkaistu 7.0. VMWare Player on kotikäyttöön ilmainen, mutta kaupallinen käyttö vaatii lisenssin hankkimisen. VMWare Player käyttää samaa virtualisointiydintä VMWare Workstationin kanssa, josta riisuttu versio Player oikeastaan on. VMware Playerin ominaisuuksiin kuuluu neljän sarjaportin välitys kohdejärjestelmälle. Laitteiston välitystuki Playerissa on hyvä. VMware Playerista on versiot Windows- ja Linux-käyttöjärjestelmille \cite{vmware1}.
+VMWare Player on VMWaren vuonna 2008 julkaistu kaupallinen virtualisointiohjelmisto. Uusin versio on joulukuussa 2014 julkaistu 7.0. VMWare Player on kotikäyttöön ilmainen, mutta kaupallinen käyttö vaatii lisenssin hankkimisen. VMWare Player käyttää samaa virtualisointiydintä VMWare Workstationin kanssa, josta riisuttu versio Player oikeastaan on. VMware Playerin ominaisuuksiin kuuluu neljän sarjaportin välitys kohdejärjestelmälle. Laitteiston välitystuki Playerissa on hyvä. VMware Playerista on versiot Windows- ja Linux-käyttöjärjestelmille \citep{vmware1}
 
 
 Playerista puuttuvat snapshotit, ja siinä on hyvin rajoittunut komentorivi-käyttöliittymä. Suoritusnopeudessa VMware Player voittaa Virtualboxin pienellä erolla \cite{vplayervsvbox}. VMware Player on Virtualboxin kannsa ominaisuuksiltaan muuten hyvin tasaväkinen, mutta maksullinen, mistä syystä Player jätettiin pois harkinnanarvoisista virtuaalikoneohjelmistoista ajoneuvotietokoneen virtualisoimiseksi.
@@ -433,29 +433,29 @@ Playerista puuttuvat snapshotit, ja siinä on hyvin rajoittunut komentorivi-käy
 % Xeniä käytettäessä QEMU hoitaa ainoastaan laitteistoemuloinnin, itse virtuaalikoneen suoritus tapahtuu Xenin kautta eikä QEMUlla ole siihen pääsyä.
 
 \subsubsection{Windows Virtual PC}
-Windows Virtual PC on Microsoftin ilmaiseksi tarjoama virtuaalikone Windows 7 -käyttöjärjestelmälle. Uusin versio on 6.1, jonka tuettuina kohdekäyttöjärjestelminä ovat Windows XP, WIndows Vista, ja Windows 7 \cite{vpc_tips}.
+Windows Virtual PC on Microsoftin ilmaiseksi tarjoama virtuaalikone Windows 7 -käyttöjärjestelmälle. Uusin versio on 6.1, jonka tuettuina kohdekäyttöjärjestelminä ovat Windows XP, WIndows Vista, ja Windows 7 \citep{vpc_tips}
 
 Connectix kehitti Virtual PC:n Machintonin System 7.5 -käyttöjärjestelmälle vuonna 1997. Windows-versio julkaistiin vuonna 2001. Microsoft osti Virtual PC:n Connectixilta vuonna 2003. Vuonna 2006 Microsoft julkaisi Virtual PC 2004 SP1:n ilmaiseksi. Vuonna 2009 Virtual PC:n nimi vaihdettiin Windows Virtual PC:ksi, joka tukee ainoastaan Windows 7:ää ja sen jälkeen julkaistuja Windowseja. Virtual PC:n asettamat käyttöjärjestelmärajoitukset sulkevat sen pois mahdollisten virtuaalikoneiden listalta.
 
 
 \section{Järjestelmäemulointi}
-Järjestelmäemuloinnissa alkuperäisiä ohjelmistoja ja käyttöjärjestelmää suoritetaan emulaattorissa toisen järjestelmän päällä. Emuloimalla saavutetaan laitteistoarkkitehtuuririippumattomuus isäntäkoneen ja emuloitavan järjestelmän välillä. Emuloinnin haittapuolena on hitaus. Nyrkkisääntönä on 20 \% hyötysuhde \cite{tinycc}, kun parhaat emulaattorit pääsevät noin 40-80 \%:n hyötysuhteeseen \cite{40pperf}.
+Järjestelmäemuloinnissa alkuperäisiä ohjelmistoja ja käyttöjärjestelmää suoritetaan emulaattorissa toisen järjestelmän päällä. Emuloimalla saavutetaan laitteistoarkkitehtuuririippumattomuus isäntäkoneen ja emuloitavan järjestelmän välillä. Emuloinnin haittapuolena on hitaus. Nyrkkisääntönä on 20 \% hyötysuhde \citep{tinycc}, kun parhaat emulaattorit pääsevät noin 40-80 \%:n hyötysuhteeseen \cite{40pperf}
 
 Hitauden vuoksi emulointi ei ole erityisen suotuisa vaihtoehto huomattavasti nopeampaan virtualisointiin verrattuna. Työssä käytettävät ohjelmat eivät kuitenkaan ole mitenkään resurssisyöppöjä, joten emulointia voi ajatella varteenotettavana vaihtoehtona, jotta työssä voidaan mahdollisesti käyttää x86-arkkitehtuurin lisäksi muita prosessoriarkkitehtuureita, joista ARM on laajan suosionsa takia vaihtoehtojen kärjessä.
 
 % Blaah. Esittely QEMUsta, Virtualboxista, VirtualPC:stä, VMWaren shaibasta
 %http://qemu.weilnetz.de/qemu-tech.html#intro_005ffeatures
 \subsubsection{QEMU}
-QEMU (Quick Emulator) on avoimen lähdekoodin emulaattori ja virtuaalikone, joka toimii Linuxin lisäksi myös Windowsissa, ja Mac OS X:ssä. QEMU tukee erilaisia toimintamoodeja. QEMU:n rakenne on jaettu taustajärjestelmään, joka vastaa isäntäkoneen arkkitehtuurituesta, ja edustaohjelmaan joka vastaa kohdeprosessorin emuloinnin toteuttamisesta. Tällä rakenteella on saatu aikaiseksi järjestelmä, joka on helppo kääntää ja laajentaa uusille prosessoreille ja niiden käskykannoille \cite{qemu_doc}.
+QEMU (Quick Emulator) on avoimen lähdekoodin emulaattori ja virtuaalikone, joka toimii Linuxin lisäksi myös Windowsissa, ja Mac OS X:ssä. QEMU tukee erilaisia toimintamoodeja. QEMU:n rakenne on jaettu taustajärjestelmään, joka vastaa isäntäkoneen arkkitehtuurituesta, ja edustaohjelmaan joka vastaa kohdeprosessorin emuloinnin toteuttamisesta. Tällä rakenteella on saatu aikaiseksi järjestelmä, joka on helppo kääntää ja laajentaa uusille prosessoreille ja niiden käskykannoille \citep{qemu_doc}
 
-Järjestelmäemuloinnissa QEMU emuloi koko tietokoneeen, mukaan lukien laitteistot. Kun kohdejärjestelmää emuloidaan, arkkitehtuurin ei tarvitse olla sama kuin isäntäkoneella. QEMUun on toteutettu suhteellisen laaja määrä erilaisia laitteita, kuten 11 erilaista USB Hostia, 8 erilaista verkkokorttia, 5 erilaista näytönohjainta ja 8 äänikorttia \cite{qemu_doc}. QEMU:ssa on käytetty GIL:ä (Global Interpreter Lock) synkronoimaan suoritusta, joten se suorittaa järjestelmäemuloinnin yksisäikeisesti, vaikka kohdejärjestelmälle olisikin toisin väitetty \cite{qemu_tech}.
+Järjestelmäemuloinnissa QEMU emuloi koko tietokoneeen, mukaan lukien laitteistot. Kun kohdejärjestelmää emuloidaan, arkkitehtuurin ei tarvitse olla sama kuin isäntäkoneella. QEMUun on toteutettu suhteellisen laaja määrä erilaisia laitteita, kuten 11 erilaista USB Hostia, 8 erilaista verkkokorttia, 5 erilaista näytönohjainta ja 8 äänikorttia \citep{qemu_doc}. QEMU:ssa on käytetty GIL:ä (Global Interpreter Lock) synkronoimaan suoritusta, joten se suorittaa järjestelmäemuloinnin yksisäikeisesti, vaikka kohdejärjestelmälle olisikin toisin väitetty \cite{qemu_tech}
 
 %http://qemu.weilnetz.de/qemu-tech.html#QEMU-compared-to-other-emulators
-QEMU käyttää dynaamista käännöstä (dynamic translation) nopeuttakseen emulointinopeutta. Dynaamisessa käännöksessä tulkitaan ja käännetään suoritettavaa tiedostoa pieni osa, blokki, kerrallaan. Blokki on haarautumiseen ja hyppykäskyihin asti oleva pätkä käskyjä. Koska yleensä dynaamiset kääntäjät ovat monimutkaisia ja arkkitehtuurisidonnaisia, on QEMU:n kääntäjä TCG (Tiny Code Generator) pidetty yksinkertaisena ja helposti siirrettävänä. TCG:n perusajatus on jakaa jokainen käsky TCG:n RISC-tyyppisiksi käskyiksi, jotka sitten muutetaan kohdejärjestelmän käskyiksi \cite{qemu_tech}.
+QEMU käyttää dynaamista käännöstä (dynamic translation) nopeuttakseen emulointinopeutta. Dynaamisessa käännöksessä tulkitaan ja käännetään suoritettavaa tiedostoa pieni osa, blokki, kerrallaan. Blokki on haarautumiseen ja hyppykäskyihin asti oleva pätkä käskyjä. Koska yleensä dynaamiset kääntäjät ovat monimutkaisia ja arkkitehtuurisidonnaisia, on QEMU:n kääntäjä TCG (Tiny Code Generator) pidetty yksinkertaisena ja helposti siirrettävänä. TCG:n perusajatus on jakaa jokainen käsky TCG:n RISC-tyyppisiksi käskyiksi, jotka sitten muutetaan kohdejärjestelmän käskyiksi \citep{qemu_tech}
 
 
 \subsubsection{Bochs}
-Bochs on pelkästään x86-arkkitehtuuriin keskittynyt avoimen lähdekoodin emulaattori. Sen ensimmäinen versio julkaistiin vuonna 1994, jolloin se oli vielä kaupallinen tuote. Vuonna 2000 Mandrakesoft (ranskalainen yritys, joka on erikoistunut Linuxiin) osti Bochsin sen kehittäjältä Kevin Lawtonilta ja julkaisi lähdekoodit LGPL-lisenssillä \cite{bochs0}. Bochsia käytetään käyttöjärjestelmäkehityksessä apuna, ja se sisältääkin emuloinnin 8-ytimiselle prosessorille ja kehittyneet vianetsintätyökalut. \cite{bochs_doc}.
+Bochs on pelkästään x86-arkkitehtuuriin keskittynyt avoimen lähdekoodin emulaattori. Sen ensimmäinen versio julkaistiin vuonna 1994, jolloin se oli vielä kaupallinen tuote. Vuonna 2000 Mandrakesoft (ranskalainen yritys, joka on erikoistunut Linuxiin) osti Bochsin sen kehittäjältä Kevin Lawtonilta ja julkaisi lähdekoodit LGPL-lisenssillä \citep{bochs0}. Bochsia käytetään käyttöjärjestelmäkehityksessä apuna, ja se sisältääkin emuloinnin 8-ytimiselle prosessorille ja kehittyneet vianetsintätyökalut. \cite{bochs_doc}
 
 Bochs tukee sarjaportin välitystä isäntäkäyttöjärjestelmän ja emuloidun koneen välillä, ja se pystyy emuloimaan alkuperäisen ajoneuvotietokoneen käytössä ollutta Windows 98-käyttöjärjestelmää, joten Bochsia pystyisi siten käyttämään emulaattorina tässä työssä. QEMUun verrattuna Bochsin käyttö ei kuitenkaan tuo mitään ylimääräistä arvoa vaihtoehtona, joten en suosittele sen käyttöä tässä tarkoituksessa.
 
@@ -466,7 +466,7 @@ Ohjelmistojen emuloinnilla tarkoitetaan käyttäjätilan emulointia, jossa voida
 \subsubsection{QEMU}
 QEMU tarjoaa virtualisoinnin ja laitetason emuloinnin lisäksi myös käyttäjätilan emulointia Linux-, OSX- ja BSD-käyttöjärjestelmissä \cite{qemu_use}. Tuettuja kohdeprosessoriarkkitehtuureita ovat x86 (i386), ARM, M68K ja SPARC.
 
-Käyttäjätilan emuloinnissa QEMU suorittaa järjestelmäkutsujen ja I/O-kutsujen tulkkauksen, joka korjaa myös mahdolliset tavujärjestys- ja 32/64-bittisyydestä aiheutuvat ongelmat. Linuxin signalointi pystytään suurimmaksi osaksi hoitamaan suoraan isäntäkoneelle. Vain signaalinkäsittelyn signaalit signaalien tutkimiseen (sigaction) ja signaalinkäsittelijästä poistumisen (sigreturn) on tarvinnut emuloida. Lisäksi järjestelmäkutsuista uusien säikeiden luonti on hoidettu tekemällä jokaista säiettä varten uusi virtuaaliprosessori \cite{qemu_tech}.
+Käyttäjätilan emuloinnissa QEMU suorittaa järjestelmäkutsujen ja I/O-kutsujen tulkkauksen, joka korjaa myös mahdolliset tavujärjestys- ja 32/64-bittisyydestä aiheutuvat ongelmat. Linuxin signalointi pystytään suurimmaksi osaksi hoitamaan suoraan isäntäkoneelle. Vain signaalinkäsittelyn signaalit signaalien tutkimiseen (sigaction) ja signaalinkäsittelijästä poistumisen (sigreturn) on tarvinnut emuloida. Lisäksi järjestelmäkutsuista uusien säikeiden luonti on hoidettu tekemällä jokaista säiettä varten uusi virtuaaliprosessori \citep{qemu_tech}
 
 QEMU:lla onnistuu oman dokumentaationsa mukaan myös Wine-yhteensopivuuskerroksen emulointi, jota tarvitaan, jotta Windows-ohjelmat, kuten ajoneuvotietokoneen ohjelmista Motomit, saadaan suoritettua myös muilla arkkitehtuureilla \cite{qemu_use}. QEMUn käyttäjätilan emulointi vaikuttaakin tutustumisenarvoiselta ominaisuudelta tässä varsin monipuolisessa virtualisointi- ja emulointiohjelmistossa.
 
@@ -476,7 +476,7 @@ QEMU:lla onnistuu oman dokumentaationsa mukaan myös Wine-yhteensopivuuskerrokse
 \subsubsection{Eltechs ExaGear Desktop}
 Eltechs ExaGear Desktop on kaupallinen toteutus Linuxille 32-bittisten x86 -ohjelmien ajamiseksi ARMv7-arkkitehtuurin prosessoreilla. Ohjelmisto julkaistiin lokakuussa 2014. Se on omien testiensä perusteella viisi kertaa QEMU:a nopeampi \cite{eltechs:exagear}. SysBenchín synteettisten testien perusteella ExaGear Desktopin suoritusnopeus on 50--85 \% natiivista nopeudesta.
 
-ExaGear Desktop ei sisällä grafiikan laitteistokiihdytystukea, joten OpenGL/DirectX Winellä vaativat ohjelmistot suoritetaan ohjelmistorenderöijällä. Tämä on hidasta, eikä ohjelmistorenderöijä tue kaikkia OpenGL-standardin ominaisuuksia. Lisäksi on raportoitu ongelmista äänentoistossa, jos ääntä tuotetaan useasta lähteestä yhtäaikaa. Ajoneuvotietokoneen tarpeita ajatellen nämä puutteet eivät haittaa, koska käytettävät ohjelmat eivät tarvitse 3D-kiihdytystä eivätkä ääniä \cite{eltechs:odroid}.
+ExaGear Desktop ei sisällä grafiikan laitteistokiihdytystukea, joten OpenGL/DirectX Winellä vaativat ohjelmistot suoritetaan ohjelmistorenderöijällä. Tämä on hidasta, eikä ohjelmistorenderöijä tue kaikkia OpenGL-standardin ominaisuuksia. Lisäksi on raportoitu ongelmista äänentoistossa, jos ääntä tuotetaan useasta lähteestä yhtäaikaa. Ajoneuvotietokoneen tarpeita ajatellen nämä puutteet eivät haittaa, koska käytettävät ohjelmat eivät tarvitse 3D-kiihdytystä eivätkä ääniä \citep{eltechs:odroid}
 
 % Caveats
 % There are some quirks with ExaGear that make things a little bit harder to use. For example, the file access in the ExaGear
@@ -510,7 +510,7 @@ ExaGear Desktop ei sisällä grafiikan laitteistokiihdytystukea, joten OpenGL/Di
 
 Lain ja olosuhteiden asettamia vaatimuksia ajoneuvotietokoneelle käsitellään seuraavissa direktiiveissä ja standardeissa:
 
-CEN EN55022 -standardi määrittää kevyen teollisuuden laitteiden ja tietokonelaitteiden säteilypäästöjen raja-arvot ja määrittää, miten mittaus tulee suorittaa. Standardissa laitteet on jaoteltu kahteen luokkaan, A ja B, joista B-luokan laitteet ovat paremmin suojattuja \cite{EN55022}.
+CEN EN55022 -standardi määrittää kevyen teollisuuden laitteiden ja tietokonelaitteiden säteilypäästöjen raja-arvot ja määrittää, miten mittaus tulee suorittaa. Standardissa laitteet on jaoteltu kahteen luokkaan, A ja B, joista B-luokan laitteet ovat paremmin suojattuja \citep{EN55022}
 
 EU-direktiivi 2004/104/EY (Autoteollisuuden EMC-direktiivi) määrittää, että 1.7.2006 alkaen valmistettujen ajoneuvojen ja kiinteästi asennetun ajoneuvoelektroniikan aiheuttamat säteilypäästöt ja päästöjen sietokyky mitataan direktiivin mukaisesti. Direktiiviin on julkaistu lisäys 2005/83/EY, joka tarkentaa direktiiviä. Uusi direktiivi korvaa aiemman direktiivin 95/54/EY.
 
@@ -518,13 +518,13 @@ Uusi direktiivi vaatii tyyppihyväksynnän vain laitteilta, joilla on
 vaikutusta ajoneuvon hallintaan, kuljettajan asennon muuttamiseen tai
 kuljettajan näkyvyysalueeseen. Laitteiden, joiden ei tarvitse olla
 tyyppihyväksyttyjä, pitää täyttää kuitenkin EMC-direktiivin 89/336/ETY
-tai radio- ja telepäätelaitedirektiivin 1999/5/EY vaatimukset \cite{1999/5/EY,89/336/ETY}.
+tai radio- ja telepäätelaitedirektiivin 1999/5/EY vaatimukset \citep{1999/5/EY,89/336/ETY}
 
-EMC-direktiivi 89/336/ETY määrittelee ainoastaan laitteistolta vaadittavat ominaisuudet sähkömagneettisen yhteensopivuuden takaamiseksi. Direktiivin tarkoitus on ohjeistaa valmistajia tekemään elektromagneettisesti yhteensopivia laitteita. Direktiivi koskee kaikkia sähkölaitteita ja -asennuksia, joita ei direktiivissä ole erikseen rajattu sen ulkopuolelle \cite{89/336/ETY}. Direktiivi 2004/108/EY kumosi vanhemman direktiivin 89/336/ETY 20.7.2004 alkaen. 2004/108/EY  erotteli kiinteille asennuksille ja laitteille tehtävät asennukset ja yksinkertaisti vaatimustenmukaisuuden arviointimenettelyä \cite{2004/108/EY}.
+EMC-direktiivi 89/336/ETY määrittelee ainoastaan laitteistolta vaadittavat ominaisuudet sähkömagneettisen yhteensopivuuden takaamiseksi. Direktiivin tarkoitus on ohjeistaa valmistajia tekemään elektromagneettisesti yhteensopivia laitteita. Direktiivi koskee kaikkia sähkölaitteita ja -asennuksia, joita ei direktiivissä ole erikseen rajattu sen ulkopuolelle \citep{89/336/ETY}. Direktiivi 2004/108/EY kumosi vanhemman direktiivin 89/336/ETY 20.7.2004 alkaen. 2004/108/EY  erotteli kiinteille asennuksille ja laitteille tehtävät asennukset ja yksinkertaisti vaatimustenmukaisuuden arviointimenettelyä \cite{2004/108/EY}
 
 Radio- ja telepäätelaitedirektiivi 1999/5/EY määrittää radio- ja telepäätelaitteiden yhteensopivuuden Euroopan laajuisesti. Kaikkiin direktiivin piiriin kuuluvien laitteiden tulee olla turvallisia käyttäjälle ja muille henkilöille ja täyttää vaaditut suojavaatimukset sähkömagneettisen yhteensopivuuden osalta. Lisäksi
 direktiivi määrittää, että laitteistojen tulee olla rakennettuja siten, että ne käyttävät tehokaasti radioviestintään varattua spektriä ja resursseja. Tietyille laiteluokille on lisäksi määritelty vielä muita vaadittuja lisäominaisuuksia, kuten yksityisyyden suojan takaaminen, yhteensopivuus muiden laitteistojen välillä, petoksia ehkäisevien ominaisuuksien sisältäminen, tuki hätäpalveluihin pääsyn takaaville ominaisuuksille ja/tai ominaisuudet, joilla laitteistojen
-käyttö tehdään helpommaksi vammaisille \cite{1999/5/EY}. Direktiivi 1999/5/EY on kumottu 13.6.2016 alkaen direktiivillä 2014/53/EU radiolaitteiden asettamista saataville markkinoilla koskevan jäsenvaltioiden lainsäädännön yhdenmukaistamisesta \cite{2014/53/EU}.
+käyttö tehdään helpommaksi vammaisille \citep{1999/5/EY}. Direktiivi 1999/5/EY on kumottu 13.6.2016 alkaen direktiivillä 2014/53/EU radiolaitteiden asettamista saataville markkinoilla koskevan jäsenvaltioiden lainsäädännön yhdenmukaistamisesta \cite{2014/53/EU}
 
 IP-suojaluokitus on standardissa IEC 60529 määritetty järjestelmä sähkölaitteiden tiiveyden määrittämiseksi. IP-luokitus kertoo laitteiden suojauksen pölyä ja vettä vastaan \cite{IEC60529}. IP54-suojaluokitetut tuotteet ovat pölysuojattuja (ei täydellistä tiiviyttä, mutta ei pölykertymiä) ja roiskesuojattuja.
 
@@ -536,7 +536,7 @@ IP67/66-suojaluokitetut tuotteet ovat täysin pölytiiviitä ja kestävät suure
 \section{Tutustuminen Nero-ajoneuvotietokoneeseen}
 Ensimmäisen kerran tutustuin Sunitin Nero-ajoneuvotietokoneeseen toukokuussa 2014, kun työn kohteena olevasta yksilöstä oli rikkoutunut kiintolevy. Tällöin tutkin ja selvitin tietokoneen ominaisuudet, liitännät ja ohjelmistot. Koska ohjelmistot olivat saatavana kopioina Motomit-jälleenmyyjältä ja Valmetilta, ei alkuperäistä kiintolevyn sisältöä tarvinnut saada talteen. Tietokoneeseen hankittiin käytetty Hitachin 40Gb 2,5" IDE-kiintolevy, asennettiin käyttöjärjestelmä (Windows 98) ja ohjelmistot valmiiksi virtuaalikoneessa ja varmuuskopioitiin asennus. Lopuksi 1.7.2014 testattiin toimivuus tuotantoympäristössä.
 
-Ensimmäisessä huollossa vaihdettu kiintolevy rikkoontui vain muutaman kuukauden käytön jälkeen. Koska kiintolevyn koolla ja nopeudella ei ole tässä tietokoneessa erityisemmin väliä, valittiin uudeksi kiintolevykorvikkeeksi paremmin tärinää ja vaihtelevia lämpöolosuhteita kestävä SD-IDE-muistikorttiadapteri ja 2 Gb:n muistikortti. Alkuperäinen SecureDigital-standardi mahdollistaa vain 2 Gb:n kapasiteetin ja väylän maksiminopeuden 12,5 Mb/s (kirjoitusnopeus on huomattavasti vähemmän, noin 1--2 Mb/s ) \cite{sd:2gb}.
+Ensimmäisessä huollossa vaihdettu kiintolevy rikkoontui vain muutaman kuukauden käytön jälkeen. Koska kiintolevyn koolla ja nopeudella ei ole tässä tietokoneessa erityisemmin väliä, valittiin uudeksi kiintolevykorvikkeeksi paremmin tärinää ja vaihtelevia lämpöolosuhteita kestävä SD-IDE-muistikorttiadapteri ja 2 Gb:n muistikortti. Alkuperäinen SecureDigital-standardi mahdollistaa vain 2 Gb:n kapasiteetin ja väylän maksiminopeuden 12,5 Mb/s (kirjoitusnopeus on huomattavasti vähemmän, noin 1--2 Mb/s ) \citep{sd:2gb}
 
 Huhtikuussa 2015 Nero-ajoneuvotietokoneesta rikkoontui BIOS:n CMOS-asetuksia ylläpitänyt NiMH-akku, minkä seurauksena ajoneuvotietokone kadottaa asetuksensa aina päävirtojen katkaisun yhteydessä. Kiintolevy pitää erikseen etsiä jokaisen päävirran katkaisun jälkeen BIOS:sta, mikä tekee tietokoneen käytön hankalaksi tai jopa mahdottomaksi hakkuukoneen kuljettajalle. Akkupaketin NiMH-kennot uusittiin ja BIOS-asetukset määritettiin uudelleen, jolloin kone saatiin taas takaisin käyttöön.
 
@@ -628,7 +628,7 @@ data & Blob \\\bottomrule
 \subsubsection{SQL-taulut ja tietotyypit}
 SQLiteä käytettäessä on hyvä tietää sen tukemat datatyypit \cite{sqlite:datatype3}. Integer tallennetaan sisäisesti sopivanpituiseen 1--8 tavun (8--64-bittiseen) etumerkilliseen tietueeseen, eikä käyttäjän tarvitse tietokannan luontivaiheessa tietää kentän maksimiarvoa. Text- ja Blob-muotojen oletusmaksimipituus on miljardi tavua (953,67 MiB). Tämä arvo voidaan kasvattaa $2^{31}-1$ tavuun (lähes 2 GiB). SQLite ei tue natiivisti DATE- tai DATETIME-tyyppiä, vaan päiväykset tulee tallentaa tekstinä (ISO8601) tai numeerisena (Unix epoch).
 
-Kokorajoitukset eivät aiheuta ongelmia, koska data tallennetaan maksimissaan 1 sekunnin pituisissa palasissa. Tällöin jo oletusrajoilla sarjaväylän maksiminopeus olisi noin 133 Mbit/s, joka on kolme kertaluokkaa isompi kuin perinteinen 16550 UART:n määrittämä 115,2 kbit/s \cite{sqlite:limits}.
+Kokorajoitukset eivät aiheuta ongelmia, koska data tallennetaan maksimissaan 1 sekunnin pituisissa palasissa. Tällöin jo oletusrajoilla sarjaväylän maksiminopeus olisi noin 133 Mbit/s, joka on kolme kertaluokkaa isompi kuin perinteinen 16550 UART:n määrittämä 115,2 kbit/s \citep{sqlite:limits}
 
 \subsubsection{SRPT-ohjelmat}
 Tallennukseen käytetään SRPT-record-ohjelmaa, joka annetaan parametreiksi tiedostonimi, käytettävä laitetiedosto ja sarjaportin nopeus. Tarvittaessa myös muita sarjaväylän asetuksia (bittimäärä, paritetti, stop-bittien määrä, tallennuksen pituus/koko) voidaan vaihtaa. Oletusasetuksina ovat yleisin 8-N-1 (8 bittiä, ei pariteettia, 1 stop-bitti) ja rajoittamaton tallennus.
